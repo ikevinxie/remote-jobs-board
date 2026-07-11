@@ -10,5 +10,7 @@
 
 手机浏览器打开浏览页后可「添加到主屏幕」,像 App 一样使用。
 
+> ⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don't verify them. Beware of job scams — never pay to apply.
+>
 > 本仓库内容由脚本自动生成并每周更新;岗位信息版权归原发布方所有,链接均指向原始出处。
 > Auto-generated weekly. All listings link back to their original sources.
