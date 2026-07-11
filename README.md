@@ -8,5 +8,7 @@
 - 🗂 [历史周报 | Archive](https://ikevinxie.github.io/remote-jobs-board/reports/)
 - 📡 [RSS 订阅 | RSS feed](https://ikevinxie.github.io/remote-jobs-board/feed.xml)
 
+手机浏览器打开浏览页后可「添加到主屏幕」,像 App 一样使用。
+
 > 本仓库内容由脚本自动生成并每周更新;岗位信息版权归原发布方所有,链接均指向原始出处。
 > Auto-generated weekly. All listings link back to their original sources.
