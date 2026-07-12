@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>V2EX 招聘帖 | 远程岗位不限制地区/时区北京 Flutter 工程师</title>
+<meta property="og:title" content="V2EX 招聘帖 | 远程岗位不限制地区/时区北京 Flutter 工程师">
+<meta property="og:description" content="V2EX 招聘帖 · 📍远程(V2EX·中文社区)">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="V2EX 招聘帖 · 📍远程(V2EX·中文社区)">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>远程岗位不限制地区/时区北京 Flutter 工程师</h1>
+<div class="meta">🏢 V2EX 招聘帖 · 📍 远程(V2EX·中文社区) · 软件开发 | Software Development · 亚太 | Asia-Pacific · 来源 V2EX · 发布 2026-07-06</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://www.v2ex.com/t/1225352" target="_blank" rel="noopener">去原站申请 | Apply on V2EX ↗</a>
+<div class="jd">Flutter 工程师  25k 内<br>一、岗位职责<br>1. 负责公司移动端产品 Flutter 跨平台应用的架构设计、核心功能开发、迭代优化与技术攻坚，保障 iOS 、Android 双端应用的稳定性、流畅度与兼容性。<br>2. 主导 Flutter 项目技术方案选型、模块拆分与代码规范制定，推动组件化、模块化开发，提升研发效率与代码可复用性，保障团队代码质量。<br>3. 深入优化 Flutter 应用性能，解决内存泄漏、渲染卡顿、包体积过大、启动耗时等核心问题，适配不同机型、系统版本与弱网环境，提升用户体验。<br>4. 负责 Flutter 与原生 iOS/Android 端的混合开发、通道通信、原生插件封装与集成，对接第三方 SDK 、后端接口，完成复杂业务逻辑的跨端实现。<br>5. 参与产品需求评审，从研发视角提出可行性建议，把控项目研发进度与技术风险，推动问题快速闭环。<br>6. 跟踪 Flutter 前沿技术、行业方案与生态更新，落地技术预研与技术升级，沉淀研发文档、通用组件与实践，赋能团队技术成长。<br><br>二、任职要求<br>1. 本科及以上学历，3 年以上移动端开发经验。<br>2. 3 年以上 Flutter 世纪项目开发经验。<br>3. 熟悉 IOS/Android 原生开发，具备原生与 Flutter 混合开发经验。<br>4. 熟练掌握 Flutter 框架原理，精通 Widget 生命周期、状态管理等核心机制。<br>5.熟悉常用设计模式，具备良好的架构设计能力。<br>6. 具备较强的分析解决问题能力，能独立承担复杂模块开发。<br>7. 抗压能力强，责任心强，具备较强的自驱力。<br><br>Flutter 高级开发工程师，20-35k<br>负责 Android 、iOS 及 Flutter Web （ PWA ）跨平台产品研发，涵盖短视频、聊天、会员、支付、内容社区等核心业务模块。<br><br>要求：3 年以上 Flutter 开发经验，熟悉 Dart 、Flutter Framework 、GetX 、GoRouter ；具备 Flutter Web （ PWA ）开发经验，熟悉 Safari （ iOS/macOS ）兼容性处理；熟悉播放器开发、页面性能优化、WebSocket 、Drift/SQLite 、Platform Channel 、插件封装及多项目维护；具备良好的代码规范和架构设计能力；熟练使用 Claude Code 、Cursor 、GitHub Copilot 、ChatGPT 等 AI 工具提升研发效率。<br><br>加分项： 有 Android （ Kotlin ）或 iOS （ Swift ）开发经验；有短视频、直播、音视频项目经验；有 CI/CD 、Google Play 、App Store 发布或海外项目经验。</div>
+
+<a class="apply" href="https://www.v2ex.com/t/1225352" target="_blank" rel="noopener">去原站申请 | Apply on V2EX ↗</a>
+<footer>信息采集自 V2EX,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from V2EX; refer to the original posting.</footer>
+</body></html>

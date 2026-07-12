@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>V2EX 招聘帖 | [远程] 前端工程师｜ AI 产品（画布/工作流）方向</title>
+<meta property="og:title" content="V2EX 招聘帖 | [远程] 前端工程师｜ AI 产品（画布/工作流）方向">
+<meta property="og:description" content="V2EX 招聘帖 · 📍远程(V2EX·中文社区)">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="V2EX 招聘帖 · 📍远程(V2EX·中文社区)">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>[远程] 前端工程师｜ AI 产品（画布/工作流）方向</h1>
+<div class="meta">🏢 V2EX 招聘帖 · 📍 远程(V2EX·中文社区) · 软件开发 | Software Development · 亚太 | Asia-Pacific · 来源 V2EX · 发布 2026-07-03</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://www.v2ex.com/t/1224659" target="_blank" rel="noopener">去原站申请 | Apply on V2EX ↗</a>
+<div class="jd"><h3>关于我们</h3>
+<p>Atlas Cloud 是面向全球开发者与企业的全模态 AI API 平台,用一套统一 API 聚合数百个主流大模型(文本、图像、视频、音频)。在稳定的 API 平台业务之上,我们正在从 0 到 1 打造新一代 <strong>AI 应用产品</strong>——包括 AI 工作流编排、可视化画布、agent 应用、AI 工具页等方向,让用户把多个 AI 模型组合、编排成自己的生成与自动化流程。</p>
+<p>你会以这些新产品为主,同时参与官网、模型页、控制台等前端业务的开发。</p>
+<h3>岗位亮点</h3>
+<ul>
+<li>远程友好，不强制坐班，适合希望远程工作的前端同学；</li>
+<li>报销 AI 工具费用 并鼓励使用 AI 工具提升开发效率；</li>
+<li>五险一金，节假日福利；</li>
+<li>轻松的办公氛围，压力小；</li>
+<li>AI 产品方向，能接触大模型、图像/视频生成、开发者平台等场景；</li>
+</ul>
+<h3>职位描述</h3>
+<ol>
+<li>参与 AI 工作流 / 编排 / 画布 / agent 类新产品的前端开发,实现流程编排、可视化交互、结果预览等核心功能;</li>
+<li>对接大模型 API,完成 AI 生成、流式输出等交互场景的落地;</li>
+<li>参与官网、模型页、营销页、开发者控制台等前端业务的开发与迭代;</li>
+<li>负责相关页面的性能优化、体验打磨与线上维护。</li>
+</ol>
+<h3>职位要求</h3>
+<ol>
+<li><strong>熟练掌握 React / Next.js / TypeScript</strong>,能独立完成模块开发;</li>
+<li>有较复杂的<strong>交互类项目经验</strong>——画布、图编辑、拖拽编排、Canvas 等其中一类(用过 React Flow 、tldraw 、Fabric.js 、Konva 等更佳),或有其他复杂前端交互的落地经验;</li>
+<li><strong>对 AI 行业有一定理解</strong>:了解当前主流大模型的能力边界与适用场景,清楚不同模态(文本、图像、视频、语音)及不同模型在效果、成本、生成特性上的差异;熟悉主流 AI 产品与工具,能理解模型驱动型产品的业务逻辑;</li>
+<li>了解<strong>大模型 API 集成与流式输出(SSE)</strong>,做过 AI 对话 / 生成类产品者优先;</li>
+<li>掌握常见<strong>前端性能优化</strong>(虚拟化渲染、Web Worker 、大数据量处理等)与响应式 / 多端适配;</li>
+<li>做事踏实、执行力强,能在方向明确的前提下将功能稳定落地。</li>
+</ol>
+<h3>加分项</h3>
+<ul>
+<li>有 AI 应用 / workflow 类产品经验(ComfyUI / Dify / n8n / Coze 等编排类产品的使用或开发);</li>
+<li>对 AI 领域保持持续关注,能主动跟进新模型、新工具的能力与应用场景;</li>
+<li>熟悉 Canvas / WebGL 渲染优化;</li>
+<li>有从 0 到 1 参与项目,或独立完成过完整交互 Demo / 开源项目的经历。</li>
+</ul>
+<h3>薪资范围</h3>
+<p>20K-25K ，具体根据能力和匹配度面议。</p>
+<h3>投递方式</h3>
+<p>请发送简历至：</p>
+<p>mike.wang@atlascloud.ai</p>
+<p>邮件标题建议：</p>
+<p>前端工程师 - 姓名 - 年限 - 城市</p></div>
+
+<a class="apply" href="https://www.v2ex.com/t/1224659" target="_blank" rel="noopener">去原站申请 | Apply on V2EX ↗</a>
+<footer>信息采集自 V2EX,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from V2EX; refer to the original posting.</footer>
+</body></html>
