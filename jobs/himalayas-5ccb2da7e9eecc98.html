@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Xirgo Technologies | Sales Manager-Latin America</title>
+<meta property="og:title" content="Xirgo Technologies | Sales Manager-Latin America">
+<meta property="og:description" content="Xirgo Technologies · 📍Mexico">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="Xirgo Technologies · 📍Mexico">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Sales Manager-Latin America</h1>
+<div class="meta">🏢 Xirgo Technologies · 📍 Mexico · 销售 | Sales · 美洲 | Americas · 来源 Himalayas · 🕐 时区 UTC-8 ~ UTC-5 · 发布 2026-07-11</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://himalayas.app/companies/xirgo-technologies/jobs/sales-manager-latin-america" target="_blank" rel="noopener">去原站申请 | Apply on Himalayas ↗</a>
+<div class="jd"><p><b><strong>Driving The Future of Smart Fleet Logistics</strong></b></p><p>At Xirgo, we’re not just transforming logistics — we’re redefining what’s possible. Let’s move forward together.</p><h3>Our Purpose</h3><p>We believe smarter tools create smarter operations. As the switched-on experts in IoT fleet solutions, we transform uncertainty into confidence, complexity into clarity, and data into decisions.</p><h3>Our Vision</h3><p>We empower partners with intelligent fleet logistics to create a more connected future. From bustling cities to open highways, from railroads to runways, our innovative technologies make peace of mind the new normal.</p><h3>Our Mission</h3><p>To be the world’s most trusted partner in smart fleet logistics, delivering comprehensive IoT solutions that transform data into useful information. We enhance fleet safety, efficiency, and performance—ensuring confidence at every step.</p><h3>General Summary</h3><p>As the Sales Manager for Latin America at Xirgo, you will be responsible for building and executing the regional commercial strategy, developing new enterprise opportunities, and managing existing strategic accounts across the LATAM territory. Based in Mexico, you will serve as the primary commercial leader for the region, driving revenue growth through direct sales, channel partnerships, and C-suite relationship development.</p><p>This role demands deep knowledge of the LATAM IoT, telematics, and fleet management landscape, a proven track record of closing complex technology deals in the region, and the ability to operate autonomously while collaborating closely with global teams.</p><h3><b><strong>Essential Functions and Responsibilities</strong></b></h3><h4>RegionalStrategy&amp;Market Development</h4><ul><li>Define and execute Xirgo&#x27;s go-to-market strategy across Latin America, with primary focus on Mexico and expansion across the broader LATAM market.</li><li>Identify high-potential verticals, geographies, and customer segments to prioritize market entry and share growth.</li><li>Monitor competitive dynamics, regulatory environments, and market trends across the region to inform strategic decisions.</li><li>Represent Xirgo at regional industry events, trade shows, and partner forums to strengthen brand presence and generate leads.</li></ul><h4>BusinessDevelopment&amp;Pipeline Management</h4><ul><li>Identify, qualify, and develop new enterprise and mid-market opportunities across target verticals (fleet, logistics, insurance, construction, government, and others).</li><li>Build and maintain a robust, well-qualified pipeline using CRM tools; provide accurate forecasting to senior leadership.</li><li>Develop and execute strategic account plans for key prospects and existing customers to drive expansion and retention.</li><li>Establish and grow a partner and reseller network to extend Xirgo&#x27;s commercial reach across the region.</li></ul><h4>SalesExecution&amp; Negotiation</h4><ul><li>Lead the full sales cycle — from discovery and solution design to contract negotiation and deal close.</li><li>Conduct high-impact presentations and product demonstrations tailored to stakeholder audiences (Operations, IT, Finance, C-Suite).</li><li>Structure and negotiate complex, multi-year agreements, ensuring alignment with customer needs and Xirgo&#x27;s revenue and profitability objectives.</li><li>Own regional revenue targets and deliver consistent, predictable results quarter over quarter.</li></ul><h4>CustomerRelationship Management</h4><ul><li>Build and maintain trusted, executive-level relationships across customer organizations throughout the region.</li><li>Act as a strategic advisor to key accounts, identifying opportunities to expand Xirgo&#x27;s footprint and deliver measurable business value.</li><li>Partner with Customer Success and Technical teams to ensure smooth post-sale implementation and high customer satisfaction.</li></ul><h4>Cross-Functional Collaboration</h4><ul><li>Work closely with Product, Engineering, Marketing, and Finance to shape solution offerings, pricing strategies, and go-to-market approaches relevant to LATAM customers.</li><li>Provide regional market intelligence that informs product roadmap decisions and investment priorities.</li><li>Serve as the voice of the LATAM customer internally, advocating for region-specific requirements and opportunities.</li></ul><h3>Qualifications</h3><h4>Experience&amp; Education</h4><ul><li>5+ years of experience in enterprise or B2B sales, with at least 3 years in a regional or territory management role covering LATAM.</li><li>Proven experience selling IoT, telematics, SaaS, fleet management, or related technology solutions.</li><li>Demonstrated track record of meeting or exceeding revenue targets in the Latin American market.</li><li>Experience building and managing channel or reseller partnerships in the region is highly desirable.</li><li>Bachelor&#x27;s degree in Business, Engineering, or a related field (MBA or advanced degree is a plus).</li></ul><h4>Skills&amp; Knowledge</h4><ul><li>Deep knowledge of the LATAM business environment, customer expectations, procurement processes, and competitive landscape.</li><li>Strong consultative selling skills with the ability to map technology solutions to complex business challenges.</li><li>Excellent negotiation, contract management, and closing skills for high-value, long-cycle deals.</li><li>Proficiency in CRM tools (Salesforce or equivalent) and standard business software (Microsoft Office suite).</li><li>Exceptional interpersonal and communication skills; able to build trust at all levels of an organization.</li></ul><h4>Language</h4><p>-<b><strong>Spanish</strong></b>: Native or bilingual proficiency (required)</p><p>-<b><strong>English</strong></b>: Fluent — written and spoken (required)</p><h4> Working Conditions</h4><p>-<b><strong>Engagement type</strong></b>: Independent Contractor</p><p>-Remote work from home; <b><strong>must reside in Mexico </strong></b>(required)</p><p>-Expected travel: 40–50% across the LATAM region</p><h3>-Reports to: Sales Director, Latam</h3><p>-No adverse or hazardous working conditions</p><p>Originally posted on <a href="https://himalayas.app" rel="nofollow noopener" target="_blank">Himalayas</a></p></div>
+
+<a class="apply" href="https://himalayas.app/companies/xirgo-technologies/jobs/sales-manager-latin-america" target="_blank" rel="noopener">去原站申请 | Apply on Himalayas ↗</a>
+<footer>信息采集自 Himalayas,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from Himalayas; refer to the original posting.</footer>
+</body></html>

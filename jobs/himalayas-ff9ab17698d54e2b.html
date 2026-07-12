@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ethena | Senior Software Engineer</title>
+<meta property="og:title" content="Ethena | Senior Software Engineer">
+<meta property="og:description" content="Ethena · 📍United States · 💰USD 180,000 - 200,000">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="Ethena · 📍United States · 💰USD 180,000 - 200,000">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Senior Software Engineer</h1>
+<div class="meta">🏢 Ethena · 📍 United States · 💰 USD 180,000 - 200,000 · 软件开发 | Software Development · 美洲 | Americas · 来源 Himalayas · 🕐 时区 UTC-10 ~ UTC+14 · 发布 2026-07-11</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://himalayas.app/companies/ethena/jobs/senior-software-engineer" target="_blank" rel="noopener">去原站申请 | Apply on Himalayas ↗</a>
+<div class="jd"><h3>Who we are</h3>Hi there 👋 We’re <a href="https://himalayas.app/companies/ethena" rel="nofollow noopener" target="_blank">Ethena</a>, compliance training that customizes itself to you. <a href="https://himalayas.app/companies/ethena" rel="nofollow noopener" target="_blank">Ethena</a> combines top-rated training content with intelligent AI that builds and adapts training to reflect your company’s unique brand, roles, policies, and risks, so it feels like your team, whether that’s hard hats or virtual meetings. From auto-assigning courses based on HRIS data to transforming your policies into interactive training in minutes, <a href="https://himalayas.app/companies/ethena" rel="nofollow noopener" target="_blank">Ethena</a> helps People, Legal, and Compliance teams launch in days (not months) and cut learner seat time by up to 60% with adaptive learning paths. <a href="https://himalayas.app/companies/ethena" rel="nofollow noopener" target="_blank">Ethena</a> supports 1M+ learners across 2,000+ organizations, with a 93% learner approval rating and 96% customer renewal rate. Over the past several years, we’ve delivered consistent, durable growth, including 120%+ net dollar retention, 95%+ gross dollar retention, and strong enterprise expansion across industries. <a href="https://himalayas.app/companies/ethena" rel="nofollow noopener" target="_blank">Ethena</a> has become a go-to compliance partner for modern, global organizations.Beyond training, <a href="https://himalayas.app/companies/ethena" rel="nofollow noopener" target="_blank">Ethena</a> unifies core compliance tools, Hotline &amp; Case Management, Policy Bot, and Phishing Simulator, into a single platform, with built-in audit trails and compliance controls teams can trust.Trusted by teams at companies like Genesco, Asana, Pinterest, and Synaptics, it’s a great time to join <a href="http://us.how/" rel="nofollow noopener" target="_blank">us.</a><h3>How we work</h3>We’re a team that values diversity in all its forms and loves adding new perspectives. We ask thoughtful questions, challenge assumptions, and build with empathy, for customers and for each other. We care about craft, we love feedback, and we take ownership. We also embrace humor (yes, the puns are real), because doing serious work doesn’t have to feel so serious.<em>Our workforce is fully remote, and your personal working hours can be based on your own timezone. All team-wide meetings are scheduled to be inclusive of all North American time zones.</em><h3>Who we&#x27;re looking for</h3><ul><p>We’re looking for a Senior Software Engineer to join our engineering team! This role will report to our Engineering Manager, and will be responsible for building great products quickly with the power of AI-driven development, without sacrificing quality. They will be a key contributor to <a href="https://himalayas.app/companies/ethena" rel="nofollow noopener" target="_blank">Ethena</a>’s growing product surface area and engineering operations.</p></ul><h3>Reports to</h3><ul>Engineering Manager</ul><h3>What you&#x27;ll do</h3><ul><li><p>Develop full stack software using Typescript, MySQL, React, and <a href="http://next.js" rel="nofollow noopener" target="_blank">Next.js</a>.</p></li><li><p>Direct AI coding agent(s) to assist you in building great things <em>quickly</em>, while maintaining a production quality codebase.</p></li><li><p>Own features big and small from the idea phase through to production</p></li><li><p>Collaborate with other engineers, designers, product managers, and members of the wider <a href="https://himalayas.app/companies/ethena" rel="nofollow noopener" target="_blank">Ethena</a> team.</p></li></ul><h3>What makes a great candidate</h3><ul><li><p>A hunger for building great software faster than ever using AI coding agents, along with an understanding of the pitfalls and how to avoid them.</p></li><li><p>A great knack for simple and elegant system design.</p></li><li><p>Deep expertise building and maintaining great web applications, especially in a B2B context. </p></li><li><p>Comfort with Javascript/Typescript, MySQL, React, Next.js, and AWS. </p></li><li><p>Extensive experience shipping agile software sustainably (Git, CI/CD, database migrations, logging &amp; monitoring, infrastructure considerations, etc).</p></li><li><p>A self-starter who thrives in a hands-off management environment — someone who takes ownership of their work with a “roll up your sleeves mentality”, is comfortable with ambiguity, proactively identifies problems and solutions, and drives their work forward with minimal oversight.</p></li><li><p>We’re a startup so we’re not just looking for someone to run a playbook. We want you to help build it.</p></li><li><p>Passion for what we’re building here at <a href="https://himalayas.app/companies/ethena" rel="nofollow noopener" target="_blank">Ethena</a> and a strong alignment with our core values (which includes an impeccable sense of humor)</p></li></ul><h3>What’s going to be the hardest part</h3><ul><li><p>Getting spun up quickly on our million-line codebase, best practices, and 6 years of product learnings.</p></li></ul>At <a href="https://himalayas.app/companies/ethena" rel="nofollow noopener" target="_blank">Ethena</a>, we&#x27;re committed to fair and equitable compensation. We carefully evaluate each candidate&#x27;s skills and qualifications to provide our best possible offer upfront. <a href="https://www.linkedin.com/posts/melanie-naranjo_hiring-recruiting-salarynegotiations-activity-6957671022984634368-05_y/?utm_source=linkedin_share&amp;utm_medium=member_desktop_web" rel="nofollow noopener" target="_blank">Our no-negotiation policy </a>ensures that our <em>first offer</em> is always our<em> best offer</em>, promoting pay equity throughout our organization.<h3>Physical Demands</h3>This is sedentary work that primarily involves sitting/standing in a home office environment.<h3>Location</h3><a href="https://himalayas.app/companies/ethena" rel="nofollow noopener" target="_blank">Ethena</a> is a remote-first organization and is currently hiring candidates based in the United States or Canada.<em>We are not currently offering employer visa sponsorship for this role.</em><h3>AI Usage in Interviews:</h3>We’re big fans of AI and use it heavily in our day-to-day work. That said, to ensure fairness and accurate skill assessment, we do not allow the use of AI tools (including note takers, transcription tools, or recordings) during interviews. If you have questions or need accommodations, we’re happy to chat — just let us know.<h3>Benefits</h3>The benefits offered for this position can be found <a href="https://www.goethena.com/careers" rel="nofollow noopener" target="_blank">here</a>. We provide unlimited PTO.<h3>How to Apply</h3>Applications for this position will be accepted via our <a href="https://jobs.lever.co/ethena/" rel="nofollow noopener" target="_blank">job board</a>. Excited about the opportunity, but worried you don’t meet all the requirements? Apply anyway, and give us both the chance to find out. We welcome you to <a href="https://www.goethena.com/post/title-we-need-to-change-the-way-we-approach-job-descriptions" rel="nofollow noopener" target="_blank">read more about our approach to job descriptions</a> by our Chief People Officer, Melanie Naranjo. Curious to know what it’s like to interview with us? <a href="https://docs.google.com/presentation/d/e/2PACX-1vSC8j8gcINbU9ZykagFR-N15MuiuLsuFoxU0jnhBAkhbAUBUjZABFO7f6W0w5CaTqmDVMB00uxvQobQ/pub?start=false&amp;loop=false&amp;delayms=60000&amp;slide=id.g1010b5baf7f_0_0" rel="nofollow noopener" target="_blank">Read more here</a>.<em><a href="https://himalayas.app/companies/ethena" rel="nofollow noopener" target="_blank">Ethena</a> is proud to be an Equal Opportunity Employer and is committed to a diverse and inclusive workplace. We believe that a successful organization is one that celebrates its employees for who they are, who they love, and the unique lens through which they experience the world. <a href="https://himalayas.app/companies/ethena" rel="nofollow noopener" target="_blank">Ethena</a> does not discriminate based on race, color, ancestry, religion, sex, national origin, sexual orientation, age, citizenship, marital status, disability, gender identity, Veteran status, or other legally protected status. We understand that our differences make us better. They empower us to learn from each other, lean on each other, and create a product and community that models the behavior we hope to see in others.</em><strong>Disclaimer: </strong>The salary, other compensation, and benefits information are accurate as of the date of this posting. The Company reserves the right to modify this information at any time, subject to applicable law.<p>Originally posted on <a href="https://himalayas.app" rel="nofollow noopener" target="_blank">Himalayas</a></p></div>
+
+<a class="apply" href="https://himalayas.app/companies/ethena/jobs/senior-software-engineer" target="_blank" rel="noopener">去原站申请 | Apply on Himalayas ↗</a>
+<footer>信息采集自 Himalayas,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from Himalayas; refer to the original posting.</footer>
+</body></html>

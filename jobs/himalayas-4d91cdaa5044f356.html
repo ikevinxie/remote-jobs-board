@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Allegion | Senior SQL Server Database Administrator</title>
+<meta property="og:title" content="Allegion | Senior SQL Server Database Administrator">
+<meta property="og:description" content="Allegion · 📍Australia">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="Allegion · 📍Australia">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Senior SQL Server Database Administrator</h1>
+<div class="meta">🏢 Allegion · 📍 Australia · 数据 | Data · 亚太 | Asia-Pacific · 来源 Himalayas · 🕐 时区 UTC+8 ~ UTC+10 · 发布 2026-07-11</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://himalayas.app/companies/allegion/jobs/senior-sql-server-database-administrator" target="_blank" rel="noopener">去原站申请 | Apply on Himalayas ↗</a>
+<div class="jd"><h3><b>Creating Peace of Mind by Pioneering Safety and Security</b></h3><br><p><i>At <a href="https://himalayas.app/companies/allegion" rel="nofollow noopener" target="_blank">Allegion</a>, we help keep the people you know and love safe and secure where they live, work and visit. With more than 40 brands, 14,000+ employees globally and products sold in 130 countries, we specialize in security around the doorway and beyond. </i></p><br><p><i>Additionally, <a href="https://himalayas.app/companies/allegion" rel="nofollow noopener" target="_blank">Allegion</a> is proud to be recognized with the 2026 Gallup Exceptional Workplace Award (GEWA) for the third consecutive year, earning distinction in both the employee engagement and strengths categories. This year, <a href="https://himalayas.app/companies/allegion" rel="nofollow noopener" target="_blank">Allegion</a> also received Gallup’s With Distinction honor — a designation reserved for a select group of organizations that go above and beyond in building exceptional workplace cultures.</i></p><h3>Job Description:</h3><p>We are seeking a highly skilled <b>Senior SQL Server Database Administrator</b> to support database management initiatives. The ideal candidate will possess extensive knowledge and experience in SQL Server administration across Microsoft Azure and on-premises environments. Proven expertise supporting Microsoft Dynamics AX 2012 databases is a plus. This role involves managing all aspects of database administration, including planning, installation, configuration, security, optimization, monitoring, disaster recovery, and performance tuning of SQL Server databases. The candidate should also have strong T-SQL development skills to maintain, optimize and automate processes.</p><h3>Key Responsibilities:</h3><ul><li>Architect and maintain robust SQL database systems that support application environments, ensuring maximum uptime, performance, and scalability.</li><li>Design and implement fault-tolerant SQL Server solutions using high-availability patterns in on-premises and Microsoft Azure environments.</li><li>Design and deploy Microsoft SQL PaaS solutions in Microsoft Azure.</li><li>Provide SQL Server administration for MS SQL Server versions 2012, 2014, 2016, 2017, 2019 and/or 2022, as well as support for Microsoft Dynamics AX 2012.</li><li>Plan and implement database backup strategies and perform recovery in case of disaster.</li><li>Monitor and maintain database storage, health, performance, sustainability, and security.</li><li>Manage SQL Server high availability, backups, maintenance jobs, encryption, security controls, etc.</li><li>Analyze SQL query plans, suggest optimizations, and support developers in the SDLC process.</li><li>Install, configure, and upgrade database management systems and software, including clustering environments.</li><li>Refine and automate SQLDBA team processes using T-SQL and PowerShell.</li><li>Collaborate with development teams to optimize database queries and schema design, enhancing application performance.</li><li>Provide mentorship and guidance to junior DBAs, fostering a culture of knowledge sharing and continuous improvement.</li></ul><h3>Required Qualifications:</h3><ul><li>Bachelor’s degree in computer science or information technology (advanced degree preferred).</li><li>Minimum of five (5) years of experience managing and administering enterprise-level SQL databases in SQL Server 2016 or 2017.</li><li>Minimum of two (2) years of experience designing and deploying Azure SQL Database PaaS solutions in Microsoft Azure.</li><li>Minimum of five (5) years of experience planning and implementing MS SQL database disaster recovery for enterprise-level applications.</li><li>Proficiency in physical database design, database changes, enforcement of data integrity, and security management.</li><li>Strong knowledge of query languages, particularly T-SQL, with the ability to write and optimize complex queries and stored procedures.</li><li>Familiarity with database replication, clustering, and failover strategies.</li><li>Ability to troubleshoot and resolve complex database-related issues, collaborating effectively across functional teams.</li><li>Experience installing, configuring, and patching database management systems and software.</li><li>Excellent interpersonal skills, initiative, teamwork, and problem-solving abilities.</li><li>Strong attention to detail, with good oral and written communication skills.</li><li>Proven experience supporting Microsoft Dynamics AX 2012 databases is a plus.</li></ul><h3>Preferred Qualifications:</h3><ul><li>Knowledge of PowerShell and database automation scripting.</li><li>SolarWinds DPA Tool experience, monitoring, and tunning.</li><li>Certifications such as Microsoft Certified: Azure Database Administrator Associate or similar.</li></ul><h3>Technical Skills and Relevant Technologies:</h3><ul><li>Advanced knowledge of SQL Server database architecture and administration.</li><li>Experience with tools such as SQL Profiler, Performance Monitor, SQL Server Management Studio (SSMS), and Azure Data Studio.</li><li>Strong T-SQL development and query optimization skills.</li><li>Experience administering SQL Server in both Microsoft Azure and on-premises environments.</li><li>Experience automating processes and/or support tasks for SQL Server database administration (for example: T-SQL automation, PowerShell, SQL Server Agent jobs, Azure Automation, etc.)</li><li>Experience applying or implementing AI/ML techniques or tools to automate, monitor, or improve SQL Server database support is a plus.</li></ul><h3>Soft Skills and Cultural Fit:</h3><ul><li>A positive, collaborative attitude is a must; able to work constructively with colleagues across teams and levels.</li><li>Exceptional problem-solving skills, with the ability to navigate complex database issues and provide effective solutions.</li><li>Strong communication skills, capable of conveying technical information to non-technical stakeholders.</li><li>Ability to work independently while collaborating effectively with distributed teams.</li><li>A proactive mindset, with a passion for continuous learning and staying updated on database technologies and trends.</li></ul><h3><b>We Celebrate Who We Are! </b></h3><p><a href="https://himalayas.app/companies/allegion" rel="nofollow noopener" target="_blank">Allegion</a> is committed to building and maintaining a diverse and inclusive workplace.  Together, we embrace all differences and similarities among colleagues, as well as the differences and similarities within the relationships that we foster with customers, suppliers and the communities where we live and work. Whatever your background, experience, race, color, national origin, religion, age, gender, gender identity, disability status, sexual orientation, protected veteran status, or any other characteristic protected by law, we will make sure that you have every opportunity to impress us in your application and the opportunity to give your best at work, not because we’re required to, but because it’s the right thing to do.   We are also committed to providing accommodations for persons with disabilities. If for any reason you cannot apply through our career site and require an accommodation or assistance, please contact our Talent Acquisition Team.</p><br><br><p>© <a href="https://himalayas.app/companies/allegion" rel="nofollow noopener" target="_blank">Allegion</a> plc, 2023 | Block D, Iveagh Court, Harcourt Road, Dublin 2, Co. Dublin, Ireland</p><p>REGISTERED IN IRELAND WITH LIMITED LIABILITY REGISTERED NUMBER 527370</p><p><a href="https://himalayas.app/companies/allegion" rel="nofollow noopener" target="_blank">Allegion</a> is an <a href="https://www.allegion.com/corp/en/careers/equal-opportunity.html" rel="nofollow noopener" target="_blank">equal opportunity and affirmative action employer</a></p><p><a href="https://www.allegion.com/corp/en/footer/privacy-statement.html" rel="nofollow noopener" target="_blank">Privacy Policy</a></p><p>Originally posted on <a href="https://himalayas.app" rel="nofollow noopener" target="_blank">Himalayas</a></p></div>
+
+<a class="apply" href="https://himalayas.app/companies/allegion/jobs/senior-sql-server-database-administrator" target="_blank" rel="noopener">去原站申请 | Apply on Himalayas ↗</a>
+<footer>信息采集自 Himalayas,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from Himalayas; refer to the original posting.</footer>
+</body></html>

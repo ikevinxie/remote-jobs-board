@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cloud Software Group | Principal Solution Specialist - Citrix Security Products</title>
+<meta property="og:title" content="Cloud Software Group | Principal Solution Specialist - Citrix Security Products">
+<meta property="og:description" content="Cloud Software Group · 📍United Kingdom">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="Cloud Software Group · 📍United Kingdom">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Principal Solution Specialist - Citrix Security Products</h1>
+<div class="meta">🏢 Cloud Software Group · 📍 United Kingdom · 销售 | Sales · 欧洲 | Europe / EMEA · 来源 Himalayas · 🕐 时区 UTC+0 · 发布 2026-07-11</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://himalayas.app/companies/cloud-software-group/jobs/principal-solution-specialist-citrix-security-products-7974950914" target="_blank" rel="noopener">去原站申请 | Apply on Himalayas ↗</a>
+<div class="jd"><h3><b>About the Team</b></h3><p>Our Solution specialistorganizationunderCitrixsecurity business unitis a global group of highly technical, passionate, and collaborative security expertswith over 200 years of experience between them. We act as the trusted advisors bridging the gap between complex enterprise IT challenges and Citrix&#x27;s modern, zero-trust product portfolio. We thrive on innovation, cross-functional collaboration, and fostering a culture where every team member is empowered to lead and share theirexpertise.We have a single goal as a team to drive the product adoption as a measure of our success.When you join this team, you are joining a collaborative group of elite technologists dedicated to redefining how the world works securely and seamlessly.</p><h3><b>Key Responsibilities</b></h3><ul><li><p><b>Technical Sales Leadership:</b>Own the technical sales strategy for global, enterprise-level accounts. Lead discovery sessions, whiteboard architectures, deliver compelling product demonstrations, manage complex Proof of Concepts/Values (PoC/PoV), and drive the product adoption frominitialadoption to mass rollout stage.</p></li></ul><ul><li><p><b>Architect Zero Trust Solutions:</b>Design tailored solutions that integrate our Enterprise Browser and ZTNA products into the customer&#x27;s existing security ecosystem (Identity Providers, SIEM, Endpoint Management, etc.).</p></li></ul><ul><li><p><b>Trusted Advisor:</b>Build deep technical relationships with key customer stakeholders, fromend user computing teams,networkand security architects to CISOs and CIOs. Articulate business value alongside technical superiority.</p></li></ul><ul><li><p><b>Evangelism &amp; Thought Leadership:</b>Represent Citrix and <a href="https://himalayas.app/companies/cloud-software-group" rel="nofollow noopener" target="_blank">Cloud Software Group</a> at industry conferences, webinars, and regional events. Speak authoritatively on market trends surrounding Enterprise Browsers,SASE, SSE,and Zero Trust.</p></li></ul><ul><li><p><b>Product Advocacy:</b>Act as the voice of the customer. Synthesize feedback from the field and work directly with Product Management and Engineering to influence the product roadmap.</p></li></ul><h3><b>Required Qualifications</b></h3><ul><li><p><b>Experience:</b>10+ years of experience in technical pre-sales, sales engineering, or customer-facing security architecture roles, with a proventrack recordofdriving the deals with double digit increase in ARR year over year through the product adoption.</p></li></ul><ul><li><p><b>Domain Expertise (Zero Trust &amp; Identity):</b>Deep understanding ofEnterprise browser,ZTNA, SASE, Software-Defined Perimeters (SDP), and legacy VPN replacements. Strong knowledge of Identity and Access Management (SAML, OAuth, OIDC, Active Directory, Okta, Ping).Domain knowledge of VDI as well is preferred</p></li></ul><ul><li><p><b>Domain Expertise (Web &amp; Data Security):</b>Familiarity with web security concepts, Secure Web Gateways (SWG), Cloud Access Security Brokers (CASB), Data Loss Prevention (DLP), and browser-based security mechanisms.</p></li></ul><ul><li><p><b>Networking Fundamentals:</b>Advanced knowledge of L3-L7 networking, TCP/IP, DNS, HTTP/S, SSL/TLS interception, and routing.</p></li></ul><ul><li><p><b>Communication Skills:</b>Elite presentation and whiteboarding skills. Ability to translate complex technical concepts into business outcomes for non-technical executives.</p></li></ul><ul><li><p><b>Problem-Solving:</b>Hands-on technical ability to troubleshoot complex network and security environments during PoV deployments.</p></li></ul><ul><li><p><b>Language skills</b>: The ability to speak in local language and other European languages is preferred</p></li></ul><h3><b>Preferred Qualifications</b></h3><ul><li><p>Previousexperience specifically selling Enterprise Browser solutions or advanced ZTNA solutions (e.g., Citrix Secure Private Access).</p></li></ul><ul><li><p>Industry certifications such as CISSP, CISM, CCIE, or equivalent cloud security certifications (AWS, Azure, GCP).</p></li></ul><ul><li><p>Familiarity with endpoint management and security tools (MDM, UEM, EDR/XDR).</p></li></ul><ul><li><p>Scripting and automation experience (Python, Bash, REST APIs) toassistin custom integrations duringPoVsisan added bonus</p></li></ul><ul><li><p>Ability to use AI tools for better productivity andcompete analysis</p></li></ul><ul><li><p>Innovative mindset on solving AI security challenges is preferred</p></li></ul><p><i>Citrix, as part of <a href="https://himalayas.app/companies/cloud-software-group" rel="nofollow noopener" target="_blank">Cloud Software Group</a> Inc., is an Equal Opportunity Employer. We celebrate diversity and are committed to creating an inclusive environment for all employees.</i></p><h3>About Us:</h3><p><a href="https://himalayas.app/companies/cloud-software-group" rel="nofollow noopener" target="_blank">Cloud Software Group</a> is one of the world’s largest cloud solution providers, serving more than 100 million users around the globe. When you join <a href="https://himalayas.app/companies/cloud-software-group" rel="nofollow noopener" target="_blank">Cloud Software Group</a>, you are making a difference for real people, each of whom count on our suite of cloud-based products to get work done — from anywhere. Members of our team will tell you that we value passion for technology and the courage to take risks.  Everyone is empowered to learn, dream, and build the future of work. We are on the brink of another Cambrian leap -- a moment of immense evolution and growth. And we need your expertise and experience to do it. Now is the perfect time to move your skills to the cloud.</p><p><a href="https://himalayas.app/companies/cloud-software-group" rel="nofollow noopener" target="_blank">Cloud Software Group</a> is firmly committed to Equal Employment Opportunity (EEO) and to compliance with all federal, state and local laws that prohibit employment discrimination. All qualified applicants will receive consideration for employment without regard to age, race, color, creed, sex or gender, sexual orientation, gender identity, gender expression, ethnicity, national origin, ancestry, citizenship, religion, genetic carrier status, disability, pregnancy, childbirth or related medical conditions (including lactation status), marital status, military service, protected veteran status, political activity or affiliation, taking or requesting statutorily protected leave and other protected classifications.</p><p>If you need a reasonable accommodation due to a disability during any part of the application process, please contact us via the <a href="https://bridge.cloud.com/" rel="nofollow noopener" target="_blank"><u>Bridge portal</u></a> for assistance.</p><p>Originally posted on <a href="https://himalayas.app" rel="nofollow noopener" target="_blank">Himalayas</a></p></div>
+
+<a class="apply" href="https://himalayas.app/companies/cloud-software-group/jobs/principal-solution-specialist-citrix-security-products-7974950914" target="_blank" rel="noopener">去原站申请 | Apply on Himalayas ↗</a>
+<footer>信息采集自 Himalayas,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from Himalayas; refer to the original posting.</footer>
+</body></html>

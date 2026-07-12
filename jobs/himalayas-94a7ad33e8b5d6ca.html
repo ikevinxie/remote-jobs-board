@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atos | PROJECT MANAGER (Remote Home, US)</title>
+<meta property="og:title" content="Atos | PROJECT MANAGER (Remote Home, US)">
+<meta property="og:description" content="Atos · 📍United States">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="Atos · 📍United States">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>PROJECT MANAGER (Remote Home, US)</h1>
+<div class="meta">🏢 Atos · 📍 United States · 运营与人力 | Operations &amp; HR · 美洲 | Americas · 来源 Himalayas · 🕐 时区 UTC-10 ~ UTC+14 · 发布 2026-07-11</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://himalayas.app/companies/atos/jobs/project-manager-remote-home-us-2322505941" target="_blank" rel="noopener">去原站申请 | Apply on Himalayas ↗</a>
+<div class="jd"><p><strong>The future is our choice</strong><br>At <a href="https://himalayas.app/companies/atos" rel="nofollow noopener" target="_blank">Atos</a>, as the global leader in secure and decarbonized digital, our purpose is to help design the future of the information space. Together we bring the diversity of our people’s skills and backgrounds to make the right choices with our clients, for our company and for our own futures.</p><h3><strong>Project Manager (PM)</strong></h3><p><strong>Location:</strong> Remote<br><strong>Employment Type:</strong> Full-Time<br><strong>Travel:</strong> As required by client (typically 10–20%)<br><strong>Eligibility:</strong> Must be authorized to work in the United States (Citizen, Green Card, or PR status)</p><h3><strong>About <a href="https://himalayas.app/companies/atos" rel="nofollow noopener" target="_blank">Atos</a></strong></h3><p><a href="https://himalayas.app/companies/atos" rel="nofollow noopener" target="_blank">Atos</a> is a global leader in digital transformation, technology, and consulting services. We partner with organizations across all industries to navigate their digital future. Our <strong>AI &amp; Analytics practice</strong> is at the forefront of this mission, delivering innovative solutions that create measurable business value.</p><h3><strong>Role Overview</strong></h3><p>We are seeking a <strong>Project Manager</strong> to lead the successful delivery of complex, end-to-end technology and digital initiatives. This role is responsible for project planning, execution, and governance—including managing scope, timelines, budgets, and stakeholder expectations.</p><p>The ideal candidate thrives in fast-paced environments, demonstrates strong leadership across cross-functional teams, and leverages data-driven insights to drive performance and decision-making.</p><h3><strong>Key Responsibilities</strong></h3><ul><li>Lead <strong>end-to-end project delivery</strong>, including planning, execution, and continuous improvement</li><li>Define and manage <strong>project scope, schedules, budgets, and dependencies</strong></li><li>Align delivery objectives with <strong>business goals and stakeholder priorities</strong></li><li>Coordinate cross-functional teams to ensure <strong>timely delivery within scope</strong></li><li>Engage customers and stakeholders to triage, prioritize, and resolve feedback</li><li>Present project progress, roadmaps, and strategic updates to leadership</li><li>Drive the implementation and optimization of <strong>Scaled Agile (SAFe) methodologies</strong></li><li>Lead program and release activities across <strong>Agile Release Trains (ARTs)</strong></li><li>Demonstrate <strong>servant leadership and strong delivery governance</strong></li><li>Mentor and coach Scrum Masters and delivery teams to improve Agile maturity</li><li>Support solution delivery, including <strong>requirements coordination, UX alignment, and release planning</strong></li><li>Apply Agile and Lean principles to optimize <strong>program performance and efficiency</strong></li><li>Coordinate internal and external solution interfaces</li><li>Translate business strategies into <strong>execution-focused delivery plans</strong></li><li>Validate and improve solutions through <strong>performance metrics and feedback loops</strong></li><li>Manage dependencies and perform functional allocation across workstreams</li></ul><h3><strong>Required Qualifications</strong></h3><ul><li>Bachelor’s degree in IT, Engineering, Business, or related field (or equivalent experience)</li><li>5+ years of experience in <strong>project/program management</strong> delivering complex, end-user-facing solutions</li><li>Proven track record managing <strong>multi-stakeholder, cross-functional initiatives</strong></li><li>Experience working in <strong>Agile environments</strong>, including SAFe frameworks</li><li>Experience across the <strong>full product and solution lifecycle</strong> (concept through delivery and optimization)</li></ul><h3><strong>Core Skills &amp; Competencies</strong></h3><ul><li>Strong leadership, collaboration, and stakeholder management capabilities</li><li>Ability to adapt quickly and operate effectively in <strong>dynamic, evolving environments</strong></li><li>Proactive, solution-oriented mindset with strong ownership</li><li>Excellent written, verbal, and presentation skills</li><li>Strong analytical and problem-solving capabilities</li><li>Ability to define, track, and report <strong>performance metrics and success criteria</strong></li><li>High intellectual curiosity with the ability to navigate ambiguity</li></ul><h3><strong>Technical &amp; Domain Knowledge</strong></h3><ul><li>Understanding of <strong>web and mobile technologies</strong></li><li>Familiarity with <strong>large-scale service operations and enterprise environments</strong></li><li>Exposure to <strong>user-centered design principles</strong> and UX-driven delivery</li><li>Ability to quickly learn and ramp up in new technical domains</li></ul><h3><strong>Preferred Qualifications</strong></h3><ul><li>Experience leading <strong>enterprise-scale transformation programs</strong></li><li>Strong background in <strong>SAFe program-level execution and governance</strong></li><li>Experience working in <strong>global, distributed delivery teams</strong></li><li>Balanced perspective of <strong>product thinking and delivery execution</strong></li></ul><h3><strong>Why Join <a href="https://himalayas.app/companies/atos" rel="nofollow noopener" target="_blank">Atos</a></strong></h3><ul><li>Lead high-impact digital transformation programs</li><li>Collaborate with global teams and industry-leading professionals</li><li>Contribute to innovative AI &amp; Analytics initiatives</li><li>Advance your career in a high-visibility leadership role</li></ul><h3><strong>Equal Opportunity Statement</strong></h3><p><a href="https://himalayas.app/companies/atos" rel="nofollow noopener" target="_blank">Atos</a> is committed to fostering a diverse and inclusive workplace. Inclusion and fairness are embedded in our culture and values.<br><a href="https://himalayas.app/companies/atos" rel="nofollow noopener" target="_blank">Atos</a> is also recognized globally for its leadership in Environmental, Social, and Governance (ESG) practices.</p><h3>Choose your future. Choose <a href="https://himalayas.app/companies/atos" rel="nofollow noopener" target="_blank">Atos</a>.</h3><p>Here at <a href="https://himalayas.app/companies/atos" rel="nofollow noopener" target="_blank">Atos</a>, diversity and inclusion are embedded in our DNA. <a href="https://atos.net/en/careers/atos-today" rel="nofollow noopener" target="_blank">Read more</a> about our commitment to a fair work environment for all.</p><p><a href="https://himalayas.app/companies/atos" rel="nofollow noopener" target="_blank">Atos</a> is a recognized leader in its industry across Environment, Social and Governance (ESG) criteria. <a href="https://atos.net/en/about-us/corporate-responsibility-and-sustainability" rel="nofollow noopener" target="_blank">Find out</a> more on our CSR commitment. </p><h3>Choose your future. Choose <a href="https://himalayas.app/companies/atos" rel="nofollow noopener" target="_blank">Atos</a>.</h3><p>Originally posted on <a href="https://himalayas.app" rel="nofollow noopener" target="_blank">Himalayas</a></p></div>
+
+<a class="apply" href="https://himalayas.app/companies/atos/jobs/project-manager-remote-home-us-2322505941" target="_blank" rel="noopener">去原站申请 | Apply on Himalayas ↗</a>
+<footer>信息采集自 Himalayas,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from Himalayas; refer to the original posting.</footer>
+</body></html>

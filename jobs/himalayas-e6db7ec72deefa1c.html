@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>equivant | Customer Support Specialist</title>
+<meta property="og:title" content="equivant | Customer Support Specialist">
+<meta property="og:description" content="equivant · 📍United States">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="equivant · 📍United States">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Customer Support Specialist</h1>
+<div class="meta">🏢 equivant · 📍 United States · 客户支持 | Customer Support · 美洲 | Americas · 来源 Himalayas · 🕐 时区 UTC-10 ~ UTC+14 · 发布 2026-07-11</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://himalayas.app/companies/equivant/jobs/customer-support-specialist" target="_blank" rel="noopener">去原站申请 | Apply on Himalayas ↗</a>
+<div class="jd"><p><u><b>Job Summary:</b></u></p>Please enter your job advertisement. If you are using Workday recruitment this is what will be published on the website above the job description. This cannot be formatted with bullet points etc. so please use reader friendly paragraphs.<p><u><b>Job Description:</b></u></p><h3>ACT Job Req: Customer Support Specialist</h3><h3>ACT Innovations</h3><p>Remote | Full-Time | Monday–Friday | 8:00 AM – 5:00 PM CT</p><p>At <a href="https://actinnovations.com?utm_source=chatgpt.com" rel="nofollow noopener" target="_blank">ACT Innovations</a>, we build software that supports treatment courts, justice programs, and toxicology laboratories across the country. Our platforms help organizations improve lives, streamline operations, and deliver better outcomes for the communities they serve.</p><p>We are looking for a Customer Support Specialist who is eager to learn, enjoys helping others, and is interested in growing within a technology-focused company. This is a technical support role — not a call center position — and requires comfort learning complex, specialized software platforms used in laboratory and justice program environments. This is an excellent opportunity for someone early in their career who wants exposure to software support, QA/testing, client operations, and other areas of a growing SaaS organization.</p><h3>What You’ll Do</h3><ul><li>Provide customer support via phone, email, and chat for ACT Innovations software platforms, including DCCM and Paracelsus</li><li>Troubleshoot software, workflow, and user-related issues across ACT platforms, including printer connectivity and driver issues for laboratory equipment</li><li>Remotely access customer computers using screen-sharing tools to diagnose and resolve software and configuration issues in real time</li><li>Troubleshoot communication issues between the Paracelsus relay and laboratory analyzers used for screening tests, escalating to senior team members when needed</li><li>Answer user questions about Paracelsus (Laboratory Information System) workflows and functionality; remotely access customer systems as needed to resolve urgent issues in an active lab environment and enter support tickets on behalf of users</li><li>Support DCCM users with workflow questions and case management tasks; create and manage support tickets on behalf of users navigating this virtual client filing system for specialty courts</li><li>Document support interactions and resolutions within our ticketing system</li><li>Escalate complex issues to the designated senior team member when needed</li><li>Assist with software testing, QA efforts, and creation of customer-facing release notes for software updates and enhancements during slower support periods</li><li>Help maintain internal support documentation and knowledge base articles</li><li>Participate in team meetings, training sessions, and product education opportunities</li><li>Occasionally assist with customer onboarding, implementations, or future travel opportunities as needed</li></ul><h3>What We’re Looking For</h3><ul><li>High school diploma or GED required</li><li>College degree is optional</li><li>Strong communication and customer service skills</li><li>Comfortable learning and working with technology and software systems; basic proficiency with MS Office (Word, Excel, Outlook) required; comfort with remote desktop or screen-sharing tools (such as GoToAssist or similar) preferred</li><li>Organized, dependable, and detail-oriented</li><li>Ability to follow structured troubleshooting steps and translate technical information into clear, non-technical guidance for end users</li><li>Ability to problem-solve and remain professional in customer-facing situations</li><li>Willingness to learn multiple parts of the business and grow professionally over time</li><li>Strong written communication skills with the ability to clearly document technical information for end users</li><li>Ability to work independently in a remote environment</li><li>Reliable high-speed internet connection and a professional remote work environment required</li></ul><p>Success in This Role Looks Like                                                                                          </p><ul><li>Providing friendly, timely, and accurate customer support</li><li>Learning ACT software platforms and workflows quickly</li><li>Communicating clearly with both customers and internal teams</li><li>Contributing to documentation, QA efforts, release notes, and process improvement initiatives</li><li>Growing into additional responsibilities over time</li></ul><h3>Bonus Points If You Have</h3><ul><li>Previous customer support or help desk experience (1-3 years)</li><li>Experience with SaaS software platforms</li><li>Familiarity with Paracelsus or laboratory/toxicology workflows</li><li>QA/testing experience</li><li>Experience working with courts, justice programs, healthcare, or laboratory environments</li><li>Experience supporting hardware-connected software such as laboratory instruments, printers, or similar equipment</li><li>Familiarity with remote desktop or screen-sharing tools (TeamViewer, AnyDesk, or similar)</li></ul><h3>Why Join ACT Innovations?</h3><ul><li>Fully remote position</li><li>Stable Monday–Friday schedule with no weekends</li><li>Opportunity for career growth into QA, implementations, product management, client success, or technical operations</li><li>Exposure to mission-driven software that makes a real impact</li><li>Collaborative and supportive team environment</li><li>Growing technology company with long-term advancement opportunities</li></ul><h3>Compensation &amp; Benefits</h3><ul><li>Competitive compensation based on experience</li><li>Benefits package available</li><li>Paid time off and company holidays</li><li>Ongoing training and development opportunities</li></ul><p><u><b>Worker Type:</b></u></p>Regular<h3><u>Number of Openings Available:</u></h3>1<p>Originally posted on <a href="https://himalayas.app" rel="nofollow noopener" target="_blank">Himalayas</a></p></div>
+
+<a class="apply" href="https://himalayas.app/companies/equivant/jobs/customer-support-specialist" target="_blank" rel="noopener">去原站申请 | Apply on Himalayas ↗</a>
+<footer>信息采集自 Himalayas,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from Himalayas; refer to the original posting.</footer>
+</body></html>

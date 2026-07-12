@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Remote | Remote-后端工程师、开发者关系工程师</title>
+<meta property="og:title" content="Remote | Remote-后端工程师、开发者关系工程师">
+<meta property="og:description" content="Remote · 📍全职远程(电鸭·中文社区)">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="Remote · 📍全职远程(电鸭·中文社区)">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Remote-后端工程师、开发者关系工程师</h1>
+<div class="meta">🏢 Remote · 📍 全职远程(电鸭·中文社区) · 其他 | Other · 亚太 | Asia-Pacific · 来源 电鸭社区 · 发布 2026-07-06</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://eleduck.com/posts/XNfwom" target="_blank" rel="noopener">去原站申请 | Apply on 电鸭社区 ↗</a>
+<div class="jd"><h3>公司介绍</h3>
+<p>AIsa成立于2025年，总部位于美国旧金山。公司背后汇聚了顶尖的投资阵容，包括阿里巴巴、Tribe Capital、Draper Associates、Sumitomo Corporation（住友商事）以及Saison Capital等知名机构投资人，是一家专注于 AI 智能体（Agent）基础设施的创业公司，为智能体生态提供统一的 API 网关、大模型智能路由、上下文管理、智能体原生支付协议等资源层服务。我们的客户是智能体开发者和智能体本身。我们的愿景是构建”Amazon for AI Agents”  - The Everything Store for AI Agents - 让AI Agents能够更简单地接入、管理和部署 AI 能力。</p>
+<p>团队小伙伴是211/985、海外留学及大厂背景，我们是一家小而精的公司</p>
+<h3>开放岗位</h3>
+<p><strong>1、后端工程师</strong><br>
+我们正在招聘一位 动手能力强的工程师，一起参与核心平台的建设和维护。这个岗位以 后端 / 全栈开发 为主，也会涉及部分平台运营相关工作，例如模型上线、价格更新，以及 API、agent skills 和 plugins 的开发。<br>
+<strong>岗位职责</strong></p>
+<ul>
+<li>你将负责参与平台前后端功能的开发与维护</li>
+<li>开发 API、agent skills、plugins 及相关集成能力负责系统维护、</li>
+<li>问题排查和线上运行支持</li>
+</ul>
+<p><strong>岗位要求：</strong></p>
+<ul>
+<li>211、985本科或以上学历3–5 年软件开发相关工作经验，具备良好的中英文沟通能力，有互联网大厂或大型互联网公司经验，</li>
+<li>扎实的后端或全栈开发基础</li>
+<li>熟悉 API、数据库、云基础设施，以及日常工程运维相关工作</li>
+<li>能适应创业公司节奏，有较强的 ownership 和执行力<br>
+加分项：</li>
+<li>有 LLM、模型 API、AI gateway 或 inference platform 相关经验</li>
+<li>有 DevOps、部署、云运维相关经验</li>
+<li>使用过 Claude Code、Codex、Cursor 等 AI 编程工具</li>
+</ul>
+<p>薪资：目前薪资open，20k-60k的薪资只是个参考，主要根据能力定薪，如超过范围可详谈</p>
+<p><strong>2、开发者关系工程师</strong><br>
+<strong>关于这个岗位</strong><br>
+AIsa 正在构建面向 Agent 时代的基础设施——从统一的资源层（API、LLM、Skill 、Connector）到可控的 Agent 运行时与控制平面，致力于打造一个开发者可以自由上传、组合、计费资源的开放生态。</p>
+<p>作为 AIsa 的首位开发者关系工程师，你将是我们与中国开发者社区之间的核心纽带。你需要把复杂的平台能力转化为开发者能轻松上手的内容：清晰的文档、跑得通的示例、有价值的开源项目，以及真实的社区口碑。</p>
+<p>这不是一个纯粹写博客的岗位。你是平台采用率的第一责任人，是开发者声音传回产品团队的通道，也是 AIsa 在技术社区的“门面”。我们需要你懂技术、善表达，更要懂开发者。</p>
+<p>AIsa 目前处于早期阶段。你不会接手一套成熟的体系，而是要从第一篇文档、第一个示例、第一批开发者开始，亲手搭建起我们的开发者生态。如果你享受“从 0 到 1”的过程，并坚信 Agent 基础设施的未来，这会是一个充满挑战与成就感的位置。</p>
+<p><strong>岗位职责</strong></p>
+<p>你的核心目标是降低中国开发者使用 AIsa 平台的门槛，建立技术口碑，并形成有效的产品反馈闭环：</p>
+<p>• <strong>内容与文档</strong>：编写和维护高质量的中文开发者文档、快速上手指南和最佳实践，确保开发者能在最短时间内跑通第一个 Agent，打磨极致的“第一次成功体验”。</p>
+<p>• <strong>示例与开源</strong>：构建可直接运行的示例项目、SDK 示例和开源工具，用真实代码证明平台能力，并持续运营这些开源资产。</p>
+<p>• <strong>社区与布道</strong>：活跃于国内主流开发者社区（如 GitHub、掘金、知乎、V2EX、技术微信群等）及线下技术大会（Meetup），进行答疑、分享，建立 AIsa 的技术声誉。</p>
+<p>• <strong>反馈闭环</strong>：作为开发者在内部的代言人，系统性地收集开发者的痛点和需求，推动 API 设计、文档和开发体验（DX）的迭代。</p>
+<p>• <strong>技术验证</strong>：以“外部开发者”的视角亲测平台功能，提前发现并解决集成过程中的坑和体验断点。</p>
+<p><strong>任职要求</strong><br>
+我们寻找的是兼具**“工程师底子 + 表达能力 + 开发者同理心”**的复合型人才：</p>
+<p>•<strong>技术能力</strong><br>
+扎实的工程背景，能独立写代码、跑通 API 集成与 Agent 开发；熟悉 Python；理解 LLM、Agent、RAG 等基本概念。<strong>加分项</strong>：熟悉 TypeScript / Go；有后端、SDK 或开发者工具开发经验；用过 LangChain 等 Agent 框架。</p>
+<p>•<strong>内容与表达</strong><br>
+能把复杂技术讲简单；具备优秀的中文技术写作能力（文档、教程、博客）。<strong>加分项</strong>：有公开的技术写作、演讲或视频教程作品；运营过有影响力的个人技术博客/公众号。</p>
+<p>•<strong>社区与布道</strong><br>
+深刻理解国内开发者的痛点与偏好，能用真诚和实用建立信任；有社区运营或技术活动组织经验。<strong>加分项</strong>：开源项目维护者或活跃贡献者；在技术圈有个人品牌；有 Meetup 或技术大会分享经验。</p>
+<p>•<strong>产品同理心</strong><br>
+具备产品意识，能从开发者视角发现体验断点，并将吐槽转化为结构化反馈；极强自驱力。<strong>加分项</strong>：有 DevTool/API 平台的 Dev Rel 或开发者体验 (DX) 经验；有早期创业团队经历。</p>
+<p>薪资：15k-30k，薪资只是个参考，由于工作经验不一样，目前薪资open，主要根据能力定薪</p>
+<p><strong>其他</strong></p>
+<ul>
+<li>面试方式：视频面试</li>
+<li>如对我们岗位有兴趣，请直接邮件联系我们，邮件中附上个人简历</li>
+</ul></div>
+
+<a class="apply" href="https://eleduck.com/posts/XNfwom" target="_blank" rel="noopener">去原站申请 | Apply on 电鸭社区 ↗</a>
+<footer>信息采集自 电鸭社区,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from 电鸭社区; refer to the original posting.</footer>
+</body></html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>团队 | 【团队直招】13k-16k招远程平台运营，周末双休五险一金</title>
+<meta property="og:title" content="团队 | 【团队直招】13k-16k招远程平台运营，周末双休五险一金">
+<meta property="og:description" content="团队 · 📍全职远程(电鸭·中文社区)">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="团队 · 📍全职远程(电鸭·中文社区)">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>【团队直招】13k-16k招远程平台运营，周末双休五险一金</h1>
+<div class="meta">🏢 团队 · 📍 全职远程(电鸭·中文社区) · 运营与人力 | Operations &amp; HR · 亚太 | Asia-Pacific · 来源 电鸭社区 · 发布 2026-07-07</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://eleduck.com/posts/Jpfd11" target="_blank" rel="noopener">去原站申请 | Apply on 电鸭社区 ↗</a>
+<div class="jd"><p>平台运营（招聘平台方向）</p>
+<p>【岗位介绍】<br>
+我们公司总部位于澳大利亚布里斯班，国内运营中心位于南京，团队采用全远程协作模式。本岗位将深度参与网站平台从0到1建设，负责平台运营体系搭建与持续优化，通过内容运营、用户运营及平台运营，不断提升平台专业度、用户体验及运营效率。</p>
+<p>【岗位职责】<br>
+1.负责网站平台内容策划及运营，输出平台教程、成功案例、行业洞察、岗位分析等内容，持续提升平台专业度及品牌影响力；<br>
+2.负责 B 端 及 C 端 运营，建立用户分层体系，持续提升平台活跃度、留存率及复用率；<br>
+3.负责平台日常运营，包括企业资质审核、岗位审核、内容审核及人才库维护，保障平台供需质量及用户体验；<br>
+4.持续优化岗位展示、人岗匹配及平台运营效果，结合运营数据不断优化运营策略，提高平台运营效率；<br>
+5.深度参与网站平台0-1建设，与团队共同完善平台运营流程、运营规范及AI运营体系，推动平台持续成长。</p>
+<p>【任职要求】<br>
+1.本科及以上学历，3年以上平台运营、用户运营、ToB运营、招聘运营或互联网运营相关经验；<br>
+2.熟悉平台运营及用户运营逻辑，有平台型、双边平台（企业+用户）或ToB客户运营经验者优先；<br>
+3.具备优秀的内容策划及文案能力，能够独立完成案例包装、行业内容及平台内容输出；<br>
+4.具备基础数据分析能力，能够根据平台运营数据持续优化运营效果；<br>
+5.熟练使用ChatGPT、Claude等AI工具，能够将AI应用于内容策划、运营分析及日常工作，持续提升工作效率；有AI工作流实践经验者优先；<br>
+6.具备良好的逻辑思维、项目推进及跨团队协作能力，能够独立推动项目落地；<br>
+7.适应远程办公及创业团队工作模式，长期稳定，自驱力强，责任心强，结果导向。</p>
+<p>【加分项】<br>
+1.有Boss直聘、猎聘、LinkedIn、Indeed等招聘平台运营或深度使用经验；<br>
+2.有招聘、人力资源、猎头、RPO等相关行业经验；<br>
+3.有互联网平台、招聘平台或双边平台0-1搭建、冷启动经验；<br>
+4.有用户增长、私域运营、社群运营或ToB客户运营经验；<br>
+5.有跨境招聘、海外业务或国际化平台运营经验；<br>
+6.有AI工作流搭建或AI提效实践经验。</p>
+<p>【工作时间与薪资】<br>
+工作方式： 国内全职远程办公<br>
+工作时间： 周一至周五 09:00-18:00（北京时间），周末双休<br>
+薪资待遇： 13K-16K/月（根据能力及经验综合评估）<br>
+试用期： 1-3个月，表现优秀者可提前转正缴纳五险一金<br>
+福利待遇：周末双休、法定节假日、节日福利、年度员工体检<br>
+成长发展：根据能力及贡献提供调薪及晋升机会，长期表现优秀者可成长为平台运营负责人、增长负责人或核心业务合伙人。</p>
+<p>【为什么加入我们】<br>
+深度参与网站平台从0到1建设，真正影响平台的发展方向；<br>
+与创始团队直接协作，参与平台运营、产品优化及业务策略制定；<br>
+全职远程办公，团队扁平化管理，以结果为导向；<br>
+深度接触AI、平台及跨境 HR 领域，积累稀缺行业经验；<br>
+鼓励创新、自主思考及持续优化，拥有充分的发挥空间；</p>
+<p>合适感兴趣的朋友可通过电鸭联系我，投递个人简历+作品集/案例。</p></div>
+
+<a class="apply" href="https://eleduck.com/posts/Jpfd11" target="_blank" rel="noopener">去原站申请 | Apply on 电鸭社区 ↗</a>
+<footer>信息采集自 电鸭社区,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from 电鸭社区; refer to the original posting.</footer>
+</body></html>

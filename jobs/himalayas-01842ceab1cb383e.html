@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Outforce | ERP Support &amp; Optimization Business Analysts || Work from Home ||</title>
+<meta property="og:title" content="Outforce | ERP Support &amp; Optimization Business Analysts || Work from Home ||">
+<meta property="og:description" content="Outforce · 📍Philippines">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="Outforce · 📍Philippines">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>ERP Support &amp; Optimization Business Analysts || Work from Home ||</h1>
+<div class="meta">🏢 Outforce · 📍 Philippines · 数据 | Data · 亚太 | Asia-Pacific · 来源 Himalayas · 🕐 时区 UTC+8 · 发布 2026-07-11</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://himalayas.app/companies/outforce-com/jobs/erp-support-optimization-business-analysts-work-from-home" target="_blank" rel="noopener">去原站申请 | Apply on Himalayas ↗</a>
+<div class="jd">Category: Other <br><br>Location: Pasig City National Capital Region Philippines <br><br><br><p>OutForce is a people-first outsourcing company focused on buildinghigh-performing teams and long-term careers.</p><p>We partner with companies around the world, providing dedicatedoffshore professionals who work as an extension of our clients’ teams.</p><p>Unlike traditional outsourcing models, our people are fullyembedded into their client’s business, creating meaningful work, strongercollaboration, and long-term career opportunities.</p><h3>We are proud to be:</h3><ul><li>Great Place to Work® Certified<br></li><li>HR Asia Best Companies to Work for in Asia 2025<br></li><li>HR Asia Most Caring Company Award 2025<br></li><li>HR Asia Diversity, Equity &amp; Inclusion Award 2025<br></li></ul><p>At OutForce, we invest in our people through career growthopportunities, flexible work environments, supportive leadership, and a culturebuilt on trust, collaboration, and continuous improvement.</p><p>As a tech-enabled, people-powered company, we are committed tohelping our employees grow alongside some of the world’s most excitingbusinesses.</p><p>Join OutForce and build your future with one of Asia’s bestworkplaces.</p><h3>Job Overview:</h3><p>We are seeking a highly skilled and motivated ERP Business Analyst tojoin our team and play a critical role in optimizing and maintaining our <b>Microsoft D365 Finance &amp; Operations ERP</b> system to enhance businessoperations. This role requires a deep understanding of ERP systems andprocesses, coupled with exceptional problem-solving and analytical skills.The successful candidate will be responsiblefor identifying, analyzing, resolving, and documenting complex system-related problemswith system users, ensuring the smooth and efficient functioning of the ERPsystem.The individual will need topossess strong functional knowledge of <b>Dynamics 365 modules like Finance &amp;Operations (F&amp;O)</b>.</p><p><b>Employment type:</b> Full-time</p><p><b>Shift:</b>Mid-shift - Night-shift</p><p><b>Work setup:</b> Work from Home</p><h3>What we offer:</h3><ul><li>Competitive compensation package aligned with your skills and experience<br></li><li>Night differentials pay to help maximize your earnings<br></li><li>Comprehensive HMO coverage, including a free dependent on Day 1<br></li><li>Employee referral program with rewarding incentives<br></li><li>20 days of annual leave, giving you flexibility to manage your time<br></li><li>Engaging team activities and events to keep work enjoyable<br></li><li>Build strong, high-impact connections with key stakeholders across the business<br></li><li>Take part in client engagement initiatives to elevate your professional experience.<br></li></ul><h3>What We’re Looking For:</h3><ul><li><b>Functional Knowledge:</b> Deep understanding of specific Dynamics 365 modules (e.g., F&amp;O and CE) and their functionalities. Must have experience communicating with end users to gather requirements and business reasoning for translation of expectations to Development team, as well as communicating with end users on progress made.<br></li><li><b>Communication and Interpersonal Skills:</b> Strong communication and collaboration skills to interact effectively with stakeholders at all levels, to include the ability to communicate complex technical concepts to non-technical audiences, and vice versa.<br></li><li><b>Problem-Solving and Analytical Skills:</b> Ability to analyze complex business problems, identify root causes, and propose effective solutions.  Must have experience analyzing cross application dependencies - for instance, how requests would affect Dayforce, CE, existing integrations, etc.<br></li><li><b>Industry Knowledge:</b> Understanding of industry-specific business processes and best practices is a plus.<br></li><li>Ability to operate independently and set priorities amongst multiple task assignments.<br></li><li>Ability to manage multiple tasks, assignments, and projects. Self-motivated and highly engaged.<br></li><li>Excellent analytical and problem-solving skills, with the ability to translate business requirements into actionable solutions.<br></li><li>Strong communication and interpersonal skills, with the ability to collaborate effectively with stakeholders, end-users, and technical teams.<br></li><li>Ability to manage multiple priorities and work independently in a fast-paced environment.<br></li></ul><p><u><b>MinimumQualifications</b></u><b>:</b></p><ul><li>Bachelor&#x27;s degree in Computer Science, Information Systems, Finance, or related field.Or equivalent combination of education and work-related experience.<br></li><li>Demonstrated advanced proficiency in reading, writing, and speaking English is required to effectively perform the duties of this role.<br></li><li>Accounting or financial sector experience also a plus.<br></li><li>3-5 years of experience as a business analyst in supporting, managing, or implementing Microsoft Dynamics 365 Finance &amp; Operations ERP system.<br></li><li>Proficiency with the following D365 finance modules/areas preferred:<br></li></ul><h3>-GeneralLedger</h3><h3>-AccountsPayable/Accounts Receivable</h3><h3>-ProjectManagement in Accounting</h3><h3>-Taxprocessing</h3><h3>-Intercompany</h3><h3>-ProjectTimesheets</h3><ul><li>Strong proficiency in system configuration, customization, and data management within Microsoft Dynamics 365.<br></li><li>Experience with Dynamics 365 ISVs, specifically HSO’s aec360, SKSoft Treasury Automation Suite (TAS), RSAT, and Docentric are a plus.<br></li><li>Dynamics 365 Certifications preferred.<br></li><li>Knowledge of Microsoft Dynamics 365 CE is a plus.<br></li></ul><h3>What You’ll Be Working On:</h3><ul><li><b>Requirements Gathering:</b>Collaborate with stakeholders to gather and document business requirements, ensuring a comprehensive understanding of their needs.<br></li><li><b>Process Analysis:</b> Analyze existing business processes and identify areas for improvement, aligning them with ERP system capabilities.<br></li><li><b>Solution Design:</b> Designing and proposing solutions using Dynamics 365 modules, considering scalability, performance, and best practices.<br></li><li><b>System Configuration:</b>Configure ERP modules to meet business needs and process workflows, ensuring effective implementation of solutions.<br></li><li><b>Troubleshooting Issues:</b> Investigate and resolve system errors, data inconsistencies, and user-reported problems.Review incoming support requests and independently work towards an appropriate and timely resolution.Must be willing to deep dive into system issues while deploying a systematic, disciplined and analytical approach to problem solving.Tenacity, perseverance, and creativity are needed to keep exploring different solutions, even when the first attempts don&#x27;t succeed.<br></li><li><b>User Support and Training:</b> Provide training and support to end-users, facilitating a smooth transition to new or updated ERP functionalities.<br></li><li><b>Testing/Deployment/Validation:</b> Leads testing efforts, ensuring the quality and functionality of the implemented solution, and managing the deployment process. Conducts User Acceptance Testing (UAT) to validate system changes and ensure they meet specified requirements.<br></li><li><b>Collaboration:</b> Work closely with IT teams, external consultants, and vendors to prioritize and implement system enhancements and upgrades.<br></li><li><b>Customization and Configuration:</b>Configuring and customizing Dynamics 365 to meet specific business requirements, including security, and workflows.<br></li><li><b>Problem Solving:</b> Problem identification and analysis, solution development and implementation, system maintenance and support, and collaboration and communication.<br></li><li><b>Testing Solutions:</b>Participate in testing new configurations, customizations, or updates to ensurethey function as intended and do not negatively impact other areas of thesystem.<br></li></ul><p>Ready to take your career to the next level? Join us and be partof a team that values your growth, celebrates your achievements, and empowersyou to make a real impact.</p><p>Apply today and start shaping your future with a company thatinvests in your success every step of the way!</p><br><br><br><br><a href="https://careers.outforce.com.ph/jobs/Careers/555418000034081263/ERP-Support-Optimization-Business-Analysts-Work-from-Home?source=RSS" rel="nofollow noopener" target="_blank">Details</a><p>Originally posted on <a href="https://himalayas.app" rel="nofollow noopener" target="_blank">Himalayas</a></p></div>
+
+<a class="apply" href="https://himalayas.app/companies/outforce-com/jobs/erp-support-optimization-business-analysts-work-from-home" target="_blank" rel="noopener">去原站申请 | Apply on Himalayas ↗</a>
+<footer>信息采集自 Himalayas,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from Himalayas; refer to the original posting.</footer>
+</body></html>
