@@ -4,7 +4,7 @@
 (Remotive、We Work Remotely、Remote OK、Jobicy、Himalayas、Working Nomads、HN Who's Hiring)。
 
 - 🔍 [浏览全部岗位 | Browse all jobs](https://ikevinxie.github.io/remote-jobs-board/index.html)
-- 📰 [本周周报 | This week's report](https://ikevinxie.github.io/remote-jobs-board/reports/2026-W28.html)
+- 📰 [本周周报 | This week's report](https://ikevinxie.github.io/remote-jobs-board/reports/2026-W29.html)
 - 🗂 [历史周报 | Archive](https://ikevinxie.github.io/remote-jobs-board/reports/)
 - 📡 [RSS 订阅 | RSS feed](https://ikevinxie.github.io/remote-jobs-board/feed.xml)
 

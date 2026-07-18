@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Education Sub Saharan Africa | Consultancy: Design and Implementation of ACSL Impact Studies</title>
+<meta property="og:title" content="Education Sub Saharan Africa | Consultancy: Design and Implementation of ACSL Impact Studies">
+<meta property="og:description" content="Education Sub Saharan Africa · 📍Anywhere in the World">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="Education Sub Saharan Africa · 📍Anywhere in the World">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Consultancy: Design and Implementation of ACSL Impact Studies</h1>
+<div class="meta">🏢 Education Sub Saharan Africa · 📍 Anywhere in the World · 设计 | Design · 全球 | Worldwide · 来源 We Work Remotely · 发布 2026-07-16</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://weworkremotely.com/remote-jobs/education-sub-saharan-africa-consultancy-design-and-implementation-of-acsl-impact-studies" target="_blank" rel="noopener">去原站申请 | Apply on We Work Remotely ↗</a>
+<div class="jd"><p>
+  <strong>Headquarters:</strong> 
+    <br><strong>URL:</strong> <a href="http://essa-africa.org" rel="nofollow noopener" target="_blank">http://essa-africa.org</a>
+</p>
+
+<p>POST TITLE: Consultancy: Design and Implementation of ACSL Impact Studies</p>
+<p><br></p>
+<p>PERIOD OF APPOINTMENT: 2026-2030</p>
+<p><br></p>
+<p>LOCATION: Sub-Saharan Africa</p>
+<p> </p>
+<p>Applicants must have the right to work in their location. </p>
+<p><br></p>
+<p>REPORTING TO: Senior Research, Evaluation and Impact Manager </p>
+<p><br></p>
+<p>SALARY: Competitive - dependent on experience   </p>
+<p><br></p>
+<p>ABOUT ESSA</p>
+<p><br></p>
+<p>Education Sub Saharan Africa (ESSA) improves education using evidence and data from Africa in research, advocacy and programme design.  <br> <br>We take a systems approach by identifying challenges and co-designing solutions in partnership with local education researchers, education leaders, policymakers, funders and employers to improve education outcomes for young people. Our research generates actionable insights that inform decisions, policies and practice and strengthen education systems.  <br> <br>ESSA’s values are at the heart of everything we do, and they are: <br>•    Evidence-driven: We are driven by data and evidence to find what works best, building an evidence alliance for education in sub-Saharan Africa. <br>•    Solutions-focused: We seek the highest impact for young people and educators in sub-Saharan Africa with the cost-effective funds we invest.  <br>•    Strengthening Trust: We strive to create supportive environments, building trust with the communities we work with. <br>•    Always learning: Everyone’s opinion is valuable; we develop solutions through teamwork. <br> <br>To find out more about ESSA, visit <a href="https://essa-africa.org/" rel="nofollow noopener" target="_blank">essa-africa.org</a>. <br></p>
+<p><br></p>
+<p>ABOUT THE ROLE</p>
+<p>Background and Context</p>
+<p>The African Centre for School Leadership (ACSL) was established in 2021 to transform school leadership systems across Africa. The Centre’s mission is to collaborate with governments and regional institutions to provide high-quality, contextualised professional development services, conduct research, and offer policy advice to enhance school leadership, teaching, and student outcomes. By developing school leaders and improving educational practices, ACSL seeks to foster positive changes in the education sector, enhancing learning environments, student well-being, and overall academic quality at national and Pan-African levels. Further details about ACSL can be found on the ACSL website (<a href="https://africancentreforschoolleadership.org/" rel="nofollow noopener" target="_blank">African Centre for School Leadership</a>).</p>
+<p> </p>
+<p>ACSL functions as a coalition of regional and in-country partners implementing donor-funded projects, and four key Pan-African organisations coordinate it: the Association for the Development of Education in Africa (ADEA), Education Sub-Saharan Africa (ESSA), the Forum of African Women Educationalists (FAWE), and VVOB – Education for Development. In partnership with the Mastercard Foundation, ACSL launched the Foundation Phase Project (2023-2024), which spanned Rwanda, Kenya, and Ghana. This initiative focused on two central themes: the intersection of gender and school leadership and the emerging Ubuntu leadership model. These areas guided the Centre&#x27;s work in promoting inclusive, innovative, and collaborative school leadership practices across the continent. </p>
+<p> </p>
+<p>ACSL is actively engaged in implementing the Leaders in Teaching (LIT) LEAD pillar across Tanzania, Malawi, Liberia, and Sierra Leone. This initiative focuses on strengthening the leadership capacities of secondary school leaders to foster more effective teaching and learning environments. By 2030, the programme aims to benefit over 14,493 secondary schools, including both public and non-state institutions, in LIT expansion countries and throughout the Pan-African region.  </p>
+<p> </p>
+<p>Through targeted School Leadership Professional Development (SLPD), school leaders will be better equipped to support teachers and drive improvements in student learning outcomes. The initiative is expected to affect approximately 4,853,564 students enrolled in secondary education. </p>
+<p> </p>
+<p>The initiatives of ACSL-LIT-Lead concentrate on four key areas:  </p>
+<p>    1. Supporting the development and reform of evidence-based policies and frameworks for school leadership. </p>
+<p>    2. Supporting the delivery of professional development programmes for school leaders. </p>
+<p>    3. Researching to generate insights on school leadership effectiveness.  </p>
+<p>    4. Promoting communication and advocacy to disseminate lessons and enhance sector coordination.</p>
+<p> </p>
+<p>ACSL aims to improve learning outcomes and reduce gender and equity disparities in education through enhanced school leadership practices. </p>
+<p><br><br></p>
+<p>Purpose of the Consultancy </p>
+<p>The Centre seeks to engage an African-led consortium of institutions to provide coordinated technical leadership, methodological rigour, and independent analysis to support the design, implementation, synthesis, and cross-study learning across six potential studies. Further details on the studies can be found: <a href="https://dub.sh/ACSL_IS_Concept_Note" rel="nofollow noopener" target="_blank">ACSL Impact Studies - Concept Note.</a></p>
+<p><br></p>
+<p>The purpose of this engagement is for the consortium of institutions to: </p>
+<ul>
+<li>Provide independent technical lead for the design and implementation of the ACSL’s six impact studies. </li>
+</ul>
+<ul>
+<li>Ensure methodological coherence, quality assurance, and alignment with ACSL’s Theory of Change and the outcomes of the ADEA Triennale in 2025 (See the detailed concept note referenced above for more information; pages 35 to 44).  </li>
+</ul>
+<ul>
+<li>Apply contribution-focused, mixed-methods, and Afrocentric analytical approaches across the portfolio. </li>
+</ul>
+<ul>
+<li>Generate high-quality evidence products to inform learning, policy influence, and the sustainability of the Centre. </li>
+</ul>
+<p><br></p>
+<p>Required Qualifications and Experience </p>
+<p>Given the multi-country scope, cross-cutting thematic focus, and technical complexity of the six interrelated studies, ACSL strongly encourages applications from qualified consortia of organisations rather than single entities. Applicants are therefore encouraged to form consortia that strategically combine complementary expertise. </p>
+<p> </p>
+<p>ACSL requires the consortium to be African-led. The lead institution must be legally registered and headquartered in Africa, with demonstrated experience leading multi-country evaluation portfolios on the continent.  </p>
+<p> </p>
+<p>The consortium model should clearly demonstrate: </p>
+<ul>
+<li>Defined and complementary roles among partners. </li>
+</ul>
+<ul>
+<li>Clear governance and coordination arrangements. </li>
+</ul>
+<ul>
+<li>Mechanisms for quality assurance and methodological coherence across studies. </li>
+</ul>
+<ul>
+<li>Efficient financial management and accountability structures. </li>
+</ul>
+<ul>
+<li>Designation of a lead institution responsible for overall portfolio coordination and primary contractual engagement. </li>
+</ul>
+<p> </p>
+<p>Additionally, the consortium team collectively should demonstrate: </p>
+<ul>
+<li>Proven experience in school leadership and/or education systems evaluation, preferably in Africa. </li>
+</ul>
+<ul>
+<li>Strong expertise in school leadership, professional development, and policy reform. </li>
+</ul>
+<ul>
+<li>Demonstrated use of mixed-methods, contribution analysis, and systems evaluation. </li>
+</ul>
+<ul>
+<li>Experience with gender-transformative and equity-focused research. </li>
+</ul>
+<ul>
+<li>Strong understanding of Afrocentric and contextually grounded leadership models. </li>
+</ul>
+<ul>
+<li>Ability to manage multi-country, multi-study evaluation portfolios. </li>
+<li>Excellent analytical writing and knowledge translation skills. </li>
+</ul>
+<p><br></p>
+<p>Scope of Work</p>
+<p>ACSL expects the consortium of institutions to possess complementary expertise, where each member leads or co-leads specific studies aligned with its demonstrated core strengths. The consortium must collectively demonstrate the capacity to deliver all six studies and present a clear framework for executing them as a coherent portfolio, including defined approaches to sequencing, methodological alignment, cross-study learning integration, and quality assurance.  </p>
+<p> </p>
+<p>Applicants are advised that the methodology presented in the concept note is indicative and may be used as a guiding framework.  </p>
+<p> </p>
+<p>Study Coverage: </p>
+<p>1. Study 1: School leadership practice, data use, and learner outcomes (Tanzania). </p>
+<p>2. Study 2: Gender, equity, and social inclusion in school leadership (Pan Africa &amp; Tanzania). </p>
+<p>3. Study 3: Policy and institutionalisation of school leadership professional development (Pan Africa &amp; Tanzania). </p>
+<p>4. Study 4: Effectiveness of school leadership professional development (Pan Africa &amp; Tanzania). </p>
+<p>5. Study 5: Research capacity, blended learning trajectories, and evidence use (Pan Africa &amp; Tanzania). </p>
+<p>6. Study 6: Collaboration, networks, and formative assessment for ACSL Centre establishment (Pan Africa &amp; Tanzania). </p>
+<p> </p>
+<p>Key Tasks and Responsibilities </p>
+<p>The consortium will be expected to undertake the following tasks:<br></p>
+<p>1. Inception and Design</p>
+<ul>
+<li>Review ACSL programme documentation, Theories of Change, and study concept notes. </li>
+</ul>
+<ul>
+<li>Review evaluation questions and contribution pathways across the six studies. </li>
+</ul>
+<ul>
+<li>Develop and/or validate study designs, sampling strategies, and data collection tools. </li>
+</ul>
+<ul>
+<li>Ensure Afrocentric, gender-responsive, and context-sensitive frameworks are embedded across studies. </li>
+<li>Define clear leadership and technical responsibilities among consortium members for specific studies, while establishing mechanisms for portfolio-level coordination and coherence</li>
+</ul>
+<p> 2. Methodological Implementation Support</p>
+<ul>
+<li>Lead the longitudinal, mixed-methods, and contribution-based evaluation approaches through designated lead institutions within the consortium. </li>
+</ul>
+<ul>
+<li>Embark on network mapping, policy analysis, institutional readiness assessment, and professional development effectiveness analysis. </li>
+</ul>
+<ul>
+<li>Ensure ethical standards, data protection, and safeguarding protocols are applied. </li>
+</ul>
+<ul>
+<li>Provide technical oversight to fieldwork coordination (working with partners). <br></li>
+</ul>
+<p>3. Data Analysis and Synthesis</p>
+<ul>
+<li>Analyse quantitative and qualitative data across studies under coordinated leadership arrangements within the consortium. </li>
+</ul>
+<ul>
+<li>Conduct cross-study triangulation and synthesis. </li>
+</ul>
+<ul>
+<li>Generate contribution narratives explaining how ACSL interventions influence observed outcomes. </li>
+</ul>
+<ul>
+<li>Support intersectional analysis (gender, location, disability etc.). </li>
+</ul>
+<ul>
+<li>Establish internal quality assurance processes to ensure methodological consistency across consortium-led studies. <br></li>
+</ul>
+<p>4. Learning, Adaptation, and Knowledge Translation</p>
+<ul>
+<li>Produce learning briefs and adaptive management insights. </li></ul></div>
+
+<a class="apply" href="https://weworkremotely.com/remote-jobs/education-sub-saharan-africa-consultancy-design-and-implementation-of-acsl-impact-studies" target="_blank" rel="noopener">去原站申请 | Apply on We Work Remotely ↗</a>
+<footer>信息采集自 We Work Remotely,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from We Work Remotely; refer to the original posting.</footer>
+</body></html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ashley Digital | Director, CRM</title>
+<meta property="og:title" content="Ashley Digital | Director, CRM">
+<meta property="og:description" content="Ashley Digital · 📍Anywhere in the World">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="Ashley Digital · 📍Anywhere in the World">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Director, CRM</h1>
+<div class="meta">🏢 Ashley Digital · 📍 Anywhere in the World · 客户支持 | Customer Support · 全球 | Worldwide · 来源 We Work Remotely · 发布 2026-07-16</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://weworkremotely.com/remote-jobs/ashley-digital-director-crm" target="_blank" rel="noopener">去原站申请 | Apply on We Work Remotely ↗</a>
+<div class="jd"><p>
+  <strong>Headquarters:</strong> Remote (USA)
+    <br><strong>URL:</strong> <a href="http://residenthome.com" rel="nofollow noopener" target="_blank">http://residenthome.com</a>
+</p>
+
+<p><strong>THE BIGGEST NAME IN HOME. THE BOLDEST TEAM IN E-COMMERCE.</strong></p>
+<p>Ashley Digital is the e-commerce engine behind Ashley — one of the most recognized home brands on the planet. As the world&#x27;s largest manufacturer of home furnishings and the largest furniture store brand in North America, Ashley is in a category unto itself. Our team sits at the intersection of world-class retail and digital innovation, driving the e-commerce experience for millions of customers across every platform and touchpoint. We&#x27;re a fast-moving, highly collaborative team operating at a transformational moment, and we&#x27;re charged with shaping how people discover, explore, and buy home furnishings. Our expertise spans data science, performance marketing, product, and creative, and our work reaches millions of customers every day. It&#x27;s a rare combination: the energy of a tech company, the stability of an industry leader, and the opportunity to build something truly significant. If you&#x27;re energized by transformation, collaboration, and meaningful impact at scale, Ashley Digital is where ambition meets opportunity.</p>
+<p> </p>
+<p><strong>To be considered for this remote opportunity, you must reside and be authorized to work within the United States. The ideal candidate will be able to work Eastern Standard Time.</strong></p>
+<p> </p>
+<p><strong>About the Role:</strong></p>
+<p>Ashley Digital is looking for a curious, analytically driven marketing leader to own and evolve the Ashley Furniture CRM program. The Director, Ashley CRM will be responsible for growing consumer revenue across a broad and complex product catalog, developing lifecycle strategies across email, SMS and lead capture, while navigating the operational realities of both corporate-owned and licensee store channels. This is a high-volume program: over 1 billion email sends and 100 million SMS messages annually, requiring both strategic leadership and operational precision to execute well. This is a role for someone who is energized by building. Ashley is growing and evolving, and this person will play an active role in shaping what the CRM program becomes. The right candidate moves with purpose, creates clarity for their team, and sees change as an opportunity rather than an obstacle.</p>
+<p>Beyond marketing strategy, this role carries real technical and operational ownership. You&#x27;ll be responsible for the health and performance of our ESP platform (Zeta), which means solving platform-level problems, driving technical execution, and partnering cross-functionally to build and maintain complex, multi-touchpoint journeys. Strategic vision matters here, but so does the ability to get into the weeds.</p>
+<p>This role reports to the Senior Director, CRM and is part of a broader CRM organization spanning six brands, with opportunities to collaborate on shared standards, tooling, and strategy across the portfolio.</p>
+<p> </p>
+<p><strong>What You’ll Be Doing:</strong></p>
+<ul>
+<li>Direct the CRM calendar, setting email and SMS scheduling and segmentation strategy in support of the company&#x27;s promotional calendar; provide strategic direction and day-to-day guidance to the senior manager responsible for calendar execution</li>
+<li>Oversee lifecycle journey strategy across email and SMS, ensuring journeys and campaign sends are complementary and collectively driving toward revenue and engagement goals</li>
+<li>Monitor email and SMS send volume against platform costs, proactively identify budget risks, and recommend program adjustments to stay within budget</li>
+<li>Own the CRM testing roadmap: analyze results using established methods, determine next steps, and prioritize the next best test to drive continuous program improvement</li>
+<li>Design and evaluate analyses to measure program performance against goals on a weekly, monthly, and quarterly basis</li>
+<li>Leverage segmentation, behavioral targeting, and personalization to maximize engagement across the customer lifecycle</li>
+<li>Manage day-to-day relationships with CRM vendors, including primary ESP (currently Zeta); evaluate platform performance, lead initial contract renewal discussions, and make recommendations on tooling needs or changes</li>
+<li>Lead cross-functional relationships with brand, data and analytics, creative, product, growth, and customer success to ensure CRM outputs are strategically aligned</li>
+<li>Maintain current knowledge of CRM best practices, technology, and trends and apply insights to evolve the program</li>
+<li>Lead and develop a team of three — two senior managers and one specialist — investing genuinely in their growth, performance, and long-term development</li>
+</ul>
+<p>The responsibilities described above are not exhaustive. You may be asked, from time to time and as reasonably required by business needs, to perform other duties consistent with your skills and role, including work for or on behalf of our related entities. This job description does not constitute a contract of employment and may be modified at any time, subject to applicable law. </p>
+<p><br><br></p>
+<p> </p>
+<p><strong>Skills &amp; Qualifications</strong></p>
+<p><strong>Experience &amp; Education</strong></p>
+<ul>
+<li>6+ years of email and SMS marketing experience in eCommerce/DTC and retail environments</li>
+<li>Proven track record managing and developing teams of 2 or more</li>
+<li>Bachelor&#x27;s degree preferred</li>
+</ul>
+<p><strong>Technical Proficiency</strong></p>
+<ul>
+<li>Hands-on experience with email development, including working knowledge of HTML for email</li>
+<li>Proficiency with analytics platforms such as Looker; ability to rapidly develop expertise in new tools</li>
+<li>Familiarity with Zeta or comparable ESP platforms (Zeta experience a plus)</li>
+<li>Strong understanding of CAN-SPAM regulations and email industry best practices</li>
+</ul>
+<p><strong>Analytical &amp; Strategic Thinking</strong></p>
+<ul>
+<li>Data-driven mindset with the ability to synthesize large datasets, identify trends, surface anomalies, and translate findings into actionable test-and-learn recommendations</li>
+</ul>
+<p><strong>Communication &amp; Creative Skills</strong></p>
+<ul>
+<li>Exceptional written and verbal communication skills with a keen creative sensibility and meticulous attention to detail</li>
+</ul>
+<p><strong>Work Style &amp; Adaptability</strong></p>
+<ul>
+<li>Thrives in fast-paced environments with the ability to ramp quickly, iterate, and manage multiple priorities with urgency</li>
+<li>Self-motivated and comfortable working autonomously within a decentralized team structure</li>
+<li>Ability to travel to off-site meetings as business needs require</li>
+</ul>
+<p> </p>
+<p> </p>
+<p><strong>What We Offer</strong> (subject to eligibility requirements):</p>
+<ul>
+<li>Remote-first workplace (since 2016!)</li>
+<li>Competitive salary</li>
+<li>Health, Vision &amp; Dental Insurance </li>
+<li>HSA company contributions</li>
+<li>401K with company match component </li>
+<li>“Take what you need” PTO </li>
+<li>Wellness benefits</li>
+<li>WFH office and cell phone/internet stipend </li>
+<li>A FREE MATTRESS plus an awesome Friends and Family discount!</li>
+</ul>
+<p> </p>
+<p>If you reside in a state or location where pay transparency laws or regulations have been adopted please read the following: The salary for this position is $150,000 - $180,000. We carefully consider a wide range of compensation factors, including your background, skills, qualifications, experience, geographic location and other non-discriminatory factors. These considerations can cause your compensation to vary. [Additionally, this role might be eligible for discretionary bonuses or commission payments]. For more information regarding the pay range applicable for this position, please contact us at People@residenthome.com</p>
+<p>Resident is a privately-held company headquartered in San Francisco, CA, with offices in New York City, London, Tel Aviv.  Learn more at: https://www.residenthome.com</p>
+<p>Resident is committed to a policy of equal employment opportunity, and will not discriminate against an applicant or employee on the basis of race, color, religion, creed, national origin, ancestry, sex, gender, age, physical or mental disability, veteran or military status, genetic information, sexual orientation, gender identity, gender expression, marital status, or any other legally recognized protected basis under federal, state, or local law.</p>
+<p>Resident is proud to be a remote-first company and maintains policies to support our unique flexible work location culture. However, there are a few important parameters to our work-from-home-culture: While we currently employ Residents in over 30 US states and 3 countries, if you are hired, you may be restricted to working from the state or country in which you currently reside, unless the state or country to which you plan to relocate is one in which we already operate and no other restrictions apply to the role. As with anything, we encourage an open dialogue about your current location and potential desired relocation during the interview process and upon hire, if applicable, and the extent any other restrictions apply to a particular role. We reserve the right to deny relocation requests post-hire for any reason.</p>
+<p>#LI-REMOTE</p>
+<p>Resident Home participates in E-Verify.</p>
+<p><br><br></p><p> </p>
+<p> </p>
+
+<p><strong>To apply:</strong> <a href="https://weworkremotely.com/remote-jobs/ashley-digital-director-crm" rel="nofollow noopener" target="_blank">https://weworkremotely.com/remote-jobs/ashley-digital-director-crm</a></p></div>
+
+<a class="apply" href="https://weworkremotely.com/remote-jobs/ashley-digital-director-crm" target="_blank" rel="noopener">去原站申请 | Apply on We Work Remotely ↗</a>
+<footer>信息采集自 We Work Remotely,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from We Work Remotely; refer to the original posting.</footer>
+</body></html>

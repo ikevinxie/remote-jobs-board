@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carnival Corporation | Engineer Sr, DevOps</title>
+<meta property="og:title" content="Carnival Corporation | Engineer Sr, DevOps">
+<meta property="og:description" content="Carnival Corporation · 📍Florida">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="Carnival Corporation · 📍Florida">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Engineer Sr, DevOps</h1>
+<div class="meta">🏢 Carnival Corporation · 📍 Florida · 软件开发 | Software Development · 其他/未标明 | Other / Unspecified · 来源 We Work Remotely · 发布 2026-07-16</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://weworkremotely.com/remote-jobs/carnival-corporation-engineer-sr-devops" target="_blank" rel="noopener">去原站申请 | Apply on We Work Remotely ↗</a>
+<div class="jd"><p>
+  <strong>Headquarters:</strong> Miami, FL, United States
+    <br><strong>URL:</strong> <a href="http://carnivalcorp.com" rel="nofollow noopener" target="_blank">http://carnivalcorp.com</a>
+</p>
+
+<strong>Description</strong><br><p>The Senior Engineer, DevOps is responsible for designing, implementing, automating, and supporting the organization&#x27;s cloud and on-premises infrastructure, CI/CD pipelines, deployment frameworks, and operational tooling. This role serves as a technical leader within the engineering organization, driving automation, reliability, scalability, and operational excellence across enterprise applications and platforms.</p><p> </p><p><strong>Essential Functions:</strong></p><p>DevOps Engineering &amp; Automation: </p><ul><li><p>Design, implement, and maintain CI/CD pipelines to support rapid, reliable software delivery.</p></li><li><p>Develop infrastructure-as-code (IaC) solutions using tools such as Terraform, CloudFormation, or similar technologies.</p></li><li><p>Automate provisioning, deployment, monitoring, and operational processes to reduce manual effort and improve consistency.</p></li><li><p>Build and maintain reusable automation frameworks and deployment standards.</p></li><li><p>Drive adoption of DevOps best practices across engineering teams.</p></li></ul><p>Cloud &amp; Infrastructure Management </p><ul><li><p>Design and support cloud-native and hybrid infrastructure environments.</p></li><li><p>Manage cloud platforms such as AWS, Azure, or Google Cloud Platform.</p></li><li><p>Optimize infrastructure performance, scalability, availability, and cost efficiency.</p></li><li><p>Implement containerization and orchestration technologies including Docker and Kubernetes.</p></li><li><p>Ensure infrastructure aligns with enterprise architecture and security standards.</p></li></ul><p>Reliability, Monitoring &amp; Incident Response </p><ul><li><p>Develop and maintain monitoring, logging, and observability solutions.</p></li><li><p>Implement proactive alerting and performance management capabilities.</p></li><li><p>Participate in incident response, root cause analysis, and post-incident reviews.</p></li><li><p>Drive continuous improvement initiatives to improve service reliability and operational resilience.</p></li><li><p>Support Site Reliability Engineering (SRE) practices and operational maturity initiatives.</p></li></ul><p>Security &amp; Compliance </p><ul><li><p>Integrate security controls into CI/CD pipelines and infrastructure automation.</p></li><li><p>Support DevSecOps initiatives and secure software delivery practices.</p></li><li><p>Ensure compliance with corporate security standards, regulatory requirements, and audit controls.</p></li><li><p>Collaborate with cybersecurity teams to remediate vulnerabilities and strengthen platform security.</p></li></ul><p>Technical Leadership &amp; Collaboration </p><ul><li><p>Provide technical leadership and mentorship to engineers and project teams.</p></li><li><p>Participate in architecture reviews and technology evaluations.</p></li><li><p>Collaborate with development teams to improve deployment efficiency and application reliability.</p></li><li><p>Establish engineering standards, documentation, and operational runbooks.</p></li><li><p>Lead complex infrastructure and automation initiatives across multiple teams.</p></li></ul><p>Research and Innovation: Stay abreast of emerging technologies, industry trends, and best practices. Research new tools, frameworks, and methodologies that can enhance solution designs and delivery. Participate in the evaluation and selection of appropriate technologies, frameworks, and tools to support the development and deployment of applications. </p><p> </p><p><strong>Knowledge, Skills &amp; Abilities:</strong></p><ul><li><p>Scope: Supports enterprise-wide applications, cloud platforms, and infrastructure environments. Leads medium to large-scale DevOps and automation initiatives. Influences engineering standards, tooling strategies, and platform architecture decisions. Works across multiple business and technology domains.  CCL only.</p></li><li><p>Problem Solving: Resolves highly complex technical issues involving infrastructure, deployments, integrations, and system reliability. Identifies opportunities for automation and process optimization.  Analyzes system performance, availability, and scalability challenges.  Balances operational stability with delivery speed and innovation.</p></li><li><p>Impact: Significant impact on the organization&#x27;s ability to deliver technology solutions quickly, securely, and reliably. Through the design and implementation of automated deployment pipelines, cloud infrastructure, and operational tooling, this role reduces manual effort, accelerates software delivery, and improves system stability across enterprise platforms.</p></li><li><p>Leadership: Serves as a technical mentor and subject matter expert. Provides guidance to DevOps engineers, software engineers, and infrastructure teams.  Leads technical workstreams and major implementation efforts. Influences organizational DevOps practices and engineering culture.</p></li></ul><p> </p><p>For all roles:</p><ul><li><p>Knowledge: Understanding of workplace policies and procedures / Familiarity with team collaboration tools and techniques.</p></li><li><p>Skills: Strong time management and organizational skills</p></li><li><p>Abilities: Ability to maintain reliable and consistent attendance / Capacity to be punctual and meet deadlines / Ability to collaborate effectively with colleagues and work as part of a team / Demonstrated professionalism in all interactions and tasks.</p></li></ul><p> </p><p><strong>Essential/Minimum qualifications:</strong></p><ul><li><p>Bachelor&#x27;s Degree in information technology, computer science, or related field or related equivelant work experience </p></li><li><p>Strong experience with CI/CD tools (Azure DevOps, GitHub Actions, GitLab CI/CD, Jenkins, Gitlab CI/CD, or similar)</p></li><li><p>Strong experience in Infrastructure as Code (Terraform, CloudFormation, Ansible, or similar)</p></li><li><p>Strong experience in at least one major cloud provider (Azure, AWS, or GCP; multi-cloud plus.</p></li><li><p>Expertise in Kubernetes, Terraform, CI/CD and cloud automation and container platforms.</p></li><li><p>Strong experience in GitOps methodologies and tools (e.g., ArgoCD), platform engineering, self-service infrastructure, developer enablement, reusable deployment patterns</p></li><li><p>Proficient in system monitoring tools including metrics, logging and alerting platforms                                </p></li><li><p>Expertise web-enabling technologies, web and administrative tools.           </p></li><li><p>Expertise in Source Control; Continuous Integration; Infrastructure Automation; Deployment Automation &amp; Orchestration; Mobile Device Management</p></li><li><p>Solid understanding of networking, security best practices, and system architecture.</p></li><li><p>Ability to think critically, solve problems creatively, and perform root cause analysis. </p></li><li><p>Flexibility to adjust to changing priorities and deadlines. </p></li><li><p>Good analytical skills and attention to detail with a strong business sense. </p></li><li><p>Ability to manage tight deadlines, prioritize workload, and achieve effective results. </p></li><li><p>Ability to write comprehensive and concise technical communications (i.e. email, reports, presentations) to be consumed by non-technical individuals.   </p></li><li><p>Ability to create PowerPoint presentations that are informative and engaging and deliver them to various audiences including management. </p></li><li><p>Very good communication, team building, conflict management, and organizational skills. </p></li><li><p>Proven track record of working collaboratively with cross functional teams to achieve common goals and drive results.</p></li><li><p>Ability to quickly learn new technologies and concepts.  </p></li></ul><p> </p><p>Preferred certifications: </p><ul><li><p>AWS or Azure Certification</p></li><li><p>Certified Kubernetes Administrator (CKA) or Certified Kubernetes Security Specialist (CKS)</p></li><li><p>Project Management Professional (PMP - PMI</p></li><li><p>Information Technology Infrastructure Library (ITIL)</p></li></ul><p> </p><p>Preferred Experience:</p><ul><li><p>1+ year in the cruise and/or travel industry</p></li></ul><p><strong>Essential experience required</strong></p><ul><li><p>5+ Years</p></li><li><p>Experience in ITIL and IT project management via various SDLCs (i.e. Agile, Waterfall, Hybrid, etc.)</p></li><li><p>Participating in cross-functional technology teams.</p></li><li><p>Experience in DevOps, Cloud Engineering, Infrastructure Engineering, or related technical disciplines.</p></li><li><p>3+ Years</p></li><li><p>Experience designing and supporting enterprise CI/CD platforms.</p></li><li><p>Experience supporting large-scale production environments </p></li><li><p>Experience in network, server, and application-status monitoring.</p></li><li><p>Experience in cloud infrastructure and modern application deployment methodologies.</p></li></ul><p> </p><p>Travel: No or very little travel likely</p><p> </p><p>Work Conditions: Work primarily in a climate-controlled environment with minimal safety/health hazard potential.</p><p> </p><p>Physical Demands: Must be able to remain in a stationary position at a desk and/or computer for extended periods of time.</p><p> </p><p>This position is classified as “remote.”  As a remote role, it allows employees to work full-time from their home. It may also require regular travel to Carnival headquarters in Miami, FL for in-office collaboration.  Sourcing of candidates is primarily done in Carnival’s remote hubs of Orlando, Tampa, Atlanta, Houston, and Dallas.  If the search is extended past those areas, candidates must be located in one of the following U.S. states:  FL, GA, TX and NC </p><p> </p><p>Offers to selected candidates will be made on a fair and equitable basis, taking into account specific job-related skills and experience.   </p><p> </p><p>At Carnival, your total rewards package is much more than your base salary. All non-sales roles participate in an annual cash bonus program, while sales roles have an incentive plan. Director and above roles may also be eligible to participate in Carnival’s discretionary equity incentive plan. Plus, Carnival provides comprehensive and innovative benefits to meet your needs, including: </p><p> </p><ul><li>Health Benefits: <ul><li>Cost-effective medical, dental and vision plans </li><li>Employee Assistance Program and other mental health resources </li><li>Additional programs include company paid term life insurance and disability coverage  </li></ul></li><li>Financial Benefits: <ul><li>401(k) plan that includes a company match </li><li>Employee Stock Purchase plan </li></ul></li><li>Paid Time Off <ul><li>Holidays – All full-time and part-time with benefits employees receive days off for 8 company-wide holidays, plus 2 additional floating holidays to be taken at the employee’s discretion.  </li><li>Vacation Time – All full-time employees at the manager and below level start with 14 days/year; director and above level start with 19 days/year.  Part-time with benefits employees receive time off based on the number of hours they work, with a minimum of 84 hours/year.  All employees gain additional vacation time with further tenure. </li><li>Sick Time – All full-time employees receive 80 hours of sick time each year.  Part-time with benefits employees receive time off based on the number of hours they work, with a minimum of 60 hours each year.   </li></ul></li><li>Other Benefits <ul><li>Complementary stand-by cruises, employee discounts on confirmed cruises, plus special rates for family and friends </li><li></li></ul></li></ul></div>
+
+<a class="apply" href="https://weworkremotely.com/remote-jobs/carnival-corporation-engineer-sr-devops" target="_blank" rel="noopener">去原站申请 | Apply on We Work Remotely ↗</a>
+<footer>信息采集自 We Work Remotely,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from We Work Remotely; refer to the original posting.</footer>
+</body></html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ICF | Senior DevOps Engineer</title>
+<meta property="og:title" content="ICF | Senior DevOps Engineer">
+<meta property="og:description" content="ICF · 📍Virginia">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="ICF · 📍Virginia">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Senior DevOps Engineer</h1>
+<div class="meta">🏢 ICF · 📍 Virginia · 软件开发 | Software Development · 其他/未标明 | Other / Unspecified · 来源 We Work Remotely · 发布 2026-07-16</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://weworkremotely.com/remote-jobs/icf-senior-devops-engineer" target="_blank" rel="noopener">去原站申请 | Apply on We Work Remotely ↗</a>
+<div class="jd"><p>
+  <strong>Headquarters:</strong> Nationwide Remote Office (US99)
+    <br><strong>URL:</strong> <a href="http://icf.com" rel="nofollow noopener" target="_blank">http://icf.com</a>
+</p>
+
+<p><b>The Company</b></p><p>ICF is a mission-driven company filled with people who care deeply about improving the lives of others and making the world a better place. Our core values include Embracing Difference; we seek candidates who are passionate about building a culture that encourages, embraces, and hires dimensions of difference. </p><p> </p><p>Our Health Engineering Solutions team works side by side with customers to articulate a vision for success, and then make it happen. We know success doesn&#x27;t happen by accident. It takes the right team of people, working together on the right solutions for the customer. We are looking for a seasoned DevOps Engineer who will be a key driver to make this happen.</p><p> </p><p>In this position, you will be part of the team building best in class health care reporting service. Learn and grow using AWS Infrastructure, DevSecOps, Agile Scrum, incremental delivery philosophy with highly supportive peers constantly sharing subject matter expertise.</p><p> </p><p>Our core work hours are 9am - 5pm Eastern Time with the option to start earlier or work later depending on your time zone.</p><p> </p><p><b>Responsibilities:</b></p><ul><li>Implement best in class cloud-based solutions in AWS using infrastructure as code</li><li>Deploy, setup, and run infrastructure configurations for various AWS services, utilizing Infrastructure as Code such as Terraform</li><li>Engage with technical stakeholders including but not limited to application development, networking, infrastructure, information security, risk, enterprise identity and access management, and security operations</li><li>Enable and optimize the automation of application and infrastructure environments</li><li>Be part of a team where you collaborate to build cloud infrastructure, with an understanding of AMI, Containers and serverless functions</li><li>Develop, maintain and improve continuous integration/continuous delivery (CI/CD) pipelines for delivering features, fixes and system updates in development, integration and production environments.</li><li>Set up, integrate, and maintain a scalable, stable set of CI/CD tools to support development, testing, and security scanning.</li><li>Implement Amazon CloudWatch and other third party monitoring solutions to provide continuous monitoring capabilities, track all aspects of the system, infrastructure, performance, application errors and roll up metrics.</li><li>Analyze functional and non-functional business requirements, translate them into technical operational requirements, and propose CI/CD pipelines with tools and plugins.</li><li>Making a big impact as part of a small team that’s pushing boundaries</li></ul><p> </p><p><b>Professional Skills:</b></p><ul><li>Outstanding writing and verbal communication abilities</li><li>Meticulous attention to detail</li></ul><p> </p><p><b>Minimum Requirements:</b></p><ul><li>Bachelor&#x27;s degree</li><li>3+ years of experience in setting up CI/CD Pipelines with integration with open-source plugins.</li><li>3+ years of experience in DevOps/Agile/Scrum environments and development.</li><li>5+ years of strong hands-on experience with configuration management, cloud orchestration and automation tools with AWS environments.</li><li>5+ years of experience with provisioning and managing infrastructure as well as applications in AWS cloud environments.</li><li>2+ years of experience with identifying and implementing automation for Continuous Integration/Continuous Deployment.</li><li>5+ years of experience writing infrastructure as code using Terraform</li><li>Ability to obtain and maintain a Federal Public Trust clearance.</li><li>Must reside in the United States, be authorized to work in the United States, and perform all work within the United States.</li><li>Must have lived in the United States for at least three (3) of the last five (5) years.</li></ul><p> </p><p><b>Preferred:</b></p><ul><li>Working knowledge of Linux</li><li>Design and implement automated monitoring capabilities to generate dashboards with trends, useful messages, and immediate notifications, and provide real-time metrics using Splunk or similar services.</li><li>Knowledge of multi-account architecture, leveraging tools such as AWS Control Tower, SCPs, GuardRails, and Transit Gateways</li><li>Wide technology experience that may include cloud architecture, cloud migrations, applications development, networking, security, storage, analytics, or machine learning</li><li>AWS Solution Architect (Associate or Pro) certification.</li><li>Familiar with standard concepts, practices, and procedures such as NIST, FISMA, FedRamp and Common Criteria regulations and standards. </li><li>Familiarity with the MLOps, machine learning lifecycle and product landscape, for example: Amazon SageMaker, Apache Airflow, Looker, Trifacta etc. You don&#x27;t need to be an expert in all these.</li></ul><p> </p><p><b>Job Location:</b> This position requires that the job be performed in the United States.  If you accept this position, you should note that ICF does monitor employee work locations and blocks access from foreign locations/foreign IP addresses, and also prohibits personal VPN connections.</p><ul><li>Must be able to travel approximately 5%</li></ul><p></p><p></p><p><b>Working at ICF</b></p>ICF is a global advisory and technology services provider, but we’re not your typical consultants. We combine unmatched expertise with cutting-edge technology to help clients solve their most complex challenges, navigate change, and shape the future.<p></p><p></p><p>We can only solve the world&#x27;s toughest challenges by building a workplace that allows everyone to thrive. We are an equal opportunity employer. Together, our employees are empowered to share their expertise and collaborate with others to achieve personal and professional goals. For more information, please read our <a href="https://www.icf.com/legal/equal-employment-opportunity" rel="nofollow noopener" target="_blank">EEO</a> policy.</p><p></p><p>We will consider for employment qualified applicants with arrest and conviction records.</p><p> </p><p>Reasonable Accommodations are available, including, but not limited to, for disabled veterans, individuals with disabilities, and individuals with sincerely held religious beliefs, in all phases of the application and employment process. To request an accommodation, please email Candidateaccommodation@icf.com and we will be happy to assist. All information you provide will be kept confidential and will be used only to the extent  to provide needed reasonable accommodations.  </p><p></p><p>Read more about <a href="https://www.eeoc.gov/sites/default/files/2022-10/EEOC_KnowYourRights_screen_reader_10_20.pdf" rel="nofollow noopener" target="_blank">workplace discrimination rights</a> or our benefit offerings which are included in the <a href="https://www.icf.com/legal/equal-employment-opportunity" rel="nofollow noopener" target="_blank">Transparency in (Benefits) Coverage Act.</a> </p><p></p><p> </p><p></p><b>Candidate AI Usage Policy</b><p>At ICF, we are committed to ensuring a fair interview process for all candidates based on their own skills and knowledge. As part of this commitment, the use of artificial intelligence (AI) tools to generate or assist with responses during interviews (whether in-person or virtual) is not permitted. This policy is in place to maintain the integrity and authenticity of the interview process.  </p><p></p><p>However, we understand that some candidates may require accommodation that involves the use of AI. If such an accommodation is needed, candidates are instructed to contact us in advance at candidateaccommodation@icf.com. We are dedicated to providing the necessary support to ensure that all candidates have an equal opportunity to succeed.  </p><p><br> </p><p><b>Pay Range</b> - There are multiple factors that are considered in determining final pay for a position, including, but not limited to, relevant work experience, skills, certifications and competencies that align to the specified role, geographic location, education and certifications as well as contract provisions regarding labor categories that are specific to the position. </p><p></p><p>The pay range for this position based on full-time employment is:</p>$108,476.00 - $184,409.00<p></p><p></p><p></p><p></p>Nationwide Remote Office (US99)
+
+<p><strong>To apply:</strong> <a href="https://weworkremotely.com/remote-jobs/icf-senior-devops-engineer" rel="nofollow noopener" target="_blank">https://weworkremotely.com/remote-jobs/icf-senior-devops-engineer</a></p></div>
+
+<a class="apply" href="https://weworkremotely.com/remote-jobs/icf-senior-devops-engineer" target="_blank" rel="noopener">去原站申请 | Apply on We Work Remotely ↗</a>
+<footer>信息采集自 We Work Remotely,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from We Work Remotely; refer to the original posting.</footer>
+</body></html>

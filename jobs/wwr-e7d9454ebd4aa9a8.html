@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Castr | Sales Development Representative (SDR)</title>
+<meta property="og:title" content="Castr | Sales Development Representative (SDR)">
+<meta property="og:description" content="Castr · 📍Anywhere in the World">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="Castr · 📍Anywhere in the World">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Sales Development Representative (SDR)</h1>
+<div class="meta">🏢 Castr · 📍 Anywhere in the World · 市场营销 | Marketing · 全球 | Worldwide · 来源 We Work Remotely · 发布 2026-07-16</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://weworkremotely.com/remote-jobs/castr-sales-development-representative-sdr" target="_blank" rel="noopener">去原站申请 | Apply on We Work Remotely ↗</a>
+<div class="jd"><p>
+  <strong>Headquarters:</strong> Canada
+    <br><strong>URL:</strong> <a href="https://castr.com" rel="nofollow noopener" target="_blank">https://castr.com</a>
+</p>
+
+<h3>Sales Development Representative (SDR)</h3>
+<p><strong>Castr — Live Streaming and Video Technology</strong><br><strong>Full-time | Remote | Base salary + uncapped commission | Immediate start</strong></p>
+<h3>About Castr</h3>
+<p>Castr is a global live-streaming and video technology platform built for production agencies, broadcasters, corporate media teams, event companies, and organizations running business-critical video workflows.</p>
+<p>Our platform helps customers deliver live video, video on demand, OTT content, secure streaming experiences, and digital events to audiences around the world.</p>
+<p>We are expanding our outbound sales function and looking for confident, resilient, and commercially driven Sales Development Representatives to generate qualified new-business opportunities for our sales team.</p>
+<h3>Compensation</h3>
+<ul>
+<li>Competitive location-based base salary, determined by experience and local market rates<br><br></li>
+<li>Uncapped performance-based commission<br><br></li>
+<li>Clear monthly targets and commission criteria<br><br></li>
+<li>Additional earning potential for consistently exceeding targets</li>
+</ul>
+<p>This is a newly created outbound role, and the commission structure is designed to strongly reward qualified appointments and genuine sales opportunities.</p>
+<h3>The Role</h3>
+<p>This is a full-time, telephone-led outbound sales role focused on prospecting, lead generation and appointment setting.</p>
+<p>You will identify suitable businesses, reach relevant decision-makers, uncover potential requirements and create a consistent flow of qualified sales appointments.</p>
+<p>We are looking for genuine sales hunters: people who enjoy opening new doors, are motivated by results and earnings, and are comfortable speaking with businesses across the UK, Europe and North America.</p>
+<p>This is not a role for someone whose primary approach is sending automated LinkedIn messages or mass email campaigns. Email and LinkedIn may support your outreach, but the telephone will be your main sales channel.</p>
+<p>You must be comfortable picking up the phone, starting conversations, handling objections and continuing after rejection.</p>
+<p>Your objective is straightforward:</p>
+<p><strong>Generate qualified appointments and create new sales opportunities every day.</strong></p>
+<h3>Key Responsibilities</h3>
+<ul>
+<li>
+<p>Make a high volume of outbound calls to prospective customers</p>
+</li>
+<li>
+<p>Identify and contact relevant business decision-makers</p>
+</li>
+<li>
+<p>Generate qualified appointments for the sales team</p>
+</li>
+<li>
+<p>Research target companies, industries and accounts</p>
+</li>
+<li>
+<p>Uncover prospects’ live-streaming, video, digital-content and event requirements</p>
+</li>
+<li>
+<p>Identify upcoming events, active projects, contract-renewal dates and purchasing timescales</p>
+</li>
+<li>
+<p>Introduce Castr’s live-streaming, video-on-demand, OTT, CDN, monetisation and security capabilities</p>
+</li>
+<li>
+<p>Qualify each opportunity before arranging a sales meeting</p>
+</li>
+<li>
+<p>Follow up consistently with prospects by telephone</p>
+</li>
+<li>
+<p>Use email and LinkedIn to support telephone outreach where appropriate</p>
+</li>
+<li>
+<p>Maintain accurate records of calls, conversations, follow-ups and booked meetings</p>
+</li>
+<li>
+<p>Support the wider sales team with account research and pipeline development</p>
+</li>
+<li>
+<p>Work towards agreed targets for calls, conversations and qualified appointments</p>
+</li>
+<li>
+<p>Share feedback on objections, customer requirements, competitor activity and market trends</p>
+</li>
+</ul>
+<h3>Who We Are Looking For</h3>
+<p>You may be a strong fit if you:</p>
+<ul>
+<li>
+<p>Have strong sales-hunting instincts and enjoy finding new business</p>
+</li>
+<li>
+<p>Are motivated by targets, results and uncapped earning potential</p>
+</li>
+<li>
+<p>Are confident making high-volume outbound calls</p>
+</li>
+<li>
+<p>Are comfortable speaking with senior business decision-makers</p>
+</li>
+<li>
+<p>Can communicate clearly, confidently and professionally</p>
+</li>
+<li>
+<p>Are resilient, persistent and able to handle rejection</p>
+</li>
+<li>
+<p>Are comfortable following up with prospects multiple times</p>
+</li>
+<li>
+<p>Can quickly learn new products and technical concepts</p>
+</li>
+<li>
+<p>Are organised and able to manage a busy daily workload</p>
+</li>
+<li>
+<p>Can work independently and remain productive in a remote environment</p>
+</li>
+<li>
+<p>Are comfortable working flexible hours to reach prospects in different time zones</p>
+</li>
+<li>
+<p>Are available to start quickly</p>
+</li>
+</ul>
+<p>Previous experience in live streaming or video technology is not required.</p>
+<p>We are more interested in confidence, work ethic, commercial instincts, resilience and the ability to learn quickly.</p>
+<h3>Relevant Experience</h3>
+<p>Strong candidates may come from backgrounds such as:</p>
+<ul>
+<li>
+<p>Appointment setting</p>
+</li>
+<li>
+<p>Telesales</p>
+</li>
+<li>
+<p>Sales development</p>
+</li>
+<li>
+<p>Business development</p>
+</li>
+<li>
+<p>Lead generation</p>
+</li>
+<li>
+<p>Recruitment</p>
+</li>
+<li>
+<p>Fundraising</p>
+</li>
+<li>
+<p>Events or hospitality sales</p>
+</li>
+<li>
+<p>Media or advertising sales</p>
+</li>
+<li>
+<p>Membership or subscription sales</p>
+</li>
+<li>
+<p>Customer retention</p>
+</li>
+<li>
+<p>Other high-volume telephone-based sales roles</p>
+</li>
+</ul>
+<p>An interest in technology, live events, video production, media, marketing or digital content would be beneficial, but it is not essential.</p>
+<h3>Sales Tools and Technology</h3>
+<p>Experience with CRM systems, sales-engagement tools or prospecting platforms would be beneficial.</p>
+<p>At Castr, we believe technology should support the sales process, not replace genuine conversations with potential customers.</p>
+<h3>Remote-Working Requirements</h3>
+<p>This is a full-time, work-from-home position.</p>
+<p>You must have:</p>
+<ul>
+<li>
+<p>Your own reliable computer</p>
+</li>
+<li>
+<p>A professional-quality headset</p>
+</li>
+<li>
+<p>A quiet and suitable place to work</p>
+</li>
+<li>
+<p>A stable and reliable internet connection</p>
+</li>
+</ul>
+<p>The role will involve contacting prospects across the UK, Europe and North America. Some later working hours may be required to reach North American companies.</p>
+<p>Working schedules will be agreed in advance.</p>
+<p>This is not a quiet or routine 9-to-5 role. It is suited to people who want to perform, earn and progress.</p>
+<h3>Career Progression</h3>
+<p>Strong performers will have opportunities to progress into positions such as:</p>
+<ul>
+<li>
+<p>Senior Sales Development Representative</p>
+</li>
+<li>
+<p>Business Development Representative</p>
+</li>
+<li>
+<p>Account Executive</p>
+</li>
+</ul>
+<p>Progression will be based on performance, consistency, attitude and the ability to create genuine sales opportunities.</p>
+<h3>What Success Looks Like</h3>
+<p>Success in this role means:</p>
+<ul>
+<li>
+<p>Consistently achieving outbound activity targets</p>
+</li>
+<li>
+<p>Booking qualified appointments for the sales team</p>
+</li>
+<li>
+<p>Speaking with relevant decision-makers and influencers</p>
+</li>
+<li>
+<p>Identifying businesses with genuine requirements and realistic buying timescales</p>
+</li>
+<li>
+<p>Providing accurate qualification information for every meeting</p>
+</li>
+<li>
+<p>Following up consistently and professionally</p>
+</li>
+<li>
+<p>Contributing directly to Castr’s sales pipeline and revenue growth</p>
+</li>
+</ul>
+<p>Appointment quality is just as important as appointment volume.</p>
+<p>A qualified meeting should involve a relevant decision-maker or significant influencer from a suitable organisation with a genuine or potential requirement for live streaming, video on demand, OTT, digital events or related video technology.</p>
+<h3>Interview Process</h3>
+<p>The interview process may include:</p>
+<ol>
+<li>
+<p>An initial screening interview</p>
+</li>
+<li>
+<p>A short telephone-based sales exercise</p>
+</li>
+<li>
+<p>A final interview with the Castr sales leadership team</p>
+</li>
+</ol>
+<p>Candidates may be asked to demonstrate how they would open a cold call, qualify a prospect and respond to common objections.</p>
+
+<p><strong>To apply:</strong> <a href="https://weworkremotely.com/remote-jobs/castr-sales-development-representative-sdr" rel="nofollow noopener" target="_blank">https://weworkremotely.com/remote-jobs/castr-sales-development-representative-sdr</a></p></div>
+
+<a class="apply" href="https://weworkremotely.com/remote-jobs/castr-sales-development-representative-sdr" target="_blank" rel="noopener">去原站申请 | Apply on We Work Remotely ↗</a>
+<footer>信息采集自 We Work Remotely,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from We Work Remotely; refer to the original posting.</footer>
+</body></html>

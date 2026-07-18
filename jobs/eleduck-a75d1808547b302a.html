@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>电鸭直招帖 | 西南行业头部汽车贸易公司招募远程工作者</title>
+<meta property="og:title" content="电鸭直招帖 | 西南行业头部汽车贸易公司招募远程工作者">
+<meta property="og:description" content="电鸭直招帖 · 📍全职远程(电鸭·中文社区)">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="电鸭直招帖 · 📍全职远程(电鸭·中文社区)">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>西南行业头部汽车贸易公司招募远程工作者</h1>
+<div class="meta">🏢 电鸭直招帖 · 📍 全职远程(电鸭·中文社区) · 运营与人力 | Operations &amp; HR · 亚太 | Asia-Pacific · 来源 电鸭社区 · 发布 2026-07-17</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://eleduck.com/posts/wwfZDB" target="_blank" rel="noopener">去原站申请 | Apply on 电鸭社区 ↗</a>
+<div class="jd"><h3>【企业直招｜全职远程】成都宏盟云科技招聘市场、跨境履约、新媒体运营｜月薪8K+岗位激励</h3>
+<p>大家好，我们是成都宏盟云科技有限公司，这次想通过电鸭招聘三个岗位：</p>
+<ul>
+<li>
+<p>市场专员</p>
+</li>
+<li>
+<p>跨境履约专员</p>
+</li>
+<li>
+<p>新媒体运营专员</p>
+</li>
+</ul>
+<p>这是公司直接招聘，不是猎头、中介或项目外包。三个岗位合并在一篇帖子里发布，也方便大家完整了解我们正在做的事情。</p>
+<h3>我们是谁</h3>
+<p>公司总部在成都，主要从事汽车贸易业务，连接国内车主、车商及其他车源提供方与海外汽车市场。</p>
+<p>业务从国内车源开发开始，经过车辆评估、检测、合同签署、出口手续、运输清关和海外交付，最终完成车辆交易与结算。团队成员分别负责市场、履约、新媒体和海外销售等环节。</p>
+<p>我们采用分布式远程办公，并不是为了临时节省办公成本，而是因为车源来自全国，业务也面向不同国家和地区。很多工作无法依靠单一城市的线下团队完成，远程协作是我们的实际工作方式。</p>
+<h3>一、市场专员</h3>
+<h3>你要做的事</h3>
+<ul>
+<li>
+<p>开发个人车主、国内车商、汽贸合作驾驶员和分公司合伙人等车源渠道；</p>
+</li>
+<li>
+<p>通过小红书、抖音、社群及其他渠道寻找潜在合作对象；</p>
+</li>
+<li>
+<p>介绍公司的汽车贸易模式，解答基础合作问题；</p>
+</li>
+<li>
+<p>收集车辆资料，提交车辆评估并持续跟进；</p>
+</li>
+<li>
+<p>协助完成看车、检测、签约、交车及后续销售衔接；</p>
+</li>
+<li>
+<p>做好客户沟通记录和高意向车源登记。</p>
+</li>
+</ul>
+<h3>我们希望你</h3>
+<ul>
+<li>
+<p>沟通清楚，有耐心，能站在客户角度解释问题；</p>
+</li>
+<li>
+<p>有销售、商务拓展、汽车行业或线上获客经验；</p>
+</li>
+<li>
+<p>能主动寻找机会，不完全依赖公司分配名单；</p>
+</li>
+<li>
+<p>对结果负责，能持续跟进而不是只完成第一次联系；</p>
+</li>
+<li>
+<p>适应远程协作，有基本的文字总结和工作汇报能力。</p>
+</li>
+</ul>
+<h3>薪资</h3>
+<p>月薪8000元：</p>
+<ul>
+<li>
+<p>基础薪资5600元；</p>
+</li>
+<li>
+<p>任务完成薪资2400元；（任务完成度是指远程工作的基础任务，在每天8小时工作时间内100%能完成的工作，不是绩效，更不已市场结果为核算标准）</p>
+</li>
+<li>
+<p>另按公司正式制度享受车源收购及销售提成。</p>
+</li>
+</ul>
+<p>具体提成口径、计算条件和结算节点会在面试时依据正式制度说明，不用模糊的“上不封顶”代替实际规则。</p>
+<p>申请时可以附上销售、商务拓展、汽车行业、自媒体获客或客户转化方面的经历。</p>
+
+<h3>二、跨境履约专员</h3>
+<h3>你要做的事</h3>
+<ul>
+<li>
+<p>对接车辆检测、合同及交易手续；</p>
+</li>
+<li>
+<p>衔接车辆出口、报关、订舱、运输和清关流程；</p>
+</li>
+<li>
+<p>跟踪车辆从国内交付到海外落地的全部节点；</p>
+</li>
+<li>
+<p>建立车辆履约档案，整理合同、单证、检测和物流资料；</p>
+</li>
+<li>
+<p>向相关同事同步车辆手续、运输、交付及回款进度；</p>
+</li>
+<li>
+<p>发现流程异常时及时协调处理并上报风险。</p>
+</li>
+</ul>
+<h3>我们希望你</h3>
+<ul>
+<li>
+<p>有外贸、汽车出口、国际物流、报关单证或项目履约经验；</p>
+</li>
+<li>
+<p>做事细致，能够同时管理多个流程节点；</p>
+</li>
+<li>
+<p>对时间、文件和数据比较敏感，不遗漏重要手续；</p>
+</li>
+<li>
+<p>有风险意识，遇到不确定问题会先核实再处理；</p>
+</li>
+<li>
+<p>能和市场、销售、检测、物流等不同岗位协同。</p>
+</li>
+</ul>
+<h3>薪资</h3>
+<p>月薪8000元：</p>
+<ul>
+<li>
+<p>基础薪资5600元；</p>
+</li>
+<li>
+<p>任务完成薪资2400元；（任务完成度是指远程工作的基础任务，在每天8小时工作时间内100%能完成的工作，不是绩效，更不已市场结果为核算标准）</p>
+</li>
+<li>
+<p>按车辆销售利润的15%计提岗位提成。</p>
+</li>
+</ul>
+<p>申请时可以附上外贸、单证、物流、汽车出口或复杂项目交付方面的经历。</p>
+
+<h3>三、新媒体运营专员</h3>
+<h3>你要做的事</h3>
+<ul>
+<li>
+<p>负责小红书、抖音及海外社媒平台的内容策划和发布；</p>
+</li>
+<li>
+<p>围绕国内车主、车商和车源合作制作图文或短视频内容；</p>
+</li>
+<li>
+<p>维护账号日常运营，分析内容数据并持续复盘；</p>
+</li>
+<li>
+<p>承接评论和私信线索，将有效客户转交市场流程；</p>
+</li>
+<li>
+<p>配合市场部测试不同选题、内容形式和获客方法；</p>
+</li>
+<li>
+<p>做好素材、内容、数据和线索的整理记录。</p>
+</li>
+</ul>
+<h3>我们希望你</h3>
+<ul>
+<li>
+<p>有小红书、抖音或海外社媒其他内容平台的实际运营经验；</p>
+</li>
+<li>
+<p>能独立完成选题、文案和基础图文或短视频制作；</p>
+</li>
+<li>
+<p>有网感，但不依赖夸大、虚构或擦边内容获取流量；</p>
+</li>
+<li>
+<p>关注获客和转化，不只关注播放量；</p>
+</li>
+<li>
+<p>能根据数据调整内容，而不是机械完成发布数量。</p>
+</li>
+</ul>
+<h3>薪资</h3>
+<p>月薪8000元：</p>
+<ul>
+<li>
+<p>基础薪资5600元；</p>
+</li>
+<li>
+<p>任务完成薪资2400元；（任务完成度是指远程工作的基础任务，在每天8小时工作时间内100%能完成的工作，不是绩效，更不已市场结果为核算标准）</p>
+</li>
+<li>
+<p>绩效及其他奖励按照公司正式制度执行。</p>
+</li>
+</ul>
+<p>申请时请尽量附上做过的账号、代表作品、内容数据或相关案例。</p>
+
+<h3>工作方式和共同制度</h3>
+<ul>
+<li>
+<p>工作性质：全职远程；</p>
+</li>
+<li>
+<p>每月22个工作日，不固定双休，休息根据工作安排协调；</p>
+</li>
+<li>
+<p>9:00至19:00为在线备勤范围；</p>
+</li>
+<li>
+<p>客户及公司消息原则上需要在20分钟内响应；</p>
+</li>
+<li>
+<p>在线备勤不等于连续坐在电脑前工作10小时，具体工作可以根据任务自行安排，但工作日需要保持可联系并及时处理事项；</p>
+</li>
+<li>
+<p>试用期3个月，试用期采用同一月薪结构；</p>
+</li>
+<li>
+<p>薪资每月15日发放；</p>
+</li>
+<li>
+<p>五险一金、休假及其他事项以正式劳动合同和公司制度为准；</p>
+</li>
+<li>
+<p>根据业务需要，可能安排线上会议、出差、线下验车或履约节点处理。</p>
+</li>
+</ul>
+<h3>这份工作可能适合你</h3>
+<ul>
+<li>
+<p>希望长期全职远程，而不是把远程理解为临时兼职；</p>
+</li>
+<li>
+<p>能管理自己的时间，不需要每天有人在线监督；</p>
+</li>
+<li>
+<p>愿意先学习业务资料和工作流程；</p>
+</li>
+<li>
+<p>遇到问题会主动沟通，也能把处理结果整理清楚；</p>
+</li>
+<li>
+<p>在意真实业务结果，愿意和团队一起优化方法。</p>
+</li>
+</ul>
+<h3>这份工作可能不太适合你</h3>
+<ul>
+<li>
+<p>只接受固定朝九晚六，其他时间完全无法响应；</p>
+</li>
+<li>
+<p>希望同时从事多份全职工作；</p>
+</li>
+<li>
+<p>不愿意学习汽车贸易业务，只想机械完成任务；</p>
+</li>
+<li>
+<p>不习惯文字协作、任务记录和远程工作汇报；</p>
+</li>
+<li>
+<p>对客户跟进、任务结果和时间节点不敏感。</p>
+</li>
+</ul>
+<h3>招聘流程</h3>
+<ol>
+<li>
+<p>在电鸭点击“申请该职位”并提交简历；</p>
+</li>
+<li>
+<p>我们查看简历和相关经历；</p>
+</li>
+<li>
+<p>符合岗位方向的候选人进行线上沟通；</p>
+</li>
+<li>
+<p>进入正式面试，确认岗位、薪资制度和工作要求；</p>
+</li>
+<li>
+<p>双方确认后签署合同并参加岗前学习。</p>
+</li>
+</ol>
+<p>请在申请中注明应聘岗位。暂时不在帖子里公开手机号、微信或其他联系方式，后续沟通统一通过电鸭站内进行。</p>
+<p>我们会认真查看每一份申请，也会友善回复岗位相关问题。岗位暂停或招满后，我们会及时更新帖子状态。</p>
+<p>最后想说一句：</p>
+<p>我们希望加入的同事把这里当作一份有明确薪酬、责任和结果要求的长期工作，也愿意在理解业务之后，和团队一起把流程和方法做得更好。远程工作给了大家空间，也更依赖信任、自律和主动沟通。</p>
+<p>比起漂亮的表达，我们更看重靠谱、真实和持续把事情做好。</p></div>
+
+<a class="apply" href="https://eleduck.com/posts/wwfZDB" target="_blank" rel="noopener">去原站申请 | Apply on 电鸭社区 ↗</a>
+<footer>信息采集自 电鸭社区,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from 电鸭社区; refer to the original posting.</footer>
+</body></html>

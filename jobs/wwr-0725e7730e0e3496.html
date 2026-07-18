@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Farmers | Data Science Manager - Marketing</title>
+<meta property="og:title" content="Farmers | Data Science Manager - Marketing">
+<meta property="og:description" content="Farmers · 📍Anywhere in the World">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="Farmers · 📍Anywhere in the World">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Data Science Manager - Marketing</h1>
+<div class="meta">🏢 Farmers · 📍 Anywhere in the World · 市场营销 | Marketing · 全球 | Worldwide · 来源 We Work Remotely · 发布 2026-07-16</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://weworkremotely.com/remote-jobs/farmers-data-science-manager-marketing" target="_blank" rel="noopener">去原站申请 | Apply on We Work Remotely ↗</a>
+<div class="jd"><p>
+  <strong>Headquarters:</strong> R_US - United States
+    <br><strong>URL:</strong> <a href="http://farmersinsurance.com" rel="nofollow noopener" target="_blank">http://farmersinsurance.com</a>
+</p>
+
+
+<p><strong>We are Farmers – where ambition meets opportunity.</strong></p>
+<p> </p>
+<p>At Farmers, we’re not just known for unforgettable jingle – we’re a team with a passion for purpose and making a real difference in people’s lives. We deliver peace of mind when it matters most. Our results-driven, high-performance culture thrives on creativity, accountability and bold solutions. Here, growth isn’t just a goal – it’s a way of life for both the organization and every individual on our team. We tackle challenges head-on, learn from every experience and measure our impact on the customers who trust us.</p>
+<p> </p>
+<p>Join an award-winning,  equal opportunity employer, where you’ll find more than a job – you’ll find a supportive community. Enjoy competitive benefits, take part in meaningful volunteer projects, and help shape the future alongside talented colleagues across all backgrounds. At Farmers, helping others is at the heart of what we do.</p>
+<p> </p>
+<p>Ready to make your mark? Discover our vibrant culture and explore career opportunities at <a href="http://www.farmers.com/careers/corporate" rel="nofollow noopener" target="_blank">www.Farmers.com/careers/corporate</a>. Connect with us on <a href="https://www.instagram.com/thisisfarmers/" rel="nofollow noopener" target="_blank">Instagram</a>, <a href="https://www.linkedin.com/company/farmers-insurance/" rel="nofollow noopener" target="_blank">LinkedIn</a> and <a href="https://www.tiktok.com/@thisisfarmers" rel="nofollow noopener" target="_blank">TikTok</a>, and let’s build something incredible together!</p>
+<p> </p>
+<p>Workplace: Hybrid ( #LI-Hybrid ), Remote ( #LI-Remote )</p>
+<p>Farmers believes in a culture of collaboration, creativity, and innovation, which thrives when we have the ability to work flexibly in a virtual setting as well as the opportunity to be together in person. Our hybrid work environment combines the best of both worlds with at least three (3) days in office and up to two (2) days virtual for employees who live within fifty (50) miles of a Farmers corporate office. Applicants beyond fifty (50) miles may still be considered.</p>
+<h3>Job Summary</h3> <ul>
+<li>Utilizes in-depth knowledge and experience to apply advanced analytics and modeling to improve business results. Leverages customer information and behavioral data to influence strategic business decisions while using complex, innovative analytics, multi-variate models, machine learning and data mining technologies.</li>
+<li>Leads less complex projects operationalizing business decisions and works independently, receiving minimal guidance from manager.</li>
+<li>The role mentors, coaches, and trains less experienced team members and supervises direct reports who are individual contributors.</li>
+</ul><h3>Essential Job Functions</h3> <ul>
+<li>Utilizes broad knowledge of consumer analytics including retention models, agency economics, and lead optimization in their daily work. Utilizes in-depth knowledge of advanced programing, complex ETL and specialized modeling methods and execute projects. Demonstrates clean reusable code and effective documentation, encourages others to do the same. Acts as the main a contributor to multiple phases of a data science project (ideation, experiment design, EDA, feature engineering, model building, deployment, etc. ). Utilizes a strong sense of ownership and contributes to multiple tasks simultaneously. Executes on complex and often vague business challenges involving data science.</li>
+<li>Succeeds in projects by scoping, defining measures of success, utilizing a data science vision for project success, and accomplishes successfully with some vague timelines. Executes on broad projects independently, with a sense of urgency. Partners closely with IT, business, and data management/engineering teams to understand, utilize, and improve our data infrastructure.   Advises on difficult matters and serves as an objective and transparent partner to drive fact-based decision making and a measures of success culture. Develops presentations and presents to leadership. Regularly communicates complex technical material understandable to non-technical associates.</li>
+<li>Manages complex model deployments via established MLOps techniques. Works with analytics and IT teams to deploy models/rules in various platforms and support testing of new solutions. Helps to steer MLOps environment improvements. Supervises, guides, coaches, and manages the performance of direct reports. Delivers regular feedback and supports professional deve lopment. Relies on emerging skill in employee engagement to promote a high-performance culture where excellence is standard and innovation is actively encouraged.</li>
+</ul><h3>Physical Actions</h3> <ul>
+<li>Job is performed in-person at a Farmers office or virtually at an approved alternative work location. The physical work environment is indoors and climate-controlled with adequate lighting and ventilation. Normal and customary distractions include background noise produced by office equipment and chatter among people, as well as interruptions. Frequently sits for prolonged periods of time, up to a full shift. Occasionally moves about the workplace including, navigating stairs, ramps, and level or uneven surfaces. Occasionally moves, pushes, pulls, lifts, carries, and/or places objects or materials weighing up to 25 pounds without assistance. Frequently uses shoulders, arms, hands, and fingers to manipulate equipment, tools, and objects necessary to perform job duties. Frequently performs fine motor tasks such as typing, mousing, or writing, up to a full shift. Rarely performs movements such as bending, stooping, crouching, kneeling, twisting, and reaching overhead or below the knees. Possesses clear vision, with or without correction, to visually read and verify information. Relies on depth perception and peripheral vision to navigate the work environment visually by identifying barriers, changes in terrain and locating objects. Possesses adequate hearing, with or without correction, to communicate with co-workers, respond promptly to auditory signals or alarms, and discern sounds essential for maintaining safety and productivity in the workplace. Jobs in this category require rare, if any, travel.</li>
+</ul><h3>Education Requirements</h3> <ul>
+<li>High School Diploma or equivalent required. Masters degree preferred in data science, statistics, mathematics, business analytics or related.</li>
+</ul><h3>Experience Requirements</h3> <ul>
+<li>Minimum five years of work experience required in data analysis, statistical or mathematical modeling, or related. Experience in insurance industry preferred.</li>
+<li>Python experience is required.</li>
+<li>CLTV experience is required.</li>
+<li>ML Ops experience preferred.</li>
+<li>Lead routing experience highly preferred.</li>
+</ul><h3>Additional Qualification</h3> Strong verbal communication and listening skills. Strong storytelling skills with ability to communicate complex data insights clearly to technical and non-technical audiences. Demonstrated written communication skills. Demonstrated problem solving skills. Effective interpersonal skills. Ability to influence internal and/or external constituents. Demonstrated analytical skills. Possesses strong technical aptitude. Seeks to acquire knowledge in area of specialty. Proficient in Microsoft Office Suite. Demonstrated time management and priority setting skills. Able to handle shifting priorities. Strong proficiency working on large-scale structured and unstructured multidimensional data using in-depth knowledge of open-source cloud-enabled analytical programming languages. Strong ability to consult on data extraction, data manipulation and data design for statistical, modeling and monitoring needs. In-depth knowledge of data analysis, manipulation tools (SQL, Python, SAS, R, and/or Snowflake) and cloud computing services (AWS). In-depth knowledge of data visualization tools (example, Tableau, Power BI). Strong proficiency in using explanatory, diagnostic, and inferential techniques such as experimental design, hypothesis testing, clustering analysis, time series and other statistical modeling algorithms with the ability to decide the appropriate methodology for the purpose. Strong proficiency in predictive and prescriptive modeling using advanced machine learning and deep learning techniques. In-depth knowledge of ML/AI model deployment best practices. Able to adapt quickly to new technologies. In-depth knowledge of coding standards and version control (Git). Working knowledge of data ethics and data privacy.
+<p><strong>Benefits</strong></p>
+<ul>
+<li>Farmers offers a competitive salary commensurate with experience, qualifications and location.<br>o CA Only: $115,275 - $196,130<br>o CO Only: $108,375 - $169,070 <br>o  HI/IL/MN/VT Only: $108,375 - $181,060<br>o MA Only: $108,375 - $181,060 </li>
+<li>o MD Only: $108,375 - $181,060<br>o DC/NJ/NY/OH Only: $108,375 - $196,130 <br>         o Albany County, NY/Cleveland, OH: $115,275 - $169,070 <br>o WA Only:  $108,375 - $205,750 </li>
+<li>Bonus Opportunity (based on Company and Individual Performance)</li>
+<li>401(k)</li>
+<li>Medical</li>
+<li>Dental</li>
+<li>Vision</li>
+<li>Health Savings and Flexible Spending Accounts</li>
+<li>Life Insurance</li>
+<li>Paid Time Off</li>
+<li>Paid Parental Leave</li>
+<li>Tuition Assistance</li>
+<li>For more information, review “What we offer” on <a href="https://www.farmers.com/careers/corporate/#offer" rel="nofollow noopener" target="_blank">https://www.farmers.com/careers/corporate/#offer</a></li>
+</ul>
+<p> </p>
+<p>Job Location(s): R_US - United States</p>
+<p> </p>
+<p>Anticipated application deadline: At Farmers, the recruitment process is designed to ensure that we find the best talent to join our team. As part of this process, we typically close open positions within 8 to 21 days after posting. If you are interested in any of our open positions, we encourage you to submit your application promptly.</p>
+<p> </p>
+<p>Farmers will consider for employment all qualified applicants, including those with criminal histories, in accordance with the Los Angeles Fair Chance Initiative for Hiring Ordinance or other applicable law.  Pursuant to 18 U.S.C. Section 1033, Farmers is prohibited from employing any individual who has been convicted of any criminal felony involving dishonesty or a breach of trust without prior written consent from the state Department of Insurance.</p>
+<p> </p>
+<p><em>It is unlawful in Massachusetts to require or administer a lie detector test as a condition of employment or continued employment. An employer who violates this law shall be subject to criminal penalties and civil liability.</em></p>
+<p> </p>
+<p><em>Farmers is an Equal Opportunity Employer and does not discriminate in any employer/employee relations based on race, color, religion, gender, sexual orientation, gender expression, genetic information, national origin, age, disability, marital status, military and veteran&#x27;s status, or any other basis protected by applicable discrimination laws.</em> </p>
+<p> </p>
+<p>Want to learn more about our culture &amp; opportunities? Check out <a href="http://www.Farmers.com/careers/corporate" rel="nofollow noopener" target="_blank">www.Farmers.com/careers/corporate</a> and be sure to follow us on <a href="https://www.instagram.com/thisisfarmers/" rel="nofollow noopener" target="_blank">Instagram</a>, <a href="https://www.linkedin.com/company/farmers-insurance/" rel="nofollow noopener" target="_blank">LinkedIn</a>, and <a href="https://www.tiktok.com/@thisisfarmers" rel="nofollow noopener" target="_blank">TikTok</a>.</p>
+<p> </p>
+<p>Spokane, WA only:  Residents who prefer not to provide their address click here to submit your resume via email: careers@farmers.com</p>
+
+
+<p><strong>To apply:</strong> <a href="https://weworkremotely.com/remote-jobs/farmers-data-science-manager-marketing" rel="nofollow noopener" target="_blank">https://weworkremotely.com/remote-jobs/farmers-data-science-manager-marketing</a></p></div>
+
+<a class="apply" href="https://weworkremotely.com/remote-jobs/farmers-data-science-manager-marketing" target="_blank" rel="noopener">去原站申请 | Apply on We Work Remotely ↗</a>
+<footer>信息采集自 We Work Remotely,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from We Work Remotely; refer to the original posting.</footer>
+</body></html>

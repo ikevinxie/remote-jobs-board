@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NOBLE | Director Business Development Army</title>
+<meta property="og:title" content="NOBLE | Director Business Development Army">
+<meta property="og:description" content="NOBLE · 📍Florida, Florida, United States">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="NOBLE · 📍Florida, Florida, United States">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Director Business Development Army</h1>
+<div class="meta">🏢 NOBLE · 📍 Florida, Florida, United States · 运营与人力 | Operations &amp; HR · 美洲 | Americas · 来源 Remote OK · 发布 2026-07-16</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://remoteOK.com/remote-jobs/remote-director-business-development-army-noble-1134952" target="_blank" rel="noopener">去原站申请 | Apply on Remote OK ↗</a>
+<div class="jd"><strong>Position Summary<br><br></strong>The Director, Army Sales is a senior player/coach sales leader responsible for driving personal sales performance while guiding and enabling a team of field sales managers and representatives. This role maintains direct customer engagement and may carry a personal or shared sales target, while providing leadership across territory strategy, pipeline development, and sales execution.<br><br>The Director shares accountability for field sales performance within the service vertical, operating in close partnership with the VP, Business Unit Leader, who retains ultimate ownership of revenue outcomes and business performance. Success in this role is measured by Individual and shared revenue contribution, overall field sales execution effectiveness, pipeline health and opportunity progression, team development, coaching impact, and retention, and alignment with business unit sales strategy<br><br><strong>Essential Functions<br><br></strong>Reasonable Accommodations Statement<br><br>To perform this job successfully, an individual must be able to perform the essential duties outlined below. Reasonable accommodations may be made to enable qualified individuals with disabilities to perform these essential functions.<br><br><strong>Essential Functions Statements<br><br></strong><strong>Sales Performance &amp; Territory Execution<br><br></strong><ul><li>Contribute directly to revenue generation while supporting and influencing overall field sales performance across the service vertical</li><li>Partner with the VP, Business Unit Leader to execute sales strategy, territory coverage models, and performance priorities</li><li>Support sales managers and representatives through coaching, deal strategy, and escalation support, while reinforcing accountability and execution discipline</li><li>Develop and execute territory and account plans aligned to company objectives</li><li>Maintain and manage an active pipeline of opportunities, quotes, and orders</li><li>Drive opportunity progression from identification through order execution<br><br></li></ul><strong>Customer &amp; Account Management<br><br></strong><ul><li>Maintain direct customer relationships and participate personally in key deals, strategic accounts, and complex sales efforts as both a seller and leader</li><li>Establish and maintain strong relationships with end users, contracting offices, and program stakeholders</li><li>Conduct regular in-person customer visits, briefings, and solution discussions</li><li>Identify customer requirements and translate needs into product and service solutions</li><li>Serve as the primary field point of contact for assigned accounts<br><br></li></ul><strong>Market, Program &amp; Budget Awareness<br><br></strong><ul><li>Maintain working knowledge of DoD budget cycles, appropriations, and funding mechanisms as they impact customer buying behavior</li><li>Monitor customer programs, funding timelines, and mission priorities</li><li>Liaise with strategy, business development, and capture teams to align field sales activity with longer-term pursuits<br><br></li></ul><strong>Team and Cross Functional Leadership<br><br></strong><ul><li>Collaborate with inside sales, contracts, pricing, and operations teams to support order fulfillment and customer satisfaction</li><li>Coordinate vendor relationships, ride-alongs, and product demonstrations</li><li>Communicate competitive intelligence, market trends, and customer feedback to leadership</li><li>Serve as a player/coach by mentoring and supporting Field Sales Representatives, providing guidance on account strategy, customer engagement, and opportunity progression without serving as the sole owner of team outcomes<br><br></li></ul><strong>Reporting &amp; Systems<br><br></strong><ul><li>Maintain accurate CRM (Salesforce) records, forecasts, and pipeline reporting</li><li>Prepare sales reports, expense reports, and required administrative documentation<br><br></li></ul><strong>Additional Duties<br><br></strong><ul><li>Interface and effectively communicate with the management team, staff, customers, sub-contractors, vendors, business partners, and suppliers</li><li>Take ownership and responsibility for all aspects of the customer and team sales process</li><li>Maintain and update a Google calendar consisting of client calls, travel, and working sales pipeline<br><br></li></ul><strong>Requirements<br><br></strong><strong>POSITION QUALIFICATIONS AND EXPERIENCE<br><br></strong>To perform this job successfully, an individual must be able to perform each essential duty satisfactorily. The requirements listed below are representative of the knowledge, skill, and/or ability required.<br><br><ul><li>10+ years of experience leading field sales teams in DoD or federal markets</li><li>Demonstrated success coaching quota-carrying sales teams to revenue targets</li><li>Strong knowledge of Navy and Marine Corps procurement environments</li><li>Strong understanding of federal procurement, contracting, and customer environments</li><li>Prior military service strongly preferred</li><li>Bachelor&#x27;s degree preferred or equivalent industry experience</li><li>U.S. citizenship and eligibility to work in the United States required. This position requires the ability to obtain and maintain a U.S. government security clearance<br><br></li></ul><strong>Computer Skills<br><br></strong><ul><li>Proficiency with Microsoft Office Suite and Google Office Suite</li><li>Experience using Salesforce for pipeline management and forecasting accuracy</li><li>Proficiency with internet research and searching</li><li>NetSuite or familiarity with an ERP system a plus<br><br></li></ul><strong>WORK ENVIRONMENT<br><br></strong><ul><li>Personal at-home office for administrative duties required</li></ul><br><br>Please mention the word **AUSPICIOUS** and tag RMTAzLjExNy4xMDMuNzE= when applying to show you read the job post completely (#RMTAzLjExNy4xMDMuNzE=). This is a beta feature to avoid spam applicants. Companies can search these words to find applicants that read this and see they&#x27;re human.</div>
+
+<a class="apply" href="https://remoteOK.com/remote-jobs/remote-director-business-development-army-noble-1134952" target="_blank" rel="noopener">去原站申请 | Apply on Remote OK ↗</a>
+<footer>信息采集自 Remote OK,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from Remote OK; refer to the original posting.</footer>
+</body></html>

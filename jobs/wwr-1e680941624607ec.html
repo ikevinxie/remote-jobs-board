@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>garden3d | Head of Design</title>
+<meta property="og:title" content="garden3d | Head of Design">
+<meta property="og:description" content="garden3d · 📍Anywhere in the World">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="garden3d · 📍Anywhere in the World">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Head of Design</h1>
+<div class="meta">🏢 garden3d · 📍 Anywhere in the World · 设计 | Design · 全球 | Worldwide · 来源 We Work Remotely · 发布 2026-07-17</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://weworkremotely.com/remote-jobs/garden3d-head-of-design" target="_blank" rel="noopener">去原站申请 | Apply on We Work Remotely ↗</a>
+<div class="jd"><p>
+  <strong>Headquarters:</strong> New York City
+    <br><strong>URL:</strong> <a href="https://garden3d.net/" rel="nofollow noopener" target="_blank">https://garden3d.net/</a>
+</p>
+
+<p>We are hiring a <strong>Head of Design</strong> for the garden3d creative collective, to uphold an exceedingly high bar on every single thing we make</p>
+<p>More details if you check our <a href="https://app.notion.com/p/garden3d/Head-of-Design-39d131fea2c781b3953af7d310a53bc2?source=copy_link" rel="nofollow noopener" target="_blank">original job posting link</a></p>
+<h3><strong>About <a href="https://garden3d.net/" rel="nofollow noopener" target="_blank">garden3d</a></strong></h3>
+<p>We are worker owned creative collective, innovating on everything from brands and IRL communities to IoT devices and cross platform apps. We share profit, open source everything, spin out new businesses, and invest in exciting ideas through financial and/or in-kind contributions.</p>
+<p>Our client roster includes <a href="https://www.google.com/" rel="nofollow noopener" target="_blank">Google</a>, <a href="https://stripe.com/" rel="nofollow noopener" target="_blank">Stripe</a>, <a href="https://www.figma.com/" rel="nofollow noopener" target="_blank">Figma</a>, <a href="https://hinge.co/" rel="nofollow noopener" target="_blank">Hinge</a>, <a href="https://blacksocialists.us/" rel="nofollow noopener" target="_blank">Black Socialists in America</a>, <a href="https://www.aclu.org/" rel="nofollow noopener" target="_blank">ACLU</a>, <a href="https://www.pratt.edu/" rel="nofollow noopener" target="_blank">Pratt</a>, <a href="https://www.newschool.edu/parsons/" rel="nofollow noopener" target="_blank">Parsons</a>, <a href="https://www.mozilla.org/en-US/" rel="nofollow noopener" target="_blank">Mozilla</a>, <a href="https://www.nobelprize.org/" rel="nofollow noopener" target="_blank">The Nobel Prize</a>, <a href="https://www.mit.edu/" rel="nofollow noopener" target="_blank">MIT</a>, <a href="https://www.gnosis.io/" rel="nofollow noopener" target="_blank">Gnosis</a>, <a href="https://www.etsy.com/" rel="nofollow noopener" target="_blank">Etsy</a> &amp; <a href="https://gagosian.com/" rel="nofollow noopener" target="_blank">Gagosian</a>.</p>
+<p>We’re the software team behind innovative products like <a href="https://www.thelightphone.com/" rel="nofollow noopener" target="_blank">The Light Phone</a> &amp; <a href="https://www.mill.com/" rel="nofollow noopener" target="_blank">Mill</a>, and we operate a global, decentralized community space collective called <a href="https://www.index-space.org/" rel="nofollow noopener" target="_blank">Index Space</a>.</p>
+<p>We think of our garden3d as collective for creative people, prioritizing a happy, talented, and diverse studio culture. We work on projects that bring value to our world, and we balance deep care for the work we do with a genuine curiosity about life outside of our jobs.</p>
+<p><strong>Sanctuary Computer</strong> — Development</p>
+<p>At <a href="https://www.sanctuary.computer/" rel="nofollow noopener" target="_blank">Sanctuary Computer</a> we’re building a different type of technology shop – one that prioritizes close collaboration between the client and the craftsperson.</p>
+<p>Our projects range from design-forward websites, to robust web apps, to native mobile development.</p>
+<p><strong>XXIX</strong> — Design</p>
+<p>When we started <a href="https://www.xxix.co/" rel="nofollow noopener" target="_blank">XXIX</a> in 2013, we set out to create a different kind of design studio and we’ve thrived because we continually ask what a creative practice can be.</p>
+<p>We’re building a radically different kind of organization that values autonomy, growth, transparency, and shared responsibility.</p>
+<p><strong>Index Space</strong> — Community</p>
+<p>A network of physical spaces all around the world, <a href="https://www.index-space.org/" rel="nofollow noopener" target="_blank">Index</a> provides space for the exchange of knowledge and tools.</p>
+<p>We nurture trust within the creative community through generosity and abundance of ideas and care.</p>
+<p><a href="https://garden3d.substack.com/" rel="nofollow noopener" target="_blank"><strong>garden3d TK</strong></a> — Media</p>
+<p>At garden3d, we’re in the early stages of building an experimental media company exploring emerging themes related to the evolving landscape of technology, design and culture.</p>
+<p>We aim to monetize this outlet, publish books, produce screenplays, and release music.</p>
+<p>Plus, our partner organizations<br><a href="https://www.thelightphone.com/" rel="nofollow noopener" target="_blank">https://www.thelightphone.com/</a><br><a href="https://www.mill.com/" rel="nofollow noopener" target="_blank">https://www.mill.com/</a><br><a href="https://www.mill.com/" rel="nofollow noopener" target="_blank">https://www.ingredient-ai.com/</a></p>
+<h3>The Head of Design Role</h3>
+<p>The garden3d Head of Design has one mandate: nothing we put on the internet falls below an 8 out of 10. We are a house of brands - Sanctuary Computer (development), XXIX (design), Index Space (community), USB Club (digital community), and the garden3d umbrella itself - and all of them ship work into the world under our name. Working in close partnership with our founder &amp; president <a href="http://hhff.solar/" rel="nofollow noopener" target="_blank">Hugh Francis</a>, this person sets the craft standard, and builds the culture that holds it.</p>
+<p>You can be based anywhere. A lot of our people are in New York and there&#x27;s some gravity here, but we already work across timezones and we would happily hire in Europe, Singapore, Chicago, or wherever you are. If you&#x27;re the right person, we want to hear from you.</p>
+<p>This role works with studio leads, designers, developers, editors, animators, photographers and clients across every garden3d vertical. </p>
+<p>This person can move between a brand identity, a product interface, a case study and a launch film in the same week, and raise the bar on each of them.</p>
+<p>They span all of garden3d, but their home base is <a href="https://www.xxix.co" rel="nofollow noopener" target="_blank">XXIX</a>. Our design studio is where the standard gets set, and where it either holds or slips, so this person runs critique there. Regular reviews. Honest and specific feedback. A shared language for why one thing is better than another, and what practically to do about it. Then they carry that same bar everywhere: to Sanctuary Computer&#x27;s product and web work, to Index, to new USB Club product launches, to garden3d TK and everything we publish.</p>
+<p>They are also how we get better people. Our work is only as good as the designers making it, so this person hunts for exceptional talent, sells them on us, and sets them up to do the best work of their careers. The ideal candidate looks at a worker-owned collective with four studios, an open P&amp;L and clients like Google, Figma and The Nobel Prize, and sees a design practice they can propel among the best in the world.</p>
+<p>They span all of garden3d, but their home base is <a href="https://www.xxix.co" rel="nofollow noopener" target="_blank">XXIX</a>. Our design studio is where the standard gets set, and where it either holds or slips, so this person runs critique there. Regular reviews. Honest and specific feedback. A shared language for why one thing is better than another, and what practically to do about it. Then they carry that same bar everywhere: to Sanctuary Computer&#x27;s product and web work, to Index, to new USB Club product launches, to garden3d TK and everything we publish.</p>
+<p>They are also how we get better people. Our work is only as good as the designers making it, so this person hunts for exceptional talent, sells them on us, and sets them up to do the best work of their careers. The ideal candidate looks at a worker-owned collective with four studios, an open P&amp;L and clients like Google, Figma and The Nobel Prize, and sees a design practice they can propel among the best in the world.</p>
+<h3><strong>Responsibilities &amp; Mandates</strong></h3>
+<h3>‍Quality never less than <strong>8/10</strong></h3>
+<p>We aspire for 10/10, celebrate 9/10 and never publish anything that’s not an 8/10 - visually, narratively, and in production quality. This person holds that line across every website, brand, deck, film, case study and post, on every vertical. They would rather kill a piece than let a 6 out the door. Their feedback makes work better and faster, without micromanaging the people who make it.</p>
+<h3><strong>A critique culture at XXIX</strong></h3>
+<p>XXIX is where our standard lives, so this is where most of their energy goes. They build and run its critique practice: reviews with teeth, feedback that is specific rather than polite, and a vocabulary the whole studio shares. A designer should leave a crit knowing exactly what to do next. Done well, the crit is what makes the studio better than any one person in it, including them.</p>
+<h3><strong>Hiring and empowering the very best</strong></h3>
+<p>They are a magnet for exceptional designers. They know where to find them, how to convince them, and how to give them enough room to do their best work while still holding them to the standard. People who work for this person should get visibly better, and should say so.</p>
+<h3><strong>Client craft, at blue-chip standard</strong></h3>
+<p>Our clients include Google, Stripe, Figma, Mozilla, The Nobel Prize and Gagosian. This person has sat across the table from companies like these, presented work, defended it, and shaped a brand narrative the client&#x27;s own leadership could repeat back to their board. They can run a room, and they&#x27;ve done it across many industries, not just one.</p>
+<h3><strong>New design business, and the projects that matter most</strong></h3>
+<p>They run new business for design. Pitching, scoping and closing the work we actually want, and building the relationships that bring the next one back. When a project is our highest-profile or highest-budget, they&#x27;re in it: not always as the day-to-day lead, but as the person shaping the creative direction and making sure it lands. The work we win, and the work we&#x27;re known for, is the clearest measure of whether this is going well.</p>
+<h3><strong>Type and editorial design</strong></h3>
+<p>Typography and editorial systems are core craft here, not a specialism we farm out. This person has a real practice in both. Their type choices should be one of the first things you notice about their portfolio, and one of the first things our designers learn from them.</p>
+<h3><strong>Case study production</strong></h3>
+<p>Every engagement across our studios should end in a case study you&#x27;d want to read. Producing them is second nature to this person: interviewing the team, shaping the narrative, art-directing the assets, and shipping something that wins the studio its next project.</p>
+<h3>️ <strong>Websites that put our best foot forward</strong></h3>
+<p>Our sites are usually the first place a prospective client or hire meets us. This person owns what each garden3d site says, what work it shows, and how clearly it explains what that studio can do. They keep sites, decks and collateral current as the work moves, so what people find is sharp and true.</p>
+<h3><strong>Presence IRL</strong></h3>
+<p>garden3d shows up in person: events, conferences, talks, Index programming, and the dinners and openings where our world gathers. This person decides which of these deserve our time, gets us there looking like ourselves, and comes back with something to publish.</p>
+<h3><strong>Culture</strong></h3>
+<p>They model garden3d&#x27;s values of partnership, curiosity, and accountability. The designers they lead do the best work of their careers here, because the feedback is honest, the recognition is earned, and the taste rubs off.</p>
+<p><strong>Special Projects</strong></p>
+<p><strong>In addition to day to day responsibilities, here’s an idea of some of the projects this role may spearhead or support in coming years →</strong></p>
+<ul>
+<li>Building XXIX&#x27;s critique practice into something other studios try to copy</li>
+<li>Landing the kind of flagship design engagement that changes what people think we do</li>
+<li>Hiring the next generation of the design team, across every garden3d studio</li>
+<li>Rebuilding our studio websites so each one sells its studio properly</li>
+<li>A case study production line that feeds all four new-business pipelines</li>
+<li>Bringing our type and editorial practice into garden3d TK: books, covers, records, screenplays</li>
+<li>Setting the AI-assisted design pipeline the whole collective works from</li>
+</ul>
+<h3><strong>Qualifications</strong></h3>
+<p>This is a great opportunity for someone looking to make a significant impact in a growing, dynamic company. Based on the responsibilities of this role, we think the right candidate has the following experience and skills:</p>
+<p><strong> Must have:</strong></p>
+<ul>
+<li>10+ years in design, at least three of them leading a team inside a studio, agency or founder-led company</li>
+<li>A portfolio that proves exceptional taste: visual, typographic and narrative</li>
+<li>Type design and editorial design as core craft, not an occasional side interest</li>
+<li>Extensive client experience: presenting and defending work in front of blue-chip companies across many industries, and shaping the brand narrative their leadership repeats back</li>
+<li>A track record of winning design work, not only delivering it: pitching, scoping and closing new business at the top of the market</li>
+<li>A track record of hiring exceptional designers, and of people who got measurably better working for them</li>
+<li>Running critique: feedback that is specific, honest and actionable, and the ability to build a studio culture around it</li>
+<li>Hands-on Figma fluency. This person can make the thing, not only critique it (and will get on the tools when the need arises)</li>
+<li>Case study production as second nature: interviewing the team, shaping the story, art-directing the assets</li>
+</ul>
+<p><strong> Nice-to-have:</strong></p>
+<ul>
+<li>Directing video and holding the quality bar on it: short-form for social, product and client shoots, launch films. They can brief a crew, sit in the edit, and say why a cut isn&#x27;t working</li>
+<li>Motion, photography or editing chops of their own</li>
+<li>Print, publishing or book design</li>
+<li>Product and interface design alongside brand work</li>
+<li>Experience owning a company&#x27;s web presence end to end</li>
+<li>Comfort managing several distinct brand voices in a house of brands</li>
+<li>Experience inside a worker-owned, open-book or otherwise unusual company</li>
+<li>A network in the design community: the schools, the conferences, the people worth hiring</li>
+<li>Experience designing for the design &amp; engineering decision-makers at companies like our clients</li>
+</ul>
+<h3><strong>Who you are</strong></h3>
+<p>The person we’re looking for is happy, relaxed and easy to get along with and appreciates a commitment to a culture of transparency, non-dictatorial leadership styles, and alternative methodologies. They’re flexible on anything except conceits that will lower their usually outstanding work quality. They work “smart” by carefully managing their workflow and team.</p>
+<h3><strong>How we interview</strong></h3>
+<p>After you submit your application, a member of our team will reach out. Our interview process starts with an intro call to answer any questions you have about the role and to learn a bit more about your experience and interests.</p>
+<p>From there, we’ll follow up with a panel interview call where you get to meet a few members of our</p></div>
+
+<a class="apply" href="https://weworkremotely.com/remote-jobs/garden3d-head-of-design" target="_blank" rel="noopener">去原站申请 | Apply on We Work Remotely ↗</a>
+<footer>信息采集自 We Work Remotely,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from We Work Remotely; refer to the original posting.</footer>
+</body></html>

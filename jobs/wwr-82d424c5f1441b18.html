@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Launch Legends | Senior DevOps Engineer (Web3)</title>
+<meta property="og:title" content="Launch Legends | Senior DevOps Engineer (Web3)">
+<meta property="og:description" content="Launch Legends · 📍Texas">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="Launch Legends · 📍Texas">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Senior DevOps Engineer (Web3)</h1>
+<div class="meta">🏢 Launch Legends · 📍 Texas · 软件开发 | Software Development · 其他/未标明 | Other / Unspecified · 来源 We Work Remotely · 发布 2026-07-16</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://weworkremotely.com/remote-jobs/launch-legends-senior-devops-engineer-web3" target="_blank" rel="noopener">去原站申请 | Apply on We Work Remotely ↗</a>
+<div class="jd"><p>
+  <strong>Headquarters:</strong> [REMOTE]
+    <br><strong>URL:</strong> <a href="http://launchlegends.io" rel="nofollow noopener" target="_blank">http://launchlegends.io</a>
+</p>
+
+
+<p><strong>Shape the Future of Blockchain—Bringing Business On-Chain</strong></p>
+<p>We’re offering a unique opportunity to join <strong>Launch Legends</strong> (and Autheo) as a part-time <strong>Equity Cofounder</strong>. Founded nearly four years ago, Launch Legends is at the forefront of bridging Web3 blockchain technology with the next evolution of Web2 integration—bringing businesses on-chain through enterprise-grade solutions, DePIN innovations, and decentralized financial infrastructure.</p>
+<p>Our flagship project, <strong>Autheo</strong>, is an AI enabled Layer-Zero OS with an integrated Layer-1 blockchain  and complete decentralized infrastructure thast includes decentralized compute, storage, identity, and service marketplaces, as well as a Full-stack development enveronment (DevHub)—engineered for scalable enterprise adoption, developer innovation, and real-world blockchain integration.</p>
+<p><strong>Our Projects</strong></p>
+<ul>
+<li><strong>Autheo</strong> – www.autheo.com</li>
+<li><strong>Autheo Team</strong> - https://www.autheo.com/teams</li>
+<li><strong>Launch Legends (Parent Company)</strong> – www.launchlegends.io</li>
+<li><strong>Twitter</strong>: https://x.com/Autheo_Network</li>
+</ul>
+<p><strong>About Autheo</strong><br>
+With nearly 100 equity cofounders from leading companies and institutions—many with advanced degrees and PhDs—Autheo is solving the critical challenges blocking business adoption of blockchain technology.</p>
+<p><strong>Key Features:</strong></p>
+<ul>
+<li><strong>Enterprise-Grade Layer-1 Blockchain</strong> – High-speed, self-securing, and cost-efficient infrastructure built for scale.</li>
+<li><strong>Developer Hub &amp; Application Marketplace</strong> – A decentralized platform where developers build, deploy, and monetize real-world apps.</li>
+<li><strong>Web2-Web3 Integration</strong> – Microservices, SDKs, and governance frameworks for seamless business migration.</li>
+<li><strong>Decentralized Cloud &amp; Compute</strong> – Secure, privacy-preserving storage and AI-powered compute for next-gen applications.</li>
+<li><strong>DePIN Infrastructure</strong> – On-chain networks powering real-world infrastructure ownership and resource sharing.</li>
+</ul>
+<p><strong>Traction (Testnet Launch):</strong></p>
+<ul>
+<li><strong>Wallet Accounts:</strong> 290,000+</li>
+<li><strong>Twitter Followers:</strong> 30,000+</li>
+<li><strong>Discord Members:</strong> 19,000+</li>
+<li><strong>Smart Contracts Deployed:</strong> 30,000+</li>
+<li><strong>Developers Registered for MVP DevHub:</strong> 7,500+</li>
+</ul>
+<p><strong>Compensation &amp; Growth Path</strong><br>
+This is a part time equity / token-based cofounder opportunity. You will receive equity in <strong>Launch Legends</strong>, <strong>Autheo</strong>, and the <strong>WFO Creator Network</strong>, along with token allocations in the Autheo blockchain. We have already completed an initial financing round to support infrastructure and marketing, and are currently in discussions with VCs and crypto investors to fund expansion and salaries.  Salaried compensation is expected to begin within 4 to 5 months, following our node, token sales or funding.</p>
+<p> </p>
+<p><strong>POSITION - SENIOR DEVOPS ENGINEER (WEB3) </strong></p>
+<p>We are seeking a highly experienced and knowledgeable DevOps Specialist to join our team as a co-founder. The ideal candidate will have a strong background in DevOps for blockchain systems, experience with Digital Ocean and other cloud platforms, and proficiency with GitHub. This role is crucial for the successful implementation and maintenance of our blockchain infrastructure.</p>
+<p><strong>Responsibilities</strong>:</p>
+<ul>
+<li>Design, implement, and manage the infrastructure for our blockchain ecosystem<br>
+	Take ownership of designing, implementing, and managing the company&#x27;s cloud infrastructure on AWS, GCP, and Cloudflare. Architect and optimize cloud solutions to ensure scalability, security, and efficiency on Layer 1 and Layer 2.</li>
+<li>Optimize the deployment, monitoring, and scaling of blockchain nodes and related services.</li>
+<li>Automate the deployment process using CI/CD pipelines.</li>
+<li>Ensure high availability, reliability, and security of the infrastructure.</li>
+<li>Collaborate with the development team to integrate DevOps practices and tools.</li>
+<li>Manage and optimize cloud resources on platforms Digital Ocean and other cloud platforms such as Oracle Cloud Infrastructure.</li>
+<li>Maintain and manage code repositories and workflows on GitHub.</li>
+<li>Troubleshoot and resolve infrastructure-related issues</li>
+<li>Continuously improve and document DevOps processes and best practices. </li>
+<li>Expertise in AWS services, EC2, S3, RDS, and Lambda, Terraform, Docker, Kubernetes, etc.</li>
+<li>Implement monitoring solutions to ensure proactive identification and resolution of issues.</li>
+<li>Tooling such as Salt, Vault, Python, and Bash scripting for automation and configuration management and version control using Git to manage code repositories effectively</li>
+<li>Collaborate with cross-functional teams to understand application requirements and provide infrastructure solutions. Lead and mentor a team of DevOps professionals, fostering a culture of continuous improvement and innovation.</li>
+<li>Maintain comprehensive documentation of infrastructure configurations, processes, and best practices</li>
+<li>Stay abreast of industry trends, emerging technologies, and best practices to drive continuous improvement in the DevOps practices.</li>
+</ul>
+<p><strong>Requirements: </strong></p>
+<ul>
+<li>Proven experience as a DevOps Engineer (8+ years experience), with additional in blockchain projects.</li>
+<li>Strong knowledge of cloud platforms, especially Digital Ocean, and experience with other cloud services (e.g., AWS, Oracle Cloud).</li>
+<li>Proficiency in using and managing GitHub repositories and workflows.</li>
+<li>Experience with containerization technologies such as Docker and orchestration tools like Kubernetes.</li>
+<li>Familiarity with infrastructure-as-code tools (e.g., Terraform, Ansible).</li>
+<li>Strong scripting skills (e.g., Bash, Python).</li>
+<li>Knowledge of CI/CD pipelines and tools (e.g., Jenkins, GitLab CI).</li>
+<li>Excellent problem-solving skills and attention to detail.</li>
+<li>Strong communication and collaboration abilities.Expert knowledge of infrastructure and DevOps with experience in AWS services, IAM policies, Terraform, Docker and Kubernete</li>
+<li>Must have significant Web3 and Blockchain Experience in decentralized systems.</li>
+<li>Proficiency in Salt, Vault, Python and Bash scripting.</li>
+<li>Proficiency in CDN Management.</li>
+<li>Knowledge of AWS Secrets Manage.</li>
+<li>Able to lead a small team of DevOps engineers, this role is mostly hands-on with a managerial component.</li>
+<li>Possess a understanding of networking principles and be adept at configuring and troubleshooting network components within the cloud environment.</li>
+</ul>
+<p><strong>Preferred Qualifications:</strong></p>
+<ul>
+<li>Experience with Testnet and Mainnet blockchain deployments</li>
+<li>Experience with deploying Nodes and Setting up Validators</li>
+<li>Experience with Digital Ocean and GitHub.</li>
+<li>Understanding of blockchain technologies and protocols.</li>
+<li>Previous startup experience and a passion for innovation.</li>
+</ul>
+<p> </p>
+<p> </p>
+<p>🌐 <strong>🚀</strong><strong> WHY JOIN LAUNCH LEGENDS?</strong></p>
+<ul>
+<li><strong>Traction with Momentum</strong>: Autheo is already gaining significant traction in the blockchain space, with rapid developer adoption, platform growth, and partnership interest.</li>
+<li><strong>Cross-Industry Impact</strong>; Autheo is positioned to transform not only the Web3 ecosystem—but also Web2 and the broader technology sector—by enabling real-world business adoption of decentralized infrastructure.</li>
+<li><strong>Real Innovation, Not Hype</strong>: Unlike many blockchain ventures, Autheo is focused on substance over speculation. We are building real solutions: modular fullstack infrastructure, enterprise-grade toolkits, decentralized identity, cloud, compute, and service orchestration.</li>
+<li><strong>Backed by Elite Talent</strong>: You’ll join a team composed of professionals from top-tier universities, Fortune 500 companies, and major blockchain platforms. Our team includes multiple PhDs and senior engineers who have launched and scaled world-class technologies.</li>
+</ul>
+<p>If you&#x27;re ready to <strong>redefine blockchain adoption</strong>, <strong>empower global business integration</strong>, and <strong>help shape the next generation of Web3 and developer ecosystems</strong>, we invite you to take the next step.</p>
+<p> </p>
+<p> </p>
+<p> </p>
+
+
+<p><strong>To apply:</strong> <a href="https://weworkremotely.com/remote-jobs/launch-legends-senior-devops-engineer-web3" rel="nofollow noopener" target="_blank">https://weworkremotely.com/remote-jobs/launch-legends-senior-devops-engineer-web3</a></p></div>
+
+<a class="apply" href="https://weworkremotely.com/remote-jobs/launch-legends-senior-devops-engineer-web3" target="_blank" rel="noopener">去原站申请 | Apply on We Work Remotely ↗</a>
+<footer>信息采集自 We Work Remotely,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from We Work Remotely; refer to the original posting.</footer>
+</body></html>

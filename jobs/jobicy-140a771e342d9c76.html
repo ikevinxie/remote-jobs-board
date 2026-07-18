@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ashby | Strategic Customer Success Manager - Americas</title>
+<meta property="og:title" content="Ashby | Strategic Customer Success Manager - Americas">
+<meta property="og:description" content="Ashby · 📍USA">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="Ashby · 📍USA">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Strategic Customer Success Manager - Americas</h1>
+<div class="meta">🏢 Ashby · 📍 USA · 客户支持 | Customer Support · 美洲 | Americas · 来源 Jobicy · 发布 2026-07-18</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://jobicy.com/jobs/147007-strategic-customer-success-manager-americas" target="_blank" rel="noopener">去原站申请 | Apply on Jobicy ↗</a>
+<div class="jd"><h3><strong>About this Role</strong></h3><p>Hi, I’m <a href="https://www.linkedin.com/in/lfoseid/" rel="nofollow noopener" target="_blank">Loren</a>, the Head of Strategic Customer Success here at Ashby. My team is dedicated to building deep, consultative partnerships within the Enterprise space. </p><p>Our Customer Success Team is passionate about shaping and scaling an exceptional upmarket customer experience across the Enterprise Segment. We’re thrilled to be hiring our next Strategic CSM as we continue to grow the team.</p><p>In this role, you&#x27;ll guide Ashby&#x27;s biggest customers - focusing on improved product adoption and increased customer health. You will shape how we serve customers ranging from high growth organizations to public companies.<br>Ashby is designed to be powerful and flexible, allowing users to adjust it to their needs. This means that there is a lot to learn. You will become a product and domain expert in order to enable our customers to make the best use of Ashby to drive hiring excellence.<br><strong>Role Requirements:</strong></p><ul><li><p>You have a strong track record of customer success experience in B2B SaaS (at least five years), supporting the implementation and adoption of complex technologies through the customer journey.</p></li><li><p>You’re comfortable managing a book of ~20 strategic customers, exceeding $2m in total ARR. You enjoy multi-threading, developing relationships across a broad set of stakeholders while supporting existing teams to drive adoption and retention.</p></li><li><p>You have experience working closely with cross-functional stakeholders across Sales, Marketing, Product, and Operations.</p></li><li><p>You love becoming a product and industry expert. You create ‘Ah ha!’ moments by tailoring configuration, driving product adoption, and crafting training to address a customer’s specific challenges so they achieve their intended business outcomes.</p></li><li><p>You’ve worked with technically complex products and show a strong curiosity to explore details and understand how things work.</p></li></ul><p><strong>You Should Apply If:</strong></p><ul><li><p> <em>You communicate with precision and clarity. You can take something complex (like a multi-layered report or a nuanced workflow) and explain it simply and confidently.</em></p></li><li><p><em> You are a listener first. You seek to understand what customers actually need and then advocate for them internally to shape how Ashby evolves for enterprise use cases.</em></p></li><li><p><em>⚙️You thrive in complexity. Ashby is powerful and highly configurable; you’re energized by learning a product with depth, and you can translate that knowledge into creative solutions for your customers.</em></p></li><li><p><em>‍ You’re excited to help shape a new segment. Our Strategic customer motion is still evolving; you’ll be iterating on playbooks, helping us learn what works, and turning those learnings into repeatable processes for the team.</em></p></li><li><p><em> Your peers describe you as detail oriented. You send crisp follow-up emails, on time. You take pride in internal operations, like real-time CRM updates.</em></p></li><li><p><em> You are always looking for ways to improve your work through data.</em></p></li><li><p><em>You may have been a recruiter, hiring manager, or interviewer before. That experience helps you quickly connect Ashby’s workflows to real-world hiring problems (though it’s not required).</em></p></li></ul><p><strong>Why you shouldn’t apply:</strong></p><ul><li><p><em>You prefer managing a broad book of business (if so, see our High Touch or Startup roles).</em></p></li><li><p><em>You&#x27;re interested in managing customer accounts with infrequent and well-defined touchpoints (rather than excited by the fluidity required of early stage CS work).</em></p></li><li><p><em>You shine as an exclusively commercial CSM, motivated by variable compensation. While our team&#x27;s north star metric is revenue retention, we focus on adoption and engagement as leading indicators. For renewal negotiation and upsell, we have a remarkable team of Contract Managers. As such, this role does not currently include variable pay, aligning with our strategy to hire product-oriented CSMs rather than adhering to the conventional Account Manager model.</em></p></li><li><p><em>You’re afraid of rolling up your sleeves. If the idea of getting in the weeds with a customer about the nuance between a time in process report and a time to hire report feels too granular, or project managing a workflow change for offer approvals isn’t interesting, this job isn’t going to be for you.</em></p></li></ul><h3><strong>About Ashby</strong></h3><p>We’re building the next generation of enterprise software, and we’re starting with a suite of products that help talent leaders, recruiters, and hiring managers run their hiring process significantly better. <a href="https://www.ashbyhq.com/%EF%BF%BC%EF%BF%BCWe" rel="nofollow noopener" target="_blank"><u><br></u></a>We are well funded and backed by great investors, including Y Combinator, Elad Gil and Lachy Groom. We have thousands of amazing customers including Snowflake, OpenAI, Shopify, Ramp, Notion, and Zapier (and many others who we cannot name!). Our growth and retention metrics are best-in-class among our peers: we have tens of millions in ARR, growing &gt;100% year over year, very low churn, and many years of runway. We’ll share more details once we meet. In short, it&#x27;s the perfect time to join! </p><h3><strong>Interview Process</strong></h3><p>Our interview process is thorough — we aim to ensure each person that joins the team is the right fit for Ashby and will provide ample information for you to assess if Ashby is the right fit for you. The process for this role is as follows:</p><ul><li><p><strong>Intro Call with Ashby Recruiting</strong> - 30 Minutes</p></li><li><p><strong>Hiring Manager Interview</strong> - 45 Minutes</p></li><li><p><strong>Take-Home/Presentation</strong> - 45 Minutes</p></li><li><p><strong>Panel Interview</strong> - 2 hours</p><ul><li><p>Rather than a traditional panel interview with a large group, we structure our panel into a series of smaller conversations. This gives you the opportunity to meet with multiple team members in a more conversational setting focused on specific topics, instead of a formal Q&amp;A. You&#x27;ll discuss how you approach problem solving, how you work with sales, and dive into a product complexity exercise.</p></li></ul></li></ul><h3><strong>Benefits</strong></h3><ul><li><p>You’ll get the time to do things the right way; we put a lot of emphasis on high quality work and avoid quick hacks as much as possible.</p></li><li><p>10-year exercise window for stock options. You shouldn’t feel pressure to purchase stock options if you leave Ashby —do it when you feel financially comfortable.</p></li><li><p>Unlimited PTO with four weeks is recommended per year. Expect “Vacation?” in our one-on-one agenda until you start taking it </p></li><li><p>Twelve weeks of fully paid family leave in the US<em>.</em> We plan to expand this to employees in other countries as situations arise.</p></li><li><p>Generous equipment, software, and office furniture budget. Get what you need to be happy and productive!</p></li><li><p>$100/month education budget with more expensive items (like conferences) covered with manager approval.</p></li><li><p>If you’re in the US, we offer top-tier health insurance for you and your dependents, with 100% of premiums covered by Ashby. We also offer a 3% 401k match.</p></li></ul><p><em>Ashby provides equal employment opportunities (EEO) to all employees and applicants for employment without regard to race, color, religion, sex, national origin, age, disability, genetics, sexual orientation, gender identity, or gender expression. We are committed to a diverse and inclusive workforce and welcome people from all backgrounds, experiences, perspectives, and abilities.</em></p><p><em>Ashby is committed to a fair and transparent hiring process. We confirm that this advertisement is for an active, existing vacancy within our organization. Please be advised that we may use artificial intelligence-driven tools to assist our recruitment team in screening, assessing, and selecting candidates for this position.</em></p></div>
+
+<a class="apply" href="https://jobicy.com/jobs/147007-strategic-customer-success-manager-americas" target="_blank" rel="noopener">去原站申请 | Apply on Jobicy ↗</a>
+<footer>信息采集自 Jobicy,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from Jobicy; refer to the original posting.</footer>
+</body></html>

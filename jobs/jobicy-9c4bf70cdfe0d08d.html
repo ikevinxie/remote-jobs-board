@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scorpion | Senior SEO Strategist</title>
+<meta property="og:title" content="Scorpion | Senior SEO Strategist">
+<meta property="og:description" content="Scorpion · 📍USA">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="Scorpion · 📍USA">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Senior SEO Strategist</h1>
+<div class="meta">🏢 Scorpion · 📍 USA · 市场营销 | Marketing · 美洲 | Americas · 来源 Jobicy · 发布 2026-07-17</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://jobicy.com/jobs/146473-senior-seo-strategist-2" target="_blank" rel="noopener">去原站申请 | Apply on Jobicy ↗</a>
+<div class="jd"><h3><strong>About Us</strong></h3>
+Scorpion is the leading provider of technology and services helping local businesses thrive. We do this by helping customers understand local market dynamics, make the most of their marketing, and deliver experiences their customers will love. We offer tools to know what’s going on with marketing, competitors, and customers. We offer a unique blend of AI support and teams of real human people with local expertise committed to customer success. At Scorpion, we are ready to do whatever it takes to help our clients reach their goals. Our technology and personalized tools bring everything together to help local businesses easily understand their unique business, market, and customer needs. We put SEO, Reviews, Advertising, Email Marketing, Chat and Messaging, Social Media, Website, Lead Management, Appointment Scheduling, and more to work for local businesses. We’re a technology-led service with a human touch.<h3>About the Role</h3><p>As the Senior SEO Strategist focusing on high-value clients, you will play a pivotal role in advancing our client services to unprecedented levels of excellence. Supporting a portfolio of either Legal or Private Equity clients, you will provide strategic oversight of ranking plans, serve as a trusted advisor to key stakeholders, and deliver direct communication with high-value clients. Your influence will extend to providing sophisticated support to Account Managers, ensuring seamless collaboration across the team. Your seasoned expertise is essential for consistently delivering exceptional results for high-profile clientele while safeguarding and maximizing revenue through strategic upsells, contract renewals, and proactive measures to protect client investments in our services.</p><p>Your proactive approach will involve closely monitoring client performance metrics and industry trends, allowing you to anticipate and address potential challenges. By fostering a culture of continuous improvement and staying at the forefront of SEO advancements, you will contribute to the overall resilience and adaptability of our client services, ensuring they remain unparalleled in a rapidly evolving digital landscape.</p><p><em><strong>Scorpion Internal Title:</strong> Senior Ranking Strategist, SMB</em></p><h3><strong>What Your Success Will Look Like</strong></h3><ul>
+<li>Provide specialized support for high-value clients, including direct communication, strategic oversight of ranking plans, and ensuring client satisfaction.</li>
+<li>Collaborate with cross-functional teams to develop and implement advanced SEO strategies tailored to meet the unique needs of high-value clients.</li>
+<li>Contribute to the growth of product revenue by identifying and executing upselling opportunities within the high-value client portfolio.</li>
+<li>Conduct pre-launch audits for new VIP clients to ensure a seamless onboarding experience and successful launch.</li>
+<li>Analyze and create organic ranking goals, implementing tailored strategies to enhance visibility and drive targeted traffic for high-value clients.</li>
+<li>Act as a senior-level resource, providing mentorship to junior team members, fostering a culture of continuous learning, and contributing to the overall success of the team.</li>
+</ul><h3><strong>Who You Are And What You Bring<br></strong></h3><ul>
+<li><strong>Education</strong><br>
+<ul>
+<li>Bachelor’s degree in Marketing, Communications, Business, or a related field — or equivalent experience.</li>
+</ul>
+</li>
+</ul><ul>
+<li><strong> Experience</strong>
+<ul>
+<li>3+ years experience in high-value client-facing roles, within an SEO environment.</li>
+<li>Strong understanding of organic ranking strategies and SEO best practices.</li>
+<li>Proficiency in SEO tools such as Google Analytics, Search Console, and third-party SEO platforms.</li>
+<li>Experience with upselling and revenue growth strategies is a plus.</li>
+</ul>
+</li>
+</ul><ul>
+<li><strong>Skills</strong>
+<ul>
+<li>Excellent communication and relationship-building skills, with a client-centric approach.</li>
+<li>Detail-oriented and organized with the capacity to oversee and optimize complex plans.</li>
+</ul>
+</li>
+</ul><h3>Our Scorpion Values</h3><ul>
+<li><strong>Winning Mindset:</strong> When our clients win, we win.</li>
+<li><strong>Genuine Care:</strong> We only succeed when we are truly invested in our clients and each other.</li>
+<li><strong>Unmatched Results:</strong> We deliver more than expected–and then some–driving the best results and impacting lives.</li>
+<li><strong>Constant Improvement:</strong> We believe there is always a better way. We learn we ask “What if?” we build and then do it again.</li>
+<li><strong>Unbeatable Teamwork:</strong> We come from different backgrounds but have the same vision. We only get there by doing it together, as a team.</li>
+</ul><h3>Compensation </h3><p>We acknowledge that states have passed legislation promoting pay transparency. As a national employer, Scorpion has made the decision to post our expected pay rate or pay range (as applicable) in all our job postings, regardless of geographic location.</p><ul>
+<li>The base salary range is $70,000 (entry-level) - $90,000 (highly experienced), exclusive of fringe benefits. If you are hired at Scorpion, your final base salary compensation will be determined based on factors such as geographic location, skills, education, and/or experience. Additionally, we believe in the importance of pay equity and consider the internal equity of our current team members as a part of any final offer. Please keep in mind that the range mentioned above is the total salary range for the role. Hiring at the maximum of the range would not be typical in order to allow for future &amp; continued salary growth. </li>
+<li>The compensation package may also include incentive compensation opportunities in the form of discretionary bonuses or commissions.</li>
+</ul>
+<h3>Our Benefits</h3>
+<p>We invest in our employees by offering them diverse benefits from best-in-class carriers. These benefits provide enough choice and flexibility to keep our employees and their families healthy and happy—today and tomorrow.</p>
+<ul>
+<li>100% employer-paid medical, dental, and vision insurance</li>
+<li>Flexible paid time off, so you can rest, relax, and recharge away from work</li>
+<li>Paid parental leave</li>
+<li>Paid cell phone and service</li>
+<li>Remote office allowance</li>
+<li>Professional development and development courses</li>
+<li>Regular manager check-ins to drive performance and career growth through Lattice</li>
+</ul>
+<p><strong>Work Location &amp; Flexibility</strong></p>
+<p>Scorpion supports a range of work arrangements, including in-office, hybrid, and remote roles. For positions designated as remote, employees who live within commuting distance of a Scorpion office may be asked to work from the office based on team needs, collaboration opportunities, or business priorities. Specific expectations will be discussed during the interview process.</p>
+
+Scorpion is an equal opportunity employer and considers applicants for all positions without regard to race, color, religion or belief, sex, age, national origin, citizenship status, marital status, military/veteran status, genetic information, sexual orientation, gender identity, or physical or mental disability. We believe in creating a dynamic work environment that values diversity and inclusion.
+ 
+<a href="https://www.scorpion.co/careers/accommodations/" rel="nofollow noopener" target="_blank">Reasonable Accommodations</a>
+ 
+Scorpion participates in the E-Verify program to confirm employment authorization of all newly hired employees. The E-Verify process is completed during new hire onboarding and completion of the Form I-9, Employment Eligibility Verification, at the start of employment. E-Verify is not used as a tool to pre-screen candidates. For more information on E-Verify, please visit <a href="https://www.uscis.gov" rel="nofollow noopener" target="_blank">www.uscis.gov</a>.</div>
+
+<a class="apply" href="https://jobicy.com/jobs/146473-senior-seo-strategist-2" target="_blank" rel="noopener">去原站申请 | Apply on Jobicy ↗</a>
+<footer>信息采集自 Jobicy,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from Jobicy; refer to the original posting.</footer>
+</body></html>

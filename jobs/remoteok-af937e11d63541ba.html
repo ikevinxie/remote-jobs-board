@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Delinea | Senior Product Manager Platform</title>
+<meta property="og:title" content="Delinea | Senior Product Manager Platform">
+<meta property="og:description" content="Delinea · 📍Redwood City · 💰$130,000 - $162,000">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="Delinea · 📍Redwood City · 💰$130,000 - $162,000">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Senior Product Manager Platform</h1>
+<div class="meta">🏢 Delinea · 📍 Redwood City · 💰 $130,000 - $162,000 · 产品 | Product · 其他/未标明 | Other / Unspecified · 来源 Remote OK · 发布 2026-07-17</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://remoteOK.com/remote-jobs/remote-senior-product-manager-platform-delinea-1134961" target="_blank" rel="noopener">去原站申请 | Apply on Remote OK ↗</a>
+<div class="jd"><p><strong>About Delinea:</strong><br>Delinea is a pioneer in securing human and machine identities through intelligent, centralized authorization, empowering organizations to seamlessly govern their interactions across the modern enterprise. Leveraging AI-powered intelligence, Delineaâs leading cloud-native Identity Security Platform applies context throughout the entire identity lifecycle â across cloud and traditional infrastructure, data, SaaS applications, and AI. It is the only platform that enables you to discover all identities â including workforce, IT administrator, developers, and machines â assign appropriate access levels, detect irregularities, and respond to threats in real-time. With deployment in weeks, not months, 90% fewer resources to manage than the nearest competitor, and a 99.995% uptime, Delinea delivers robust security and operational efficiency without compromise. Learn more about Delinea on <a href="http://Delinea.com" rel="nofollow noopener" target="_blank">Delinea.com</a>, <a href="https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Fdelinea%2F&amp;data=05%7C02%7CMichele.Eaton%40delinea.com%7C766420d58b9a492d94ca08ddd6949f59%7C18d6ed03f0e5486183d2bb7b6c7c2bb2%7C0%7C0%7C638902656186877399%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&amp;sdata=b1LCPIWSjxvblUYLlabUnRZ43S8rcspTQcBZsz0UbmU%3D&amp;reserved=0" rel="nofollow noopener" target="_blank">LinkedIn</a>, <a href="https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fx.com%2Fdelineainc&amp;data=05%7C02%7CMichele.Eaton%40delinea.com%7C766420d58b9a492d94ca08ddd6949f59%7C18d6ed03f0e5486183d2bb7b6c7c2bb2%7C0%7C0%7C638902656186902236%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&amp;sdata=goZhva9hWR8F0P5pO6SQUEwigdbvbZiWqmw5%2BHhhf1A%3D&amp;reserved=0" rel="nofollow noopener" target="_blank">X</a>, and <a href="https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.youtube.com%2F%40Delinea&amp;data=05%7C02%7CMichele.Eaton%40delinea.com%7C766420d58b9a492d94ca08ddd6949f59%7C18d6ed03f0e5486183d2bb7b6c7c2bb2%7C0%7C0%7C638902656186928751%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&amp;sdata=uXgjuXTFu4kHWBJZ1XdNWN88Mrk5iT9Y24Ejw8fFBi8%3D&amp;reserved=0" rel="nofollow noopener" target="_blank">YouTube</a>.</p><p></p><p>Join our passionate, global team at Delinea and help us make the world a safer and more secure place. Our success is driven by world-class product leadership, outstanding engineers, and strategic investment from TPG. We value diversity, innovation, and a culture of respect and fairness. If you&#x27;re ready to push boundaries and challenge the status quo in security, we want to hear from you.<br>Â </p><p>Apply today to help us achieve our mission.</p><p></p><p><strong>Position Summary</strong></p><p>As a<strong> Senior Product Manager for Delinea Platform Shared Services,</strong> you will play a pivotal role in defining and executing the strategic vision for the foundational services that power every product on the Delinea Platform. You will own the platform&#x27;s shared services portfolio â including the policy service, workflow orchestration and approval services, inbox, and notifications â capabilities that every product team builds on and every customer touches daily. The ideal candidate possesses a deep understanding of platform product management, workflow and policy-driven systems, and has a proven track record of successfully launching and scaling shared services in a multi-tenant SaaS environment.</p><p></p><p><strong>Key Responsibilities</strong></p><ul><li><p>Develop and communicate a compelling vision and strategy for the platform&#x27;s shared services â policy, workflow (including the approval service), inbox, and notifications â aligning it with overall company goals.</p></li></ul><ul><li><p>Collaborate with customers as well as external and internal stakeholders to understand end-user needs and validate product requirements for policy authoring, approval workflows, and notification experiences.</p></li></ul><ul><li><p>Collaborate with internal business unit product teams: gather their requirements, understand their roadmaps, and design shared services that are easy to adopt, extend, and build upon.</p></li></ul><ul><li><p>Drive the development of a robust, flexible policy framework that enables consistent, auditable policy definition and enforcement across the platform.</p></li></ul><ul><li><p>Own the workflow and approval service roadmap, delivering orchestration capabilities that support complex, multi-step approval chains, delegation, escalation, and audit requirements.</p></li></ul><ul><li><p>Define and evolve the platform inbox and notification services to deliver timely, actionable, and well-governed communications across channels, with sensible defaults and user-level control.</p></li></ul><ul><li><p>Champion API-first, self-service design, and establish adoption metrics to measure success.</p></li></ul><ul><li><p>Stay up to date on industry trends and emerging technologies â including policy-as-code, workflow orchestration patterns, and event-driven architectures â to inform the product roadmap.</p></li></ul><ul><li><p>Work closely with engineering, design, architecture, and other cross-functional teams to define, prioritize, and deliver features.</p></li></ul><p></p><p><strong>Skills &amp; Requirements</strong></p><ul><li><p>Bachelor&#x27;s degree in computer science, Information Systems, Engineering, Business, or similar preferred.</p></li></ul><ul><li><p>5+ years of proven experience in product management, with a focus on platform services, shared/foundational capabilities, or related areas.</p></li></ul><ul><li><p>Solid understanding of platform product management principles: multi-tenancy, API-first design.</p></li></ul><ul><li><p>Experience with one or more of the shared-service domains primarily policy engines, policy-as-code and workflow orchestration systems.</p></li></ul><ul><li><p>Familiarity with security, compliance, and audit requirements for enterprise workflows and approvals (e.g., separation of duties, audit trails).</p></li></ul><ul><li><p>Track record of successfully bringing platform capabilities to market and driving their adoption across multiple product teams.</p></li></ul><ul><li><p>Working knowledge of public cloud computing (e.g., AWS, Azure, Google Cloud Platform) and event-driven, microservices-based architectures.</p></li></ul><ul><li><p>Experience in identity security, PAM, or the broader cybersecurity space is a huge plus.</p></li></ul><ul><li><p>Pragmatic Marketing/Scrum Product Owner certifications are a plus.</p></li></ul><ul><li><p>Excellent written, oral, and presentation skills, and a curious attitude with a desire to collaborate with a team of first-rate engineers, designers, and other Product Managers.</p></li></ul><p></p><p><strong>Travel Expectation: Up to 25%</strong></p><p></p><p><strong>Why work at Delinea? </strong></p><ul><li><p>We&#x27;re passionate problem-solvers helping the world&#x27;s largest organizations protect what matters most: their human and machine identities.</p></li></ul><ul><li><p>We invest in people who are smart, self-motivated, and collaborative.</p></li></ul><ul><li><p>What we offer in return is meaningful work, a culture of innovation and great career progression.</p></li></ul><p></p><p><strong>At Delinea, our core values are STRONG and guide our behaviors and success:</strong></p><ul><li><p>Spirited - We bring energy and passion to everything we do</p></li></ul><ul><li><p>Trust - We act with integrity and deliver on our commitments</p></li></ul><ul><li><p>Respect - We listen, value different perspectives, and work as one team</p></li></ul><ul><li><p>Ownership - We take initiative and follow through</p></li></ul><ul><li><p>Nimble - We adapt quickly in a fast-changing environment</p></li></ul><ul><li><p>Global - We embrace diverse people and ideas to drive better outcomes</p></li></ul><p>We believe weaving these core values into our day-to-day actions, and our process for hiring, evaluating, and promoting employees, helps us cultivate a work environment that embraces collaboration and camaraderie.</p><p>We take care of our employees. We offer competitive salaries, a meaningful bonus program, and excellent benefits, including healthcare insurance, as well as pension/retirement matching, comprehensive life insurance, an employee assistance program, time off plans, and paid company holidays. </p><p><em>Delinea is an Equal Opportunity and Affirmative Action employer and prohibits discrimination and harassment of any type with regard to race, color, religion, age, sex, national origin, disability status, genetics, protected veteran status, sexual orientation, gender identity or expression, or any other characteristic protected by federal, state or local laws.</em></p><p><em>Upon conditional offer of employment, candidates are required to complete comprehensive criminal background check, verification of education, and verification of employment, per employment policy. In addition, all publicly posted social media sites may be reviewed.</em></p><p><em>Â </em></p><p><em>Â </em></p><p><em>Â </em></p><p>Â </p><p><strong><br></strong></p><br><br>Please mention the word **SOOTHE** and tag RMTAzLjExNy4xMDMuNzE= when applying to show you read the job post completely (#RMTAzLjExNy4xMDMuNzE=). This is a beta feature to avoid spam applicants. Companies can search these words to find applicants that read this and see they&#x27;re human.</div>
+
+<a class="apply" href="https://remoteOK.com/remote-jobs/remote-senior-product-manager-platform-delinea-1134961" target="_blank" rel="noopener">去原站申请 | Apply on Remote OK ↗</a>
+<footer>信息采集自 Remote OK,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from Remote OK; refer to the original posting.</footer>
+</body></html>

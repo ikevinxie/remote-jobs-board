@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Truelogic | Graphic Designer - Marketing</title>
+<meta property="og:title" content="Truelogic | Graphic Designer - Marketing">
+<meta property="og:description" content="Truelogic · 📍LATAM">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="Truelogic · 📍LATAM">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Graphic Designer - Marketing</h1>
+<div class="meta">🏢 Truelogic · 📍 LATAM · 设计 | Design · 美洲 | Americas · 来源 Jobicy · 发布 2026-07-17</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://jobicy.com/jobs/149177-graphic-designer-marketing" target="_blank" rel="noopener">去原站申请 | Apply on Jobicy ↗</a>
+<div class="jd"><h3><strong>About Truelogic</strong></h3><p>At Truelogic we are a leading provider of nearshore staff augmentation services headquartered in New York. For over two decades, we’ve been delivering top-tier technology solutions to companies of all sizes, from innovative startups to industry leaders, helping them achieve their digital transformation goals.</p><p>Our team of 600+ highly skilled tech professionals, based in Latin America, drives digital disruption by partnering with U.S. companies on their most impactful projects. Whether collaborating with Fortune 500 giants or scaling startups, we deliver results that make a difference.</p><p>By applying for this position, you’re taking the first step in joining a dynamic team that values your expertise and aspirations. We aim to align your skills with opportunities that foster exceptional career growth and success while contributing to transformative projects that shape the future.</p><p></p><h3><strong>Our Client</strong></h3><p>An award-winning creative and social media agency that helps global brands stay culturally relevant through innovative, social-first campaigns. The agency creates content designed to participate in culture rather than interrupt it, translating trends, memes, and real-time social conversations into compelling visual storytelling. With a strong focus on authenticity and platform-native creativity, it helps brands connect meaningfully with audiences across social media, influencer marketing, and digital ecosystems.</p><h3><br><strong>Job Summary</strong></h3><p>We are seeking a Graphic Designer with a strong passion for social media, internet culture, and platform-native creative. This role is ideal for someone who spends time online, understands how trends evolve, and knows how to design content that feels native to platforms like TikTok, Instagram, X, Threads, LinkedIn, and YouTube Shorts.<br></p><p>The ideal candidate combines strong design fundamentals with a deep understanding of meme culture, social behavior, and digital storytelling. You&#x27;ll collaborate closely with creative, strategy, community, and account teams to develop content that is timely, culturally relevant, and built for engagement.</p><p></p><h3><strong>Responsibilities</strong></h3><ul><li><p>Design social-first creative for TikTok, Instagram, X, Threads, LinkedIn, YouTube Shorts, and emerging platforms. </p></li><li><p>Create memes, trend-driven content, reactive assets, and culturally relevant social creative. </p></li><li><p>Design static posts, carousels, stories, social templates, and presentation materials. Translate social insights, cultural moments, and online trends into compelling visual concepts. </p></li><li><p>Collaborate with Creative Directors, Copywriters, Strategists, Community Managers, and Account teams. </p></li><li><p>Contribute ideas during brainstorms and creative development sessions. </p></li><li><p>Support campaign launches, content calendars, pitch decks, and new business initiatives.</p></li><li><p>Ensure creative quality, consistency, and platform relevance across all deliverables. </p></li><li><p>Stay current on internet culture, creator trends, social platform updates, and emerging formats.</p></li></ul><p></p><h3><strong>Qualifications and Job Requirements</strong></h3><ul><li><p>2–5 years of experience in graphic design within a creative agency, social agency, media company, design studio, or in-house brand team. </p></li><li><p>Strong portfolio demonstrating social-first campaigns, organic social content, meme-driven creative, trend participation, and platform-native design.</p></li><li><p>Deep understanding of internet culture, meme formats, social trends, and creator ecosystems. </p></li><li><p>Advanced proficiency in Adobe Creative Suite, particularly Photoshop and Illustrator. </p></li><li><p>Strong typography, composition, layout, and visual storytelling skills. </p></li><li><p>Experience creating content optimized for social platforms and platform-specific audiences. </p></li><li><p>Ability to work quickly, manage multiple projects, and thrive in a fast-paced environment. Strong communication, collaboration, and organizational skills. </p></li><li><p>Excellent attention to detail and creative judgment.</p></li></ul><p></p><p><u>Differentials</u></p><ul><li><p>Experience with After Effects, motion graphics, or basic animation. </p></li><li><p>Familiarity with TikTok-native editing styles and creator content. </p></li><li><p>Experience working on influencer marketing or creator-led campaigns. </p></li><li><p>Strong conceptual thinking and idea generation skills. </p></li><li><p>Experience creating reactive or real-time social content. </p></li><li><p>Understanding of social media performance metrics and content optimization. </p></li><li><p>Experience contributing to pitch decks or new business presentations.</p></li></ul><p></p><h3><strong>What We Offer</strong></h3><ul><li><p>100% Remote Work: Enjoy the freedom to work from the location that helps you thrive. All it takes is a laptop and a reliable internet connection.</p></li><li><p>Highly Competitive USD Pay: Earn an excellent, market-leading compensation in USD, that goes beyond typical market offerings.</p></li><li><p>Paid Time Off: We value your well-being. Our paid time off policies ensure you have the chance to unwind and recharge when needed.</p></li><li><p>Work with Autonomy: Enjoy the freedom to manage your time as long as the work gets done. Focus on results, not the clock.</p></li><li><p>Work with Top American Companies: Grow your expertise working on innovative, high-impact projects with Industry-Leading U.S. Companies.</p></li></ul><p></p><h3><strong>Why You’ll Like Working Here</strong></h3><ul><li><p>A Culture That Values You: We prioritize well-being and work-life balance, offering engagement activities and fostering dynamic teams to ensure you thrive both personally and professionally.</p></li><li><p>Diverse, Global Network: Connect with over 600 professionals in 25+ countries, expand your network, and collaborate with a multicultural team from Latin America.</p></li><li><p>Team Up with Skilled Professionals: Join forces with senior talent. All of our team members are seasoned experts, ensuring you&#x27;re working with the best in your field.</p></li></ul><p></p><p>Apply now!</p></div>
+
+<a class="apply" href="https://jobicy.com/jobs/149177-graphic-designer-marketing" target="_blank" rel="noopener">去原站申请 | Apply on Jobicy ↗</a>
+<footer>信息采集自 Jobicy,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from Jobicy; refer to the original posting.</footer>
+</body></html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spirax Group | Customer and Sector Insights Lead: Mining</title>
+<meta property="og:title" content="Spirax Group | Customer and Sector Insights Lead: Mining">
+<meta property="og:description" content="Spirax Group · 📍EMEA">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="Spirax Group · 📍EMEA">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Customer and Sector Insights Lead: Mining</h1>
+<div class="meta">🏢 Spirax Group · 📍 EMEA · 数据 | Data · 欧洲 | Europe / EMEA · 来源 Jobicy · 发布 2026-07-18</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://jobicy.com/jobs/146982-customer-and-sector-insights-lead-mining" target="_blank" rel="noopener">去原站申请 | Apply on Jobicy ↗</a>
+<div class="jd"><p><strong>Job Title:</strong> Customer &amp; Sector Insights Lead: Mining<br> <strong>Location: </strong>Global<br> <strong>Location Type: </strong>Remote<br><strong>Travel:</strong> 50% Global Travel<br> <strong>Website:</strong> <a href="https://www.wmfts.com/en/" rel="nofollow noopener" target="_blank">https://www.wmfts.com/en/</a><br><strong>Group: </strong><a href="https://www.spiraxgroup.com/" rel="nofollow noopener" target="_blank">https://www.spiraxgroup.com/</a></p><p><strong>Applications: </strong>https://www.wmfts.com/en/mining/</p><p>Watson-Marlow Fluid Technology Solutions is part of Spirax Group, a FTSE100 and FTSE4Good multi-national industrial engineering Group with expertise in the control and management of steam, electric thermal solutions, peristaltic pumping and associated fluid technologies.<br>When you join us, you will be integrated into a cooperative and encouraging team, participate in challenging yet critical work, and experience ongoing growth opportunities to help you achieve your full potential. Visit our website to learn more.</p><p><strong>Job Summary:<br></strong> This is a global strategic role with a primary focus on driving the growth of designated market sectors and related portfolio, with a strong emphasis on capture and dissemination of Customer Insights. Reporting to the Customer &amp; Market Insights Manager, you’ll be part of a team playing a crucial role in delivering the strategic objectives of the business to drive revenue growth and sustain contribution margin. By engaging directly with our customers, you’ll bring a strong commercial voice to provide direction on how we best serve the industry and position ourselves for success.</p><p>The role requires engagement and collaboration across all functions within the Strategic Business Development Directive, Sales and Supply and will be responsible for ensuring the commercial view and customer needs are well understood and embedded into our approach. A key part of the role is to support the relationship between Sales and Supply to ensure all entities are aligned in working with our customers. <br><strong>Key Responsibilities:<br></strong> </p><ul><li>As the commercial expert for your designated sector, enable Sales to exceed annual revenue and contribution margin targets, facilitating portfolio pricing strategies for direct and indirect RTMs as required.</li><li>Take a leading role in enabling Sales to win contracts/tenders/RFPs where required. </li><li>Undertake global field sales work to build Sales’ expertise in applications, processes and portfolio capability addressing competitive threats whilst cross-pollinating regional application strongholds. </li><li>As the Subject Matter Expert (SME) for your designated sector capture and disseminate customer insights and application/process knowledge to the Training Content and Marcoms teams. </li><li>Design and mobilise go-to-market strategies that are tailored to the dynamics of target sub-sectors, fully considering customer needs and the competitive landscape, to drive new lead generation. </li><li>Collaborate with Portfolio Management, Sales, Supply and Global Engineering, to ensure that customer and sector insights are integrated into the NPI roadmap and sales strategies.</li><li>Collaborate with Sector Sales Managers and Portfolio Management to validate the NPI commercial plans and facilitate successful new product commercialisation and relating vitality. </li><li>Develop Solution selling capability of Sales, to deliver market leading Customer Value Propositions (CVPs) that sustain competitive advantage.</li><li>Work with both Sales and Supply to ensure that appropriate levels of commercial and technical support are provided to customers. </li><li>Build and sustain a network of market contacts, and as an advocate and SME for WMFTS, attend customer sites, exhibitions and conferences where required to promote portfolio capability. </li><li>Follow GBD Business Development Framework (Protect/Grow/Expand) for standard work guidance. </li><li>Time Management Approximately 50% Customer insight related content generation, 50% global travel.</li></ul><br><strong>Skills/Experience:<br></strong> <ul><li>BSc/BEng in an Engineering discipline or equivalency through relevant experience.</li><li>Experience developing and executing regional or global commercial growth strategies within the mining sector.</li><li>Proven experience working with mining customers across multiple international regions, with an understanding of differing market dynamics, customer requirements and routes to market.</li><li>Ability to make decisions concerning commercial negotiations, MRP, RFQ pricing (with global alignment), regional discounting, contract frameworks (MSA), negotiations, group gross Contribution. </li><li>Exceptional Leadership and Followership skills.</li><li>Excellent written and communication skills in English.</li><li>Data analysis skills using CRM, Power BI, Excel. </li><li>Knowledge of CRM (customer relation management system).</li><li>Ability and willingness to travel nationally and internationally on a regular basis, as required (up to 50%) for networking, developing/negotiating strategic key accounts, launching and executing GTM campaigns in the field and collaborating with Sales and Customers as required.</li></ul><p>At Watson-Marlow, we believe in taking care of our colleagues. We offer a generous benefits package, including:</p><ul><li>A competitive salary</li><li>Flexible working arrangements</li><li>A generous holiday allowance</li><li>Three days’ paid volunteering leave</li><li>Additional support and benefits through our Everyone is Included Group Inclusion Plan</li></ul><p><strong>Everyone is Included at Spirax Group<br></strong>We are passionate about creating inclusive and equitable working cultures where everyone can be themselves and achieve their full potential. For us, that means supportive teams and strong relationships where everyone’s contribution is valued - across social and cultural backgrounds, ethnicities, ages, genders, gender identities, abilities, neurodiversity, sexual orientation, religious beliefs, and everything else that makes us human and unique.<br>We want everyone to be able to make their difference here, so we will always consider requests for flexible working.<br>We know that everyone needs some extra help from time to time too, so we have introduced a range of additional benefits through our Group Inclusion Commitments. These include</p><ul><li>Gender-neutral parental leave</li><li>15 days of extra paid caregiver leave</li><li>Paid time off and support for anyone experiencing pregnancy loss or domestic abuse</li><li>Menopause-friendly workplace principles and more</li></ul><p> Learn more at <a href="https://www.spiraxgroup.com/en/life-at-spirax/our-inclusive-group/our-approach" rel="nofollow noopener" target="_blank">spiraxgroup.com/inclusion</a>.</p><p>We are also a Disability Confident Committed Employer. If you would like to apply using this scheme, please select this option in our application form.<br>We are an equal opportunity employer committed to fostering an inclusive and diverse workplace. We encourage candidates from all backgrounds to apply.<br>If you require accommodations during the application process, please let us know.</p><p><strong>Company Overview<br></strong> At Watson-Marlow Fluid Technology Solutions, part of Spirax Group, we are driven by innovation and are dedicated to creating an inclusive workplace where everyone is empowered to make a difference. As a world leader in manufacturing peristaltic pumps and associated fluid path technologies for the life sciences and process industries, we offer a wide range of products, including tubing, specialised filling systems and products for single-use applications.<br>Our shared Purpose is to create sustainable value for all our stakeholders as we engineer a more efficient, safer and sustainable world. Our technologies play an essential role in critical industrial processes and industrial equipment across industries as diverse as Food &amp; Beverage, Pharmaceutical &amp; Biotechnology, Power Generation, Semiconductors and Healthcare. With customers in 116 countries, we provide the solutions that sit behind the production of many items used in daily life, from baked beans to mobile phones!<br>Our inclusive culture and Values, unites us, guides our decisions and inspires us everywhere that we operate. We support our colleagues to make their difference for each other as well as customers, communities, suppliers, our planet and shareholders by creating a truly equitable working environment where everyone feels included.</p><p></p><br></div>
+
+<a class="apply" href="https://jobicy.com/jobs/146982-customer-and-sector-insights-lead-mining" target="_blank" rel="noopener">去原站申请 | Apply on Jobicy ↗</a>
+<footer>信息采集自 Jobicy,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from Jobicy; refer to the original posting.</footer>
+</body></html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thales | Sales Engineer (Application Security)</title>
+<meta property="og:title" content="Thales | Sales Engineer (Application Security)">
+<meta property="og:description" content="Thales · 📍USA">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="Thales · 📍USA">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Sales Engineer (Application Security)</h1>
+<div class="meta">🏢 Thales · 📍 USA · 销售 | Sales · 美洲 | Americas · 来源 Jobicy · 发布 2026-07-17</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://jobicy.com/jobs/146550-sales-engineer-application-security" target="_blank" rel="noopener">去原站申请 | Apply on Jobicy ↗</a>
+<div class="jd"><p>Location: Texas, United States of America</p><p>Thales people architect identity management and data protection solutions at the heart of digital security. Business and governments rely on us to bring trust to the billions of digital interactions they have with people. Our technologies and services help banks exchange funds, people cross borders, energy become smarter and much more. More than 30,000 organizations already rely on us to verify the identities of people and things, grant access to digital services, analyze vast quantities of information and encrypt data to make the connected world more secure.</p><p><b>Remote - Central/ West US States</b></p><p>Thales is hiring an experienced<b> Sales Engineer </b>who&#x27;ll provide guidance and assistance to the account teams in building solutions specific to customers’ application security challenges to support our Sales team in the West region.</p><p><b>Sales Engineers</b> are an integral part of Thales’s sales organization<br>and assist the sales team with pre-sales technical knowledge and presentations. They work closely with sales managers, prospects and partners as the subject-matter expert to demonstrate how a proposed solution meets and exceeds customer requirements. Our preference is someone whose technical strengths include a heavy emphasis in Web Application Security.</p><p><b>Key Areas of Responsibility</b></p><ul><li><p>Use consultative selling skills with customers to understand technical requirements and provide solutions using Thales products</p></li><li><p>Prepare and deliver solution Presentations, Demonstrations, Proof of Concepts for Thales Solutions</p></li><li><p>Provide high-level consultation and enablement on the company’s products and capabilities to Partners, End-Users, and other departments as part of the sales cycle</p></li><li><p>Work closely with Product Management and Business Development to identify, evaluate, and make technical recommendations regarding strategic product enhancements based on market initiatives, new technology, partnerships, or customer requirements</p></li><li><p>Work with the Customer Success and Technical Support teams to ensure customer satisfaction</p></li><li><p>Prepare workflows and answers to Requests for Proposals, Request for Information, and project proposals</p></li><li><p>Maintain a high degree of technical awareness of relevant products, competitors, and trends in the marketplace</p></li></ul><p><b>Minimum Qualifications</b></p><ul><li><p>5+ years of Sales Engineering experience in more than one of the following areas: DDoS Mitigation, Web application firewalls, API Management &amp; Security, Bot Management or related cybersecurity solutions</p></li><li><p>Knowledge of the Application Security industry, products, vendor landscape, history, and emerging trends</p></li><li><p>Must have a foundational knowledge of TCP/IP, DNS, TLS, HTTP, CDN, load balancers, proxies, and firewalls</p></li><li><p>Hands on experience in AWS/Azure/GCP, K8s, Docker, or other containerization technologies</p></li><li><p>Prior experience in API security, API management, SIEM, DevOps, DevSecOps is desirable</p></li><li><p>Compliance standards knowledge (PCI, SOX, HIPAA) – an advantage</p></li><li><p>Experience with using value-selling/consultative methodologies, playbooks, and processes</p></li><li><p>Able to effectively present technical material to small and large groups</p></li></ul><p><b>Special Position Requirements</b></p><ul><li><p>Up to 30% travel</p></li></ul><p><b>Applicants must be legally authorized to work in the United States for any employer at the time of hire. This position is not eligible for visa sponsorship or for assuming sponsorship of an employment visa now or in the future.</b></p><p>If you’re excited about working with Thales, but not meeting the requirements for this position, we encourage you to join our Talent Community! <a href="https://careers.thalesgroup.com/global/en/jointalentcommunity" rel="nofollow noopener" target="_blank">https://careers.thalesgroup.com/global/en/jointalentcommunity</a>. You can upload your CV and our recruiters can get in touch with any new opportunities that may be of interest to you.</p><p><b>Why Join Us?</b></p><p>Say HI and learn more about working at Thales <a href="https://youtu.be/9aMF4NMhEJo" rel="nofollow noopener" target="_blank"><i>click here</i></a></p><p>#LI-MM1</p><p>#LI-Remote</p><p>This position will require successfully completing a post-offer background check. Qualified candidates with criminal history will be considered and are not automatically disqualified, consistent with applicable federal law, state law (the California Fair Chance Act), and local ordinances (San Francisco Fair Chance Ordinance, City of Los Angeles’ Fair Chance Initiative for Hiring Ordinance, and Los Angeles County’s Fair Chance Ordinance for Employers).</p><p>This position will require successfully completing a post-offer background check. Qualified candidates with [a] criminal history will be considered and are not automatically disqualified, consistent with federal law, state law, and local ordinances.</p><p>Thales champions inclusion and we believe diversity strengthens the fabric of our culture. Thales is an Equal Opportunity Employer, including disability/veterans.</p><p>If you need an accommodation or assistance in order to apply for a position with Thales, please contact us at talentacquisition@us.thalesgroup.com.</p><p>The reference Total Target Compensation (TTC) market range for this position, inclusive of annual base salary and the variable compensation target, is between</p><p>This reflects how companies in a similar industry and geographic region generally pay for similar jobs. This range helps the Company make pay decisions as one data point among many. Where a position falls within this range is also dependent on other factors including – but not limited to – the employee’s career path history, competencies, skills and performance, as well as the company’s annual salary budget, the customer’s program requirements, and the company’s internal equity. Thales may offer additional benefits and other compensation, depending on circumstances not related to an applicant’s status protected by local, state, or federal law.</p><p>(For Internal candidate, if you need more information, please raise HR request through <a href="https://kiss.service-now.com/esc?id=ec_pro_home" rel="nofollow noopener" target="_blank"><u>MyThales</u></a>)</p><p>Thales provides an extensive benefits program for all full-time employees working 30 or more hours per week and their eligible dependents, including the following:</p><p>•Elective Health, Dental, Vision, FSA/HSA, Voluntary Life and AD&amp;D, Whole Group Life w/LTC, Critical Illness, Hospital Indemnity, Accident Insurance, Legal Plan, Identity Theft, and Pet Insurance</p><p>•Retirement Savings Plan after 30 days of employment with a company contribution and a match, and with no vesting period</p><p>•Company paid holidays and Paid Time Off</p><p>•Company provided Life Insurance, AD&amp;D, Disability, Employee Assistance Plan, and Well-being Program</p></div>
+
+<a class="apply" href="https://jobicy.com/jobs/146550-sales-engineer-application-security" target="_blank" rel="noopener">去原站申请 | Apply on Jobicy ↗</a>
+<footer>信息采集自 Jobicy,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from Jobicy; refer to the original posting.</footer>
+</body></html>

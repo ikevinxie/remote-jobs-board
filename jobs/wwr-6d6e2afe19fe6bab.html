@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WiFi Tribe | Leader for Premium Remote Work + Travel Community (global travel required)</title>
+<meta property="og:title" content="WiFi Tribe | Leader for Premium Remote Work + Travel Community (global travel required)">
+<meta property="og:description" content="WiFi Tribe · 📍Anywhere in the World">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="WiFi Tribe · 📍Anywhere in the World">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Leader for Premium Remote Work + Travel Community (global travel required)</h1>
+<div class="meta">🏢 WiFi Tribe · 📍 Anywhere in the World · 其他 | Other · 全球 | Worldwide · 来源 We Work Remotely · 发布 2026-07-17</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://weworkremotely.com/remote-jobs/wifi-tribe-leader-for-premium-remote-work-travel-community-global-travel-required" target="_blank" rel="noopener">去原站申请 | Apply on We Work Remotely ↗</a>
+<div class="jd"><p>
+  <strong>Headquarters:</strong> United Kingdom
+    <br><strong>URL:</strong> <a href="https://wifitribe.co" rel="nofollow noopener" target="_blank">https://wifitribe.co</a>
+</p>
+
+<h3>Become a WiFi Tribe Chapter Host</h3>
+<p>WiFi Tribe is the vetted community for remote professionals who travel together while they work. For the last 10 years, we have been traveling the world together with our members, living in a different city every month. On weekdays, we work remotely side-by-side, and on the weekends, we go on trips and adventures together.<br><br>Right after the pandemic, the interest in what we do has exploded. We&#x27;re now expanding our team and looking for talented and passionate community builders to take on the world with us as Chapter Hosts.<br><br>A WiFi Tribe Chapter Host is our version of a community leader. As a Host, you will be traveling the world with 15-25 other WiFi Tribe members and be in charge of the vibe (the culture) and group dynamics. This is a paid job and all travel costs are covered.</p>
+<h3>Why Does WiFi Tribe Exist?</h3>
+<p>We all need to feel that we belong somewhere. Humans evolved and survived as tribes and communities. But now, with billions of people living in mega cities and lonely one-person apartments, we&#x27;re more disconnected than we ever were. We&#x27;ve traded comfort, success, and belongings for what really matters; human connection. Oh, and, where has our sense of adventure and discovery gone?!<br><br>You&#x27;re reading this because you&#x27;re a person who derives meaning and energy from being around other great people and bringing them together. You&#x27;re a people person! You know this, because you&#x27;ve been told so often by others that you&#x27;re just... <em>naturally good with people</em>. And, I&#x27;m going to bet that you love a good adventure.<br><br>Maybe, you&#x27;re in a moment of transition in your life, where you&#x27;re asking yourself: <em>&quot;What matters to me? What do I want more of in my life? What do I want my life to look like? And what do I need to change to get it there?&quot;</em><br><br>At WiFi Tribe, we believe that a rich, fulfilling life boils down to three things:</p>
+<ol>
+<li>
+<p>a collection of shared experiences</p>
+</li>
+<li>
+<p>deep, meaningful relationships, and</p>
+</li>
+<li>
+<p>the sense of purpose we find when we are making a real difference in other people&#x27;s lives.</p>
+</li>
+</ol>
+<h3>What Does a Chapter Host Do?</h3>
+<p>Our Chapter Hosts are the most important members of our team. Everyone else on the team is here to support <em>you</em> in making the magic happen! As a Host, your mission is to strengthen the culture and foster a tight-knit community. The result of that will be a mind-expanding experience that bonds people together for life.<br><br><em>Challenge accepted?<br></em><br>Ok, here&#x27;s how it will happen... You&#x27;ll be traveling the world with 20 other freelancers, entrepreneurs, and remote professionals, living and working together from a new city every month. Yes, you&#x27;ll be responsible for the logistics of setting up a new destination, <em>but that&#x27;s the easy part</em>... You&#x27;ll find the ultimate match to your people skills and your natural leadership in the moments where you need to bring this group of 20 together and foster a real sense of community, wherever in the world we go.<br><br>As a Host, you are both the community architect and the community builder. You are a leader who empowers others to become active contributors and leaders too – an engineer of human dynamics. Most importantly, <em>you are a champion for the culture</em> WiFi Tribe has carefully fostered over the last five years.<br><br>And when necessary, you step up to ensure that the experience is safe for everyone. You&#x27;re the person in charge if anything needs to get resolved, and the on-the-ground liaison with the landlord/property owner. And don&#x27;t worry, the rest of the WiFi Tribe team has got your back – we&#x27;re here to help you make the magic happen every step of the way!</p>
+<h3>How, Exactly, Will I Be Working?</h3>
+<p>Hosts usually run two or three Chapters in a row. They are then off for one or two months before hosting their next set of Chapters. Each Chapter is four or six weeks long, so a Host is typically running Chapters for two or three months at a time.<br><br>There is always a week in-between each Chapter. We call it the ‘gap week’. Hosts arrive at their destinations at the start of the gap week so that they have enough time to prepare for their next Chapter.<br><br>The Chapter Host role is a 12-month contract that is paid per completed Chapter. Whenever Hosts are not running a Chapter, there are no work-related expectations from our side. Therefore, we recommend applicants to have other part-time work alongside the Host role. Ideally, you would either already be working as a freelancer, have a part-time remote job, or be running your own company to have a stable income, especially during the months when you’re not running a Chapter.<br><br>When on-Chapter, you can expect a part-time commitment (about 20h per week, with most of those hours at the beginning of the Chapter and less at the end) and when off-Chapter, you wouldn’t have any WiFi Tribe-related work.<br><br>There may be an opportunity to take on additional projects within the WiFi Tribe company at a later time. This would depend on your skills, work experience, and interests in other areas of our company, as well as what kind of projects are available. Please do not rely on this, as we cannot guarantee that there will be sufficient projects to support your full-time income needs.</p>
+<h3>Am I the Right Person for this Role?</h3>
+<p>Our application process takes a lot of time and effort and we&#x27;ve had 200 applicants per available spot. So, out of respect to your time, we want to help you self-assess whether you are exactly the kind of person we&#x27;re looking for:</p>
+<ol>
+<li>
+<p><strong>You&#x27;re a natural leader.</strong> Somehow people always gravitate around you and look to you for decisions.</p>
+</li>
+<li>
+<p><strong>You&#x27;re confident.</strong> You&#x27;re very comfortable being authentic self and your are stable within yourself.</p>
+</li>
+<li>
+<p><strong>You&#x27;re brave.</strong> You don&#x27;t shy away from doing the right thing, even when it&#x27;s hard to do.</p>
+</li>
+<li>
+<p><strong>You&#x27;re Reliable:</strong> People quickly trust you because you move through life with integrity.</p>
+</li>
+<li>
+<p><strong>You can &#x27;feel&#x27; the room.</strong> You&#x27;re aware of how everyone is feeling and you always make sure that everyone is involved and having a good time.</p>
+</li>
+<li>
+<p><strong>You&#x27;re a people person.</strong> Your friends and colleagues always tell you that you&#x27;re really good with people!</p>
+</li>
+<li>
+<p><strong>You&#x27;re a community builder.</strong> You naturally bring groups of people together around events, experiences, shared interests or ideas. You build a community around you by empowering people to contribute.</p>
+</li>
+</ol>
+<p>In short, your superpowers are all about people and leadership.<br><br>If every single one of these felt like it was describing <em>who you are</em>, we really hope you apply!</p>
+<h3>How Will I Grow Professionally?</h3>
+<p>Think of it as a practical, hands-on masters degree in community architecting, social dynamics engineering, and leadership... that you&#x27;re getting paid for. We&#x27;ll provide all the training for you to:</p>
+<ul>
+<li>
+<p>become skilled at navigating group dynamics</p>
+</li>
+<li>
+<p>develop public speaking skills</p>
+</li>
+<li>
+<p>sharpen your natural leadership skills</p>
+</li>
+<li>
+<p>hone your organisational skills</p>
+</li>
+<li>
+<p>hone your team/people management skills</p>
+</li>
+<li>
+<p>become a skilled communicator</p>
+</li>
+<li>
+<p>become skilled at managing uncertain or challenging situations</p>
+</li>
+<li>
+<p>put your emotional intelligence to the test and make it your greatest asset going forward (in work and life)</p>
+</li>
+</ul>
+<p>Of course, it&#x27;s on you to make the most of this opportunity, but just by being a leader within this community, you will be exposed to a constant stream of opportunities. You&#x27;ll be surrounded by successful remote professionals, freelancers and entrepreneurs who will happily take the time to sit down with you and share their hard-earned wisdom and their unique perspectives. Take this chance to:</p>
+<ul>
+<li>
+<p>sharpen your business acumen</p>
+</li>
+<li>
+<p>take a peek into any career you&#x27;re curious about</p>
+</li>
+<li>
+<p>find out more about an industry</p>
+</li>
+<li>
+<p>build a personal network of friends all over the world, who all work remotely and happen to be experts in their fields</p>
+</li>
+</ul>
+<h3>How Will I Grow as a Person?</h3>
+<ul>
+<li>
+<p>Get trained by a company that’s been perfecting the art and science of community leadership for 10 years. Receive high-value training on leadership, community building, and effective communication skills.</p>
+</li>
+<li>
+<p>Gain perspective as you meet new people and immerse yourself into the world&#x27;s many cultures.</p>
+</li>
+<li>
+<p>Escape the 9-to-5 cubicle and refocus on what truly matters: human connection, adventure, nature, self-discovery, growth, purpose, and just gratitude for life and all it has to offer.</p>
+</li>
+<li>
+<p>Do work that matters. You WILL change people&#x27;s lives (you&#x27;ll be responsible for engagements, marriages, kids, best friends for life, a new-found feeling of belonging, self-discovery, big career changes, and a life filled with memories).</p>
+</li>
+<li>
+<p>Become a better version of yourself. Let go of your ego and find yourself putting other people&#x27;s needs first.</p>
+</li>
+<li>
+<p>Challenge yourself to do something uncomfortable. This experience will shape you and prepare you for all sort of situations in life.</p>
+</li>
+<li>
+<p>Learn any work or life skill from a fellow member of the community.</p>
+</li>
+<li>
+<p>Learn from and grow with a great team that cares about you (as corny as it sounds, the team is family!)</p>
+</li>
+</ul>
+<blockquote>
+<p><em>&quot;My growth and internal capacity as a human being has skyrocketed. I am surrounded everyday by people who are inspiring and passionate whilst retaining their humility. This community has shown me where I need to grow but also it has shown me the ways I already shine.&quot; – Amanda (Senior Chapter Host &amp; Community Architect)</em></p>
+</blockquote>
+<p> </p>
+<h3>Is this a Typical Travel Job?</h3>
+<p>Yes and no. It&#x27;s really <em>all</em> about community. But yes, as a Host, you will be traveling a lot and you&#x27;ll be surrounded by people who are just as curious and excited about the world as you are. So, of course, this role is also about:</p>
+<ul>
+<li>
+<p>bringing more adventure into your life (escape the cubicle!)</p>
+</li>
+<li>
+<p>experiencing more of those small moments that life is all about (the sunsets, cozy dinners, more time in nature, exploring the streets of an unknown place with a new-found friend...)</p>
+</li>
+<li>
+<p>maybe learning a new language</p>
+</li>
+<li>
+<p>being on a never-ending journey of growth with a bunch of curious, passionate and quietly successful humans by your side</p>
+</li>
+<li>
+<p>maybe meeting a future business parter or the person who will open the door to your next big opportunity</p>
+</li>
+<li>
+<p>making friends for life all around the world</p>
+</li>
+<li>
+<p>filling your life with memories and experiences, instead of material things</p>
+</li>
+<li>
+<p>and, of course, seeing the world while you&#x27;re still young and full of energy!</p>
+</li>
+</ul>
+<h3>Your Mission as a Host</h3>
+<ul>
+<li>
+<p>Be an exemplary member of the community (live and breathe our values)</p>
+</li>
+<li>
+<p>Protect and foster the culture (the vibe) of WiFi Tribe on each Chapter</p>
+</li>
+<li>
+<p>Introduce new members to our culture to help them succeed</p>
+</li>
+<li>
+<p>Be a leader that empowers others. Use your natural influence to achieve that people live by our values, to foster our intentional culture, and to lift people up so that other leaders naturally emerge from within the community</p>
+</li>
+<li>
+<p>Encourage members to shape or co-create their own experience</p>
+</li>
+<li>
+<p>Prepare the housing and internet set-up for the group to arrive</p>
+</li>
+<li>
+<p>Collaborate with the landlord and sourcing team for any issues that need to be resolved (e.g. internet, housing quality, safety, etc.)</p>
+</li>
+<li>
+<p>Make it feel safe and comfortable for members to arrive on your Chapter</p>
+</li>
+<li>
+<p>Work with the Product team to improve the Chapter experience</p>
+</li>
+</ul>
+<h3>Secondary Responsibilities</h3>
+<ul>
+<li>
+<p>Be the on-the-ground eyes and ears for the rest of the team</p>
+</li>
+<li>
+<p>Work with the marketing team to promote the location (create social media posts, record videos, etc.)</p>
+</li>
+<li>
+<p>Work with Tribe Support to help onboard members to your Chapter</p>
+</li>
+<li>
+<p>Support the Sourcing (housing) team with viewing and vetting potential properties for future Chapters</p>
+</li>
+<li>
+<p>Help WiFi Tribe secure local partnerships</p>
+</li>
+</ul>
+<h3>Requirements for the Role</h3>
+<ul>
+<li>
+<p>You must be able to travel to most countries (this role can be either regional, e.g. South America, or global)</p>
+</li>
+<li>
+<p>You have experience travelling internationally</p>
+</li>
+<li>
+<p>[bonus] 2+ years of experience leading in-person communities</p>
+</li>
+</ul>
+<h3>Perks &amp; Compensation</h3>
+<ul>
+<li>
+<p>Travel the world, build a powerful global network, grow personally and professionally</p>
+</li>
+<li>
+<p>Take on a leadership role in a tight-knit community of entrepreneurs, freelancers, and remote professionals</p>
+</li>
+<li>
+<p>You&#x27;ll run 6-8 Chapters per year and get all the networking and community benefits our members pay for</p>
+</li>
+<li>
+<p>NOT a full-time commitment, so you can build your business, freelance, or do another job alongside <em>(but there’s a full-time option too, if you qualify*)</em></p>
+</li>
+<li>
+<p>Compensation: <strong>$1,500 - $2,450 per Chapter</strong> (range depends on length of Chapter, bonuses and stipends)</p>
+</li>
+<li>
+<p>Flexible hours: just get the job done and make your magic happen</p>
+</li>
+<li>
+<p>*Option to work full-time: There may be the possibility of taking on a full-time role, if you have skills and experience in areas where the team needs help (in this case the total compensation range is <strong>$3,000-$5,000/month</strong>)</p>
+</li>
+<li>
+<p>All flights to, from, and between destinations are covered</p>
+</li>
+<li>
+<p>All accommodation while running a trip is covered</p>
+</li>
+<li>
+<p>Between $100-$300/month subsidy for adventures (weekend trips!)</p>
+</li>
+<li>
+<p>Join a passion-driven company, with the strongest brand in its category</p>
+</li>
+<li>
+<p><strong>Your first Chapter is on us:</strong> experience one Chapter for free as a member first to learn alongside an experienced Chapter Host (the value of our Chapters is between $2,000 - $4,000 per month)</p>
+</li></ul></div>
+
+<a class="apply" href="https://weworkremotely.com/remote-jobs/wifi-tribe-leader-for-premium-remote-work-travel-community-global-travel-required" target="_blank" rel="noopener">去原站申请 | Apply on We Work Remotely ↗</a>
+<footer>信息采集自 We Work Remotely,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from We Work Remotely; refer to the original posting.</footer>
+</body></html>

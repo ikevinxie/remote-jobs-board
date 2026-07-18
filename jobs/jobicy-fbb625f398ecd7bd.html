@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ruby Labs | Social Media Ads Manager (Paid Social)</title>
+<meta property="og:title" content="Ruby Labs | Social Media Ads Manager (Paid Social)">
+<meta property="og:description" content="Ruby Labs · 📍Europe,  Türkiye">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="Ruby Labs · 📍Europe,  Türkiye">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Social Media Ads Manager (Paid Social)</h1>
+<div class="meta">🏢 Ruby Labs · 📍 Europe,  Türkiye · 市场营销 | Marketing · 欧洲 | Europe / EMEA · 来源 Jobicy · 发布 2026-07-17</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://jobicy.com/jobs/146616-social-media-ads-manager-paid-social" target="_blank" rel="noopener">去原站申请 | Apply on Jobicy ↗</a>
+<div class="jd"><h3><strong>About us</strong></h3><p>Ruby Labs is a leading tech company that creates and operates innovative consumer products. We offer a diverse range of opportunities across the health, education, and entertainment industries. Our innovative teams are driving the future of consumer-led products, and we&#x27;re always looking for passionate individuals to join us. Learn more about our story at: <a href="https://rubylabs.com/about-us/" rel="nofollow noopener" target="_blank">https://rubylabs.com/about-us/</a></p><h3><strong>About the role</strong></h3><p>We&#x27;re a fast-moving consumer software company building browser-based document tools used by millions of people worldwide. Our growth runs on performance marketing — every dollar of spend is measured, every campaign is accountable to a target, and the people who run our channels own real budgets and real outcomes.</p><p>Today, our paid acquisition engine is anchored in paid search. We&#x27;re now building out <strong>paid social</strong> as a primary growth channel, and we&#x27;re looking for a Social Media Ads Manager to own it. You&#x27;ll start by building out our Meta (Facebook &amp; Instagram) program from a strong foundation and scaling it profitably, with a clear path to expand other platforms as the channel matures.</p><p>This is a hands-on builder role, not a hands-off oversight role. You&#x27;ll be in the ad accounts daily, shaping creative strategy, managing budget, and answering for the numbers.</p><h3>What you&#x27;ll own (your KPIs)</h3><ul><li><p>Paid social CPA against a defined blended target.</p></li><li><p>ROAS / return on ad spend at the channel level.</p></li><li><p>Spend efficiency and budget pacing.</p></li><li><p>Creative testing velocity and win rate.</p></li><li><p>Channel growth — scaling spend profitably over time.</p></li></ul><h3><strong>Key Responsibilities</strong></h3><ul><li><p><strong>Own Meta paid social end to end</strong> — strategy, campaign builds, budget allocation, bidding, audience and targeting strategy, optimization, and scaling across our product portfolio.</p></li><li><p><strong>Hit performance targets.</strong> Manage spend against clear CPA and ROAS goals, pace budgets through the month, and make daily/weekly optimization calls that keep the channel efficient as it scales.</p></li><li><p><strong>Drive the creative engine.</strong> Partner with content creators, designers, and video producers to brief, test, and iterate on ad creative — you&#x27;ll define the testing roadmap and turn creative learnings into a repeatable system, since creative is the primary lever on paid social.</p></li><li><p><strong>Run a disciplined testing program.</strong> Structure and read A/B tests across creative, audiences, placements, and offers; separate signal from noise; and document what works.</p></li><li><p><strong>Build the reporting and feedback loop.</strong> Track performance against targets, surface insights to the wider growth team, and work closely with our data colleagues to make sure attribution and measurement are sound.</p></li><li><p><strong>Expand the channel.</strong> As Meta proves out, lead our expansion into additional platforms ( as it makes sense), applying the same disciplined, target-driven approach.</p></li><li><p><strong>Coordinate cross-functionally.</strong> Work alongside the paid search team, external agency partners, and product to keep messaging, landing pages, and audience strategy aligned across the funnel.</p></li></ul><h3><strong>Qualifications</strong></h3><ul><li><p>3+ years managing paid social campaigns with direct ownership of budget and performance, ideally in a D2C, subscription, or app/web product environment.</p></li><li><p>Deep, hands-on expertise in <strong>Meta Ads Manager</strong> — campaign structure, Advantage+ / ASC, audience strategy, the pixel/Conversions API, and creative-first optimization.</p></li><li><p>A genuinely performance-driven mindset: comfortable being measured on CPA and ROAS, and confident making decisions from data rather than gut.</p></li><li><p>Strong creative instincts — you understand what makes a scroll-stopping ad and can brief and direct creative even though you&#x27;re not the one designing it.</p></li><li><p>Analytical fluency: comfortable in reporting tools and dashboards, reading attribution sensibly, and translating numbers into action.</p></li><li><p>Self-directed and organized — able to own a channel without close supervision and prioritize where your time moves the needle.</p></li></ul><h3><strong>Nice to have</strong></h3><ul><li><p>Hands on experience with YouTube and Google Display ads</p></li><li><p>Hands-on TikTok Ads (or other emerging paid social platforms) experience.</p></li><li><p>Experience scaling a channel from early stage to meaningful spend.</p></li><li><p>Familiarity with SaaS / subscription unit economics (LTV, payback, cohort ROAS).</p></li><li><p>Experience working with creative teams or UGC pipelines.</p></li><li><p>SQL or comfort working with raw performance data is a plus.</p></li></ul><h3><strong>Location</strong></h3><p>Ruby Labs operates within the CET (Central European Time) zone. Applicants from any country are welcome to apply for the position as long as they are located within approximately ± 4 hours of CET. This ensures optimal collaboration and communication during working hours.</p><h3><strong>Benefits</strong></h3><p>Discover the perks of being part of our vibrant team! We offer:</p><ul><li><p><strong>Remote Work Environment:</strong> Embrace the freedom to work from anywhere, anytime, promoting a healthy work-life balance. </p></li><li><p><strong>Unlimited PTO:</strong> Enjoy unlimited paid time off to recharge and prioritize your well-being, without counting days. </p></li><li><p><strong>Paid National Holidays:</strong> Celebrate and relax on national holidays with paid time off to unwind and recharge. </p></li><li><p><strong>Company-provided MacBook:</strong> Experience seamless productivity with top-notch Apple MacBooks provided to all employees who need them. </p></li><li><p><strong>Flexible Independent Contractor Agreement:</strong> Unlock the benefits of flexibility, autonomy, and entrepreneurial opportunities. Benefit from tax advantages, networking opportunities, reduced employment obligations, and the freedom to work from anywhere. Read more about it here: <a href="https://docs.google.com/document/d/1nkrN76JlZkbKj9WSOhlT1_mni_CZeDkHdwfIjPXVwvk/preview?tab=t.0#heading=h.ndsdl4wapxtt" rel="nofollow noopener" target="_blank">https://docs.google.com/document/d/1nkrN76JlZkbKj9WSOhlT1_mni_CZeDkHdwfIjPXVwvk/preview?tab=t.0#heading=h.ndsdl4wapxtt</a></p></li></ul><p>Be part of our fast-growing team and seize this excellent opportunity for personal and professional growth!</p><h3><strong>Interview Process</strong></h3><p>After submitting your application, we conduct a thorough review which typically takes 3 to 5 days, but may occasionally take longer due to the volume of applications received. If we see a potential fit, we proceed with the following steps:</p><ul><li><p>Recruiter Screening (40 minutes)</p></li><li><p>Take-Home Assignment</p></li><li><p>Technical Interview (45 minutes)</p></li><li><p>Final Interview (45 minutes)</p></li></ul><h3><strong>Life at Ruby Labs</strong></h3><p>At Ruby Labs, we move fast, aim high, and expect the same from our team. We’re not here to play small—we’re here to build, grow, and win. That means we look for people who are ambitious, driven, and ready to give their best every single day.</p><p>This is a place for individuals who thrive under pressure, embrace challenges, and see opportunity in every obstacle. If you’re hungry to achieve, motivated by impact, and want to grow at the speed of your own ambition, Ruby Labs offers the platform to make it happen.</p><p>Here, effort is matched with reward. We recognize those who go all in and deliver results, and we create space for people who want more—more responsibility, more growth, and more success.</p><p>#LI-Remote</p></div>
+
+<a class="apply" href="https://jobicy.com/jobs/146616-social-media-ads-manager-paid-social" target="_blank" rel="noopener">去原站申请 | Apply on Jobicy ↗</a>
+<footer>信息采集自 Jobicy,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from Jobicy; refer to the original posting.</footer>
+</body></html>

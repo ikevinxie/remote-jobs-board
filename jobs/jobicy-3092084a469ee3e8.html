@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ashby | Startup Customer Success Manager - Americas</title>
+<meta property="og:title" content="Ashby | Startup Customer Success Manager - Americas">
+<meta property="og:description" content="Ashby · 📍USA">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="Ashby · 📍USA">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Startup Customer Success Manager - Americas</h1>
+<div class="meta">🏢 Ashby · 📍 USA · 客户支持 | Customer Support · 美洲 | Americas · 来源 Jobicy · 发布 2026-07-17</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://jobicy.com/jobs/145717-startup-customer-success-manager-americas" target="_blank" rel="noopener">去原站申请 | Apply on Jobicy ↗</a>
+<div class="jd"><p>Hello! I’m Jared  I joined Ashby four years ago as the first member of the Startup Customer Success team. Since then, I have been a part of building out the onboarding and success functions across our entire startup segment. Today, we’re a team of fifteen spanning across the US, Canada, and EMEA. I am so excited to be hiring another <strong>Startup Customer Success Manager </strong>in the US or Canada .</p><p>Our <strong>Startup Customer Success Team</strong> serves our early-stage customers programmatically. These customers are special to us because they aren’t just learning our software; they are learning how to build hiring excellence into the DNA of their growing organizations.<br>Our <strong>Startup Customer Success Managers</strong> create high-quality onboarding materials, documentation, and e-webinars that enable our customers to get up and running independently. They also jump in to assist via email and customer calls when needed. This is a mid-level role, so we require at least 2 years of experience as a full-time Startup Customer Success Manager, Account Manager, or Program Manager. <br>In this role, you’ll take ownership of a book of customers for whom you’d be the main point of contact in our shared inbox and hop on customer calls per our SLAs. You’ll also take ownership of medium and large projects that are core to our team’s operations. Existing projects our team has taken on include:</p><ul><li><p>Building an in-app onboarding experience using Amplitude</p></li><li><p>Creation of a live, foundational webinar series + recorded content</p></li><li><p>Building retention best practices into our engagement with customers that extend well beyond just onboarding</p></li></ul><h3>You should apply if:</h3><ul><li><p>You have <strong>2+ years</strong> of customer-facing experience supporting a complex and rapidly evolving product (for complexity, think tools like Zapier, HubSpot, and Acuity Scheduling).</p></li><li><p>You enjoy becoming a subject matter and product expert to help deliver excellent experiences when assisting our customers in solving complex challenges. Oftentimes, there will be multiple solutions to any given challenge and you enjoy getting in the weeds with customers to figure out what exactly they need to suggest the best path forward.</p></li><li><p>You’re skilled at defining the scope of problems and creating comprehensive solutions independently and collaboratively. With a complex product comes complex problems - you are excellent at identifying an issue, mapping multiple paths forward, and taking action based on principled thinking.</p></li><li><p>You possess keen attention to detail, ensuring your email and live responses are thorough, clear, and empathetic along the way. Solving the problem is sometimes only half the battle - you are gifted in extracting only the necessary details that our customers or our team members need to solve a problem.</p></li><li><p>You have strong written and verbal communication skills. You effectively communicate with diverse user groups, whether partnering with an experienced TA leader developing the recruiting function at a Series A startup or instructing individuals who are new to recruiting SaaS tools.</p></li><li><p>You are curious—both in addressing customers and creating solutions that improve our workflows. You seek the answers beyond what’s on the surface. Sometimes an answer to a problem may not be obvious at surface level, but you enjoy digging into customer use cases to learn more about their process so you can suggest the best path(s) forward.</p></li></ul><h3>You should not apply if:</h3><ul><li><p>You’d prefer to work one-on-one with a small book of customers. The Startup CS Team at Ashby uses a pooled approach (1:many) to allow us to be agile in customer interactions and ensure they have access to the resources they need when they need them.</p></li><li><p>You feel like the customer journey ends once a customer is onboarded. This role may not be right for you if you’re not excited to partner long-term with customers, including ongoing engagement that drives best practices in revenue retention for us and excellent best practices in Ashby for our customers.</p></li><li><p>You don’t enjoy problem-solving. Often, we’re called on to assist customers in solving complex challenges that could have multiple solutions. If you don’t like the idea of problem-solving and troubleshooting what feature works best for companies at varying levels of maturity, then this role may not be right for you.</p></li><li><p>You don’t like projects. A staple of our Startup Customer Success team is that we’ve developed internal processes that allow us to balance our customer interactions with project work that helps drive positive outcomes for our customers and internal teams.</p></li><li><p>You are not keen on speaking up or acting when you see something that could be improved. Our product and internal processes are rapidly changing. This means that we rely heavily on our team members to identify processes/practices that have grown stale and to offer more effective alternatives.</p></li></ul><h3><strong>About Ashby Customer Success</strong></h3><h3>Ashby Customer Success comprises five teams:</h3><ul><li><p>Product Support</p></li><li><p>Startup Customer Success</p></li><li><p>High Touch Customer Success</p></li><li><p>Recruiting Operations &amp; Professional Services</p></li><li><p>Contracts Management</p></li></ul><p>Here are a few points that should give you an idea of what it is like to work with us:</p><ul><li><p>Our Engineering, Product, and Design teams spend a lot of time building best-in-class products since we believe a highly differentiated product is easier to sell.</p></li><li><p>As they do that, our GTM teams spend a lot of time building a best-in-class customer experience. We aim to offer deep expertise whenever we interact with prospects and customers.</p></li><li><p>We strongly believe small teams with talented people and the right work environment deliver much better performance than large headcounts.</p></li></ul><h3><strong>Interview Process</strong></h3><p>Our interview process is thorough — we aim to ensure each person joining the team is the right fit for Ashby and will provide ample information to assess if Ashby is the right fit for you. The process for this role is as follows:</p><ul><li><p><strong>Initial Screen Interview </strong>- 20-30 minutes</p></li><li><p><strong>Hiring Manager Interview</strong> - 45 minutes</p></li><li><p><strong>Take Home Assessment</strong> - 1 week to complete</p></li><li><p><strong>Panel Interview</strong> - 2 hours</p></li></ul><h3><strong>Onboarding Process</strong></h3><p>Ashby is a highly complex product, and we invest a lot of time in ensuring our team members are experts on the platform. Your first 30 days will be largely focused on learning the finer points of the products; you may not respond directly to a customer in that time but don’t worry, you’ll be plenty busy learning!</p><ul><li><p><strong>Within your first 30 days</strong>, you’ll have a strong foundation on the Ashby product and will have your first accounts assigned to you.</p></li><li><p><strong>Within your first 60 days</strong>, you’ll shadow your peers and take your first customer calls.</p></li><li><p><strong>Within your first 90 days</strong>, you’ll have a book of customers, and we’ll start to explore key areas of ownership for you.</p></li></ul><h3><strong>Benefits</strong></h3><ul><li><p><strong>10-year exercise window for stock options.</strong> You shouldn’t feel pressure to purchase stock options if you leave Ashby —do it when you feel financially comfortable.</p></li><li><p><strong>Unlimited PTO with four weeks recommended per year.</strong> Expect “Vacation?” in our one-on-one agenda until you start taking it .</p></li><li><p><strong>Twelve weeks of fully paid family leave in the US</strong><em><strong>.</strong></em> We plan to expand this to employees in other countries as situations arise.</p></li><li><p><strong>Generous equipment, software, and office furniture budget.</strong> Get what you need to be happy and productive!</p></li><li><p><strong>$100/month education budget</strong> with more expensive items (like conferences) covered with manager approval.</p></li><li><p>If you’re in the US, <strong>top-notch health insurance for you and your dependents</strong>, with all premiums covered by us.</p></li></ul><p>Ashby’s success hinges on hiring great people and creating an environment where we can be happy, feel challenged, and do our best work. We’re being deliberate about building that environment from the ground up.<br>If you’ve read this far, thank you, and I hope this all excites you enough to complete an application! Please note that we’ll contact you via your application&#x27;s email address to keep things fair. Reaching out through other platforms will not change the priority of your application. Whether we move forward together or not, I wish you all the best in your job search!</p><p><em>Ashby provides equal employment opportunities (EEO) to all employees and applicants for employment without regard to race, color, religion, sex, national origin, age, disability, genetics, sexual orientation, gender identity, or gender expression. We are committed to a diverse and inclusive workforce and welcome people from all backgrounds, experiences, perspectives, and abilities.</em></p><p><em>Ashby is committed to a fair and transparent hiring process. We confirm that this advertisement is for an active, existing vacancy within our organization. Please be advised that we may use artificial intelligence-driven tools to assist our recruitment team in screening, assessing, and selecting candidates for this position.</em></p></div>
+
+<a class="apply" href="https://jobicy.com/jobs/145717-startup-customer-success-manager-americas" target="_blank" rel="noopener">去原站申请 | Apply on Jobicy ↗</a>
+<footer>信息采集自 Jobicy,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from Jobicy; refer to the original posting.</footer>
+</body></html>

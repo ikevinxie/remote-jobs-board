@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Headspace | Sales Executive, Enterprise</title>
+<meta property="og:title" content="Headspace | Sales Executive, Enterprise">
+<meta property="og:description" content="Headspace · 📍USA">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="Headspace · 📍USA">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Sales Executive, Enterprise</h1>
+<div class="meta">🏢 Headspace · 📍 USA · 销售 | Sales · 美洲 | Americas · 来源 Jobicy · 发布 2026-07-16</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://jobicy.com/jobs/149392-sales-executive-enterprise" target="_blank" rel="noopener">去原站申请 | Apply on Jobicy ↗</a>
+<div class="jd"><p><strong>About the Sales Executive, Enterprise</strong><strong> at Headspace:</strong></p><p>The Sales Executive, Enterprise Sales sits on our Employer Sales team, which is focused on bringing Headspace’s full suite of mental health and wellbeing solutions to large enterprise employers globally. This team is on the frontlines of advancing our mission to transform the health and happiness of the world, one workplace at a time. Over the past year, we’ve deepened our market presence through impactful partnerships with organizations committed to employee mental health. With growing demand for integrated, evidence-based benefits, we’re expanding our enterprise sales force to drive meaningful growth. This enterprise role operates at a senior level while focusing on market development. The position requires enterprise-wide influence, cross-functional leadership, and the ability to mentor junior sellers as part of developing sales capabilities across the organization. This is an exciting opportunity to shape how the largest employers in the world support their people—and to directly contribute to the continued success of Headspace’s B2B business.</p><p><strong>What you will do:</strong></p><ul>
+<li>Own and exceed your quota by closing new logo deals with employers of 7,500+ employees, selling high-ACV (Six and Seven-Figure) multi-product contracts.</li>
+<li>Manage full-cycle enterprise sales processes including outbound prospecting, discovery, consultative pitching, product demonstration, proposal development, negotiation, and close.</li>
+<li>Hunter who builds and drives new revenue, opens new markets, and creates new revenue streams.</li>
+<li>Identifies strategic approaches to technical sales challenges, establishes sales standards, and leads adoption of solution-based selling across the enterprise team.</li>
+<li>Cultivate trusted relationships with senior leaders across Human Resources, Total Rewards, Benefits, and People teams to deeply understand organizational needs and priorities.</li>
+<li>Collaborate closely with Account Development Executives (BDRs), Consultant Relations, and Marketing to build pipeline and support coordinated regional go-to-market efforts.</li>
+<li>Partner with key benefits consultants, brokers, and channel partners to amplify market reach and co-sell effectively.</li>
+<li>Serve as a strategic expert in the mental health benefits space, leveraging industry trends, buyer insights, and competitive dynamics to shape your sales approach.</li>
+<li>Provide accurate forecasting and pipeline reporting to support revenue planning and team-wide accountability.</li>
+<li>Partner with Sales Ops and leadership to refine and implement sales excellence processes that support consistency across enterprise deals.</li>
+<li>Identify market trends and propose innovative solutions in collaboration with cross-functional teams to support long-term business opportunities.</li>
+<li>Represent Headspace at high-impact industry events and conferences to enhance brand presence and cultivate new enterprise relationships.</li>
+<li>Contribute to organizational capability building by identifying skill gaps, providing mentorship, and creating development opportunities for other team members to enhance overall sales effectiveness.</li>
+<li>Support capability-building across the team by sharing best practices, mentoring peers, and contributing to learning opportunities.</li>
+<li>Travel as needed (~30%) to advance key deals and attend in-person meetings or events.</li>
+</ul><p><strong>What you will bring</strong>:</p><p><strong>Required Skills:</strong></p><ul>
+<li>8+ years of experience in enterprise, digital health, or benefits solution sales with a strong track record of exceeding quotas.</li>
+<li>Proven ability to sell complex solutions into HR/Benefits departments at large employers, ideally with deal sizes over $500,000 in annual contract value.</li>
+<li>Deep understanding of the U.S. employer benefits ecosystem, including mental health, employee assistance programs (EAP), and wellbeing trends.</li>
+<li>Strong consultative selling, negotiation, and executive presence with the ability to navigate long and strategic sales cycles.</li>
+<li>Ability to manage multiple stakeholders, including HR, Finance, Procurement, and external brokers/consultants.</li>
+<li>Demonstrated ability to identify process gaps and implement improved sales methodologies that enhance team effectiveness and customer outcomes.</li>
+<li>Experience applying design thinking principles to sales challenges, with the ability to challenge assumptions and continuously improve sales approaches.</li>
+<li>Excellent communication skills—both written and verbal—and comfort developing business cases and delivering compelling presentations.</li>
+<li>Highly self-motivated, organized, and goal-oriented with a bias for action in a fast-paced, high-growth environment.</li>
+<li>Comfortable using CRM tools like Salesforce to manage pipeline and forecast accurately.</li>
+</ul><p><strong>Preferred Skills:</strong></p><ul>
+<li>Existing relationships within the benefits consulting or brokerage ecosystem.</li>
+<li>Experience working in a mission-driven or healthcare-focused organization.</li>
+<li>Familiarity with mental health or behavioral health terminology and delivery models.</li>
+</ul><p><strong>Location: </strong></p><p><strong>We are currently hiring this role remotely in the US with a preference for East-Coast. Candidates must permanently reside in the US full-time.<br></strong>For candidates with a primary residence in the greater SF area, this role will follow our hybrid model. You’ll work 3 days per week from our office, allowing for impactful in-office collaboration and connection, while enjoying the flexibility of remote work for the rest of the week. Your recruiter will share more details about our hybrid model. </p><p><strong>Pay &amp; Benefits</strong>:</p><p>The anticipated new hire base salary range for this full-time position is $120k-$165k base + quarterly variable + equity + benefits. The annual on-target earnings for this role is $240k-$330k (at 100% quota attainment)</p><p>Our salary ranges are based on the job, level, and location, and reflect the lowest to highest geographic markets where we are hiring for this role within the United States. Within this range, individual compensation is determined by a candidate’s location as well as a range of factors including but not limited to: unique relevant experience, job-related skills, and education or training. <br><em>Your recruiter will provide more details on the specific salary range for your location during the hiring process.</em></p><p>At Headspace, base salary is but one component of our Total Rewards package. We’re proud of our robust package inclusive of: base salary, stock awards, comprehensive healthcare coverage, monthly wellness stipend, retirement savings match, lifetime Headspace membership, generous parental leave, and more. Additional details about our Total Rewards package will be provided during the recruitment process. </p><p><strong>About Headspace</strong></p><p>Headspace exists to provide every person access to lifelong mental health support. We combine evidence-based content, clinical care, and innovative technology to help millions of members around the world get support that’s effective, personalized, and truly accessible whenever and wherever they need it.</p><p>At Headspace, our values aren’t just what we believe, they’re how we work, grow, and make an impact together. We live them daily: <strong>Make the Mission Matter, Iterate to Great, Own the Outcome, and Connect with Courage.</strong> These values shape our decisions, guide our collaborations, and define our culture. They’re our shared commitment to building a more connected, human-centered team—one that’s redefining how mental health care supports people today and for generations to come.</p><p><strong>Why You’ll Love Working Here:</strong></p><ul>
+<li>A mission that matters—with impact you can see and feel</li>
+<li>A culture that’s collaborative, inclusive, and grounded in our values</li>
+<li>The chance to shape what mental health care looks like next</li>
+<li>Competitive pay and benefits that support your whole self</li>
+</ul><p><strong>How we feel about Diversity, Equity, Inclusion and Belonging:</strong></p><p>Headspace is committed to bringing together humans from different backgrounds and perspectives, providing employees with a safe and welcoming work environment free of discrimination and harassment. We strive to create a diverse &amp; inclusive environment where everyone can thrive, feel a sense of belonging, and do impactful work together. </p><p>As an equal opportunity employer, we prohibit any unlawful discrimination against a job applicant on the basis of their race, color, religion, gender, gender identity, gender expression, sexual orientation, national origin, family or parental status, disability*, age, veteran status, or any other status protected by the laws or regulations in the locations where we operate. We respect the laws enforced by the EEOC and are dedicated to going above and beyond in fostering diversity across our workplace. </p><p><em>*Applicants with disabilities may be entitled to reasonable accommodation under the terms of the Americans with Disabilities Act and certain state or local laws. A reasonable accommodation is a change in the way things are normally done which will ensure an equal employment opportunity without imposing undue hardship on Headspace. </em><strong><em>Please inform our Talent team by filling out </em></strong><a href="https://docs.google.com/forms/d/e/1FAIpQLSdE8hXeZCqOzzVSXbYKv3gO_88tTdlJYs3XUPHSyNvhkzqqRQ/viewform" rel="nofollow noopener" target="_blank"><strong><em>this form</em></strong></a><strong><em> if you need any assistance completing any forms or to otherwise participate in the application or interview process.</em></strong></p><p><em>Headspace participates in the </em><a href="https://www.ginger.com/careers/ginger-e-verify" rel="nofollow noopener" target="_blank"><em>E-Verify Program</em></a><em>.</em></p><p><strong><em>Privacy Statement</em></strong></p><p><em>All member records are protected according to our<a href="https://organizations.headspace.com/page/applicant-notice" rel="nofollow noopener" target="_blank"> Privacy Policy</a>. Further, while employees of Headspace (formerly Ginger) cannot access Headspace products/services, they will be offered benefits according to the company&#x27;s benefit plan. To ensure we are adhering to best practice and ethical guidelines in the field of mental health, we take care to avoid dual relationships. A dual relationship occurs when a mental health care provider has a second, significantly different relationship with their client in addition to the traditional client-therapist relationship—including, for example, a managerial relationship. </em></p><p><em>As such, Headspace requests that individuals who have received coaching or clinical services at Headspace wait until their care with Headspace is complete before applying for a position. If someone with a Headspace account is hired for a position, please note their account will be deactivated and they will not be able to use Headspace services for the duration of their employment. </em></p><p><em>Further, if Headspace cannot find a role that fails to resolve an ethical issue associated with a dual relationship, Headspace may need to take steps to ensure ethical obligations are being adhered to, including a delayed start date or a potential leave of absence. Such steps would be taken to protect both the former member, as well as any relevant individuals from their care team, from impairment, risk of exploitation, or harm.</em></p><p>For how how we will use the personal information you provide as part of the application process, please see: <a href="https://www.headspace.com/applicant-notice" rel="nofollow noopener" target="_blank">https://www.headspace.com/applicant-notice</a></p></div>
+
+<a class="apply" href="https://jobicy.com/jobs/149392-sales-executive-enterprise" target="_blank" rel="noopener">去原站申请 | Apply on Jobicy ↗</a>
+<footer>信息采集自 Jobicy,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from Jobicy; refer to the original posting.</footer>
+</body></html>

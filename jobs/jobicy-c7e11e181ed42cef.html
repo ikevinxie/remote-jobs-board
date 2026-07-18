@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AECOM | Site Strategy Manager, Data Center Sites - Remote (U.S.)</title>
+<meta property="og:title" content="AECOM | Site Strategy Manager, Data Center Sites - Remote (U.S.)">
+<meta property="og:description" content="AECOM · 📍USA">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="AECOM · 📍USA">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Site Strategy Manager, Data Center Sites - Remote (U.S.)</h1>
+<div class="meta">🏢 AECOM · 📍 USA · 产品 | Product · 美洲 | Americas · 来源 Jobicy · 发布 2026-07-17</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://jobicy.com/jobs/147583-site-strategy-manager-data-center-sites-remote-u-s" target="_blank" rel="noopener">去原站申请 | Apply on Jobicy ↗</a>
+<div class="jd"><h3>Company Description</h3><p><strong>Work with Us. Change the World.</strong></p><p>At AECOM, we&#x27;re delivering a better world. Whether improving your commute, keeping the lights on, providing access to clean water, or transforming skylines, our work helps people and communities thrive. We are the world&#x27;s trusted infrastructure consulting firm, partnering with clients to solve the world’s most complex challenges and build legacies for future generations.</p><p>There has never been a better time to be at AECOM. With accelerating infrastructure investment worldwide, our services are in great demand. We invite you to bring your bold ideas and big dreams and become part of a global team of over 50,000 planners, designers, engineers, scientists, digital innovators, program and construction managers and other professionals delivering projects that create a positive and tangible impact around the world.</p><p>We&#x27;re one global team driven by our common purpose to deliver a better world. Join us.</p><h3>Job Description</h3><p>AECOM is seeking a <strong>Program Manager for Data Center Site Strategy and Portfolio Development</strong> with a passion for driving results to join our high-performance data center team. In this role, the program manager will plan, direct, and execute multiple moderate-to-large scale projects and programs to support the utility and land development for next-generation digital infrastructure. This role has a strong focus on site development planning for data centers.</p><p>This position offers the flexibility of a remote work schedule and can be based from a variety of locations in the US where AECOM has an office.</p><p><strong>While this position is eligible for remote work, office attendance is encouraged if an AECOM office is proximal. Periodic travel may be required for client meetings, key project milestones, onsite collaboration sessions, or other business‑critical activities. Travel is expected to be occasional and scheduled in advance.</strong></p><p><strong>AECOM </strong>is a leader in the global data center consulting industry with robust teams in the Americas, Europe, Africa, Asia, and Australia. In this role, you will have the opportunity to work with our teams around the world on high-profile, fast-paced data center projects for global clients. This is a hands-on, client-facing role with an opportunity for upward career mobility. </p><p><strong>Key Responsibilities:</strong> </p><ul><li>Develop and lead cross-functional teams, including engineers, planners, and consultants; including recruitment and “care and feeding” of direct reports. </li><li>Build trust with the client, local communities and regulatory and economic development entities. </li><li>Support identification and evaluation of land opportunities aligned with long-term data center growth. </li><li>Accountable for the overall results of a project or groups of projects, including goal setting, team leadership and adherence to internal and external budgets and schedules.</li><li>Performs various management, leadership and people accountability responsibilities for a specific technical group or department.</li><li>Drive to completion due diligence, zoning, permitting, entitlement, and offsite infrastructure processes. </li><li>Proactively identify and deliver risk mitigation strategies and contingency plans. </li><li>Reinforce a culture of accountability, innovation, and open communication.</li><li>Train and deploy machine-learning based program and project management and delivery platforms (AECOM’s AI4Eng).</li></ul><h3>Qualifications</h3><p><strong>Minimum Qualifications</strong></p><ul><li>Bachelor’s degree in Engineering, Construction Management, Real Estate, Urban Planning, or related field plus 8 years of experience in land development, infrastructure, or project management or demonstrated equivalency of experience and/or education.</li><li>Demonstrated experience with colocation and hyperscale data center projects.</li></ul><p><strong>Preferred Qualifications</strong></p><ul><li>Licensed Professional Engineer, Architect, or Land Planner</li><li>Advanced degree in Engineering, Construction Management, Real Estate, Urban Planning</li><li>12 or more years of experience in general land development, infrastructure, or project management.</li><li>Proficient with data center operations and site development and construction processes.</li><li>Demonstrated ability to support large-scale initiatives and cross-functional teams.</li><li>Proficiency conducting feasibility studies and evaluating potential sites for development.</li><li>Knowledge of environmental assessments, zoning regulations, land use planning, and utility infrastructure portfolios.</li><li>Ability to work independently and manage multiple projects simultaneously</li></ul><p><strong>Desired Attributes:</strong> </p><ul><li>Proficiency with digital geospatial, project and program management, and machine learning platforms.</li><li>Excellent verbal and written communication for stakeholder presentations and reporting. </li><li>Experience in managing client relationships and understanding their business needs. </li><li>Skilled communicator with emotional intelligence and adaptability. </li><li>Growth-oriented mindset </li><li>Proven ability to work under pressure in fast-paced environments </li><li>Ability to manage complex logistics and team dynamics. </li><li>Collaborative mindset with a bias for action and problem-solving </li></ul><h3>Additional Information</h3><ul><li>Relocation is not available for this role</li><li>Sponsorship is not available for this role</li></ul><p>At AECOM, we are committed to maintaining a secure and trustworthy recruitment process and take any fraudulent hiring activity seriously. <strong><em>To support this commitment, all newly hired employees are required to attend an in-person Day 1 onboarding at an AECOM office location as a condition of employment.</em></strong></p><p><strong>About AECOM</strong> </p><p>AECOM is proud to offer comprehensive benefits to meet the diverse needs of our employees. Depending on your employment status, AECOM benefits may include medical, dental, vision, life, AD&amp;D, disability benefits, paid time off, leaves of absences, voluntary benefits, perks, flexible work options<u>,</u> well-being resources, employee assistance program, business travel insurance, service recognition awards, retirement savings plan, and employee stock purchase plan. </p><p>AECOM is the global infrastructure leader, committed to delivering a better world. As a trusted professional services firm powered by deep technical abilities, we solve our clients’ complex challenges in water, environment, energy, transportation and buildings. Our teams partner with public- and private-sector clients to create innovative, sustainable and resilient solutions throughout the project lifecycle – from advisory, planning, design and engineering to program and construction management. AECOM is a Fortune 500 firm that had revenue of $16.1 billion in fiscal year 2025. Learn more at aecom.com. </p><p><strong>What makes AECOM a great place to work</strong> </p><p>You will be part of a global team that champions your growth and career ambitions. Work on groundbreaking projects - both in your local community and on a global scale - that are transforming our industry and shaping the future. With cutting-edge technology and a network of experts, you’ll have the resources to make a real impact. Our award-winning training and development programs are designed to expand your technical expertise and leadership skills, helping you build the career you’ve always envisioned. Here, you’ll find a welcoming workplace built on respect, collaboration and community—where you have the freedom to grow in a world of opportunity. </p><p>As an Equal Opportunity Employer, we believe in your potential and are here to help you achieve it. All your information will be kept confidential according to EEO guidelines. </p></div>
+
+<a class="apply" href="https://jobicy.com/jobs/147583-site-strategy-manager-data-center-sites-remote-u-s" target="_blank" rel="noopener">去原站申请 | Apply on Jobicy ↗</a>
+<footer>信息采集自 Jobicy,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from Jobicy; refer to the original posting.</footer>
+</body></html>

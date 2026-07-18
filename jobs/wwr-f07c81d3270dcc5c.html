@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wingman Group PTY | CRM Administrator &amp; Technical Support (Night Shift)</title>
+<meta property="og:title" content="Wingman Group PTY | CRM Administrator &amp; Technical Support (Night Shift)">
+<meta property="og:description" content="Wingman Group PTY · 📍National Capital Region">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="Wingman Group PTY · 📍National Capital Region">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>CRM Administrator &amp; Technical Support (Night Shift)</h1>
+<div class="meta">🏢 Wingman Group PTY · 📍 National Capital Region · 客户支持 | Customer Support · 其他/未标明 | Other / Unspecified · 来源 We Work Remotely · 发布 2026-07-16</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://weworkremotely.com/remote-jobs/wingman-group-pty-crm-administrator-technical-support-night-shift" target="_blank" rel="noopener">去原站申请 | Apply on We Work Remotely ↗</a>
+<div class="jd"><p>
+  <strong>Headquarters:</strong> Manila, 00, Philippines
+    <br><strong>URL:</strong> <a href="http://wingmangroup.com.au" rel="nofollow noopener" target="_blank">http://wingmangroup.com.au</a>
+</p>
+
+<h3>Job description</h3><p><strong>About the Role</strong></p><p>We&#x27;re looking for a highly organized and customer-focused <strong>CRM Administrator &amp; Technical Support</strong> professional to join our growing team.</p><p></p><p>This role is primarily responsible for managing customer relationships, memberships, CRM administration, and customer enquiries during the overnight shift. You&#x27;ll be the main point of contact for members, ensuring they receive exceptional support while maintaining accurate CRM records.</p><p></p><p>In addition to CRM responsibilities, you&#x27;ll provide basic first-line technical support for a small number of member enquiries each night. Most technical issues are straightforward and involve guiding members through login issues, access concerns, or simple troubleshooting. Training will be provided on our client&#x27;s systems.</p><p>If you enjoy customer service, have excellent attention to detail, and are comfortable learning basic technical troubleshooting, we&#x27;d love to hear from you.</p><p></p><p>What You&#x27;ll Do</p><p>CRM &amp; Customer Support (Primary Responsibilities)</p><ul><li><p>Respond to member enquiries via phone, email, and messaging platforms</p></li><li><p>Manage new member onboarding and account setup</p></li><li><p>Process membership cancellations, changes, and offboarding requests</p></li><li><p>Maintain accurate customer information within the CRM</p></li><li><p>Follow up on customer reviews and feedback</p></li><li><p>Assist members with bookings, memberships, and general enquiries</p></li><li><p>Deliver outstanding customer service with professionalism and empathy</p></li></ul><p>Technical Support (Secondary Responsibilities)</p><ul><li><p>Provide first-level troubleshooting for common member issues</p></li><li><p>Assist members with access, login, and system-related enquiries</p></li><li><p>Use remote support tools (such as TeamViewer) when required</p></li><li><p>Escalate unresolved issues to the appropriate team</p></li><li><p>Coordinate with on-site staff when physical assistance is needed</p></li><li><p>Prepare weekly overnight support reports</p></li></ul><p></p><p>What We&#x27;re Looking For</p><p></p><p>Required Qualifications</p><ul><li><p>Minimum <strong>2 years of CRM Administration, Customer Service, or Customer Support experience</strong></p></li><li><p>Excellent written and spoken English communication skills</p></li><li><p>Strong attention to detail and data accuracy</p></li><li><p>Experience handling customer enquiries across multiple communication channels</p></li><li><p>Comfortable working independently during overnight shifts</p></li><li><p>Strong problem-solving and organizational skills</p></li><li><p>Reliable internet connection and suitable home office setup</p></li></ul><p></p><p>Preferred Qualifications</p><ul><li><p>Experience in a membership, subscription, SaaS, hospitality, fitness, or service-based business</p></li><li><p>Experience using CRM systems (HubSpot, Salesforce, Zoho, Microsoft Dynamics, or similar)</p></li><li><p>Basic technical support or IT Helpdesk experience</p></li><li><p>Experience using remote support software (TeamViewer, AnyDesk, Remote Desktop, etc.)</p></li></ul><p></p><p><strong>Job Type</strong></p><ul><li><p>Full-time</p></li><li><p>Remote</p></li><li><p>Independent Contractor (ICA)</p></li></ul><p><strong>Shift</strong></p><p>Night Shift (6:00 PM – 2:00 AM AEST)</p><p></p><p></p><h3>Job requirements</h3><p><strong>Technical Requirements:</strong></p><p>Equipment is self-provided</p><p><strong>Computer:</strong></p><ul><li><p>RAM: 8GB</p></li><li><p>HDDISDD: 512 GB</p></li><li><p>PU/Processor: Intel Core i5 or AMD Ryzen 5 (12th generation or newest)</p></li><li><p>Operating System: Windows 11 Home or Pro</p></li><li><p>Power Backup: Power station, Powerbank, UPS, and etc.</p></li><li><p>Extra Display: Secondary/External Monitor</p></li><li><p>Audio &amp; Video: Noise-Cancelling Headset + Web Cam</p></li><li><p>Internet Speed: 40-50 Mbps minimum bandwidth speed for both Download and Uploads.</p></li></ul><p></p><p><strong>Contractor Perks &amp; Rewards:</strong></p><ul><li><p>20 Paid Time Off</p></li><li><p>Referral Bonus - 70 AUD per successful referral to the Wingman platform (paid at 1st month mark with a client contract)</p></li><li><p>Annual Trip - connect with the broader Wingman community in person</p></li><li><p>Dedicated Support Contact (CSM) - someone to help you succeed and stay connected</p></li><li><p>Access to a Network = collaborate with follow contractors and onshore specialists</p></li><li><p>Opportunities to Upskill - optional sessions, peer learning, and developmental pathways</p></li><li><p>More Work, More Opportunity - potential for additional contracts, Statements of Work, or expanded workloads</p></li><li><p>High-Impact Projects - work alongside top-tier Australian partners on meaningful assignments</p></li><li><p>Flexibility First - deliver your work in your way, with full autonomy on how you achieve outcomes</p></li><li><p>Advisory Support - HR, Tax, and setup guidance available to make contracting seamless</p></li><li><p>100% Work-From-Home Contracts - all engagements designed for remote delivery</p></li></ul><p></p><p><strong>Pre-engagement requirements for Independent Contractors:</strong></p><ul><li><p>BiR as you are a contractor (Required to submit any contributions required by the government.)</p></li><li><p>NBI or Police Clearance</p></li><li><p>Any Government-issued 10</p></li></ul><p></p><p></p><p><strong><em>Note: If you think you have the skills and experience we are looking for but are short on technical requirements, don’t hesitate to reach out to us to discuss the matter.</em></strong></p><p></p>Remote<ul><li>Philippines</li></ul>40 - 40 hours per weekFull-time, Fixed-term<h3>All done!</h3><p>Your application has been successfully submitted!</p>Other jobs<h3>You&#x27;ve already applied for this job</h3><p>We appreciate your interest in this position. Unfortunately, you have already applied for this job.</p>
+
+<p><strong>To apply:</strong> <a href="https://weworkremotely.com/remote-jobs/wingman-group-pty-crm-administrator-technical-support-night-shift" rel="nofollow noopener" target="_blank">https://weworkremotely.com/remote-jobs/wingman-group-pty-crm-administrator-technical-support-night-shift</a></p></div>
+
+<a class="apply" href="https://weworkremotely.com/remote-jobs/wingman-group-pty-crm-administrator-technical-support-night-shift" target="_blank" rel="noopener">去原站申请 | Apply on We Work Remotely ↗</a>
+<footer>信息采集自 We Work Remotely,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from We Work Remotely; refer to the original posting.</footer>
+</body></html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tiger Analytics | Senior Agentic AI Engineer</title>
+<meta property="og:title" content="Tiger Analytics | Senior Agentic AI Engineer">
+<meta property="og:description" content="Tiger Analytics · 📍Canada">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="Tiger Analytics · 📍Canada">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Senior Agentic AI Engineer</h1>
+<div class="meta">🏢 Tiger Analytics · 📍 Canada · 软件开发 | Software Development · 美洲 | Americas · 来源 Himalayas · 🕐 时区 UTC-8 ~ UTC-3 · 发布 2026-07-17</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://himalayas.app/companies/tiger-analytics/jobs/senior-agentic-ai-engineer" target="_blank" rel="noopener">去原站申请 | Apply on Himalayas ↗</a>
+<div class="jd"><p><a href="https://himalayas.app/companies/tiger-analytics" rel="nofollow noopener" target="_blank">Tiger Analytics</a> is a global leader in AI and advanced analytics consulting, empowering Fortune 1000 companies to solve their toughest business challenges. We are on a mission to push the boundaries of what AI can do, providing data-driven certainty for a better tomorrow. Our diverse team of over 6,000 technologists and consultants operates across five continents, building cutting-edge ML and data solutions at scale. Join us to do great work and shape the future of enterprise AI. </p><p>As an Innovation engineer, you will play a pivotal role in driving ideation, rapid prototyping, and early-stage incubation of AI and GenAI initiatives. We are obsessed with customer centricity and strongly believe in an &quot;outside in&quot; human centered approach. You will help craft the innovation lifecycle—from problem discovery to proof-of-concept and transition to path 2 pilot — working closely with business partners, platform engineers, product, and researchers.</p><p>This is a hands-on, highly collaborative role that bridges the gap between imagination and implementation—leveraging platform capabilities, reference architectures, standards, and starter kits. You’ll also play a key role in shaping strategy and recommendations through experimentation and assessment, presenting insights to stakeholders with clarity and impact. Strong storytelling skills and the ability to craft compelling slide decks and pitch presentations are essential to success in this role.</p><h3>Requirements</h3><ul><li>Ideation &amp; Exploration: Facilitate structured innovation sessions using design thinking and lean startup principles to identify high-impact AI/GenAI opportunities.</li><li>Rapid Prototyping: Design and develop low-fidelity to functional prototypes to validate concepts and generate user feedback quickly.</li><li>Technology Scouting: Stay on the edge of emerging trends in AI, GenAI, LLMs, and automation technologies, evaluating relevance and feasibility.</li><li>Pilot Design: Create clear, scalable technical approaches to progress ideas from POC to Phase 2 pilot, in partnership with engineering and product teams.</li><li>Storytelling &amp; Communication: Develop compelling narratives, visualizations, and presentations to communicate vision, user value, and outcomes to a range of stakeholders.</li><li>Cross-Functional Collaboration: Partner with engineers, product, and business units to translate ideas into tangible, testable solutions.</li><li>Innovation Portfolio Management: Contribute to the tracking and prioritization of innovation initiatives based on business alignment, feasibility, and impact.</li><li>Continuous Learning: Cultivate a culture of curiosity, experimentation, and resilience—failing fast and learning faster.</li></ul><p><strong>Qualifications:</strong></p><ul><li><strong>Bachelor&#x27;s or Master’s degree in computer science, Engineering, Design, Innovation, Human-Computer Interaction, or related field.</strong></li><li><strong>professional experience in innovation, solution architecture, or product development, in AI/ML/GenAI.</strong></li><li><strong>Strong familiarity with Generative AI concepts, LLMs, prompt engineering, LLM Agents, MCP, A2A and related tools/frameworks/protocols.</strong></li><li><strong>Demonstrated experience with design thinking, lean startup, and agile prototyping methodologies.</strong></li><li><strong>Proven ability to build rapid prototypes using no-code/low-code tools or scripting (e.g., Python, NodeJS, Streamlit, ADK, LangGraph etc.).</strong></li><li><strong>Strong storytelling, presentation development, and visual communication skills; able to pitch ideas and strategic vision effectively to diverse audiences.</strong></li><li><strong>Passionate about problem-solving, emerging technologies, and delivering user-centric solutions.</strong></li><li><strong>Self-starter who thrives in ambiguity and collaborates seamlessly across disciplines.</strong></li><li><strong>Strong organizational skills with the ability to juggle multiple ideas and priorities with speed and precision.</strong></li><li><strong>Experience with cloud services (e.g., AWS, GCP) and ML platforms (e.g., Vertex AI, Bedrock).</strong></li><li><strong><strong>Prior involvement in running innovation labs, hackathons, or design sprints.</strong></strong></li><li><strong>Familiarity with innovation frameworks/theories such as the Design thinking, Innovation Funnel, Jobs-To-Be-Done (JTBD), Business Model Canvas etc.</strong></li></ul><h3><strong>Benefits</strong></h3><p><strong>Significant career development opportunities exist as the company grows. The position offers a unique opportunity to be part of a small, fast-growing, challenging and entrepreneurial environment, with a high degree of individual responsibility.</strong></p><p><strong><em><strong><a href="https://himalayas.app/companies/tiger-analytics" rel="nofollow noopener" target="_blank">Tiger Analytics</a> provides equal employment opportunities to applicants and employees without regard to race, color, religion, age, sex, sexual orientation, gender identity/expression, pregnancy, national origin, ancestry, marital status, protected veteran status, disability status, or any other basis as protected by federal, state, or local law.</strong></em></strong></p><p>Originally posted on <a href="https://himalayas.app" rel="nofollow noopener" target="_blank">Himalayas</a></p></div>
+
+<a class="apply" href="https://himalayas.app/companies/tiger-analytics/jobs/senior-agentic-ai-engineer" target="_blank" rel="noopener">去原站申请 | Apply on Himalayas ↗</a>
+<footer>信息采集自 Himalayas,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from Himalayas; refer to the original posting.</footer>
+</body></html>

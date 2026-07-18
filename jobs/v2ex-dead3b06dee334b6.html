@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>V2EX 招聘帖 | 远程全职岗位开发/运营/设计，有兴趣看看啊</title>
+<meta property="og:title" content="V2EX 招聘帖 | 远程全职岗位开发/运营/设计，有兴趣看看啊">
+<meta property="og:description" content="V2EX 招聘帖 · 📍远程(V2EX·中文社区)">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="V2EX 招聘帖 · 📍远程(V2EX·中文社区)">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>远程全职岗位开发/运营/设计，有兴趣看看啊</h1>
+<div class="meta">🏢 V2EX 招聘帖 · 📍 远程(V2EX·中文社区) · 软件开发 | Software Development · 亚太 | Asia-Pacific · 来源 V2EX · 发布 2026-07-17</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://www.v2ex.com/t/1228100" target="_blank" rel="noopener">去原站申请 | Apply on V2EX ↗</a>
+<div class="jd">远程全职岗位<br>高级 PHP 开发工程师 20-30k<br>视频平台 / 高并发 / 缓存与 CDN 方向<br>01 岗位职责<br>  负责视频资料检索平台的后端架构与核心业务开发，包括搜索聚合、影片与创作者资料、播放服务、用户行为、收藏历史、排行榜和内容运营接口。<br>  设计并持续优化高并发 API ，落地多级缓存、请求合并、异步队列、限流、熔断、降级和热点数据保护，保障突发流量下的可用性。<br>  负责 MySQL 数据模型、索引、慢查询与读写链路优化，处理缓存与数据库一致性、数据回填、幂等和任务重试等问题。<br>  建设 Redis 缓存体系，能够针对缓存穿透、击穿、雪崩、大 Key 、热 Key 和缓存失效风暴制定可执行方案。<br>  参与 Cloudflare/CDN 接入与治理，包括 Cache Rules 、缓存键、TTL 、回源保护、主动刷新、WAF 、Rate Limiting 、防盗链和多线路切换。<br>  负责视频播放链路相关后端能力，理解 HLS/m3u8 、TS 分片、AES-128 Key 、播放清单改写、鉴权 URL 、回源与边缘缓存。<br>  完善日志、指标、链路追踪和告警体系，能够快速定位线上性能问题，并对容量、故障和发布风险负责。<br>  推动代码评审、自动化测试、灰度发布、回滚和技术文档建设，带领团队形成稳定的工程规范。<br>02 任职要求          <br>  5 年以上 PHP 开发经验，至少 2 年承担核心系统或技术负责人角色；熟悉 PHP 8 、Composer 、PSR 规范及主流框架。<br>   必须具备真实的大用户量或高并发线上项目经验，能够说明业务规模、峰值 QPS 、容量瓶颈、优化过程和最终结果。<br>  熟练掌握 MySQL 与 Redis ，具备数据库性能分析、缓存架构设计和线上数据问题处置能力。<br>  必须具备 Cloudflare 或主流 CDN 的生产经验，理解浏览器缓存、边缘缓存、源站缓存及缓存键对命中率的影响。<br>  熟悉 Linux 、Nginx 或 HAProxy 、Docker 、Git 和 CI/CD ，能够独立完成服务部署、排障和性能调优。<br>  熟悉 RESTful API 、签名鉴权、权限控制、文件上传安全和第三方接口对接，重视安全与数据边界。<br>  具备清晰的系统设计能力和主人翁意识，能够把需求转化为可上线、可观测、可扩容的技术方案。<br>03 加分项            <br>  有视频、直播、内容社区、图片搜索、短视频或大规模媒体资源平台经验。<br>  使用过 Hyperf 、Swoole 、RoadRunner 等常驻内存或异步框架，并处理过连接泄漏与内存增长问题。<br>  有 Elasticsearch/OpenSearch 、ClickHouse 、Kafka 、RabbitMQ 等组件的生产实践。<br>  有 AWS 、跨账号网络、对象存储、CloudFront 、Cloudflare Workers/R2 或多 CDN 调度经验。<br>  有反爬、防盗链、风控、攻击流量治理或大规模图片处理经验。<br><br><br>Golang 、PHP 开发工程师 25-45k<br><br>岗位职责：<br>负责基于 PHP 语言和 Golang 语言的 Web 应用后端开发，完成系统架构设计与核心模块编码，开发维护现有的项目<br>使用主流 PHP 框架（如 Laravel 、Yaf ）和 Golang 框（如 Gin ）进行高效开发，确保代码可维护性和扩展性<br>设计并优化数据库结构，熟练使用 Mysql 数据库，能编写高性能语句和索引优化<br>开发 RESTful 风格 API 接口，支持前端及移动端业务调用，保障数据交互安全与稳定<br>运用 Redis 、Memcached 等缓存技术提升系统响应速度，参与高并发场景下的性能调优<br>配合前端团队完成页面集成，协同测试人员完成缺陷修复与系统迭代<br><br>任职要求：<br>1 、8 年以上后端开发经验，有中大型项目或复杂业务模块开发经验；<br>2 、需要同时具备 PHP 和 Golang 开发经验<br>3 、熟悉 Mysql 数据库设计与优化<br>4 、熟悉 Redis 、Memcached 等缓存技术的应用场景与实现方式<br>5 、具备良好的代码规范意识、问题排查能力和系统性能优化经验<br>6 、具有良好的沟通协作能力，能适应快节奏开发环境，具备较强的责任心与学习能力<br><br>AI 能力要求：<br>熟练使用 Cursor 、ChatGPT 、Claude 、Copilot 、Windsurf 等 AI 开发工具；<br>能利用 AI 完成代码生成、重构、测试、文档编写及 Bug 排查；<br>有 AI Agent 、MCP 、RAG 或大模型接入经验优先；<br>熟悉 OpenAI 、Claude 、Gemini 等模型 API 接入优先。<br><br>我们希望你：<br>工作积极主动，态度踏实认真，有较强的职业素养和工作操守<br>对技术有激情，喜欢钻研，能快速接受和掌握新技术，学习能力和工作责任心强，良好的沟通表达能力和团队协作能力<br><br>后端开发工程师 / Golang 开发工程师 21-30k<br>岗位要求<br>1. 计算机、软件工程等相关专业，5 年以上互联网后端开发经验；<br>2. 精通 Go 语言，深入理解 Goroutine 、Channel 、GMP 调度模型、内存管理与 GC ，熟悉 Gin 等主流 Web 框架；<br>3. 具备扎实的工程能力，熟悉分层架构、依赖注入、单体多入口（ API/Admin/Job ）服务设计，有从零搭建或重构 Go 项目的经验；<br>4. 熟练掌握 Redis （缓存、分布式锁、Stream 消息队列）、Elasticsearch 的设计与调优；<br>5. 深入理解高并发场景下的数据一致性方案：CAS 状态机、Saga 补偿事务、幂等设计、预聚合报表、事件驱动等（替代传统 DB 事务的工程实践）；<br>6. 主导过 DAU 数十万级以上互联网项目的架构设计或重大架构重构；<br>7. 具备良好的代码规范与安全意识，熟悉常见安全防护（注入、XSS 、鉴权、防直链等）；<br>8. 逻辑清晰，沟通能力强，有团队协作意识与责任心。<br>加分项<br>1. 有 Java 向 Go 技术栈迁移的实际落地经验（重点加分）；<br>2. 熟悉 AWS （ S3 、DocumentDB/RDS 、EC2 、CloudFront 等）云原生体系；<br>3. 有内容平台、视频平台、海外业务背景；<br>4. 熟悉 Docker 、GitLab CI/CD ，具备 DevOps 工程化视角；<br>5. 精通 MongoDB ，深入理解文档建模、索引原理、聚合管道，掌握副本集/分片集群的设计与调优（有 MySQL 经验者亦可，需理解关系型与文档型的取舍）<br><br>AI 全栈工程师 25-30k<br>负责 AI 自动化应用的全栈开发与独立交付，覆盖前端交互、后端服务、Agent 开发、模型集成、系统部署等完整技术栈，具备独立完成 AI 应用端到端开发的能力。<br>岗位职责<br>独立负责 AI 自动化应用的全栈开发，从前端界面到后端服务到数据存储的完整实现。<br>负责前端页面开发，包括 AI 流程管理后台、对话交互界面、配置面板、数据看板等。<br>负责后端服务开发，包括 API 接口、业务流程逻辑、数据处理、定时任务、消息通知等。<br>负责 Agent 、Skill 的开发与接入，完成模型调用、工具调用、工作流编排与状态管理。<br>对接 ChatGPT 、Claude 等大模型 API 及第三方系统接口，实现端到端的自动化链路。<br>负责系统的部署上线、环境配置、日志监控与线上问题排查。<br>参与需求评审与技术方案设计，能够独立拆解需求并给出合理的技术实现路径。<br>持续优化系统性能、用户体验和代码质量。<br>任职要求<br>后端能力<br>熟悉至少一种后端语言（ Node.js 、Python 、Java 、Go 之一），能完成接口开发与业务逻辑实现。<br>了解常用 Web 框架（如 Express 、Flask 、Spring Boot 等），能独立搭建基础服务。<br>前端能力<br>熟悉 HTML 、CSS 、JavaScript ，了解 Vue 或 React 等主流前端框架，能完成页面开发与交互实现。<br>具备前后端联调能力，理解接口调用、数据渲染和页面交互的基本流程。<br>数据库与基础工程<br>了解常见数据库（ MySQL 、PostgreSQL 、MongoDB 、Redis 等至少一种），能完成基本 CRUD 操作。<br>熟悉常见 Web 开发场景：接口设计、基础鉴权机制、文件上传等。<br>AI 能力<br>有 AI Coding 实战经验，日常使用 Cursor 、Claude Code 、GitHub Copilot 等 AI 编程工具辅助开发。<br>有调用大模型 API 的实际项目经验，能够设计 Prompt 完成特定业务任务。<br>使用过 OpenClaw 、Coze 、Dify 等 AI Agent 开发工具，了解 Agent 、Skill 、工作流的基本概念。<br>有 AI 自动化流程、Agent 工作流或 Skill 开发的实际项目经验。<br>部署与运维<br>了解 Linux 基本操作，有 Docker 、Nginx 等部署工具使用经验。<br>软素质<br>具备良好的问题排查能力和自驱力，能独立推动需求从开发到上线。<br>有责任心，具备良好沟通能力，能与产品、运营协作完成项目落地。<br>加分项<br>有 OpenClaw Skill 开发、部署经验。<br>有 RAG 、向量检索、知识库与 AI 应用集成经验。<br>有消息队列、定时任务等异步处理经验。<br>有 TypeScript 全栈、微服务或 Serverless 架构经验。<br>有从 0 到 1 搭建 AI 应用并上线的完整项目经历。<br>有开源项目或技术博客者优先。<br><br>上班时间:（北京时区）<br>周一到周五 10-22 午休 2  晚休 1<br>周六 10-19   午休 2<br>周天休息<br>节日假期 年假<br><br>也有运营，设计远程岗位 欢迎咨询，经验符合来投<br><br>TG：@hr861<br>邮箱： toniscott199629@gmail.com</div>
+
+<a class="apply" href="https://www.v2ex.com/t/1228100" target="_blank" rel="noopener">去原站申请 | Apply on V2EX ↗</a>
+<footer>信息采集自 V2EX,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from V2EX; refer to the original posting.</footer>
+</body></html>

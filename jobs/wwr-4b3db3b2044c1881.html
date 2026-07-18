@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Five9 | Senior DevOps Engineer</title>
+<meta property="og:title" content="Five9 | Senior DevOps Engineer">
+<meta property="og:description" content="Five9 · 📍Anywhere in the World">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="Five9 · 📍Anywhere in the World">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Senior DevOps Engineer</h1>
+<div class="meta">🏢 Five9 · 📍 Anywhere in the World · 软件开发 | Software Development · 全球 | Worldwide · 来源 We Work Remotely · 发布 2026-07-15</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://weworkremotely.com/remote-jobs/five9-senior-devops-engineer" target="_blank" rel="noopener">去原站申请 | Apply on We Work Remotely ↗</a>
+<div class="jd"><p>
+  <strong>Headquarters:</strong> United States (Remote)
+    <br><strong>URL:</strong> <a href="http://five9.com" rel="nofollow noopener" target="_blank">http://five9.com</a>
+</p>
+
+<p></p>
+<p>Join us in bringing joy to customer experience.  Five9 is a leading provider of cloud contact center software, bringing the power of cloud innovation to customers worldwide.   </p>
+<p>Living our values everyday results in our team-first culture and enables us to innovate, grow, and thrive while enjoying the journey together. We celebrate diversity and foster an inclusive environment, empowering our employees to be their authentic selves. </p><p>As part of the Product Engineering organization, the Senior DevOps Engineer will play a key role in building, operating, and enhancing <strong>Cloud Platform CI/CD pipeline</strong> capabilities that support highly available and scalable services. This role focuses on implementation, automation, and operational excellence, working closely with platform, SRE, and product engineering teams.<br><br>We are looking for a hands-on senior engineer who thrives in <strong>Continuous Integration systems</strong>, enjoys solving complex operational problems, and contributes to building reliable cloud platforms. This role requires strong execution skills, ownership of deliverables and the ability to work effectively in a fast-paced, collaborative environment supporting business-critical services that directly power our core products at scale.</p>
+<h3>Key Responsibilities:</h3>
+<ul>
+<li>Designing, implementing, and maintaining the build and release pipelines for software applications.</li>
+<li>Design, build, and maintain the CI/CD platform, including infrastructure, tooling, and automation for build, test, and deployment processes to improve efficiency and reliability.</li>
+<li>Work closely with engineering and delivery teams to deploy high-quality software in a fast-paced environment.</li>
+<li>Monitor the health and performance of the CI/CD build pipeline, implementing preventive and corrective measures to improve key reliability metrics such as availability, MTTD, and MTTR.</li>
+<li>Participate in incident response, debugging, and root cause analysis for production issues.</li>
+<li>Collaborate across teams to deliver consistent and reliable solutions aligned with organizational goals.</li>
+<li>Document designs, operational procedures, and troubleshooting guides clearly and effectively.</li>
+</ul>
+<h3>Requirements:</h3>
+<ul>
+<li>7+ years of experience in DevOps, cloud platform engineering, or production operations, with <strong>deep hands-on expertise in build and automation tools</strong> (e.g., GitLab CI/CD, Jenkins, TeamCity).</li>
+<li>3+ years of experience with version control systems (e.g., GitLab, GitHub or similar)</li>
+<li>Experience with CI/CD pipelines, including designing, implementing, and managing build pipelines, and Git-based workflows (e.g., GitLab).</li>
+<li>Strong hands-on experience with infrastructure as code and automation, using Terraform, Ansible, and scripting languages (Python, Bash, or similar).</li>
+<li>Working knowledge of containerization and orchestration technologies, including Kubernetes, Helm, and Docker.</li>
+<li>Strong troubleshooting skills across infrastructure, and cloud services, with specific expertise in diagnosing build pipeline failures, identifying, tracking and resolving dependency conflicts.</li>
+<li>Candidates must demonstrate solid experience with Linux environments, including system administration, scripting, and performance troubleshooting</li>
+<li>Excellent problem-solving, analytical, and collaboration skills.</li>
+<li>Strong written and verbal communication skills.</li>
+<li>BS in Computer Science or equivalent practical experience.</li>
+</ul>
+<h3>Nice to Have:</h3>
+<ul>
+<li>Exposure to a variety of modern CI platforms (GitHub Actions, Azure DevOps) and dedicated Continuous Delivery tools (Spinnaker, Harness).</li>
+<li>Hands-on experience in a multi-cloud environment, demonstrating flexibility across different public cloud providers.</li>
+<li>Advanced experience with observability tools (e.g., Prometheus, Grafana, Datadog).</li>
+<li>Knowledge of security best practices and tools for cloud-native environments (e.g., secrets management with Vault, container scanning).</li>
+</ul>
+<p> </p><p>Work Location: This role is fully remote for candidates who reside outside the 30 mile radius of one of our offices.  For candidates who reside within a 30 mile radius of one of our offices, this role is Hybrid and would require 3 days a week (T, W, TH) in office. </p>
+
+<p> </p>
+<p>As part of our continued commitment to diversity, equity, and inclusion, Five9 supports pay transparency during the entire recruitment process.  Actual compensation packages are based on several factors that are unique to each candidate including, but not limited to: skill set, depth of experience, certifications, and specific work location. The range displayed reflects the minimum and maximum target for new hire salaries for the job across the United States. Your recruiter can share more about the specific compensation package during your hiring process.</p>
+<p>Additionally, the total compensation package for this position may also include an annual performance bonus, stock, and/or other applicable incentive compensation plans.</p>
+<p>Our total reward package also includes:</p>
+<ul>
+<li>Health, dental, and vision coverage, beginning on the first day of employment. Five9 covers 100% of the employee portion of the health, dental and vision coverage and shares a high portion of the dependent cost. We also offer Short &amp; Long-Term Disability, Basic Life Insurance, and a 401k saving plan with employer matching.</li>
+<li>Access to an innovative mental health support platform that offers personalized care and resources in areas such as: therapy, coaching and self-guided mindfulness exercises for all covered employees and their covered dependents.</li>
+<li>Generous employee stock purchase plan.</li>
+<li>Paid Time Off, Company paid holidays, paid volunteer hours and 12 weeks paid parental leave.</li>
+</ul>
+<p>All compensation and benefits are subject to the requirements and restrictions set forth in the applicable plan documents and any written agreements between the parties.</p><p>The US base salary range for this role is below.  </p><p>$90,000 - $250,300 USD</p><p>Five9 embraces diversity and is committed to building a team that represents a variety of backgrounds, perspectives, and skills.  The more inclusive we are, the better we are.  Five9 is an equal opportunity employer. </p>
+
+<p>View our privacy policy, including our privacy notice to California residents here: <a href="https://www.five9.com/pt-pt/legal" rel="nofollow noopener" target="_blank">https://www.five9.com/pt-pt/legal</a>.  <br></p>
+<p>Note: Five9 will never request that an applicant send money as a prerequisite for commencing employment with Five9.</p>
+
+<p><strong>To apply:</strong> <a href="https://weworkremotely.com/remote-jobs/five9-senior-devops-engineer" rel="nofollow noopener" target="_blank">https://weworkremotely.com/remote-jobs/five9-senior-devops-engineer</a></p></div>
+
+<a class="apply" href="https://weworkremotely.com/remote-jobs/five9-senior-devops-engineer" target="_blank" rel="noopener">去原站申请 | Apply on We Work Remotely ↗</a>
+<footer>信息采集自 We Work Remotely,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from We Work Remotely; refer to the original posting.</footer>
+</body></html>

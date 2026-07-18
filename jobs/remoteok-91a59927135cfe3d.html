@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UNOPS | Procurement Associate</title>
+<meta property="og:title" content="UNOPS | Procurement Associate">
+<meta property="og:description" content="UNOPS · 📍Bridgetown, ">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="UNOPS · 📍Bridgetown, ">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Procurement Associate</h1>
+<div class="meta">🏢 UNOPS · 📍 Bridgetown,  · 客户支持 | Customer Support · 其他/未标明 | Other / Unspecified · 来源 Remote OK · 发布 2026-07-16</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://remoteOK.com/remote-jobs/remote-procurement-associate-unops-1134948" target="_blank" rel="noopener">去原站申请 | Apply on Remote OK ↗</a>
+<div class="jd"><strong>Job Highlight</strong> <br><br>Drive smooth Procurement operations by delivering reliable support, guidance, and services related to contracts, processes, and stakeholder collaboration.<br><br><strong> Role Purpose <br><br></strong>The Procurement Associate provides efficient and timely support services in procurement and contract administration to the different programmes managed by their office. S/he promotes a quality-driven, client-focused and results-oriented approach to ensure compliance with UNOPS procurement rules, regulations, policies and strategies, while working and liaising with other procurement personnel and various other stakeholders, including programme support officers, chief technical advisors, portfolio managers, and portfolio assistants. In the discharge of their duties, the Associate, Procurement works with minimal supervision.<br><br><strong> Functions / Key Results Expected <br><br></strong>Procurement Transactions Support<br><br><ul><li> Execute approved steps to embed sustainability in the procurement process.</li><li> Ensure complete submissions to the Contract and Property Committees (CPCs).</li><li> Ensure completeness of documentation for preparation/ processing of Purchase Orders (POs), Contracts, Long Term Agreements (LTAs), or their amendments.</li><li> Conduct routine market research to determine supply sources using the UN Global Market Place and other relevant external sources.</li><li> Set up, enhance or maintain the local supplier database, ensuring regular update of information databases and procurement files and records.</li><li> Generate status reports, as and when required.</li><li> Ensure the availability of all supporting documents for audit and review purposes.<br><br></li></ul>Procurement Planning, Requisition and Sourcing<br><br><ul><li> Collaborate with project personnel and managers in preparing their procurement plans and awards.</li><li> Maintain and update procurement monitoring processes for projects and provide feedback on POs to the requesting office.</li><li> Provide proposals to requesting entities on modes for the provision of goods, works and services, including procurement deadlines for every stage.</li><li> Review requisitions for completeness.</li><li> Prepare proper and complete specifications for equipment and materials, job profiles and statements of work (SoWs) as inputs to Requests for Proposal (RFPs), Requests for Quote (RFQs) and Invitations to Bid (ITBs), ensuring clearance/ approval by the relevant approving units.</li><li> Liaise regularly with vendors and consignees until safe delivery of goods is achieved.</li><li> Monitor progress and liaise with vendors throughout the procurement cycle.</li><li> Investigate and resolve post-order problems and share progress reports on procurement matters.</li><li> Provide oral or written responses to queries from projects, clients, companies, etc, regarding procurement-related matters.</li><li> Prepare monthly reports on procurement matters.</li><li> Liaise with the logistics unit or projects on receipt of goods, equipment and services in view of obtaining proper delivery reports, Receipt and Inspection Reports (RIRs), or relevant certificates while ensuring that proper inventory is taken.<br><br></li></ul>Bidding and Tendering Support<br><br><ul><li> Prepare shortlists of suitable contractors/ suppliers for purchases of value over designated amounts for approval by designated officer(s).</li><li> Prepare and issue Expressions of Interest (EOIs), RFQs, ITBs, RFPs, or other tender documents as required, ensuring conformity with UNOPSâ approved templates and seeking legal clearance in case of required adjustments.</li><li> Work with requesting programme or operations clients to review and evaluate bids or proposals received and prepare analyses for less complex contract awards for submission. to the regional sub-group of the Contracts and Property Committee (CPC) or other designated statutory body. body.</li><li> Work with requesting programme or operations clients to make submissions to the CPC.</li><li> Organize CPC regional sub-group (or designated statutory body) meetings as may be required, circulating documents for review at least 24 hours in advance.</li><li> Maintain records of the CPC regional sub-group or other designated statutory body.<br><br></li></ul>Contract Administration<br><br><ul><li> Follow up on the signing of contracts by vendors.</li><li> Obligate funds in the ERP and obtain appropriate signatures for approval.</li><li> Disseminate contract advertisements and awards.</li><li> Maintain contracts and filing systems.</li><li> Maintain databases/ rosters of best suppliers, contractors and service providers.<br><br></li></ul>Knowledge Building and Knowledge Sharing<br><br><ul><li> Organize, facilitate or deliver training and learning initiatives for personnel on procurement.</li><li> Provide sound contributions to knowledge networks and communities of practice by synthesizing lessons learned and disseminating best practices in procurement.</li><li> Collect and productively utilize feedback, ideas and internal knowledge about processes and best practices.<br><br></li></ul>Education Requirements <br><br><strong>Required<br><br></strong><ul><li> Secondary school (or equivalent) with 6 years of relevant experience OR</li><li> Bachelorâs degree (or equivalent) in Procurement, Supply Chain, Law, Commerce, Business Administration, Public Administration, Finance, or Economics, or related fields with 2 years of relevant experience is required<br><br></li></ul>Desired<br><br><ul><li> A globally or nationally recognized professional certificate or membership (e.g. CIPS) is desired.<br><br></li></ul><strong>Required<br><br></strong>Experience Requirements <br><br><ul><li>Relevant experience is work in procurement or related areas.</li></ul><br><br>Please mention the word **STYLIZED** and tag RMTAzLjExNy4xMDMuNzE= when applying to show you read the job post completely (#RMTAzLjExNy4xMDMuNzE=). This is a beta feature to avoid spam applicants. Companies can search these words to find applicants that read this and see they&#x27;re human.</div>
+
+<a class="apply" href="https://remoteOK.com/remote-jobs/remote-procurement-associate-unops-1134948" target="_blank" rel="noopener">去原站申请 | Apply on Remote OK ↗</a>
+<footer>信息采集自 Remote OK,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from Remote OK; refer to the original posting.</footer>
+</body></html>

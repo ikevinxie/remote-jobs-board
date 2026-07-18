@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>V2EX 招聘帖 | [全职远程] 多岗长期招人｜ Vue/React/Flutter 前端、Golang 后端、Web3 智能合约开发，全球化团队</title>
+<meta property="og:title" content="V2EX 招聘帖 | [全职远程] 多岗长期招人｜ Vue/React/Flutter 前端、Golang 后端、Web3 智能合约开发，全球化团队">
+<meta property="og:description" content="V2EX 招聘帖 · 📍远程(V2EX·中文社区)">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="V2EX 招聘帖 · 📍远程(V2EX·中文社区)">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>[全职远程] 多岗长期招人｜ Vue/React/Flutter 前端、Golang 后端、Web3 智能合约开发，全球化团队</h1>
+<div class="meta">🏢 V2EX 招聘帖 · 📍 远程(V2EX·中文社区) · 软件开发 | Software Development · 亚太 | Asia-Pacific · 来源 V2EX · 发布 2026-07-12</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://www.v2ex.com/t/1226708" target="_blank" rel="noopener">去原站申请 | Apply on V2EX ↗</a>
+<div class="jd">## 正文<br>### 团队介绍<br>全球化线上技术团队，主打跨境 Web3 与全球化 ToC 产品，全流程远程办公，无线下坐班要求。<br>团队技术栈完整，业务稳定长期迭代，不做短期项目割韭菜，本次开放 3 大类技术岗位，长期有效，合适随时可入职。<br>全员扁平化，无层级、无无效晨会周报，看重交付结果，技术方案充分自由，有充足时间深耕技术，拒绝内卷加班。<br><br>联系方式：看我历史帖子里边有<br><br>### 工作模式 &amp; 薪酬福利<br>- 工作方式：全职远程，全国均可，稳定网络即可，不打卡，以交付成果考核<br>- 薪资：对标一线互联网，根据技术深度 15k–40k ，15 号固定发薪，入职缴社保<br>- 额外福利：项目绩效奖金、技术学习补贴、海外合规工具资源、弹性工时<br>- 晋升：纯技术/技术管理双线晋升，无天花板，新项目优先内部提拔<br><br>## 岗位 1：前端开发（ Vue / React / Flutter ）<br>### 工作职责<br>1. 负责 Web 端、H5 、多端 App 业务开发，技术栈覆盖 Vue 、React 、Flutter 跨端方案；<br>2. 参与产品需求评审，独立完成页面组件封装、状态管理、交互逻辑实现；<br>3. 适配海内外多端兼容，优化页面加载、渲染性能，处理移动端适配、多语言国际化需求；<br>4. 和后端、合约工程师对接接口，联调修复线上 bug ，持续迭代产品功能；<br>5. 沉淀通用组件库，优化前端工程化构建流程。<br><br>### 岗位要求<br>1. 扎实 JS/TS 基础，熟练 Vue3 或 React 任一主流框架，有完整线上项目落地经验；<br>2. 会 Flutter 跨端开发，能独立产出安卓/iOS 双端应用者优先；<br>3. 熟悉工程化、打包优化、跨端适配、多语言国际化开发；<br>4. 良好接口联调、问题排查能力，能看懂后端 Golang 接口文档；<br>5. 自律自驱，远程办公能主动同步进度，沟通清晰；<br>6. 加分：有 Web3 项目、链上 DApp 前端开发经验、熟悉钱包交互、Ethers/Web3.js 。<br><br>## 岗位 2：Golang 后端开发<br>### 工作职责<br>1. 使用 Golang 搭建后端微服务、API 网关、业务服务、数据定时任务；<br>2. 对接前端、链上合约层，设计稳定高并发业务接口，支撑海内外用户访问；<br>3. 负责数据库（ MySQL/Redis ）设计、缓存优化、接口性能调优；<br>4. 处理链下数据同步、链上事件监听、第三方 API 对接；<br>5. 编写单元测试、接口文档，保障服务稳定可用，线上故障快速复盘修复。<br><br>### 岗位要求<br>1. 2 年及以上 Golang 生产环境开发经验，熟悉 Goroutine 、Channel 、标准库；<br>2. 熟悉 MySQL 、Redis 使用，懂索引优化、缓存策略；<br>3. 了解 Docker 基础部署，能看懂简单 Shell 脚本；<br>4. 具备接口设计、并发处理、故障排查能力；<br>5. 加分：Web3 链下服务、链上事件解析、稳定币/跨链相关项目经验。<br><br>## 岗位 3：Web3 智能合约开发（ Solidity ）<br>### 工作职责<br>1. 使用 Solidity 开发、审计、部署以太坊系兼容链智能合约（ ETH/BSC/Polygon 等）；<br>2. 编写测试用例，配合前端、后端完成合约联调、链上交互全流程；<br>3. 跟进合约安全审计，修复重入、溢出、权限漏洞等安全风险；<br>4. 研究主流 EIP 标准，结合业务设计代币、质押、交易、跨链相关合约逻辑；<br>5. 输出合约文档，对接第三方审计机构，跟进合约升级与运维。<br><br>### 岗位要求<br>1. 精通 Solidity ，有完整代币、DApp 、质押类合约开发上线实战经验；<br>2. 熟悉 Hardhat/Truffle 开发框架，单元测试、本地链调试、合约部署流程；<br>3. 懂常见合约安全漏洞，具备基础安全审计排查能力；<br>4. 了解 EVM 底层、链上 Gas 优化、合约权限设计；<br>5. 基础英文读写，可查阅官方文档；<br>6. 加分：懂 Golang/前端、有 RWA 、支付、跨链合约开发经验。<br><br>## 投递说明<br>1. 简历必备：个人简历 + GitHub 地址 + 过往项目链接（ DApp/后端/跨端 App 均可）<br>2. 投递方式：本帖私信我，附上作品集，3 个工作日内全部回复，不合适也会给出反馈<br>3. 补充说明<br>- 所有岗位**长期有效**，招满也会持续储备优质技术人才；<br>- 全部业务合规出海，无违规灰色业务，技术长期可持续迭代；<br>- 远程办公无地域限制，面试线上完成，流程简单无多轮无效笔试；<br>- 面试包含技术沟通+小型实操 demo ，不搞八股文为难人，更看重实战落地能力。<br><br><br>联系方式：看我历史帖子里边有</div>
+
+<a class="apply" href="https://www.v2ex.com/t/1226708" target="_blank" rel="noopener">去原站申请 | Apply on V2EX ↗</a>
+<footer>信息采集自 V2EX,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from V2EX; refer to the original posting.</footer>
+</body></html>

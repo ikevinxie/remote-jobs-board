@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zartis | Head of Risk and Compilance</title>
+<meta property="og:title" content="Zartis | Head of Risk and Compilance">
+<meta property="og:description" content="Zartis · 📍Europe">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="Zartis · 📍Europe">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Head of Risk and Compilance</h1>
+<div class="meta">🏢 Zartis · 📍 Europe · 财务与法务 | Finance &amp; Legal · 欧洲 | Europe / EMEA · 来源 Jobicy · 发布 2026-07-17</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://jobicy.com/jobs/146754-head-of-risk-and-compilance" target="_blank" rel="noopener">去原站申请 | Apply on Jobicy ↗</a>
+<div class="jd"><h3>The company and our mission: </h3>
+<p>Zartis is a global AI transformation and technology consulting partner where talented engineers and technologists work on cutting edge innovation. We partner with ambitious organizations to design, build, and scale technology solutions that deliver real impact.</p>
+<p>Our teams bring deep expertise in AI driven platforms, secure API architectures, and cloud native engineering. You will work on meaningful projects that accelerate the adoption of advanced technologies, from strategy and discovery through to full product delivery, helping turn complex challenges into measurable outcomes.</p>
+<p>With engineering hubs across EMEA and LATAM, and long term partnerships in financial services, healthcare and life sciences, and energy and climate, we offer opportunities to work on projects that truly matter. Here, you will not just build technology, you will drive business impact and grow your career alongside industry leaders.</p>
+<p>We are looking for a <strong>Head of Risk and Compliance</strong> to work on a project in the Tech Company industry.</p>
+<h3>The project:</h3>
+<p>We are looking for a Head of Risk &amp; Compliance to lead and evolve our Risk &amp; Compliance function. This is a senior leadership role designed for someone who can own the strategic risk agenda, drive a proactive compliance culture, and provide direct decision-making support to the COO. You will manage an internal R&amp;C team, act as the primary accountable owner across all compliance domains, and bring the technical depth in information security and IT infrastructure that bridges the gap between governance frameworks and real-world implementation. </p>
+<h3>What you will do:</h3>
+<ul>
+<li>
+<p>Own the company-wide risk register: maintain, prioritise, and drive resolution across all risk domains (legal, operational, data, information security).</p>
+</li>
+<li>
+<p>Develop and lead the annual risk assessment cycle; translate outputs into concrete mitigation plans with owners and deadlines.</p>
+</li>
+<li>
+<p>Act as the accountable owner for IT security risk, working with internal technical stakeholders and external providers to ensure vulnerabilities, access controls, and infrastructure risks are identified, assigned, and addressed.</p>
+</li>
+<li>
+<p>Act as the primary escalation point for risk and compliance matters.</p>
+</li>
+<li>
+<p>Design and maintain the governance framework across 8 EU jurisdictions, ensuring policies are current, proportionate, and consistently applied.</p>
+</li>
+<li>
+<p>Lead incident response: own the end-to-end process from detection to resolution, including client notification, root cause analysis, and lessons learned.</p>
+</li>
+<li>
+<p>Own ongoing ISO 27001 and Cyber Essentials certifications and lead future certifications (SOC 2 or equivalent) as the business requires.</p>
+</li>
+<li>
+<p>Lead GDPR compliance across all entities: DPIAs, records of processing, data subject requests, breach management, and DPA relationships.</p>
+</li>
+<li>
+<p>Monitor and interpret emerging EU regulation, including NIS2 and upcoming frameworks, and translate requirements into operational action plans before deadlines.</p>
+</li>
+<li>
+<p>Manage relationships with external legal counsel, auditors, and regulatory bodies.</p>
+</li>
+<li>
+<p>Directly manage the Risk &amp; Compliance Manager and any future hires within the function.</p>
+</li>
+<li>
+<p>Set clear performance expectations; develop the team&#x27;s capability to operate with minimal escalation.</p>
+</li>
+<li>
+<p>Act as an internal advisor to other business functions such as Business, Operations and Finance.</p>
+</li>
+</ul><h3>What you will bring:</h3>
+<ul>
+<li>
+<p>7+ years in risk, compliance, or information security roles, with at least 3 in a leadership capacity.</p>
+</li>
+<li>
+<p>Direct ownership of ISO 27001; hands-on experience with GDPR compliance operations across multiple jurisdictions.</p>
+</li>
+<li>
+<p>Track record of building or significantly maturing a compliance function, not just maintaining one.</p>
+</li>
+<li>
+<p>Experience working in a tech, consulting, or professional services environment.</p>
+</li>
+<li>
+<p>Demonstrated ability to engage C-suite and clients on risk topics with clarity and commercial awareness.</p>
+</li>
+</ul>
+ 
+<h3>Nice to have:</h3>
+<ul>
+<li>
+<p>Exposure to AI governance frameworks or emerging EU regulation in the AI space.</p>
+</li>
+<li>
+<p>Familiarity with multi-entity structures across EU jurisdictions (Spain, Ireland, Portugal, Germany, UK).</p>
+</li>
+</ul>
+ 
+<h3>What we offer: </h3>
+<ul>
+<li>
+<p><strong>100%</strong> <strong>Remote Work</strong></p>
+</li>
+<li>
+<p><strong>WFH allowance:</strong> Monthly payment as financial support for remote working.</p>
+</li>
+<li>
+<p><strong>Career Growth:</strong> We have established a career development program accessible for all employees with a 360º feedback that will help us to guide you in your career progression.</p>
+</li>
+<li>
+<p><strong>Training:</strong> For Tech training at Zartis, you have time allocated during the week at your disposal. You can request from a variety of options, such as online courses (from Pluralsight and Educative.io, for example), English classes, books, conferences, and events.</p>
+</li>
+<li>
+<p><strong>Mentoring Program:</strong> You can become a mentor in Zartis or you can receive mentorship, or both.</p>
+</li>
+<li>
+<p><strong>Zartis Wellbeing Hub (Kara Connect)</strong>: A platform that provides sessions with a range of specialists, including mental health professionals, nutritionists, physiotherapists, fitness coaches, and webinars with such professionals as well.</p>
+</li>
+<li>
+<p><strong>Multicultural working environment: </strong>We organize tech events, webinars, parties, and activities to do online team-building games and contests.</p>
+</li>
+</ul></div>
+
+<a class="apply" href="https://jobicy.com/jobs/146754-head-of-risk-and-compilance" target="_blank" rel="noopener">去原站申请 | Apply on Jobicy ↗</a>
+<footer>信息采集自 Jobicy,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from Jobicy; refer to the original posting.</footer>
+</body></html>

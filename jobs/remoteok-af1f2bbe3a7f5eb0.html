@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jasper | Executive Assistant the CEO</title>
+<meta property="og:title" content="Jasper | Executive Assistant the CEO">
+<meta property="og:description" content="Jasper · 📍London, London, England, United Kingdom">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="Jasper · 📍London, London, England, United Kingdom">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Executive Assistant the CEO</h1>
+<div class="meta">🏢 Jasper · 📍 London, London, England, United Kingdom · 运营与人力 | Operations &amp; HR · 欧洲 | Europe / EMEA · 来源 Remote OK · 发布 2026-07-16</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://remoteOK.com/remote-jobs/remote-executive-assistant-the-ceo-jasper-1134977" target="_blank" rel="noopener">去原站申请 | Apply on Remote OK ↗</a>
+<div class="jd">Jasper is the leading AI marketing platform, enabling the world&#x27;s most innovative companies to reimagine their end-to-end marketing workflows and drive higher ROI through increased brand consistency, efficiency, and personalization at scale.<br><br>Jasper has been recognized as &quot;one of the Top 15 Most Innovative AI Companies of 2024&quot; by Fast Company and is trusted by nearly 20% of the Fortune 500 â including Prudential, Ulta Beauty, and Wayfair. Founded in 2021, Jasper is a remote-first organization with team members across the US, France, and Australia.<br><br><strong>About The Role<br><br></strong>As the <strong>Executive Assistant to the CEO</strong>, you will be a trusted strategic partner and force multiplier for our CEO, helping him operate at his highest level of impact. This role demands exceptional organizational skills, strong communication abilities, and the utmost discretion in handling confidential information. Alongside this strategic remit, you&#x27;ll also manage the CEO&#x27;s schedule, travel, meeting materials, and other administrative essentials â with the same precision and attention to detail. This role demands exceptional judgment, strong communication abilities across all levels of the organization, and the utmost discretion in handling confidential information.<br><br>This role reports to the Senior Manager, Executive Operations, and works in close daily partnership with the CEO. The role is open to candidates located in the UK, with a strong preference for someone based in London. While this is a fully remote role, there may be times when meeting the CEO and various partners in our London office is necessary, so flexibility to work out of this office is required.<br><br><strong>What You Will Do At Jasper<br><br></strong><ul><li>Manage the CEOâs schedule to arrange meetings, triage incoming requests, and ensure that all deadlines are met effectively. </li><li>Coordinate and facilitate communication between the executive and other internal team members, ensuring clear and effective collaboration. </li><li>Support the Executive Team working cadence including weekly meetings, regular brainstorming sessions and quarterly offsites. </li><li>Own travel arrangements and external engagement logistics with meticulous attention to detail, building contingency plans so nothing is left to chance. </li><li>Assist with key priorities including preparing necessary materials and organizing the CEOâs workflow. </li><li>Proactively identify issues and implement solutions to maintain momentum on critical activities. </li><li>Prepare materials and organize workflow to keep the CEO&#x27;s key priorities moving forward. </li><li>Partner closely with the Senior Manager, Executive Operations and cross-functional leaders to strengthen and continuously improve executive operations processes. </li><li>Support the CEO&#x27;s engagement with the Board and other senior stakeholders, including helping prepare materials and coordinate logistics for Board meetings and other high-stakes, elevated communications. <br><br></li></ul><strong>What You Will Bring To Jasper<br><br></strong><ul><li>7+ years of experience as an executive assistant or in a similar administrative role, ideally supporting C-level executives â with 2-4+ years directly supporting a CEO or Founder strongly preferred. </li><li>Exceptional organizational and time management skills, with the ability to prioritize tasks and meet deadlines. </li><li>Strong written and verbal communication skills, with comfort communicating at the Board and executive level. </li><li>Sound independent judgment and decision-making â able to distinguish between what to run with and what to escalate. </li><li>Ability to handle sensitive and confidential information with the highest level of discretion. </li><li>Strong problem-solving skills and the ability to work independently and autonomously. </li><li>Excellent interpersonal skills and the ability to build positive relationships with colleagues and external contacts. </li><li>Flexibility and adaptability in a fast-paced and dynamic work environment. <br><br></li></ul><strong>Compensation Range<br><br></strong>At Jasper, we believe in pay transparency and are committed to providing our employees and candidates with access to information about our compensation practices. The expected base salary range offered for this role is Â£85,000 - Â£100,000. Compensation may vary based on relevant experience, skills, competencies, and certifications.<br><br><strong>Benefits &amp; Perks (UK)<br><br></strong><ul><li>Comprehensive Private Medical Insurance and Dental coverage</li><li>Workplace Pension with a 3% employer contribution</li><li>Equity grant participation</li><li>Flexible PTO with a FlexExperience budget ($900 annually) to help you make the most of your time away from work</li><li>FlexWellness program ($1,800 annually) to help support your personal health goals</li><li>Life Assurance and Income Protection Insurance</li><li>Generous budget for home office setup</li><li>$1,500 annual learning and development stipend</li><li>16 weeks of paid parental leave<br><br></li></ul>Our goal is to be a diverse workforce that is representative at all job levels as we know the more inclusive we are, the better our product will be. We are committed to celebrating and supporting our differences and that diversity is essential to innovation and makes us better able to serve our customers. We hire people of all levels and backgrounds who are excited to learn and develop their skills.<br><br>We are an equal-opportunity employer. Applicants will not be discriminated against because of race, color, creed, sex, sexual orientation, gender identity or expression, age, religion, national origin, citizenship status, disability, ancestry, marital status, veteran status, medical condition, or any protected category prohibited by local, state or federal laws.<br><br><em>By submitting this application, you acknowledge that you have reviewed and agree to Jasper&#x27;s CCPA Notice to Candidates, available at</em><em> legal.jasper.ai/#ccpa</em><em>.<br><br></em><br><br>Please mention the word **ADAPTABLE** and tag RMTAzLjExNy4xMDMuNzE= when applying to show you read the job post completely (#RMTAzLjExNy4xMDMuNzE=). This is a beta feature to avoid spam applicants. Companies can search these words to find applicants that read this and see they&#x27;re human.</div>
+
+<a class="apply" href="https://remoteOK.com/remote-jobs/remote-executive-assistant-the-ceo-jasper-1134977" target="_blank" rel="noopener">去原站申请 | Apply on Remote OK ↗</a>
+<footer>信息采集自 Remote OK,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from Remote OK; refer to the original posting.</footer>
+</body></html>

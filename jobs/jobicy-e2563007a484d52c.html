@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phaidra | Technical Program Manager</title>
+<meta property="og:title" content="Phaidra | Technical Program Manager">
+<meta property="og:description" content="Phaidra · 📍Canada,  USA">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="Phaidra · 📍Canada,  USA">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Technical Program Manager</h1>
+<div class="meta">🏢 Phaidra · 📍 Canada,  USA · 运营与人力 | Operations &amp; HR · 美洲 | Americas · 来源 Jobicy · 发布 2026-07-17</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://jobicy.com/jobs/145850-technical-program-manager-2" target="_blank" rel="noopener">去原站申请 | Apply on Jobicy ↗</a>
+<div class="jd"><h3><strong>About Phaidra</strong></h3>
+<p>Phaidra is building the future of industrial automation.</p>
+<p>The world today is filled with static, monolithic infrastructure. Factories, power plants, buildings, etc. operate the same they&#x27;ve operated for decades — because the controls programming is hard-coded. Thousands of lines of rules and heuristics that define how the machines interact with each other. The result of all this hard-coding is that facilities are frozen in time, unable to adapt to their environment while their performance slowly degrades.</p>
+<p>Phaidra creates AI-powered control systems for the industrial sector, enabling industrial facilities to automatically learn and improve over time. Specifically:</p>
+<ul>
+<li>We use reinforcement learning algorithms to provide this intelligence, converting raw sensor data into high-value actions and decisions.</li>
+<li>We focus on industrial applications, which tend to be well-sensorized with measurable KPIs — perfect for reinforcement learning.</li>
+<li>We enable domain experts (our users) to configure the AI control systems (i.e. agents) without writing code. They define what they want their AI agents to do, and we do it for them.</li>
+</ul>
+<p>Our team has a track record of applying AI to some of the toughest problems. From achieving superhuman performance with <a href="https://www.nature.com/articles/nature16961" rel="nofollow noopener" target="_blank">DeepMind&#x27;s AlphaGo</a>, to reducing the energy required to cool <a href="https://www.technologyreview.com/2018/08/17/140987/google-just-gave-control-over-data-center-cooling-to-an-ai/" rel="nofollow noopener" target="_blank">Google&#x27;s Data Centers</a> by 40%, we deeply understand AI and how to apply it in production for massive impact.</p>
+<p>Phaidra’s ability to achieve its mission is determined by our ability to work together — as defined by our core values: <strong>Transparency</strong>, <strong>Collaboration</strong>, <strong>Operational Excellence</strong>, <strong>Ownership</strong>, and <strong>Empathy.</strong> We seek individuals who embody these values, as they are instrumental in ensuring our team consistently delivers excellence and fosters an engaging and supportive culture</p>
+<p>Phaidra is based in the USA, but we are 100% remote with no physical office. We hire employees internationally with the help of our partner, <a href="https://www.oysterhr.com/" rel="nofollow noopener" target="_blank">OysterHR</a>. Our team is currently located throughout the USA, Canada, UK, Sweden, Spain, Portugal, the Netherlands, Singapore, Australia, and India.</p><h3>Who you are </h3><ul>
+<li>You’re an independent worker, skilled in organization, planning, and project management.</li>
+<li>You have technical knowledge of industrial controls, building automation systems, and/or air or water cooled chiller plants. </li>
+<li>You have the drive to learn about different industries and technologies, and a passion to help customers operate their plant more efficiently and effectively with Phaidra’s AI supervisory control system.</li>
+<li>You can take ownership of your assigned customers and delight them!</li>
+<li>You can guide internal and external teams as you coordinate the configuration and installation of the customers industrial plant AI Agents, and provide professional support while you grow customer relationships for future expansion and advocacy.</li>
+<li>You thrive in a process-driven environment, yet possess the flexibility to adapt and tailor those processes to each customer&#x27;s unique needs.</li>
+<li>You enjoy collaborating with cross-functional teams to tackle complex projects, leveraging your expertise to drive successful outcomes.</li>
+</ul><p>**This role is posted at multiple levels (mid-level and senior). Final leveling, title, and compensation will be determined based on the candidate&#x27;s experience, skills, and qualifications during the interview process. </p><h3>Responsibilities</h3><ul>
+<li>Own end-to-end delivery of complex, large-scale customer programs, including multi-site, multi-product, and highly customized deployments, ensuring successful execution from kickoff through long-term support and customer satisfaction.</li>
+<li>Lead program strategy and planning by defining timelines, milestones, resource allocation, and risk mitigation plans across concurrent initiatives, aligning execution with both customer goals and company objectives.</li>
+<li>Serve as the primary customer-facing program leader and trusted advisor, proactively guiding customers through technical and operational challenges while delivering strategic recommendations.</li>
+<li>Work closely with engineering and product teams to ensure our customer solutions are configured correctly and delivered on time according to the customer’s specific site requirements.</li>
+<li>Independently manage high-complexity engagements, navigating ambiguity, prioritizing competing demands, and ensuring consistent delivery against scope, schedule, and quality expectations.</li>
+<li>Lead executive-level communication, presenting complex technical concepts, program updates, and risks in a clear, concise, and actionable manner to stakeholders at all levels.</li>
+<li>Proactively identify program risks, inefficiencies or gaps in delivery workflows, and lead initiatives to update playbooks or processes that improve delivery, customer experience, and internal operations.</li>
+<li>Shape and influence customer strategy by aligning evolving customer needs with long-term product and company direction, providing structured feedback to inform product development.</li>
+<li>Establish and continuously improve program management best practices, including documentation standards, onboarding processes, and delivery frameworks.</li>
+<li>Own comprehensive program documentation, including project progress milestone records, critical customer decisions, technical requirements, and customer-facing materials.</li>
+<li>Lead complex internal initiatives that enhance product capabilities, deployment methodologies, or operational tooling.</li>
+<li>Peer-mentor other TPMs on project execution and technical domain nuances; provide &#x27;on-the-job&#x27; guidance during onboarding to help new hires navigate internal processes and manage their first customer deployments</li>
+<li>Adapt and apply appropriate project management methodologies (Agile, Waterfall, hybrid approaches) based on program complexity and customer requirements.</li>
+<li>Uses AI tools strategically to accelerate delivery, improve quality, and guide others in effective AI-assisted workflows.</li>
+</ul><h3><strong>Key Qualifications</strong></h3><ul>
+<li>5+ years of technical program or project management experience, with demonstrated ownership of complex, cross-functional initiatives.</li>
+<li>Proven ability to independently lead large-scale, technically complex customer programs with high levels of ambiguity.</li>
+<li>Strong experience working with enterprise customers and distributed, cross-functional teams.</li>
+<li>Exceptional ability to communicate complex technical concepts clearly to both technical and non-technical audiences, including executive stakeholders.</li>
+<li>Demonstrated experience in stakeholder management, risk management, and program execution at scale.</li>
+<li>Ability to translate explicit and implicit customer needs into structured requirements and influence product and engineering roadmaps.</li>
+<li>Demonstrated expertise in at least two of the following domains, with working proficiency across others:
+<ul>
+<li>Data centers</li>
+<li>Industrial controls and automation systems</li>
+<li>HVAC and mission-critical cooling systems</li>
+<li>AI / Machine Learning applications in industrial environments</li>
+</ul>
+</li>
+<li>Proficiency in a wide range of program management tools and methodologies, including Agile, Waterfall, and risk management frameworks.</li>
+<li>Strong documentation and organizational skills with a focus on creating scalable, repeatable processes.</li>
+<li>Bachelor’s degree in a relevant field or equivalent experience.</li>
+</ul><h3><strong>Preferred Skills &amp; Experience</strong></h3><ul>
+<li>Strong track record of driving process improvements and operational excellence initiatives.</li>
+<li>Experience leading cross-functional technical solution delivery involving engineering, research, and product teams.</li>
+<li>Proven ability to mentor, coach, and develop team members.</li>
+<li>Experience influencing product strategy through customer insights and program learnings.</li>
+<li>Project Management Professional (PMP) certification or equivalent.</li>
+</ul><h3>Onboarding </h3><p><strong>In your first 30 days…</strong></p><ul>
+<li>You will be immersed in an onboarding program that introduces you to Phaidra and our product.</li>
+<li>You will read various parts of our handbook and familiarize yourself with the documentation culture at Phaidra.</li>
+<li>You will join calls with current customers to familiarize yourself with managing customer installs.</li>
+<li>You will familiarize yourself with our tools and process for developing customer schedules.</li>
+<li>You will meet with members of the Customer Success department to better understand strengths and opportunities with current processes.</li>
+</ul><p><strong>By your first 60 days…</strong></p><ul>
+<li>You will have a solid understanding of what Phaidra does and how deliver for customers.</li>
+<li>You will have met with team members across Phaidra and started building relationships that will help you be successful at your job.</li>
+<li>You will have become proficient at navigating the department’s processes and software tools.</li>
+<li>You will learn how to manage customer support issues and assist with managing our customer service agreements.</li>
+<li>You will assist in creating and managing project and process documentation.</li>
+</ul><p><strong>By your first 90 days…</strong></p><ul>
+<li>You will have been fully integrated into the Customer Success team and with Phaidra team members across the company.</li>
+<li>You will have begun to manage your own customers and projects.</li>
+<li>You will help improve our processes and project documentation.</li>
+</ul><h3>General Interview Process</h3><p>All of our interviews are held via Google Meet, and an active camera connection is required.</p><ol>
+<li>Meeting with People Operations team member </li>
+<li>Meeting with Hiring Manager </li>
+<li>Meeting with Technical Program Manager team member </li>
+<li>Meeting with Solutions Engineering team member </li>
+<li>Culture fit interview with Phaidra’s co-founders </li>
+</ol><h3><strong>Base Salary</strong></h3><p><strong>Senior Level</strong></p><p>United States Residents:</p><ul>
+<li>Tier 1 (Largest highest-cost metros): 114,400 USD - 171,600 USD</li>
+<li>Tier 2 (Other major metros): 108,680 USD - 163,020 USD</li>
+<li>Tier 3 (Mid-sized metro areas):: 102,960 USD - 154,440 USD</li>
+<li>Tier 4 (All other locations): 97,240 USD - 145,860 USD</li>
+</ul><p>Canada Residents: </p><ul>
+<li>Tier 1 (Vancouver): 119,715 CAD - 179,573 CAD. </li>
+<li>Tier 2 (Toronto): 111,343 CAD - 167,600 CAD</li>
+<li>Tier 3 (Montreal): 95,776 CAD - 143,665 CAD</li>
+<li>Tier 4 (Smaller cities / rural areas): 87,800 CAD - 131,686 CAD</li>
+</ul><p><strong>Mid-Level</strong></p><p>United States Residents:</p><ul>
+<li>Tier 1 (Largest highest-cost metros): 90,400 USD - 135,600 USD</li>
+<li>Tier 2 (Other major metros): 85,880 USD - 128,820 USD</li>
+<li>Tier 3 (Mid-sized metro areas):: 81,360 USD - 122,040 USD</li>
+<li>Tier 4 (All other locations): 76,840 USD - 115,260 USD</li>
+</ul><p>Canada Residents: </p><ul>
+<li>Tier 1 (Vancouver): 94,600 CAD - 141,900 CAD</li>
+<li>Tier 2 (Toronto): 88,290 CAD - 132,434 CAD</li>
+<li>Tier 3 (Montreal): 75,667 CAD - 113,516 CAD</li>
+<li>Tier 4 (Smaller cities / rural areas): 69,371 CAD - 104,056 CAD</li>
+</ul><p><em>In addition to base salary, this position is eligible for equity. </em><em>Final salary will be determined based on several factors, including a candidate’s qualifications, skills, competencies, experience, expertise, education and location. In some cases, final compensation may fall outside the posted range. Salary ranges are regularly reviewed and may be adjusted in response to market trends.</em></p><h3><strong>Benefits &amp; Perks</strong></h3>
+<ul>
+<li>Fast-paced, team-oriented environment where your work directly shapes the company’s direction.</li>
+<li>We are a 100% remote company. </li>
+<li>Competitive compensation &amp; meaningful equity.</li>
+<li>Outsized responsibilities &amp; professional development.</li>
+<li>Training is foundational; functional, customer immersion, and development training.</li>
+<li>Medical, dental, and vision insurance (exact benefits vary by region).</li>
+<li>Unlimited paid time off, with a required minimum of 20 days per year.</li>
+<li>Paid parental leave (exact benefits vary by region).</li>
+<li>Flexible stipends to support your workspace, well-being, and continued professional development.</li>
+<li>Company MacBook.</li>
+</ul>
+<p><strong>Please note:</strong> Not all of Phaidra’s benefits and perks listed above apply to temporary employees such as interns.</p>
+<h3><strong>On being Remote</strong></h3>
+<p>We take a thoughtful and intentional approach to remote collaboration. Inspired by pioneers like GitLab, we embrace proven best practices to foster an exceptional remote work environment. Our culture is documentation-first, and we prioritize asynchronous communication to support focus and flexibility across time zones. While we value independence, we stay closely connected through tools like Slack and video conferencing. Weekly all-hands meetings help us align and build strong relationships, and we regularly host virtual team-building activities and social events to maintain a sense of camaraderie.</p>
+<h3><strong>Equal Opportunity Employment</strong></h3>
+<p>Phaidra is an Equal Opportunity Employer; employment with Phaidra is governed on the basis of merit, competence, and qualifications and will not be influenced in any manner by race, color, religion, gender, national origin/ethnicity, veteran status, disability status, age, sexual orientation, gender identity, marital status, mental or physical disability, or any other legally protected status. We welcome diversity and strive to maintain an inclusive environment for all employees. If you need assistance with completing the application process, please contact us at hiring@phaidra.ai.</p>
+<h3><strong>E-Verify Notice</strong></h3>
+<p>Phaidra participates in E-Verify, an employment authorization database provided through the U.S. Department of Homeland Security (DHS) and Social Security Administration (SSA). As required by law, we will provide the SSA and, if necessary, the DHS, with information from each new employee’s Form I-9 to confirm work authorizat</p></div>
+
+<a class="apply" href="https://jobicy.com/jobs/145850-technical-program-manager-2" target="_blank" rel="noopener">去原站申请 | Apply on Jobicy ↗</a>
+<footer>信息采集自 Jobicy,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from Jobicy; refer to the original posting.</footer>
+</body></html>

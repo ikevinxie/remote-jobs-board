@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gartner | Director, IT Strategy Consulting, HHS-Medicaid</title>
+<meta property="og:title" content="Gartner | Director, IT Strategy Consulting, HHS-Medicaid">
+<meta property="og:description" content="Gartner · 📍Massachusetts">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="Gartner · 📍Massachusetts">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Director, IT Strategy Consulting, HHS-Medicaid</h1>
+<div class="meta">🏢 Gartner · 📍 Massachusetts · 其他 | Other · 其他/未标明 | Other / Unspecified · 来源 We Work Remotely · 发布 2026-07-16</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://weworkremotely.com/remote-jobs/gartner-director-it-strategy-consulting-hhs-medicaid" target="_blank" rel="noopener">去原站申请 | Apply on We Work Remotely ↗</a>
+<div class="jd"><p>
+  <strong>Headquarters:</strong> Remote - North Carolina
+    <br><strong>URL:</strong> <a href="http://gartner.com" rel="nofollow noopener" target="_blank">http://gartner.com</a>
+</p>
+
+<p>Gartner’s Consulting business is an extension of Gartner’s industry-leading IT Insights. From CIOs to leaders in business and government, we help clients translate insights into transformational actions and achieve their mission-critical priorities. Leveraging the breadth of Gartner’s resources, Consulting is growing rapidly, with unlimited potential to continue expanding our client base.</p><p>Technology Strategy Consulting. We help the C-suite make the right decisions based on how technology can transform their organizations. Our consulting team directly leverages the full power of Gartner’s research and insights to address the most important strategic decisions any business will make.</p><p>We deliver value to clients in areas such as IT Strategy Consulting, Benchmarking, Analytics and Optimization. Typically, this helps Gartner’s clients to execute on their strategic priorities, including:</p><ul><li><p>Digital Acceleration and Transformation</p></li><li><p>Enterprise Application Enablement</p></li><li><p>Big Data and Analytics</p></li><li><p>Applications Rationalization &amp; Optimization</p></li><li><p>Cloud Strategy and Migration</p></li><li><p>Sourcing and Ecosystem Optimization</p></li><li><p>Contract and Cost Optimization</p></li><li><p>Security and Risk Management</p></li></ul><p></p><p><b>What you’ll do:</b></p><p>Our Consulting Directors are responsible for high-level project delivery and oversight along with client relationship management. You will manage teams and advise clients at the highest strategic level on both big-picture and tactical matters, focusing on how technology enables a wide range of business outcomes in Heath and Human Services agencies with a strong focus in Medicaid and Child Welfare.</p><p></p><p><b>Key responsibilities include:</b></p><ul><li><p>Experience supporting state HHS agencies, especially with federally funded systems  modernization (including MMIS, “eligibility of enrollment”, CCWIS, EHRs )</p></li><li><p>Drive thought leadership and client relationship management, acting as a trusted advisor.</p></li><li><p>Oversee strategy and implementation phases, ensuring deliverables meet quality standards.</p></li><li><p>Manage multiple priorities and inspire high-performing teams.</p></li><li><p>Hands-on delivery of large, complex projects.</p></li><li><p>Ability to create, review, and present deliverables.</p></li><li><p>Analytical skills and ability to develop frameworks for junior staff.</p></li><li><p>Understanding of vendor landscape and state modernization efforts.</p></li><li><p>Exposure to other HHS programs.</p></li><li><p>Business development experience.</p></li></ul><p></p><p><b>What you’ll need:</b></p><ul><li><p>Deep expertise in Medicaid, Child Welfare andor public sector health IT programs (technical and programmatic).</p></li><li><p>Strong client presence and ability to lead/manage teams.</p></li><li><p>Experience within a well-regarded management or technology consultancy in project delivery and business development.</p></li><li><p>Ability to lead large projects and teams, combining technical expertise with strategic vision.</p></li><li><p>Comfortable influencing and building trust-based relationships with senior executives.</p></li><li><p>Track record in achieving/exceeding revenue targets preferred.</p></li><li><p>Intellectual curiosity and creativity in developing solutions to client challenges.</p></li><li><p>Coachable, adaptable, and committed to continuous improvement.</p></li></ul><p>#LI-KH7</p><p><b>Who are we? </b></p><p></p><p>At Gartner, Inc. (NYSE:IT), we guide the leaders who shape the world.</p><p></p><p>Our mission relies on expert analysis and bold ideas to deliver actionable, objective business and technology insights, helping enterprise leaders and their teams succeed with their mission-critical priorities.</p><p></p><p>Since our founding in 1979, we’ve grown to 20,000 associates globally who support over 13,000 client enterprises in ~90 countries and territories. We do important, interesting and substantive work that matters. That’s why we hire associates with the intellectual curiosity, energy and drive to want to make a difference. The bar is unapologetically high. So is the impact you can have here.</p><p></p><p><b>What makes Gartner a great place to work? </b></p><p></p><p>Our vast, virtually untapped market potential offers limitless opportunities – opportunities that may not even exist right now – for you to grow professionally and flourish personally. How far you go is driven by your passion and performance.</p><p></p><p>We hire remarkable people who collaborate and win as a team. Together, our singular, unifying goal is to deliver results for our clients.</p><p></p><p>Our teams are inclusive and composed of individuals from different geographies, cultures, religions, ethnicities, races, genders, sexual orientations, abilities and generations.</p><p></p><p>We invest in great leaders who bring out the best in you and the company, enabling us to multiply our impact and results. This is why, year after year, we are recognized worldwide as a great place to work.</p><p></p><p><b>Gartner is the world authority on AI</b></p><p></p><p>At Gartner, you’ll join a company at the very center of the AI revolution. Gartner has proactive, objective guidance throughout clients’ AI journeys. We set the standard for how organizations leverage artificial intelligence to drive meaningful impact. You’ll have access to unmatched resources, expertise, and technology, and play a key role in helping Gartner and our clients innovate and grow as we leverage AI to transform business and technology landscapes.</p><p> </p><p>It’s an exciting time to be at Gartner, with limitless opportunities to make a real impact, grow your skills, and build a lasting, meaningful career in a field that’s reshaping the way we operate. If you’re passionate about AI and want to be part of a team that’s guiding the leaders who shape the world, Gartner is the place for you.</p><p></p><p><b>What do we offer? </b></p><p></p><p>Gartner offers world-class benefits, highly competitive compensation and disproportionate rewards for top performers.</p><p></p><p>In our hybrid work environment, we provide the flexibility and support for you to thrive — working virtually when it&#x27;s productive to do so and getting together with colleagues in a vibrant community that is purposeful, engaging and inspiring.</p><p></p><p>Ready to grow your career with Gartner? Join us.</p><p></p><p></p>Gartner believes in fair and equitable pay. A reasonable estimate of the base salary range for this role is 168,000 USD - 199,000 USD. Please note that actual salaries may vary within the range, or be above or below the range, based on factors including, but not limited to, education, training, experience, professional achievement, business need, and location. In addition to base salary, employees will participate in either an annual bonus plan based on company and individual performance, or a role-based, uncapped sales incentive plan. Our talent acquisition team will provide the specific opportunity on our bonus or incentive programs to eligible candidates. We also offer market leading benefit programs including generous PTO, a 401k match up to $7,200 per year, the opportunity to purchase company stock at a discount, and more.<p><br>The policy of Gartner is to provide equal employment opportunities to all applicants and employees without regard to race, color, creed, religion, sex, sexual orientation, gender identity, marital status, citizenship status, age, national origin, ancestry, disability, veteran status, or any other legally protected status and to seek to advance the principles of equal employment opportunity.</p><p></p><p>Gartner is committed to being an Equal Opportunity Employer and offers opportunities to all job seekers, including job seekers with disabilities. If you are a qualified individual with a disability or a disabled veteran, you may request a reasonable accommodation if you are unable or limited in your ability to use or access the Company’s career webpage as a result of your disability. You may request reasonable accommodations by calling Human Resources at +1 (203) 964-0096 or by sending an email to ApplicantAccommodations@gartner.com.</p><p></p><p></p>Job Requisition ID:110475<p></p><p></p><p>By submitting your information and application, you confirm that you have read and agree to the country or regional recruitment notice linked below applicable to your place of residence.</p><p></p><p>Gartner Applicant Privacy Link: <a href="https://jobs.gartner.com/applicant-privacy-policy" rel="nofollow noopener" target="_blank">https://jobs.gartner.com/applicant-privacy-policy</a></p><p><br><b>For efficient navigation through the application, please only use the back button within the application, not the back arrow within your browser.</b></p>
+
+<p><strong>To apply:</strong> <a href="https://weworkremotely.com/remote-jobs/gartner-director-it-strategy-consulting-hhs-medicaid" rel="nofollow noopener" target="_blank">https://weworkremotely.com/remote-jobs/gartner-director-it-strategy-consulting-hhs-medicaid</a></p></div>
+
+<a class="apply" href="https://weworkremotely.com/remote-jobs/gartner-director-it-strategy-consulting-hhs-medicaid" target="_blank" rel="noopener">去原站申请 | Apply on We Work Remotely ↗</a>
+<footer>信息采集自 We Work Remotely,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from We Work Remotely; refer to the original posting.</footer>
+</body></html>

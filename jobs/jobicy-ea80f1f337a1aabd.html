@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NetDocuments | Legal Innovation Partner</title>
+<meta property="og:title" content="NetDocuments | Legal Innovation Partner">
+<meta property="og:description" content="NetDocuments · 📍USA">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="NetDocuments · 📍USA">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Legal Innovation Partner</h1>
+<div class="meta">🏢 NetDocuments · 📍 USA · 财务与法务 | Finance &amp; Legal · 美洲 | Americas · 来源 Jobicy · 发布 2026-07-18</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://jobicy.com/jobs/146555-legal-innovation-partner" target="_blank" rel="noopener">去原站申请 | Apply on Jobicy ↗</a>
+<div class="jd"><p>NetDocuments is committed to providing an excellent candidate experience and will never ask you to engage in recruitment activity without phone, video, and in person meetings and communications from emails using the @netdocuments.com domain. If you have any concerns or questions about communications you have received, please send them to hrgroup@netdocuments.com so our team members can review.</p>
+
+<p>NetDocuments is the world’s #1 trusted cloud-based content management and productivity platform that helps legal professionals do their best work. We strive to win together through passionate hard work, exploring new things and recognizing every interaction matters. </p>
+<p>NetDocuments provides rewarding career growth in an inclusive, diverse environment where employees are encouraged to openly contribute creative ideas and innovation, backed by supportive peers and leadership working together to achieve our goals as a unified team. </p>
+<p>At our core, we are dedicated to empowering our employees to drive successful business outcomes and better user experiences for our customers and partners. Our customer-centric approach and employee enablement has allowed us to enjoy many accolades, including being named among the 2022, 2023, &amp; 2024 list of Inc. Magazine’s 5000 Fastest-Growing Private Companies in America. </p>
+<p>Other recent awards include: </p>
+<ul>
+<li>Five-time winner (2025, 2024, 2023, 2022, 2021) Top Workplace in the US by the Salt Lake Tribune</li>
+<li>Four-time winner (2025, 2023, 2022, 2021) Best Companies to Work for by Utah Business magazine</li>
+<li>Three-time winner (2025, 2023, 2022) Top Workplace Employee Appreciation and Employee Well-Being</li>
+<li>Three-time winner (2024, 2023, 2022) Top Workplace Work-Life Flexibility</li>
+<li>Three-time winner (2024, 2023, 2022) Top Workplace Compensation &amp; Benefits</li>
+<li>Two-time winner (2024, 2023) National Top Workplaces</li>
+<li>Two-time winner (2024, 2023) Top Workplace Innovation</li>
+<li>2025 Remote Work</li>
+<li>2024 Technology Industry</li>
+</ul>
+<p>NetDocuments is a hybrid, remote-friendly workplace. Come join our team and work inspired each day! </p><p><strong>About the position</strong></p><p>NetDocuments is seeking a Legal Innovation Partner to be a senior individual contributor embedded in the firm relationships that matter most to NetDocuments. You are not a typical customer success manager — you are an expert in legal AI strategy and transformation who serves as the primary strategic advisor to a portfolio of law firm and legal department clients. You are responsible for their success with NetDocuments, and you own the renewal and expansion of that book of business.</p><p>You will guide clients through every stage of their AI adoption journey — from understanding their current workflow and identifying high-impact use cases, through implementation, change management, and measurement of outcomes. Your clients trust you not just as a vendor contact, but as a thought partner. When they have a question about what legal AI means for their firm, you are who they call.</p><p><strong>What You’ll Do</strong> </p><ul>
+<li>Own a portfolio of strategic law firm and legal department client relationships, serving as the primary advisor and point of accountability for their NetDocuments experience and AI transformation journey</li>
+<li>Drive renewal and expansion within your assigned book of business — maintaining high net revenue retention rates and identifying meaningful upsell and cross-sell opportunities aligned to client needs</li>
+<li>Develop and execute tailored AI adoption roadmaps for each client, working with firm leadership and legal technology teams to identify the highest-value use cases and build measurable adoption plans</li>
+<li>Lead executive-level business reviews with firm management committees, CIOs, and Chief Innovation Officers — communicating ROI, adoption performance, and strategic direction clearly and confidently</li>
+<li>Identify and escalate at-risk accounts proactively, partnering with Sales and Forward Deployed Engineers to develop and execute remediation plans</li>
+<li>Collaborate with the Product and Engineering teams to channel client feedback into the product roadmap, advocating for the features and integrations that will drive adoption and stickiness in your portfolio</li>
+<li>Contribute to the development of the LIP playbook — sharing what works with the broader Legal Innovation Partner team and helping establish best practices for AI transformation engagement</li>
+<li>Represent NetDocuments at legal technology conferences, client advisory boards, and industry events</li>
+<li>Other duties as assigned</li>
+</ul><p><strong>What You’ll Need to be Successful</strong> </p><ul>
+<li>8+ years of experience in legal technology, legal operations, enterprise customer success, or management consulting focused on the legal sector</li>
+<li>Fluent in using AI for legal workflows and legal use</li>
+<li>Direct experience owning client relationships and renewal/expansion outcomes in a B2B SaaS or legal technology environment</li>
+<li>Fluency in law firm operations — you understand how firms are structured, how decisions get made, how technology is evaluated and adopted, and what drives attorney behavior</li>
+<li>JD or equivalent legal industry experience strongly preferred. Prior law firm practice (associate or counsel level) is a significant advantage in establishing credibility with firm leadership</li>
+<li>Proven ability to build trusted advisory relationships with senior law firm stakeholders, including partners, COOs, CIOs, and practice group leaders.</li>
+<li>Comfort navigating complex, multi-stakeholder organizations and moving multiple workstreams simultaneously</li>
+<li>Strong written and verbal communication skills, including the ability to design and deliver compelling client presentations and ROI narratives</li>
+<li>Familiarity with legal AI applications, document management systems, and the broader LegalTech ecosystem</li>
+<li>Ability to travel up to 25% to client sites and industry events</li>
+</ul><p><strong>What You’ll Love About NetDocuments</strong> </p><ul>
+<li>The People! </li>
+<li>90% healthcare premiums company covered </li>
+<li>HSA company contribution </li>
+<li>401K match at 4% with immediate vesting </li>
+<li>Flexible PTO (typically 3 to 4 weeks a year) </li>
+<li>10 paid holidays </li>
+<li>Monthly contributions for life activities &amp; wellness </li>
+<li>Access to LinkedIn learning with monthly dedicated time to explore </li>
+</ul><p><strong>Compensation Transparency</strong> </p><p>The compensation range for this position is: $190,000 - $210,000 plus bonus</p><p>The posted cash compensation for this position includes on target earnings, base salary and variable if applicable. Some roles may qualify for overtime pay. Individual compensation packages are determined based on various factors specific to each candidate, such as career level, skills, experience, geographic location, qualifications, and other job-related considerations </p><h3>#LI-REMOTE</h3><h3>#LI - HYBRID</h3><p><strong>Equal Opportunity</strong> </p>
+<p><em>NetDocuments is an Equal Opportunity Employer and prohibits discrimination and harassment of any kind. All employment decisions are based on business needs, job requirements, individual qualifications, without regard to race, color, religion, sex, (including pregnancy), national origin, age, physical and mental disability, marital status, sexual orientation, gender identity and/or expression, military and veteran status, or any other status protected by laws or regulations in the locations where we operate. NetDocuments believes diversity and inclusion among our employees is critical to our success, and we are committed to providing a work environment free of discrimination and harassment.</em> </p></div>
+
+<a class="apply" href="https://jobicy.com/jobs/146555-legal-innovation-partner" target="_blank" rel="noopener">去原站申请 | Apply on Jobicy ↗</a>
+<footer>信息采集自 Jobicy,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from Jobicy; refer to the original posting.</footer>
+</body></html>

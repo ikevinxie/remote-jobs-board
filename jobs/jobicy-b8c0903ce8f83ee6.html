@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fortive | Sr. Product Owner</title>
+<meta property="og:title" content="Fortive | Sr. Product Owner">
+<meta property="og:description" content="Fortive · 📍USA">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="Fortive · 📍USA">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Sr. Product Owner</h1>
+<div class="meta">🏢 Fortive · 📍 USA · 产品 | Product · 美洲 | Americas · 来源 Jobicy · 发布 2026-07-18</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://jobicy.com/jobs/147085-sr-product-owner" target="_blank" rel="noopener">去原站申请 | Apply on Jobicy ↗</a>
+<div class="jd"><p>The Sr Product Owner plays a critical role in ensuring that a product or feature is developed with a focus on delivering value to the customer and the business. They act as a voice for the customer and are responsible for making key product-related decisions throughout the development process, including identifying opportunities to incorporate emerging technologies, such as AI-enabled capabilities, where they can improve user experience, workflow efficiency, and business outcomes.</p><p><strong>Key Responsibilities</strong>:</p><ol><li><strong>Product Vision &amp; Stakeholder Alignment</strong></li></ol><p>Translation: Work with stakeholders to translate future vision and requirements into clearly broken-down epics and stories; ensure all team members understand and align with product goals, including consideration of emerging technologies where appropriate.</p><ul><li>Stakeholder Communication: Act as the primary point of contact between the development team and stakeholders; communicate progress, changes, and updates regularly.</li><li>Team Enabler: Work with one or more Agile Development Teams and act as a central reference and information source, guiding system/product functionality decisions.</li><li>Entrepreneurial Spirit: Demonstrate a track record of delivering results in fast-moving, demanding environments.</li></ul><ol><li><strong>Backlog Ownership &amp; Prioritization</strong></li></ol><ul><li>Prioritization: Create and maintain the product backlog; prioritize features, user stories, and tasks based on business value, customer needs, market trends, and strategic opportunities.</li><li>Backlog Management: Continuously groom and refine the backlog based on feedback, changing priorities, and new insights.</li><li>Feedback Integration: Gather and incorporate feedback from stakeholders and end-users into the backlog; adjust as necessary.</li></ul><ol><li><strong>Requirements &amp; Customer Experience (UX)</strong></li></ol><ul><li>User Story Development: Break down high-level requirements into detailed, implementable user stories that meet strong Agile standards and support effective workflows, automation, and decision support where applicable.</li><li>Acceptance Criteria: Define clear acceptance criteria so the team understands what constitutes “done” for each feature.</li><li>UI/UX Alignment: Partner with UX to ensure backlog items have wireframes and UI designs ready for sprint planning; provide design feedback, participate in design sprints, and support user acceptance testing.</li></ul><ol><li><strong>Planning, Delivery &amp; Risk</strong></li></ol><ul><li>Sprint Planning: Participate in sprint planning to select stories and tasks; ensure the team has a clear understanding of work scope.</li><li>Release Planning: Collaborate with the team and stakeholders to plan and prioritize releases aligned with market needs and business goals.</li><li>Quality Assurance: Ensure the product meets quality standards by accepting or rejecting work during sprint reviews.</li><li>Risk Management: Identify and mitigate delivery risks; partner with the release manager on timelines, tough conversations, mitigation strategies, and transparent escalation to leadership.</li></ul><ol><li><strong>Business Outcomes &amp; Data</strong></li></ol><ul><li>Business Case Support: Assist in developing and presenting business cases for new features and initiatives; ensure alignment with strategic goals and stakeholder expectations.</li><li>Data-Driven: Define KPIs and measures for features and capabilities to track impact and inform decisions.</li></ul><p><strong>Required Qualifications:</strong></p><p><i>Education &amp; Experience Guidelines</i></p><ul><li>Bachelor’s Degree in relevant field</li><li>4-7 years of relevant work experience</li><li>Experience with Product and Development tools such as ADO, Jira or other similar tools.</li><li>Healthcare and technical expertise are highly preferred, including experience with data, API integrations, and interoperability standards such as HL7 and FHIR.</li><li>Strong analytical and quantitative skills, with the ability to use data and metrics to back up assumptions, evaluate outcomes, and assess opportunities related to emerging technologies, including AI-enabled capabilities, where applicable.</li><li>Leadership and decision-making skills</li><li>Excellent communication and presentation abilities</li><li>Understanding of the industry, market trends, and customer needs</li><li>Strong organizational and time management skills</li><li>Strong collaboration skills, with the ability to work effectively across Engineering, UI/UX, Product Management, leadership, and internal and external stakeholders.</li><li>Travel up to 30%</li></ul><p><strong>Fortive Corporation Overview</strong></p><p>Fortive&#x27;s essential technology makes the world safer and more productive. We accelerate transformation in high-impact fields like workplace safety, build environments, and healthcare.</p><p>We are a global industrial technology innovator with a startup spirit. Our forward-looking companies lead the way in healthcare sterilization, industrial safety, predictive maintenance, and other mission-critical solutions. We&#x27;re a force for progress, working alongside our customers and partners to solve challenges on a global scale, from workplace safety in the most demanding conditions to advanced technologies that help providers focus on exceptional patient care.</p><p>We are a diverse team 10,000 strong, united by a dynamic, inclusive culture and energized by limitless learning and growth. We use the proven Fortive Business System (FBS) to accelerate our positive impact.</p><p>At Fortive, we believe in you. We believe in your potential—your ability to learn, grow, and make a difference.</p><p>At Fortive, we believe in us. We believe in the power of people working together to solve problems no one could solve alone.</p><p>At Fortive, we believe in growth. We&#x27;re honest about what&#x27;s working and what isn&#x27;t, and we never stop improving and innovating.</p><p>Fortive: For you, for us, for growth.</p><p><strong>About Provation</strong></p><p> Provation is a leading provider of healthcare software and SaaS solutions for clinical productivity, care coordination, quality reporting, and billing. Our purpose is to empower providers to deliver quality healthcare for all. Provation’s comprehensive portfolio spans the entire patient encounter, from pre-procedure through post-procedure, with solutions for physician and nursing documentation (Provation® MD, Provation® Apex, MD-Reports, Provation® endoPRO®, and Provation® MultiCaregiver), anesthesia documentation (#1 Best in KLAS Provation® iPro), patient engagement, surgical care coordination, quality reporting, and billing capture (Provation® SurgicalValet™), order set and care plan management (Provation® Order Set Advisor™ and Provation® Care Plans), and EHR embedded clinical documentation (Provation® Clinic Note). Provation has a loyal customer base, serving more than 5,000 hospitals, surgery centers, and medical offices, and 700 physician groups globally, including 19 of the top 20 U.S. hospitals. In 2021, Provation was acquired by Fortive Corporation, a Fortune 1000 company that builds essential technology and accelerates transformation in high-impact fields like workplace safety, engineering, and healthcare. For more information about our solutions, visit provationmedical.com and follow us on Twitter, Facebook, and LinkedIn. Our purpose at Provation is to empower providers to deliver quality healthcare for all. To deliver on this commitment, we’re guided by our core values – Provation has a culture of CARES:Community - We have a shared sense of improving healthcare, enriching the broader world we live in and serve. Accountability - We own it and get it done with integrity. Respect - We build diverse teams that collaborate and communicate with positive intent and trust. Excellence - We welcome new ideas as we innovate quality solutions. Service - We are passionate about putting customers first. </p><p>We Are an Equal Opportunity Employer. Fortive Corporation and all Fortive Companies are proud to be equal opportunity employers. We value and encourage diversity and solicit applications from all qualified applicants without regard to race, color, national origin, religion, sex, age, marital status, disability, veteran status, sexual orientation, gender identity or expression, or other characteristics protected by law. Fortive and all Fortive Companies are also committed to providing reasonable accommodations for applicants with disabilities. Individuals who need a reasonable accommodation because of a disability for any part of the employment application process, please contact us at applyassistance@fortive.com. </p><p><strong>Bonus or Equity</strong><br>This position is also eligible for bonus as part of the total compensation package.</p><p><strong>Pay Range</strong><br>The salary range for this position (in local currency) is 109,700.00 - 183,200.00</p></div>
+
+<a class="apply" href="https://jobicy.com/jobs/147085-sr-product-owner" target="_blank" rel="noopener">去原站申请 | Apply on Jobicy ↗</a>
+<footer>信息采集自 Jobicy,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from Jobicy; refer to the original posting.</footer>
+</body></html>

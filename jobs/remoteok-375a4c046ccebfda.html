@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Intelligent Change | Designer</title>
+<meta property="og:title" content="Intelligent Change | Designer">
+<meta property="og:description" content="Intelligent Change · 📍Toronto, Toronto, Ontario, Canada">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="Intelligent Change · 📍Toronto, Toronto, Ontario, Canada">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Designer</h1>
+<div class="meta">🏢 Intelligent Change · 📍 Toronto, Toronto, Ontario, Canada · 运营与人力 | Operations &amp; HR · 美洲 | Americas · 来源 Remote OK · 发布 2026-07-14</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://remoteOK.com/remote-jobs/remote-designer-intelligent-change-1134905" target="_blank" rel="noopener">去原站申请 | Apply on Remote OK ↗</a>
+<div class="jd"><strong>A Note from the Founder<br><br></strong>Intelligent Change began as something personal.<br><br>Before it was a company, it was a question I was trying to answer in my own life:<br><br>Why do we know so much about personal growth, yet struggle to live it consistently?<br><br>Over the years, what we created resonated far beyond anything I imagined. Millions of people around the world now use Intelligent Change products as daily rituals to slow down, reflect, and live more intentionally.<br><br>Today, we&#x27;ve sold over 4 million products globally and reached millions of people around the world. But we are still early in our journey. We are building something that can scale meaningfully without losing its soul.<br><br>This role matters because design is one of the most powerful ways people experience our brand. Every image, campaign, product, and detail shapes how people feel before they ever read a word.<br><br>If you&#x27;re excited by the idea of creating beautiful, meaningful work that helps millions of people build better lives, we&#x27;d love to meet you.<br><br>â Alex Ikonn<br><br>Founder, Intelligent Change<br><br><strong>About Intelligent Change<br><br></strong>Intelligent Change exists to help people design better lives through small, consistent rituals that compound over time.<br><br>We create physical tools and experiences that turn personal growth into something people can actually live. Not through pressure or motivation, but through structure, reflection, and intention.<br><br>We are the creators of the most viral journal in the world, The Five Minute Journal, a product that helped turn gratitude into a daily practice for millions of people globally. To date, Intelligent Change has sold over 4,000,000 products worldwide and built a deeply loyal, values-driven community.<br><br>Our products are used and recommended by Tim Ferriss, Emma Watson, Lily Collins, professional athletes, CEOs, founders, and leaders across industries, alongside millions of everyday people seeking more intentional lives.<br><br>Intelligent Change has been featured in The New York Times, Vogue, Forbes, ELLE, and other leading global publications. The New York Times described Intelligent Change as a brand that has &quot;turned gratitude into a global movement.&quot;<br><br><strong>The Role<br><br></strong>We&#x27;re looking for a Designer with exceptional visual taste and a passion for creating work that feels timeless, thoughtful, and emotionally resonant.<br><br>This role reports directly to the Creative Director and sits at the heart of our creative team. You&#x27;ll primarily design for social media and organic channels, bringing our products and ideas to life through engaging visual storytelling across Instagram, email, and digital campaigns.<br><br>You&#x27;ll also collaborate closely with our Product Development team to design packaging, printed products, marketing materials, and launch assets that extend our brand across every customer touchpoint.<br><br>This is a role for someone who cares deeply about craft, typography, composition, photography, and the details that make great design feel effortless.<br><br><strong>Remote Role<br><br></strong>This is a full-time, fully remote contract role.<br><br>We&#x27;re open to candidates worldwide, provided you can work overlapping hours with our team, who operate across ET and GMT time zones.<br><br>Candidates based in Toronto or Montreal will be given preference, as you&#x27;ll occasionally join the Creative Director on set for campaign and content shoots.<br><br><strong>What You&#x27;ll Do<br><br></strong><strong>Design Across Social<br><br></strong><ul><li>Create high-quality designs for Instagram, TikTok, Pinterest, Meta ads, email, and web</li><li>Work closely with the Creative &amp; Social teams to develop engaging social-first visuals that balance performance with strong brand design</li><li>Design static posts, carousels, stories, reels covers, motion concepts, and campaign assets<br><br></li></ul><strong>Shape the Brand<br><br></strong><ul><li>Help evolve and maintain a consistent visual identity across every customer touchpoint</li><li>Contribute ideas for campaigns, launches, seasonal moments, and new creative directions</li><li>Uphold a high bar for design quality and visual consistency<br><br></li></ul><strong>Design Physical Products<br><br></strong><ul><li>Support the Creative Director with design on packaging, journals, cards, books, and other physical products</li><li>Design supporting collateral including inserts, retail displays, presentations, and launch materials</li><li>Prepare production-ready artwork for print<br><br></li></ul><strong>Collaborate Across Teams<br><br></strong><ul><li>Work closely with the Creative Director to bring concepts from idea through execution</li><li>Partner with marketing, product, copywriting, and operations teams to deliver cohesive campaigns</li><li>Give and receive thoughtful creative feedback<br><br></li></ul><strong>Stay Curious<br><br></strong><ul><li>Bring references, trends, ideas, and inspiration from fashion, publishing, interiors, wellness, and culture</li><li>Continuously refine your craft and contribute fresh creative thinking to the team<br><br></li></ul><strong>Who You Are<br><br></strong><strong>Exceptional Visual Taste<br><br></strong>You have a strong design point of view and a portfolio that demonstrates thoughtful typography, layout, composition, and attention to detail.<br><br><strong>Social-First Designer<br><br></strong>You understand what performs on modern social platforms without sacrificing quality or brand integrity. You know how to create content that feels native, engaging, and highly shareable.<br><br><strong>Product Minded<br><br></strong>You enjoy designing physical objects as much as digital ones. Packaging, books, journals, and printed materials excite you.<br><br><strong>Curious and Collaborative<br><br></strong>You enjoy working closely with writers, marketers, videographers, photographers, and product developers.<br><br>You communicate well, ask thoughtful questions, and care about making the work better.<br><br><strong>Values Aligned<br><br></strong>You have a genuine interest in mindfulness, personal growth, psychology, wellness, or intentional living. Our products resonate with you because you believe in what they help people achieve.<br><br><strong>Detail Obsessed<br><br></strong>You notice the spacing. The typography. The kerning. The print finish. The things most people overlook.<br><br><strong>What We&#x27;re Looking For<br><br></strong><ul><li>Please note: Only candidates with submitted portfolios will be considered</li><li>2+ years of experience in graphic design or brand design</li><li>Outstanding portfolio demonstrating strong visual taste</li><li>Experience designing for social media</li><li>Strong typography and editorial design skills</li><li>Proficiency in Adobe Creative Suite, Figma, Canva, Capcut</li><li>Experience with AI such as Claude, Midjourney and other AI platforms</li><li>Experience designing packaging or printed products is a significant advantage</li><li>Motion design experience is a bonus</li><li>Photography, art direction, or editing experience is a bonus<br><br></li></ul><strong>Why This Role Matters<br><br></strong>Design has always been at the heart of Intelligent Change.<br><br>Our products become part of people&#x27;s homes, routines, and daily rituals. They are gifted, photographed, shared, and used for years.<br><br><strong>Every Creative Decision Shapes How People Experience Our Brand.<br><br></strong>As our Designer, you&#x27;ll help define that experience, creating thoughtful work that reaches millions of people and inspires them to live more intentionally.<br><br>Please mention the word **APPRECIATED** and tag RMTAzLjExNy4xMDMuNzE= when applying to show you read the job post completely (#RMTAzLjExNy4xMDMuNzE=). This is a beta feature to avoid spam applicants. Companies can search these words to find applicants that read this and see they&#x27;re human.</div>
+
+<a class="apply" href="https://remoteOK.com/remote-jobs/remote-designer-intelligent-change-1134905" target="_blank" rel="noopener">去原站申请 | Apply on Remote OK ↗</a>
+<footer>信息采集自 Remote OK,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from Remote OK; refer to the original posting.</footer>
+</body></html>

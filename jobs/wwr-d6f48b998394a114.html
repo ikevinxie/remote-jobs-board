@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LawnStarter | Data Governance &amp; Platform Manager</title>
+<meta property="og:title" content="LawnStarter | Data Governance &amp; Platform Manager">
+<meta property="og:description" content="LawnStarter · 📍Anywhere in the World">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="LawnStarter · 📍Anywhere in the World">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Data Governance &amp; Platform Manager</h1>
+<div class="meta">🏢 LawnStarter · 📍 Anywhere in the World · 其他 | Other · 全球 | Worldwide · 来源 We Work Remotely · 发布 2026-07-17</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://weworkremotely.com/remote-jobs/lawnstarter-data-governance-platform-manager" target="_blank" rel="noopener">去原站申请 | Apply on We Work Remotely ↗</a>
+<div class="jd"><p>
+  <strong>Headquarters:</strong> Brazil
+    <br><strong>URL:</strong> <a href="http://lawnstarter.com" rel="nofollow noopener" target="_blank">http://lawnstarter.com</a>
+</p>
+
+<h3>About LawnStarter<a href="https://github.com/lawnstarter/brain/blob/main/docs/job-descriptions/data-governance-platform-manager.md#about-lawnstarter" rel="nofollow noopener" target="_blank"></a>
+</h3>
+<p>LawnStarter is the nation&#x27;s leading on-demand marketplace for lawn care and outdoor services, with over $100M in annual bookings. We&#x27;re expanding beyond lawn care to become the one-stop shop for all home services - operating across three brands (LawnStarter, Lawn Love, Home Gnome) on a single shared platform.</p>
+<p></p>
+<h3>About Analytics at LawnStarter<a href="https://github.com/lawnstarter/brain/blob/main/docs/job-descriptions/data-governance-platform-manager.md#about-analytics-at-lawnstarter" rel="nofollow noopener" target="_blank"></a>
+</h3>
+<p>We&#x27;re a small, senior analytics team supporting the entire company - product, marketing, operations, and finance all run on the data we serve. The foundation is solid: a centralized Redshift data warehouse where all source data lands, modeled in dbt and orchestrated by Airflow, with Segment feeding event data in. You won&#x27;t be stitching scattered sources together - the platform exists; your job is to make it trustworthy and keep it that way. We&#x27;re mid-migration to Lightdash as our single BI platform, replacing Tableau and Metabase.</p>
+<p>Here&#x27;s the honest gap: everyone on the team today is an analyst. Data quality, tracking standards, and platform hygiene get done as side work, squeezed between analyses. Nobody wakes up thinking about them - which is exactly the job we&#x27;re hiring for.</p>
+<p></p>
+<h3>The Role<a href="https://github.com/lawnstarter/brain/blob/main/docs/job-descriptions/data-governance-platform-manager.md#the-role" rel="nofollow noopener" target="_blank"></a>
+</h3>
+<p>You&#x27;ll be the first person at LawnStarter dedicated to data governance - the owner of whether our data can be trusted. That means the quality and freshness of our source data, pipelines, and reports; the definitions behind our metrics; the standards behind our Segment event tracking; the health of our Lightdash workspace; the data feeding our machine learning models; and the security of the data itself.</p>
+<p>This is a hands-on role. You&#x27;ll work solo at first, with the Analytics team around you but nobody under you - building automation, writing checks, fixing what&#x27;s broken, and putting processes in place that scale past you. If the scope grows the way we expect, this becomes the foundation of a team you&#x27;d build.</p>
+<p><strong>What makes this role different:</strong></p>
+<ul>
+<li>
+<strong>You&#x27;re first.</strong> Governance has been everyone&#x27;s side job, so what exists today is yours to reshape - keep what works, redesign what doesn&#x27;t, and your standards become the company&#x27;s standards.</li>
+<li>
+<strong>Whole-stack ownership.</strong> Source data to pipelines to dashboards and ML models - you own trust across the entire chain, not one slice of it.</li>
+<li>
+<strong>A live migration to shape.</strong> Lightdash is landing now. You get to set up its permissions, structure, and norms before bad habits form, instead of untangling them later.</li>
+</ul>
+<p></p>
+<h3>What You&#x27;ll Own<a href="https://github.com/lawnstarter/brain/blob/main/docs/job-descriptions/data-governance-platform-manager.md#what-youll-own" rel="nofollow noopener" target="_blank"></a>
+</h3>
+<ul>
+<li>
+<strong>Data quality and freshness</strong> - automated monitoring across source data, pipelines, and reports; catching upstream schema and source changes before they break anything downstream; running incidents to resolution when they happen.</li>
+<li>
+<strong>Data lineage and impact analysis</strong> - a living map from production source to warehouse model to dashboard, and the process that uses it: when a production change is proposed, its downstream impact on pipelines, metrics, and reports gets assessed before it ships, not discovered after. The end-state is data contracts with engineering, so breaking changes get caught in their workflow, not ours.</li>
+<li>
+<strong>Lightdash</strong> - administration, workspace structure, permissions, and the rollout itself. Your job is to give the company self-serve autonomy while keeping the workspace tidy enough that people can find and trust what&#x27;s there. Enablement is part of the deal - people follow standards they&#x27;ve been taught - and so is keeping queries fast and warehouse costs sane.</li>
+<li>
+<strong>The semantic layer</strong> - we just shipped it for our most critical metrics: one governed definition per metric, in code. You&#x27;ll extend definition and mapping to the rest and guard the layer against uncontrolled growth as it scales.</li>
+<li>
+<strong>Event tracking governance</strong> - our governed Segment event catalog: reviewing new events against its standards, keeping it matched to what production actually sends, and evolving the guardrails (naming, property dictionary, drift detection) as tracking grows.</li>
+<li>
+<strong>AI data readiness</strong> - AI agents query our warehouse every day through Brain, our internal AI toolkit. You&#x27;ll govern what data AI tools can access and keep the warehouse AI-legible: documented, consistent, and safe for an agent to query and get the right answer.</li>
+<li>
+<strong>Data security and privacy</strong> - access controls, PII handling and retention under US state privacy laws, and periodic reviews of who - and which AI tools - can see what.</li>
+<li>
+<strong>The governance system itself</strong> - the documentation, ownership models, and review loops that keep all of the above running without heroics.</li>
+</ul>
+<p></p>
+<h3>Problems to Solve<a href="https://github.com/lawnstarter/brain/blob/main/docs/job-descriptions/data-governance-platform-manager.md#problems-to-solve" rel="nofollow noopener" target="_blank"></a>
+</h3>
+<p><strong>Make the Lightdash migration a step-change, not a re-platforming</strong> We&#x27;re replacing Tableau and Metabase with Lightdash. Done poorly, we trade two messy tools for one messy tool. You&#x27;ll design the structure - spaces, permissions, certification, naming - that lets stakeholders self-serve at the speed the company needs without creating an uncontrolled dashboard-growth nightmare. The hard part: autonomy and tidiness pull in opposite directions, and you have to deliver both.</p>
+<p><strong>Finish and defend the semantic layer</strong> We just shipped our semantic layer for our most critical metrics - one governed definition per metric, so &quot;two dashboards, two numbers&quot; can&#x27;t happen. The unglamorous truth: a long tail of metrics still needs definition and mapping, and a semantic layer only stays trustworthy if someone curbs its growth. You&#x27;ll own both - extending coverage and keeping one-metric-one-definition true as the layer scales.</p>
+<p><strong>Tame event-tracking entropy</strong> Segment events power our funnels and product analytics, and they&#x27;re implemented by many engineers across many teams. The guardrails exist - a governed event catalog with naming standards, a property dictionary, a review lifecycle, and automated drift detection against production. What&#x27;s missing is a dedicated owner: someone who holds every new event to the standard, keeps the catalog matched to what production actually sends, and evolves the guardrails as tracking grows. Without that, entropy wins - events drift and silently degrade when features change.</p>
+<p><strong>Get ahead of breakage instead of chasing it</strong> Today, when production data changes upstream, we too often find out when a pipeline breaks or a stakeholder flags a wrong number. You won&#x27;t start from zero - an AI-powered Analytics Engineer agent already runs freshness monitoring, metric anomaly detection, and dbt-based lineage checks - but it doesn&#x27;t yet run at the scale or coverage we need. You&#x27;ll take detection from partial to comprehensive, extend lineage beyond dbt (Segment events and Lightdash need stitching in), and wire it into engineering&#x27;s change review, so a proposed production change comes with a downstream impact assessment instead of a postmortem. The end-state is data contracts: breaking changes caught in engineering&#x27;s workflow, not ours.</p>
+<p></p>
+<h3>What Success Looks Like (Year 1)<a href="https://github.com/lawnstarter/brain/blob/main/docs/job-descriptions/data-governance-platform-manager.md#what-success-looks-like-year-1" rel="nofollow noopener" target="_blank"></a>
+</h3>
+<ul>
+<li>
+<strong>Zero pipeline incidents from unannounced source-data changes</strong> - lineage and automation catch them before they break anything downstream, and production changes ship with an impact assessment instead of a postmortem.</li>
+<li>
+<strong>Zero freshness incidents</strong> - stakeholders never open a stale dashboard.</li>
+<li>
+<strong>Every area of the business manages on official, well-maintained metrics and dashboards</strong> - product, marketing, ops, and finance self-serve in Lightdash against a fully mapped semantic layer; Tableau and Metabase are retired; arguments about whose number is right don&#x27;t happen. Not because you built the dashboards - because you built the system that keeps them trustworthy.</li>
+<li>
+<strong>Every Segment event has an owner and a standard</strong> - new events ship compliant, and degradation gets caught automatically, not by accident.</li>
+<li>
+<strong>Governance runs as a system</strong> - documented processes that would survive you taking a month off.</li>
+</ul>
+<p><strong>Requirements</strong></p>
+<h3>Who You Are<a href="https://github.com/lawnstarter/brain/blob/main/docs/job-descriptions/data-governance-platform-manager.md#who-you-are" rel="nofollow noopener" target="_blank"></a>
+</h3>
+<ul>
+<li>
+<strong>Governance is your craft, not your chore.</strong> You genuinely enjoy making data systems trustworthy and tidy - you&#x27;re the person who can&#x27;t leave a broken naming convention alone. This is unlikely to be a good fit if you see governance as a stepping stone to &quot;real&quot; analytics work.</li>
+<li>
+<strong>AI-native.</strong> You use AI tools (Claude Code, Copilot, ChatGPT) daily to build quality checks, write automation, triage anomalies, and document as you go - one person covering ground that used to take a team. You also see the reverse direction: AI agents consume our data daily, and making the warehouse safe and legible for them is part of governance now. This is unlikely to be a good fit if you&#x27;re skeptical of AI tools or prefer to do everything manually.</li>
+<li>
+<strong>A hands-on senior operator.</strong> You write the SQL, debug the Airflow DAG, and configure the permissions yourself - seniority here means judgment and speed, not delegation. This is unlikely to be a good fit if your last few years were spent directing others and you&#x27;d need a team to execute.</li>
+<li>
+<strong>Automation-first.</strong> Your instinct for any recurring check is to build a monitor, not a checklist. This is unlikely to be a good fit if your quality practice depends on manual review and discipline.</li>
+<li>
+<strong>An enforcer people actually like.</strong> You&#x27;ll hold engineers and analysts you don&#x27;t manage to standards - which takes clear rules, good tooling that makes compliance easy, and the spine to say no gracefully. This is unlikely to be a good fit if you avoid friction or, at the other extreme, enjoy being the department of no.</li>
+</ul>
+<p></p>
+<h3>This Role Is NOT<a href="https://github.com/lawnstarter/brain/blob/main/docs/job-descriptions/data-governance-platform-manager.md#this-role-is-not" rel="nofollow noopener" target="_blank"></a>
+</h3>
+<ul>
+<li>
+<strong>A people-management role - yet.</strong> You&#x27;ll work alone for a while. A team may grow under you if the scope demands it, but if you need direct reports on day one, this isn&#x27;t it.</li>
+<li>
+<strong>A policy or committee job.</strong> There are no governance councils to chair and no binders to produce. When something&#x27;s broken, you fix it - with code, config, or a conversation.</li>
+<li>
+<strong>A BI analyst role.</strong> You won&#x27;t spend your days building dashboards for stakeholders. You build the platform and guardrails that let everyone else do that well.</li>
+<li>
+<strong>A finished system to babysit.</strong> Much of this doesn&#x27;t exist yet. If you want to operate a mature data platform rather than build one, you&#x27;ll be frustrated here.</li>
+</ul>
+<p></p>
+<h3>Tech You&#x27;ll Touch<a href="https://github.com/lawnstarter/brain/blob/main/docs/job-descriptions/data-governance-platform-manager.md#tech-youll-touch" rel="nofollow noopener" target="_blank"></a>
+</h3>
+<ul>
+<li>
+<strong>Warehouse &amp; pipelines</strong> - Redshift, dbt, Airflow</li>
+<li>
+<strong>Event tracking</strong> - Segment</li>
+<li>
+<strong>BI</strong> - Lightdash (primary), Tableau and Metabase (sunsetting)</li>
+<li>
+<strong>AI tooling</strong> - Claude Code, Codex, Brain (our internal AI toolkit), and any tool that makes you more effective or efficient</li>
+<li>
+<strong>Observability</strong> - an AI-powered Analytics Engineer agent (freshness monitoring, anomaly detection, dbt lineage) you&#x27;ll scale up, plus the quality and impact tooling you&#x27;ll add around it</li>
+</ul>
+<p>You don&#x27;t need every box checked. You need hands-on depth in the warehouse/pipeline layer and credible experience keeping a BI tool and tracking plan healthy at company scale.</p>
+<p></p>
+<p></p>
+<p><strong>Benefits</strong></p>
+<h3>Compensation &amp; Benefits<a href="https://github.com/lawnstarter/brain/blob/main/docs/job-descriptions/data-governance-platform-manager.md#compensation--benefits" rel="nofollow noopener" target="_blank"></a>
+</h3>
+<ul>
+<li>
+<strong>Base salary</strong>: $75k-$100k/year</li>
+<li>
+<strong>Equity</strong>: The whole company makes decisions on the data you&#x27;ll guard. When data trust goes up, decision quality, and company value, go up with it. We want you to own a piece of that.</li>
+<li>
+<strong>Fully remote</strong>: This work needs deep focus, building monitors, untangling pipelines, and we trust you to manage your environment. Async collaboration is the norm.</li>
+<li>
+<strong>Flexible PTO</strong>: We focus on results. Take what you need.</li>
+</ul>
+<p></p>
+<p></p>
+<p><em>LawnStarter provides equal employment opportunities (EEO) to all employees and applicants for employment without regard to race, color, religion, sex, national origin, age, disability, or genetics. We comply with applicable state and local laws governing nondiscrimination in employment.</em></p>
+
+<p><strong>To apply:</strong> <a href="https://weworkremotely.com/remote-jobs/lawnstarter-data-governance-platform-manager" rel="nofollow noopener" target="_blank">https://weworkremotely.com/remote-jobs/lawnstarter-data-governance-platform-manager</a></p></div>
+
+<a class="apply" href="https://weworkremotely.com/remote-jobs/lawnstarter-data-governance-platform-manager" target="_blank" rel="noopener">去原站申请 | Apply on We Work Remotely ↗</a>
+<footer>信息采集自 We Work Remotely,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from We Work Remotely; refer to the original posting.</footer>
+</body></html>

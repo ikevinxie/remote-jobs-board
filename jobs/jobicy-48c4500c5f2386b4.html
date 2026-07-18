@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Liberty Mutual | Wholesale Operations Leader - GRS North America</title>
+<meta property="og:title" content="Liberty Mutual | Wholesale Operations Leader - GRS North America">
+<meta property="og:description" content="Liberty Mutual · 📍USA">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="Liberty Mutual · 📍USA">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Wholesale Operations Leader - GRS North America</h1>
+<div class="meta">🏢 Liberty Mutual · 📍 USA · 产品 | Product · 美洲 | Americas · 来源 Jobicy · 发布 2026-07-17</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://jobicy.com/jobs/149406-wholesale-operations-leader-grs-north-america" target="_blank" rel="noopener">去原站申请 | Apply on Jobicy ↗</a>
+<div class="jd"><b></b><br><b>Description </b><p><strong>Summary: </strong></p><p>As the Wholesale Operations Leader, you will lead cross-functional work to deliver innovative solutions, streamline operational protocols, and drive consistency and process excellence across the GRS North America Wholesale segment. This role partners closely with Wholesale business unit leaders, Office of Underwriting, Finance, Actuarial &amp; Data Science, Legal, Claims, Field Operations, Technology, and other functional partners to support operational strategies that enable segment priorities.</p><p> </p><p>The Wholesale Operations Leader serves as the connective tissue between strategy and execution, helping shape Wholesale strategy and translate it into sequenced, resourced plans with clear owners, outcomes, and measurable business impact. This role will engineer the submission-to-quote pipeline as a measurable operating system, improve broker connectivity, embed AI-enabled capabilities into the underwriting workflow, and build the data and P&amp;L infrastructure needed to make Wholesale performance visible at the segment level. The role will help free business leaders to focus on underwriting and market activity by reducing operational friction, improving reporting, and driving disciplined execution.</p><p><strong> </strong></p><p><strong>Responsibilities:</strong></p><ul><li>Through a strategic and operational lens, lead cross-functional work to drive a collaborative, agile, high-performing culture and operating model that is principled, profitable, innovative, and nimble.</li><li>Serve as a strategic thought partner to the Wholesale segment leader — contributing to the formation of segment strategy, not only its execution — including portfolio direction, distribution strategy, and growth priorities across E&amp;S lines.</li><li>Serve as Wholesale Operations Leader, representing Wholesale in Office of Underwriting, operations, product, data, and technology forums to ensure Ironshore’s needs are built into roadmaps, not accommodated after the fact.</li><li>Engineer the submission-to-quote pipeline as a measurable system with defined cycle time targets by business unit — identifying where time dies and building solutions to eliminate it.</li><li>Own broker connectivity as a product decision, supporting API-first integration into broker AMS systems and reducing reliance on additional portals that create friction for brokers and underwriters.</li><li>Make AI infrastructure foundational to the Wholesale operating model, enabling triage, clearance, and appetite scoring before a human touches a submission.</li><li>Own submission-level data as the operating nervous system, including quote ratios, hit rates, cycle times by underwriter and by broker, and other key measures of underwriting and operational performance.</li><li>Translate the six execution workstreams into a sequenced, resourced plan with clear owners, milestones, outcomes, and accountability.</li><li>Build and own the standalone Wholesale P&amp;L infrastructure in partnership with Finance, including the data architecture needed to make performance visible at the segment level.</li><li>Partner with underwriting, actuarial, claims, finance, data, and technology teams to develop dashboards, portfolio analysis, operational reporting, and business insights to support segment and business unit leaders.</li><li>Effectively prioritize and execute key operational initiatives across the Wholesale segment with strong project management discipline while championing Liberty Values &amp; Guidelines to drive employee engagement, best-in-class service, productivity, and profitability.</li><li>Accountable for ensuring clarity, visibility, and execution relative to operational key performance indicators KPIs across the Wholesale segment.</li><li>Partner with segment and business unit leaders to organize and lead key operational meetings, manage competing priorities, and ensure decisions are translated into execution.</li><li>Develop executive-level communications, business updates, decision materials, and reporting for internal and external stakeholders.</li><li>Perform business analyses and evaluate the impact of alternative management decisions on operational outcomes, financial results, and broker/underwriter experience.</li><li>May lead small team of operations resources supporting overall Wholesale priorities</li></ul><p> </p><p>If the selected candidate lives within 50 miles of a GRS office, then the selected candidate must be prepared to come into the office two days/week. This policy is subject to change. </p><b>Qualifications</b><ul><li>Deep expertise in Excess &amp; Surplus (E&amp;S) and wholesale/specialty insurance — spanning open-brokerage, SME binding authority, and delegated authority / program business — finance and actuarial concepts, regulatory environment, reinsurance, underwriting, producer management, and broker distribution.</li><li>Advanced knowledge of financial analysis, technology, strategic planning, operational management, data/reporting, and business process improvement.</li><li>Excellent oral and written communication skills, with strong presentation skills and the ability to facilitate discussion, influence stakeholders, and build consensus.</li><li>Skills required include analyzing and problem solving; adaptability; decision making; building relationships; working effectively with others; applying financial acumen; focusing on service; executing excellence; planning and organizing work; and achieving results.</li><li>Demonstrated ability to foster collaborative relationships and effectively work as part of a broader global and organizational team.</li><li>Experience working in an Agile environment, e.g., agile project management, product ownership, workflow modernization, or technology-enabled operating model transformation.</li><li>Excellent time management, prioritization, and delegation skills.</li><li>Advanced degree or equivalent training preferred; CPCU designation or equivalent preferred.</li><li>Experience managing and mentoring staff or leading cross-functional teams preferred.</li><li>12+ years of experience in operations, systems, organizational improvement, underwriting operations, strategy, business transformation, or related insurance roles.</li></ul><b>About Us</b><p><b>Pay Philosophy:</b> The typical starting salary range for this role is determined by a number of factors including skills, experience, education, certifications and location. The full salary range for this role reflects the competitive labor market value for all employees in these positions across the national market and provides an opportunity to progress as employees grow and develop within the role. Some roles at Liberty Mutual have a corresponding compensation plan which may include commission and/or bonus earnings at rates that vary based on multiple factors set forth in the compensation plan for the role.<br>At Liberty Mutual, our goal is to create a workplace where everyone feels valued, supported, and can thrive. We build an environment that welcomes a wide range of perspectives and experiences, with inclusion embedded in every aspect of our culture and reflected in everyday interactions. This comes to life through comprehensive benefits, workplace flexibility, professional development opportunities, and a host of opportunities provided through our Employee Resource Groups. Each employee plays a role in creating our inclusive culture, which supports every individual to do their best work. Together, we cultivate a community where everyone can make a meaningful impact for our business, our customers, and the communities we serve.<br>We value your hard work, integrity and commitment to make things better, and we put people first by offering you benefits that support your life and well-being. To learn more about our benefit offerings please visit: <a href="https://www.libertymutualgroup.com/about-lm/careers/benefits" rel="nofollow noopener" target="_blank">https://www.libertymutualgroup.com/about-lm/careers/benefits</a><br>Liberty Mutual is an equal opportunity employer. We will not tolerate discrimination on the basis of race, color, national origin, sex, sexual orientation, gender identity, religion, age, disability, veteran&#x27;s status, pregnancy, genetic information or on any basis prohibited by federal, state or local law.<br><b>Fair Chance Notices</b></p><ul><li><a href="https://jobs.libertymutualgroup.com/wp-content/uploads/2024/02/ca-fair-chance-act.pdf" rel="nofollow noopener" target="_blank">California</a></li><li><a href="https://bca.lacity.gov/Uploads/fciho/FCIHO-factsheet-2024-03-05.pdf" rel="nofollow noopener" target="_blank">Los Angeles Incorporated</a></li><li><a href="https://jobs.libertymutualgroup.com/wp-content/uploads/2025/01/FCOE-Official-Notice-Eng-Final-8.30.2024.pdf" rel="nofollow noopener" target="_blank">Los Angeles Unincorporated</a></li><li><a href="https://jobs.libertymutualgroup.com/wp-content/uploads/2024/02/pa-philadelphia-fair-chance-law.pdf" rel="nofollow noopener" target="_blank">Philadelphia</a></li><li><a href="https://jobs.libertymutualgroup.com/wp-content/uploads/2024/02/ca-san-francisco-fair-chance.pdf" rel="nofollow noopener" target="_blank">San Francisco</a></li></ul></div>
+
+<a class="apply" href="https://jobicy.com/jobs/149406-wholesale-operations-leader-grs-north-america" target="_blank" rel="noopener">去原站申请 | Apply on Jobicy ↗</a>
+<footer>信息采集自 Jobicy,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from Jobicy; refer to the original posting.</footer>
+</body></html>

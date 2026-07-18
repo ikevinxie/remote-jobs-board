@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>goop | Vice President, Finance</title>
+<meta property="og:title" content="goop | Vice President, Finance">
+<meta property="og:description" content="goop · 📍Anywhere in the World">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="goop · 📍Anywhere in the World">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Vice President, Finance</h1>
+<div class="meta">🏢 goop · 📍 Anywhere in the World · 财务与法务 | Finance &amp; Legal · 全球 | Worldwide · 来源 We Work Remotely · 发布 2026-06-18</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://weworkremotely.com/remote-jobs/goop-vice-president-finance" target="_blank" rel="noopener">去原站申请 | Apply on We Work Remotely ↗</a>
+<div class="jd"><p>
+  <strong>Headquarters:</strong> Remote; Various Locations
+    <br><strong>URL:</strong> <a href="http://goop.com" rel="nofollow noopener" target="_blank">http://goop.com</a>
+</p>
+
+
+
+
+<p><strong>About The Company</strong></p>
+
+
+
+
+<p>goop is a lifestyle platform dedicated to exploration, curation, and groundbreaking conversation. From its award-winning beauty and fashion lines to its expansive editorial lens, goop invites women to embrace the process of becoming, and to discover deep joy in the pursuit of pleasure, beauty, and growth in all phases of life. </p>
+<p>Gwyneth Paltrow began goop in the fall of 2008 as a weekly newsletter. It has expanded into a beauty, fashion, and food business that’s also known for its products, curation, podcast, TV shows, live events, and retail stores. </p>
+
+
+<p><strong>About You</strong></p>
+<p>We’re looking for a financially sophisticated leader who thrives at the intersection of rigorous analysis and strategic vision—someone equally at home in a board presentation as in the details of a close cycle. You bring the scrappiness of a builder and the instincts of a seasoned operator, and you’re energized by the opportunity to shape the financial backbone of a high-growth, mission-driven brand.</p>
+<p><strong>About the Role</strong></p>
+<p>We are seeking a seasoned and strategically minded VP, Finance to serve as the senior financial leader of our organization. This role carries full ownership of the company’s financial operations—from day-to-day accounting and controls through long-range planning, capital management, and executive decision support. Reporting directly to the CEO, you will oversee all finance functions across the organization, including the Accounting, FP&amp;A, AP/AR, and Payroll &amp; Benefits Administration teams.</p>
+<p>As a multi-channel brand operating across beauty, fashion, and wellness, we require a VP, Finance who brings both financial rigor and commercial acumen. You will serve as a trusted partner to the CEO and Executive Team, translating financial data into strategic insight, ensuring the integrity of our reporting and compliance environment, and building a scalable, high-performing finance function as the company grows.</p>
+<p><strong><em>Financial Strategy &amp; Executive Partnership</em></strong></p>
+<ul>
+<li>Define and drive the company’s long-term financial vision, capital strategy, and enterprise resource allocation in alignment with strategic growth objectives.</li>
+<li>Serve as the principal financial voice of the company—representing the organization externally and managing relationships with the Board of Directors, investors, banks, lenders, auditors, and financial advisors.</li>
+<li>Own investor relations and all Board, investor, and bank reporting—preparing and delivering quarterly Board packages, investor updates, lender compliance reporting, and ad hoc financial presentations.</li>
+<li>Serve as a strategic advisor to the CEO and Executive Team, translating financial data into actionable recommendations that shape business direction, mitigate risk, and optimize performance.</li>
+<li>Lead the development and ongoing management of the company’s long-range financial plan, annual operating budget, and quarterly forecasts.</li>
+<li>Partner cross-functionally with leaders across sales channels (DTC, marketplace, wholesale, and retail) and verticals to align financial plans with business priorities and growth objectives.</li>
+<li>Deliver enterprise-wide financial insights, KPIs, and decision support aligned with commercial, supply chain, and operational strategies.</li>
+</ul>
+<p><strong><em>Financial Reporting &amp; Controls</em></strong></p>
+<ul>
+<li>Ensure accurate, timely, and compliant financial reporting across all entities in accordance with U.S. GAAP and applicable international standards.</li>
+<li>Own the design, implementation, and enforcement of a robust internal controls environment; ensure audit readiness at all times.</li>
+<li>Manage all external audit and tax relationships; serve as the primary point of contact for auditors, tax advisors, and financial institutions.</li>
+<li>Continuously improve the accuracy, speed, and efficiency of the financial close and consolidation cycle.</li>
+<li>Ensure the integrity of all financial data across the company’s ERP and reporting systems; partner with IT and Operations to optimize system functionality and data flows.</li>
+</ul>
+<p><strong><em>Treasury, Cash &amp; Risk Management</em></strong></p>
+<ul>
+<li>Lead treasury strategy, including cash flow forecasting, credit facility oversight, and working capital optimization.</li>
+<li>Monitor and manage financial risk across foreign exchange, vendor credit, and operational exposure; develop and enforce policies to mitigate risk.</li>
+<li>Manage banking relationships and guide capital deployment, including financial modeling and analysis for M&amp;A, capital raises, and strategic partnerships.</li>
+<li>Evaluate and support capital needs for strategic initiatives, including expansion, inventory scaling, and investment partnerships.</li>
+</ul>
+<p><strong><em>FP&amp;A &amp; Business Intelligence</em></strong></p>
+<ul>
+<li>Lead the FP&amp;A function, establishing processes for robust forecasting, variance analysis, and management reporting across all channels and cost centers.</li>
+<li>Build and deliver quarterly Board-level and executive-level financial reporting packages, investor updates, and bank/lender reports that communicate performance clearly.</li>
+<li>Drive the development of KPIs and financial dashboards that give the business real-time visibility into performance against plan.</li>
+<li>Identify opportunities to reduce costs, improve margins, and increase return on invested capital across the business.</li>
+</ul>
+<p><strong><em>Accounting &amp; Operational Finance</em></strong></p>
+<ul>
+<li>Provide strategic oversight of all accounting operations through the Controller, including AP/AR, payroll, general ledger, and financial reporting.</li>
+<li>Ensure compliance with all applicable federal, state, and local financial regulations, including tax filings, payroll obligations, and reporting requirements.</li>
+<li>Oversee the management of accounts payable and receivable functions, optimizing payment terms, DSO, and cash collection cycles.</li>
+<li>Maintain and enforce company-wide accounting policies, ensuring consistency and compliance across all business functions.</li>
+</ul>
+<p><strong><em>Team Leadership &amp; Development</em></strong></p>
+<ul>
+<li>Lead, mentor, and develop a high-performing finance team across accounting, FP&amp;A, AP/AR, and payroll—fostering a culture of accountability, continuous improvement, and professional growth.</li>
+<li>Set clear goals and expectations across the finance organization; build scalable structures and processes that support the company’s growth trajectory.</li>
+<li>Recruit and develop top finance talent; build organizational capacity in line with business needs.</li>
+<li>Champion a culture of financial discipline and data-driven decision-making throughout the organization.</li>
+</ul>
+<p><strong>Qualifications &amp; Experience </strong></p>
+<ul>
+<li>Bachelor’s degree in Accounting, Finance, or a related field required; MBA and/or CPA strongly preferred.</li>
+<li>15+ years of progressive finance and accounting experience, including significant leadership experience overseeing multi-functional finance teams.</li>
+<li>Proven track record as a senior finance leader in a startup or high-growth company, ideally in a consumer, retail, e-commerce, or multi-channel brand environment; experience across beauty, fashion, or wellness a strong plus.</li>
+<li>Deep expertise across financial reporting, GAAP compliance, internal controls, and audit management.</li>
+<li>Strong command of FP&amp;A disciplines, including long-range planning, budgeting, forecasting, and management reporting.</li>
+<li>Hands-on experience with ERP systems; NetSuite expertise strongly preferred.</li>
+<li>Demonstrated ability to translate complex financial data into clear, actionable insight for executive and non-finance audiences.</li>
+<li>Experience preparing and delivering Board of Directors reporting, including quarterly financial packages and presentations to investors and lenders; prior exposure to fundraising, debt financing, or equity processes strongly preferred.</li>
+<li>Exceptional leadership and people management skills, with a track record of developing and retaining high-performing teams.</li>
+<li>Strategic thinker with the scrappiness, adaptability, and operational rigor to execute in a fast-paced, high-growth environment.</li>
+<li>High integrity and sound judgment, with the ability to handle sensitive information with discretion and professionalism.</li>
+</ul>
+<p><strong>FAQ</strong></p>
+<ul>
+<li><strong>Compensation: </strong>$240,000 – $270,000 + Variable Performance Bonus + Equity. This is a full-time, exempt role. Please note that this range represents the low and high end of the anticipated base salary range for the Controller position. Goop, in good faith, reasonably expects to pay the position within this salary range. Goop provides the salary range in compliance with all applicable federal, state and local laws. The actual base salary will depend on numerous factors such as: experience, training, knowledge and skills, and if the location of the job changes.</li>
+<li><strong>Benefits: </strong>Generous health benefits package, fertility benefits and paid parental leave.</li>
+<li><strong>Perks:</strong>“Goopcation” paid company summer break, generous goop discounts, special offers with brand partners, access to custom lifestyle resources and events, and a beautiful workspace in Santa Monica.</li>
+<li><strong>Location:</strong>This position can be 100% remote, but has the option for in-person work in either Santa Monica, CA or Manhattan according to our hybrid work policy.</li>
+<li><strong>Hybrid Work Philosophy</strong>: At goop we believe that creativity, innovation and camaraderie are essential to our business, our culture and our employee’s growth and development. With our Hybrid Work Policy, we are committed to promoting collaboration, productivity and employee well-being by maximizing the benefits of both in-person and remote work. We are in office Tuesdays and Thursdays.</li>
+</ul>
+
+
+<p><em>goop is an Equal Opportunity Employer. goop does not discriminate on the basis of race, religion, color, sex, gender identity, sexual orientation, age, non-disqualifying physical or mental disability, national origin, veteran status or any other basis covered by appropriate law. All employment is decided on the basis of qualifications, merit, and business need. All information provided by the applicant is collected, stored and processed in accordance with the terms of our <a href="https://goop-img.com/wp-content/uploads/2022/12/Goop-CCPA-Notice-to-Job-Candidates.pdf" rel="nofollow noopener" target="_blank">CCPA Notice for Job Candidates.  </a></em>J<em>ob Disclosures: No applicant disclosures related to physical requirements or ADA-related considerations are relevant for this role.   </em></p>
+
+
+
+
+<p><strong>To apply:</strong> <a href="https://weworkremotely.com/remote-jobs/goop-vice-president-finance" rel="nofollow noopener" target="_blank">https://weworkremotely.com/remote-jobs/goop-vice-president-finance</a></p></div>
+
+<a class="apply" href="https://weworkremotely.com/remote-jobs/goop-vice-president-finance" target="_blank" rel="noopener">去原站申请 | Apply on We Work Remotely ↗</a>
+<footer>信息采集自 We Work Remotely,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from We Work Remotely; refer to the original posting.</footer>
+</body></html>

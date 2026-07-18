@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Experian | Senior Data Scientist, Innovation Lab</title>
+<meta property="og:title" content="Experian | Senior Data Scientist, Innovation Lab">
+<meta property="og:description" content="Experian · 📍USA">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="Experian · 📍USA">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Senior Data Scientist, Innovation Lab</h1>
+<div class="meta">🏢 Experian · 📍 USA · 数据 | Data · 美洲 | Americas · 来源 Jobicy · 发布 2026-07-17</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://jobicy.com/jobs/149399-senior-data-scientist-innovation-lab" target="_blank" rel="noopener">去原站申请 | Apply on Jobicy ↗</a>
+<div class="jd"><h3>Company Description</h3><p>Experian is a global data and technology company, powering opportunities for people and businesses around the world. We operate across a range of markets, from financial services to healthcare, automotive, agribusiness, insurance, and many more. Experian invests in people and new advanced technologies to unlock the power of data. We have an amazing team of 25,200 people in 32 countries.</p><h3>Job Description</h3><p><a href="https://www.experian.com/innovation-lab/index" rel="nofollow noopener" target="_blank">Experian Innovation Lab</a> is a research and development unit at Experian formed with the desire to work in collaboration with Experian&#x27;s departments to enhance relationships with clients and acquire strategic datasets. Experian® is a global leader in providing information, analytical tools and marketing services to organizations and consumers to help manage the risk and reward of commercial and financial decisions. Using our comprehensive understanding of individuals, markets and economies, we help organizations develop customer relationships to make their businesses more profitable.</p><p>As a Senior Data Scientist at the Experian Innovation Lab, your role will be to research and develop analytical solutions, prototype new products, and evaluate data assets. You must bring an experience in predictive modeling, machine learning, and deep learning to this position. You will report into the Sr. Principal Data Scientist</p><p><strong>You&#x27;ll have opportunity to:</strong></p><ul><li>Create advanced machine learning analytical solutions to extract insights from diverse structured and unstructured data sources.</li><li>Unearth data value by selecting and applying the right machine learning, deep learning and processing techniques.</li><li>Refine data manipulation and retrieval through the design of efficient data structures and storage solutions.</li><li>Innovate with tools designed for data processing and information retrieval.</li><li>Dissect and document vast datasets, analyzing them to highlight patterns and insights.</li><li>Solve complex challenges by developing impactful algorithms.</li><li>Ensure model excellence by validating performance scores and analyzing Return on investment and benefits.</li></ul><h3>Qualifications</h3><ul><li>PhD degree in Machine Learning, Data Science, AI, Computer Science, or a related quantitative field.</li><li>2+ years of experience in AI, data science, or predictive modeling</li><li>Proficiency in multiple programming languages, including Python</li><li>Experience in deep learning (CNN, RNN, LSTM, attention models), machine learning methodologies (SVM, GLM, boosting, random forest), graph models, or reinforcement learning.</li><li>Experience with open-source tools for deep learning and machine learning technology such as pytorch, Keras, tensorflow, scikit-learn, pandas.</li><li>Experience with large data analysis using pySpark</li><li>Experience with LLMs and the relevant tools in the Generative AI domain.</li><li>Experience with Hadoop and NoSQL related technologies such as Map Reduce, Hive, HBase, mongoDB, Cassandra.</li><li>Experience modifying and applying advanced algorithms to address practical problems</li><li>Experience with online, mobile marketing analytics</li><li>Experience with GPU programming</li></ul><h3>Additional Information</h3><p><strong>Benefits/Perks:</strong></p><ul><li>Great compensation package and bonus plan</li><li>Core benefits including medical, dental, vision, and matching 401K</li><li>Flexible work environment, ability to work remote, hybrid or in-office</li><li>Flexible time off including volunteer time off, vacation, sick and 12-paid holidays</li><li>Explore all our exciting benefits here: <a href="https://yourexperianbenefits.com/cand-index.html" rel="nofollow noopener" target="_blank">https://yourexperianbenefits.com/cand-index.html</a></li></ul><p>Our uniqueness is that we celebrate yours. Experian&#x27;s people first, inclusive and purpose driven culture is multi award-winning; World&#x27;s Best Workplaces™ 2025 (Fortune Global Top 25), Great Place To Work™ in 26 countries to name a few. Check out Experian Life on social or explore our Careers Site to understand why.</p><p>Our compensation reflects the cost of labor across several U.S. geographic markets. The base pay range for this position is listed above. Within this range, individual pay is determined by work location and additional factors such as job-related skills, experience, and education. This position is also eligible for a variable pay opportunity and a comprehensive benefits package.</p><p>Experian is proud to be an Equal Opportunity Employer for all groups protected under applicable federal, state and local law, including protected veterans and individuals with disabilities. If you have a disability or special need that requires accommodation, please let us know at the earliest opportunity.</p><p><strong>Recruitment Fraud Awareness</strong> - Experian&#x27;s recruitment process is conducted only through authorised channels. Recruitment communications will only be sent from an @<a href="http://experian.com" rel="nofollow noopener" target="_blank">experian.com</a> email address. Experian will never ask candidates to make any payment as part of an application, interview, assessment, onboarding, or recruitment process. To apply for roles or verify opportunities, please visit <a href="http://experian.com/careers" rel="nofollow noopener" target="_blank">experian.com/careers</a>..</p><p>#LI-Remote</p></div>
+
+<a class="apply" href="https://jobicy.com/jobs/149399-senior-data-scientist-innovation-lab" target="_blank" rel="noopener">去原站申请 | Apply on Jobicy ↗</a>
+<footer>信息采集自 Jobicy,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from Jobicy; refer to the original posting.</footer>
+</body></html>

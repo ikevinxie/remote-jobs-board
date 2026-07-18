@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ServiceTitan | Staff Product Manager, Residential CRM</title>
+<meta property="og:title" content="ServiceTitan | Staff Product Manager, Residential CRM">
+<meta property="og:description" content="ServiceTitan · 📍Connecticut">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="ServiceTitan · 📍Connecticut">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Staff Product Manager, Residential CRM</h1>
+<div class="meta">🏢 ServiceTitan · 📍 Connecticut · 客户支持 | Customer Support · 其他/未标明 | Other / Unspecified · 来源 We Work Remotely · 发布 2026-07-16</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://weworkremotely.com/remote-jobs/servicetitan-staff-product-manager-residential-crm" target="_blank" rel="noopener">去原站申请 | Apply on We Work Remotely ↗</a>
+<div class="jd"><p>
+  <strong>Headquarters:</strong> US CA Remote
+    <br><strong>URL:</strong> <a href="http://servicetitan.com" rel="nofollow noopener" target="_blank">http://servicetitan.com</a>
+</p>
+
+<p><b>Ready to be a Titan?</b></p><p>ServiceTitan is the leading platform for residential home service - scheduling, dispatch, job booking, quoting, marketing. For years, the sales motion was simple enough that a purpose-built CRM wasn&#x27;t necessary: a homeowner calls in, books a job. The gap between &quot;interested&quot; and &quot;booked&quot; was small enough to keep lightweight.</p><p></p><p>AI has changed this: voice agents, AI-powered SMS outreach, AI powered nurture sequences, and in-home opportunity capture are surfacing more leads, more follow-up opportunities, and more unconverted estimates than residential contractors have ever had to manage before. The motion is more complex now, and the tools to support it need to match. ServiceTitan needs a first class residential CRM layer.</p><p></p><p>This role owns that problem. You&#x27;ll build a residential CRM that sits natively inside ServiceTitan, integrated with scheduling, dispatch, pricebook, service agreements, and marketing and is designed from the ground up for an AI-first world. AI handles the follow-up motion, surfaces the right opportunities at the right time, and reduces the manual coordination that keeps CSRs and sales teams from focusing on revenue.</p><p></p><p><b><b>What you&#x27;ll do</b></b></p><p>ServiceTitan&#x27;s data, integrations, and customer relationships put it in the best position to power that motion end-to-end. This role is about making sure that position is earned.</p><p></p><p>This is a general manager role as much as a product role. In other words, not just shipping a great product, but also being a leader on everything else it takes to make sure ServiceTitan delivers on this opportunity, from guiding pricing and packaging, marketing, sales, and post sales.</p><ul><li><p>Define and execute the product roadmap for Residential CRM, from core data model and workflow architecture through AI-powered GTM features</p></li><li><p>Lead customer discovery with residential contractors, CSRs, and office managers - ServiceTitan PMs are in front of customers regularly, and this role is no different</p></li><li><p>Guide pricing and packaging strategy in partnership with product marketing and finance, including how to monetize an AI-enabled product</p></li><li><p>Partner with marketing on positioning, go-to-market, and launch strategy and be the subject matter expert they need to do it well</p></li><li><p>Build the customer enablement and onboarding model, define what successful time-to-value looks like and work with CS to get there</p></li><li><p>Partner with sales and customer success on the commercial motion, the pitch, the buyer, the objections, and what&#x27;s getting in the way of conversion and retention</p></li></ul><p></p><p><b><b>What you&#x27;ll bring</b></b></p><ul><li><p>7+ years in product management with a track record of shipping from zero to scale</p></li><li><p>Deep experience with CRM, marketing automation, or customer lifecycle products - you understand how these systems need to work under the hood</p></li><li><p>A genuine point of view on what AI-first product design means in practice, not just AI as a feature layer</p></li><li><p>Background in vertical SaaS or serving mid-market/enterprise customers in high-volume transactional environments</p></li><li><p>Comfort working close to customers and close to leadership - ServiceTitan has an active founder culture where product decisions get scrutiny and visibility</p></li></ul><p></p><p></p><p></p><p></p><p></p><p><b>Be Human With Us:</b><br>Being human isn’t about checking every box on a list. It’s about the experiences we have, people we meet, and the perspectives we share. So, if you have the skills but are hesitant to apply because of your background, apply anyway. We need amazing people like you to help us challenge the conventional and think differently about the problems that we’re solving. We’re in this together. Come be human, with us. </p><br><p><b>Use of AI Technology:</b></p><p>We use technology, including automated and AI-assisted tools, to support certain aspects of our recruitment process. These tools are designed to improve efficiency and enhance the candidate experience. AI tools are not used to make hiring decisions; all hiring decisions are made by our hiring teams.</p><br><p><b>What We Offer:</b></p><p>When you join our team, you’re not just accepting a job. You’re making a career move. Here’s how we’ll support you in doing some of the most impactful work of your career:</p><ul><li><b>Flextime, recognition, and support for autonomous work</b>: Flexible time off with ample learning and development opportunities to continue growing your career. We offer a comprehensive onboarding program, leadership training for Titans at all levels, and other programs and events. Great work is rewarded through Bonusly, peer-nominated awards, and more.</li><li><b>Holistic health and wellness benefits:</b> Company-paid medical, dental, and vision (with 100% employer paid options and 90% coverage for dependents), FSA and HSA, 401k match, and telehealth options including memberships to One Medical.</li><li><b>Support for Titans at all stages of life:</b> Parental leave and support, up to $20k in fertility services (i.e. IUI and IVF), surrogacy, and adoption reimbursement, on demand maternity support through Maven Maternity, free breast milk shipping through Maven Milk, pet insurance, legal advisory services, financial planning tools, and more.</li></ul><br><p>At ServiceTitan, we celebrate individuality and uniqueness. We believe that the convergence of fresh perspectives and experiences from all walks of life is what makes our product and culture so great. We strongly encourage people from underrepresented groups to apply. We do not discriminate against employees based on race, color, religion, sex, national origin, gender identity or expression, age, disability, pregnancy (including childbirth, breastfeeding, or related medical condition), genetic information, protected military or veteran status, sexual orientation, or any other characteristic protected by applicable federal, state or local laws.</p>ServiceTitan is committed to fair and equitable compensation for all of our employees. We thoughtfully consider a wide range of factors when determining individual compensation, which may change over time. We comply with all applicable minimum wage laws.For candidates in the United States, the good faith salary ranges estimate for this role is&amp;#xa;&amp;#xa;Zone 1: $179,900 USD - $269,900 USD Applicable for: CA, CT, DC, MD, MA, NJ, NY, VA, and WA&amp;#xa;&amp;#xa;Zone 2: $168,200 USD - $252,200 USD Applicable for: All other US locations.&amp;#xa;&amp;#xa;International Compensation for candidates residing outside the United States will vary by location and will be discussed during the hiring process. Actual compensation within a range is determined by factors including relevant experience, skill set, qualifications, and performance. In addition to base salary, our total compensation package includes an annual bonus, equity, and a holistic suite of benefits.
+
+<p><strong>To apply:</strong> <a href="https://weworkremotely.com/remote-jobs/servicetitan-staff-product-manager-residential-crm" rel="nofollow noopener" target="_blank">https://weworkremotely.com/remote-jobs/servicetitan-staff-product-manager-residential-crm</a></p></div>
+
+<a class="apply" href="https://weworkremotely.com/remote-jobs/servicetitan-staff-product-manager-residential-crm" target="_blank" rel="noopener">去原站申请 | Apply on We Work Remotely ↗</a>
+<footer>信息采集自 We Work Remotely,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from We Work Remotely; refer to the original posting.</footer>
+</body></html>

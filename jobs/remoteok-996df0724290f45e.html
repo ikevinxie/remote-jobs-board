@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VeraSafe | Project Coordinator</title>
+<meta property="og:title" content="VeraSafe | Project Coordinator">
+<meta property="og:description" content="VeraSafe · 📍Kingston, Kingston, Jamaica">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="VeraSafe · 📍Kingston, Kingston, Jamaica">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Project Coordinator</h1>
+<div class="meta">🏢 VeraSafe · 📍 Kingston, Kingston, Jamaica · 设计 | Design · 其他/未标明 | Other / Unspecified · 来源 Remote OK · 发布 2026-07-15</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://remoteOK.com/remote-jobs/remote-project-coordinator-verasafe-1134911" target="_blank" rel="noopener">去原站申请 | Apply on Remote OK ↗</a>
+<div class="jd"><p><strong>About VeraSafe:</strong></p><p>VeraSafe is a U.S.-headquartered privacy and cybersecurity consulting firm and law firm, supporting organizations worldwide with data protection, compliance, and security matters.</p><p><br></p><p>We are a fully remote company and proud to be <strong>certified as a Great Place to WorkÂ®, with 97% of employees affirming a positive and supportive work environment. </strong>We value collaboration, high-quality work, and a balanced, sustainable approach to professional life.</p><p><br></p><p><strong>Watch / listen to learn more about VeraSafe: Check out our podcast!</strong></p><p><strong>Apple Podcast</strong>: <strong><u>https://apple.co/4b28hwE</u></strong></p><p><strong>YouTube</strong>: <strong><u>https://www.youtube.com/@PrivacyInPractice/videos</u></strong></p><p><strong>Spotify:</strong> <strong><u>https://bit.ly/4moSMU7</u></strong></p><p><br></p><p><strong>About the Role:</strong></p><p>We are seeking a highly organized and detail-oriented Project Coordinator to support the delivery of privacy and cybersecurity compliance projects.</p><p><br></p><p>This is a hands-on, execution-focused role. Success in this role depends on exceptional written communication, team coordination, disciplined task management and precise documentation, and the ability to manage multiple workstreams with accuracy and consistency. You will work closely with attorneys and IT security professionals to ensure projects run smoothly, efficiently, and in alignment with client expectations.</p><p><br></p><p>This role is well suited for individuals with project management experience. We are also open to individuals with experience in executive/administrative support who are looking to grow into a project management career within a legal consulting environment.</p><p><br></p><p><strong>Note: </strong>We will ask you to participate in a short skills assessment as a first step in the selection/interview process.</p><p><br></p><p><strong>Key Responsibilities:</strong></p><ul><li>Coordinate and execute project plans within defined scope, timelines, and budgets</li><li>Maintain accurate and up-to-date project records, tasks, and documentation</li><li>Schedule client and internal meetings, manage calendars carefully across time zones, and ensure key meetings and deadlines are set up accurately</li><li>Attend client and internal meetings; produce accurate, complete, and well-structured meeting minutes with clear action items, owners, and deadlines</li><li>Monitor project progress, prioritize gating tasks, proactively flag risks or blockers, and provide timely updates and recommended next steps</li><li>Communicate regularly with attorneys, team members, and clients regarding status and next steps</li><li>Ensure adherence to internal processes, standards, and best practices</li><li>Support workload coordination across team members</li><li>Assist in documenting and improving business processes</li></ul><p><br></p><p><strong>Skills Required:</strong></p><ul><li>Exceptional attention to detail and organizational ability</li><li>Strong written and verbal communication skills in English</li><li>Ability to manage multiple priorities and deadlines simultaneously</li><li>Proactive, solutions-oriented mindset</li><li>Team player</li><li>Comfortable working in a fast-paced, fully remote environment</li><li>Proficiency with productivity and project management tools (e.g., Google Workspace, Microsoft Office, Asana, Jira, Teamwork)</li></ul><p><br></p><p><strong>Experience Required:</strong></p><ul><li>4+ years of experience in project coordination or project management</li><li>Experience taking detailed meeting minutes and managing action items</li><li>Experience in professional services, consulting, legal, or technology environments preferred</li><li>Exposure to IT, cybersecurity, or compliance-related projects is a strong plus</li></ul><p><br></p><p><strong>Education/Certifications (Preferred):</strong></p><ul><li>Project management certifications (e.g., CAPM, PRINCE2 Foundation)</li><li>Exposure to Agile methodologies</li><li>Background in legal, IT audit, or cybersecurity disciplines is a plus</li></ul><p><br></p><p><strong>VeraSafeâs Excellent Benefits Include:</strong></p><ul><li>Work from almost anywhere with Wi-Fi</li><li>Paid Time Off (PTO)</li><li>Paid holidays</li><li>Annual bonuses</li><li>Membership in the International Association of Privacy Professionals (IAPP) and IAPP exam fee reimbursement (CIPP/E)</li><li>Flexible working schedule in some roles</li><li>Reimbursement for certain personal flight ticket</li><li>Company laptop provided</li></ul><p><br></p><p><strong>Other Benefits:</strong></p><ul><li>Tremendous professional development growth opportunities in the privacy, data protection, and cybersecurity niche</li><li>The chance to have a long-lasting effect on a small but growing international business</li><li>Work in an open environment with a team that respects your ideas and contributions</li><li>Occasional opportunities to travel in North America and Europe</li></ul><p><br></p><p><strong>Our HR Privacy Notice is available at the following link: </strong>https://verasafe.com/legal/human-resources-privacy-policy/</p><br><br>Please mention the word **FOND** and tag RMTAzLjExNy4xMDMuNzE= when applying to show you read the job post completely (#RMTAzLjExNy4xMDMuNzE=). This is a beta feature to avoid spam applicants. Companies can search these words to find applicants that read this and see they&#x27;re human.</div>
+
+<a class="apply" href="https://remoteOK.com/remote-jobs/remote-project-coordinator-verasafe-1134911" target="_blank" rel="noopener">去原站申请 | Apply on Remote OK ↗</a>
+<footer>信息采集自 Remote OK,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from Remote OK; refer to the original posting.</footer>
+</body></html>

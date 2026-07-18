@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anthropic | Safeguards Enforcement Analyst, Age-Appropriate Design</title>
+<meta property="og:title" content="Anthropic | Safeguards Enforcement Analyst, Age-Appropriate Design">
+<meta property="og:description" content="Anthropic · 📍New York">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="Anthropic · 📍New York">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Safeguards Enforcement Analyst, Age-Appropriate Design</h1>
+<div class="meta">🏢 Anthropic · 📍 New York · 设计 | Design · 其他/未标明 | Other / Unspecified · 来源 We Work Remotely · 发布 2026-07-16</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://weworkremotely.com/remote-jobs/anthropic-safeguards-enforcement-analyst-age-appropriate-design" target="_blank" rel="noopener">去原站申请 | Apply on We Work Remotely ↗</a>
+<div class="jd"><p>
+  <strong>Headquarters:</strong> Remote-Friendly, United States; San Francisco, CA | New York City, NY | Washington, DC
+    <br><strong>URL:</strong> <a href="http://anthropic.com" rel="nofollow noopener" target="_blank">http://anthropic.com</a>
+</p>
+
+<h3><strong>About Anthropic</strong></h3>
+<p>Anthropic’s mission is to create reliable, interpretable, and steerable AI systems. We want AI to be safe and beneficial for our users and for society as a whole. Our team is a quickly growing group of committed researchers, engineers, policy experts, and business leaders working together to build beneficial AI systems.</p><h3>About the role</h3>
+<p>As a Safeguards Enforcement Analyst on the user well-being team, you&#x27;ll build and execute enforcement workflows that keep our products safe, with a focus on detecting and mitigating potential harm. Your initial focus will be on how Anthropic handles age. A core part of this work is making sure our consumer products reach the right audiences, including the detection signals, verification paths, and appeals workflows that keep underage users off surfaces not designed for them. Claude also reaches younger users through third-party developers building on our API, and you&#x27;ll be the enforcement partner that sales and platform teams rely on when those customers need guidance on deploying age-appropriately.</p>
+<p>This position may expand into broader areas of user well-being enforcement over time. Safety is core to our mission, and you&#x27;ll help shape policy enforcement so that our users can safely interact with and build on top of our products in a harmless, helpful, and honest way.</p>
+<p><em>Important context for this role: In this position you may be exposed to and engage with explicit content spanning a range of topics, including those of a sexual, violent, or psychologically disturbing nature. There is also an on-call responsibility across the Policy and Enforcement teams.</em></p>
+<h3><strong>Key responsibilities</strong></h3>
+<ul>
+<li>Design and architect automated enforcement systems and review workflows that scale effectively while maintaining high accuracy</li>
+<li>Partner with Engineering and Data Science teams to optimize detection models for policy violations and automated enforcement systems</li>
+<li>Review flagged content to drive enforcement and policy improvements</li>
+<li>Enforce usage policies with a focus on detecting and mitigating potential harmful use of AI systems</li>
+<li>Work with Legal, Public Policy, and Privacy stakeholders to keep our age assurance approach proportionate, privacy-preserving, and responsive to an evolving regulatory landscape</li>
+<li>Support the Safeguards policy design team by providing detailed feedback on policy gaps based on real enforcement scenarios</li>
+<li>Keep up to date with emerging AI policy enforcement best practices, and use these to inform our decision-making and workflows</li>
+</ul>
+<ul>
+<li>Responsible for Anthropic&#x27;s layered age assurance approach - self-declaration, behavioral signals, verification, and ban appeals - to keep our first-party consumer products safe</li>
+<li>Adjacent user well-being enforcement where age is a key factor in how policy is applied such as sexual content and illicit substances</li>
+</ul>
+<h3>Minimum qualifications</h3>
+<ul>
+<li>Experience in trust and safety, online child safety, age assurance, privacy, product policy, or a related field</li>
+<li>Subject matter expertise in one or more of: age assurance or age verification systems, age-appropriate design, child online safety, privacy-preserving verification methods, or content classification for young people</li>
+<li>Experience driving cross-functional initiatives with Product, Engineering, Legal, and Policy partners — especially where safety, privacy, and usability tradeoffs need to be navigated together</li>
+<li>Experience navigating evolving regulatory landscapes and enforcement best practices with regards to age assurance (including frameworks like the UK AADC, COPPA, and the DSA), CSAM/CSEM, NCII, and digital well-being</li>
+<li>A thoughtful perspective on the privacy/safety tradeoffs inherent in age verification — including when less invasive approaches are the right call</li>
+<li>Strong written communication skills, with experience producing clear briefs and recommendations for technical and non-technical stakeholders</li>
+<li>Comfort using data (SQL or similar tools) to measure what&#x27;s working and inform decisions</li>
+<li>Excellent judgment and the ability to collaborate with team members while navigating rapidly evolving priorities and workstreams</li>
+</ul>
+<h3>Preferred qualifications</h3>
+<ul>
+<li>Experience building or operating age-gating flows, age estimation signals, underage account detection, or appeals workflows</li>
+<li>Experience advising or partnering with third-party platforms on deploying safely to younger users</li>
+<li>Experience working with or evaluating third-party age verification providers</li>
+<li>A deep interest in AI safety and responsible technology development</li>
+<li>Experience writing effective prompts for generative AI systems in a content review or enforcement context</li>
+</ul><p>The annual compensation range for this role is listed below. </p>
+<p>For sales roles, the range provided is the role’s On Target Earnings (&quot;OTE&quot;) range, meaning that the range includes both the sales commissions/sales bonuses target and annual base salary for the role.</p><p>Annual Salary:</p><p>$245,000 - $285,000 USD</p><h3><strong>Logistics</strong></h3>
+<p><strong>Minimum education: </strong>Bachelor’s degree or an equivalent combination of education, training, and/or experience</p>
+<p><strong>Required field of study: </strong>A field relevant to the role as demonstrated through coursework, training, or professional experience</p>
+<p><strong>Minimum years of experience: </strong>Years of experience required will correlate with the internal job level requirements for the position</p>
+<p><strong>Location-based hybrid policy:</strong> Currently, we expect all staff to be in one of our offices at least 25% of the time. However, some roles may require more time in our offices.</p>
+<p><strong>Visa sponsorship:</strong> We do sponsor visas! However, we aren&#x27;t able to successfully sponsor visas for every role and every candidate. But if we make you an offer, we will make every reasonable effort to get you a visa, and we retain an immigration lawyer to help with this.</p>
+<p><strong>We encourage you to apply even if you do not believe you meet every single qualification.</strong> Not all strong candidates will meet every single qualification as listed.  Research shows that people who identify as being from underrepresented groups are more prone to experiencing imposter syndrome and doubting the strength of their candidacy, so we urge you not to exclude yourself prematurely and to submit an application if you&#x27;re interested in this work. We think AI systems like the ones we&#x27;re building have enormous social and ethical implications. We think this makes representation even more important, and we strive to include a range of diverse perspectives on our team.<br><br><strong>Your safety matters to us.</strong> To protect yourself from potential scams, remember that Anthropic recruiters only contact you from @anthropic.com email addresses. In some cases, we may partner with vetted recruiting agencies who will identify themselves as working on behalf of Anthropic. Be cautious of emails from other domains. Legitimate Anthropic recruiters will never ask for money, fees, or banking information before your first day. If you&#x27;re ever unsure about a communication, don&#x27;t click any links—visit <a href="http://anthropic.com/careers" rel="nofollow noopener" target="_blank">anthropic.com/careers</a> directly for confirmed position openings.</p>
+<h3><strong>How we&#x27;re different</strong></h3>
+<p>We believe that the highest-impact AI research will be big science. At Anthropic we work as a single cohesive team on just a few large-scale research efforts. And we value impact — advancing our long-term goals of steerable, trustworthy AI — rather than work on smaller and more specific puzzles. We view AI research as an empirical science, which has as much in common with physics and biology as with traditional efforts in computer science. We&#x27;re an extremely collaborative group, and we host frequent research discussions to ensure that we are pursuing the highest-impact work at any given time. As such, we greatly value communication skills.</p>
+<p>The easiest way to understand our research directions is to read our recent research. This research continues many of the directions our team worked on prior to Anthropic, including: GPT-3, Circuit-Based Interpretability, Multimodal Neurons, Scaling Laws, AI &amp; Compute, Concrete Problems in AI Safety, and Learning from Human Preferences.</p>
+<h3><strong>Come work with us!</strong></h3>
+<p>Anthropic is a public benefit corporation headquartered in San Francisco. We offer competitive compensation and benefits, optional equity donation matching, generous vacation and parental leave, flexible working hours, and a lovely office space in which to collaborate with colleagues. <strong>Guidance on Candidates&#x27; AI Usage:</strong> Learn about <a href="https://www.anthropic.com/candidate-ai-guidance" rel="nofollow noopener" target="_blank">our policy</a> for using AI in our application process.</p>
+
+<p><strong>To apply:</strong> <a href="https://weworkremotely.com/remote-jobs/anthropic-safeguards-enforcement-analyst-age-appropriate-design" rel="nofollow noopener" target="_blank">https://weworkremotely.com/remote-jobs/anthropic-safeguards-enforcement-analyst-age-appropriate-design</a></p></div>
+
+<a class="apply" href="https://weworkremotely.com/remote-jobs/anthropic-safeguards-enforcement-analyst-age-appropriate-design" target="_blank" rel="noopener">去原站申请 | Apply on We Work Remotely ↗</a>
+<footer>信息采集自 We Work Remotely,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from We Work Remotely; refer to the original posting.</footer>
+</body></html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Betches Media | Video Podcast Editor</title>
+<meta property="og:title" content="Betches Media | Video Podcast Editor">
+<meta property="og:description" content="Betches Media · 📍New York, New York, New York, United States">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="Betches Media · 📍New York, New York, New York, United States">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Video Podcast Editor</h1>
+<div class="meta">🏢 Betches Media · 📍 New York, New York, New York, United States · 设计 | Design · 美洲 | Americas · 来源 Remote OK · 发布 2026-07-14</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://remoteOK.com/remote-jobs/remote-video-podcast-editor-betches-media-1134873" target="_blank" rel="noopener">去原站申请 | Apply on Remote OK ↗</a>
+<div class="jd"><strong>About Us<br><br></strong>Betches Media is the ultimate digital media and lifestyle destination for women. As a pioneer in the humor and entertainment space, weâve built a powerful platform that connects with over 250M fans across social media, podcasts, web, events, and e-commerce. Our funny, honest, and candid approach resonates with women globally, creating a one-of-a-kind community.<br><br>Now as a part of LBG Media, Betches is in an exciting new chapter, leveraging the global reach and innovation of our parent company to push the boundaries of creative media.<br><br>This is your opportunity to be at the forefront of shaping the future of Betches Media and propel the brand through its next phase of growth.<br><br><strong>Description<br><br></strong>Do you want to put your vast knowledge of random pop culture and online trends to use? Do you wish your endless TikTok scrolling counted as âresearchâ? Would you rather edit a video than write a cover letter? Then you may be perfect for this role. Betches Media is looking for a Video Editor to add to our team!<br><br>The ideal candidate is a highly skilled video podcast editor who is proficient in editing both long-form and short-form podcast content across Betches Media platforms via Spotify, YouTube, Instagram &amp; TikTok. You will play a major part in the post production of short form social media edits and longform multicam podcast edits, as well as the post production of podcast audio.<br><br>Our video podcast editors will work hand-in-hand with producers to develop dynamic content with an eye towards social, and should be excited to infuse their edits with as much creativity as possible. They also should be knowledgeable about the video podcast space, and what works across video platforms. Our editors will also work closely with our social and motion graphics team to ensure our end product is both high-quality and primed for virality.<br><br>This role will report into the Associate Director of Production.<br><br><strong>Roles &amp; Responsibilities<br><br></strong><ul><li>Edit longform video podcasts under tight deadlines, using impeccable creative instincts and industry best practices. Apply revisions and work closely with the Producer to apply episode notes.</li><li>Work closely with the Producer to prep video podcasts episodes to be published on podcasting platforms.</li><li>Edit a variety of social clips for distribution across multiple platforms such as Instagram, TikTok, and Youtube Shorts.</li><li>Focus on maximizing the reach and engagement of your shows, working closely with producers to select and create the most engaging social clips possible.</li><li>Drive all aspects of the video post-production process from ingesting footage, cleaning up audio, color correction, to exporting for final delivery.</li><li>Edit multiple videos lengths and sizes from end-to-end and format according to asset needs.</li><li>Work closely with the Associate Director and Senior Editor to prioritize workflows, follow the post-production calendar closely, and keep projects on schedule.</li><li>Work closely with a Producer on a number of projects to align on editorial and creative output of projects.<br><br></li></ul><strong>Qualifications<br><br></strong><ul><li>Experience editing short-form social videos, interviews, and long-form content.</li><li>Proficiency in Adobe Suite (Premiere, Photoshop, After Effects, etc.).</li><li>Strong understanding of visual storytelling, composition, and typography.</li><li>Ability to organize footage, execute final cuts, and manage post-production.</li><li>Knowledge of key framing, multicam editing, and audio post-production.</li><li>Experience working within brand guidelines to ensure consistency.</li><li>Strong communication, collaboration, and multitasking skills.</li><li>Ability to stay ahead of social media trends and bring new ideas.</li><li>Previous experience in video editing, media, or graphic design is a plus.</li><li>After Effects and audio engineering experience is a plus.</li><li>Comedic background or interest in comedy is a plus. <br><br></li></ul><strong>Compensation<br><br></strong>The expected hourly rate for this role is between $40 - $45, and a commitment of up to 20 hours per week.<br><br><strong>Our DEI+ Commitment<br><br></strong>At Betches, we are committed to building a diverse and inclusive workplace that empowers talent from many different backgrounds, experiences, and identities. We believe that true creativity and knowledge emerge when diversity and inclusion are fully embraced. We strive to create a workforce that reflects the diversity of our clients and our communities, recognizing that our journey towards excellence is ongoing. Together, we aim to foster an environment where everyone can contribute to and benefit from our shared success.<br><br>Please mention the word **BREATHTAKING** and tag RMTAzLjExNy4xMDMuNzE= when applying to show you read the job post completely (#RMTAzLjExNy4xMDMuNzE=). This is a beta feature to avoid spam applicants. Companies can search these words to find applicants that read this and see they&#x27;re human.</div>
+
+<a class="apply" href="https://remoteOK.com/remote-jobs/remote-video-podcast-editor-betches-media-1134873" target="_blank" rel="noopener">去原站申请 | Apply on Remote OK ↗</a>
+<footer>信息采集自 Remote OK,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from Remote OK; refer to the original posting.</footer>
+</body></html>

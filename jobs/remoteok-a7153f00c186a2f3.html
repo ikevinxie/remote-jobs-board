@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Planned Parenthood of Greater New York | Content Marketing Manager</title>
+<meta property="og:title" content="Planned Parenthood of Greater New York | Content Marketing Manager">
+<meta property="og:description" content="Planned Parenthood of Greater New York · 📍New York, New York, New York, United States">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="Planned Parenthood of Greater New York · 📍New York, New York, New York, United States">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Content Marketing Manager</h1>
+<div class="meta">🏢 Planned Parenthood of Greater New York · 📍 New York, New York, New York, United States · 运营与人力 | Operations &amp; HR · 美洲 | Americas · 来源 Remote OK · 发布 2026-07-17</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://remoteOK.com/remote-jobs/remote-content-marketing-manager-planned-parenthood-of-greater-new-york-1134953" target="_blank" rel="noopener">去原站申请 | Apply on Remote OK ↗</a>
+<div class="jd"><p><strong><u>POSITION SUMMARY</u></strong></p><br><p>The Content Marketing Manager is a creative storyteller and digital content strategist responsible for producing compelling, mission-driven content that advances Planned Parenthood of Greater New York’s mission, brand, advocacy, and fundraising goals. This role develops and executes engaging content across social media, video, email, web, and emerging digital platforms to connect with patients, supporters, donors, activists, organizers, and community partners. Working closely with colleagues across the organization, the Content Marketing Manager transforms complex issues, timely news, and community stories into impactful digital experiences that inspire action, build trust, and deepen engagement in support of sexual and reproductive health care, education, and rights.</p><br><p>This person is a highly creative content creator who thrives in fast-paced digital environments and has a passion for social media, video storytelling, and audience engagement. They bring a strong understanding of platform trends, content performance, and digital culture, pairing creativity with data-informed decision-making to create content that expands reach, strengthens community, and advances PPGNY’s mission.</p><br><p><strong><u>CORE COMPETENCIES</u></strong></p><br><p>Under the leadership of the Director of Marketing, the Content Marketing Manager oversees digital components of the communications and marketing plan that fulfill PPGNY’s organizational mission, vision, values, business, and fundraising goals</p><br><ul><br><li>Produces and manages a consistent pipeline of high-quality content, including social media posts, short-form videos, graphics, blog posts, email content, and storytelling campaigns that expand reach and deepen audience engagement</li><br><li>Captures, records, edits, and publishes timely video content, including Reels, TikToks, interviews, and behind-the-scenes storytelling, and is comfortable appearing on camera and providing voice-over narration when appropriate</li><br><li>Identifies and elevates compelling patient, community, supporter, and organizational stories that shape perspectives about sexual and reproductive health care, education, and rights</li><br><li>Monitors social media conversations, cultural moments, platform trends, and emerging best practices to create relevant and timely content that strengthens PPGNY&#x27;s digital presence</li><br><li>Cultivates and engages online communities through active social listening, audience engagement, relationship-building with partners and influencers, and responsive digital communications</li><br><li>Supports the development and execution of integrated marketing and advocacy campaigns designed to grow audiences, increase engagement, inspire action, and strengthen supporter relationships</li><br><li>Creates written and visual content for email marketing campaigns, including copywriting, content development, and audience-focused storytelling</li><br><li>Uses analytics and audience insights to evaluate content performance, identify opportunities for growth, and optimize digital strategies across platforms</li><br><li>Thrives in fast-paced digital environments, brings curiosity and creativity to content development, and continuously tests new approaches to audience engagement and storytelling</li><br><li>Performs other duties as assigned</li><br><br></ul><br><p><strong><u>REQUIRED SKILLS/ABILITIES</u></strong></p><br><ul><br><li>Proficiency in video editing using video-specific software or in-app tools, such as Instagram or TikTok</li><br><li>Experience working in reproductive/sexual health care, social justice, or mission-driven environments</li><br><li>Excellent communication (oral, written, presentation, and image) skills</li><br><li>Must have the ability to travel to health centers and events across the affiliate’s areas</li><br><li>Creative eye for graphic design and developing content across a variety of channels and platforms (extensive design experience is not required)</li><br><li>Proficiency in Microsoft Office suite, social media platforms including Facebook, Twitter,</li><br><li>Instagram, TikTok, and social media management systems like Sprout Social</li><br><li>Must be self-directed with ability to work collaboratively and independently in a remote setting</li><br><li>Strong writing skills, able to write concisely, clearly, and quickly</li><br><li>Strong, detail-oriented communicator who takes initiative</li><br><li>Excellent time and project management skills</li><br><li>Has an energized curiosity for emerging trends in digital spaces (including new platforms, influencers, media focuses, and cultural movements) that are related or tangential to PPGNY’s missions and values</li><br><li>Ability to identify opportunities for digital content and spearhead creative</li><br><br></ul><br><p><strong><u>REQUIRED QUALIFICATIONS</u></strong></p><br><ul><br><li>Bachelor&#x27;s degree in marketing-related field, or comparable work experience</li><br><li>3-4 years in social media marketing and digital content management, including but not</li><br><li>limited to social media, Google Analytics, website management, and other web</li><br><li>development tools</li><br><li>Commitment to PPGNY’s mission, purpose, and values</li><br><li>Bilingual, English and Spanish, is a plus</li><br><li>Strong writing and editing skills, including the ability to carefully target messaging, quickly turn around materials, and respond to current events</li><br><li>Must be a motivated self-starter and able to function effectively with a degree of</li><br><li>Autonomy</li><br><li>A high level of enthusiasm, energy, initiative, and drive</li><br><li>Ability to distill complicated issues and research for messaging to multiple audiences</li><br><li>Ability to prioritize work on several simultaneous, deadline-driven projects</li><br><br></ul><br><p><br><p>This position requires interaction with staff at all levels in a fast-paced environment with </p><br><p>a high level of professionalism and confidentiality, demonstrated ability to work </p><br><p>effectively and meet deadlines in high-pressure situations, and good judgment. The </p><br><p>Manager must bring a positive âcan-doâ attitude, be flexible, have strong attention to </p><br><p>detail, have strong decision-making ability, and work well both independently and </p><br><p>collaboratively as part of a team. In keeping with the position, the Manager may be </p><br><p>required to work evening and weekend hours, or irregular hours depending on the </p><br><p>activity and event schedule and may have to travel throughout the state, intermittently.</p><br><p><strong><u>PHYSICAL DEMANDS</u></strong></p><br><p>Requires sitting for long periods of time.  Periodic standing, walking, bending. Requires lifting of up to 15 pounds.  Visual acuity sufficient to perform frequent work on a computer screen and review printed reports and other materials. This role routinely uses standard office equipment such as computers, phones, photocopiers, and filing cabinets.  Requires the ability to hear and to communicate orally with others. </p><br><p> </p><br></p><p></p><p><br></p><br><p><strong>PPGNY&#x27;s benefits package includes:</strong></p><p>Generous PTO and holiday schedule</p><p>Medical, dental and vision coverage options for you and eligible dependents</p><p>FSA, HSA, Commuter pre-tax reimbursement funds</p><p>Short- and Long-Term Disability, Free Basic Life and AD&amp;D</p><p>401(k) Retirement Plan with Safe Harbor contributions after 1 year of employment</p><p><strong>All positions at PPGNY require:</strong></p><p>Proof of immunization or immunity to certain communicable diseases (including influenza during the flu season and Covid-19) and testing for tuberculosis. These certifications are required by the NYC DOHMH Health Code, NYSDOH and OSHA.</p><p><br></p><p>Planned Parenthood of Greater New York (PPGNY) is a leading provider, educator, and advocate of sexual and reproductive health care in New York State. PPGNY is proud to provide a wide-range of family planning services at our brick-and-mortar health centers and mobile care units. We care for everyone regardless of their immigration status, zip code or ability to pay. PPGNYâs education and outreach programs are backed by medically accurate, evidence-based information that allows people to make informed decisions about their health and future. As a voice for reproductive freedom, PPGNY supports legislation and policies that ensure all New Yorkers have access to the full range of reproductive health care and education.</p><p><br></p><p>At PPGNY, we provide the absolute best care to our patients and our communities through innovative health care delivery and education programming. We care for everyone who walks through our doors regardless of insurance, ability to pay or immigration status. As a leading voice for reproductive freedom, PPGNY fiercely advocates for policies to ensure that all New Yorkers will have access to the full range of reproductive health care services and information.</p><p><br></p><p>PPGNY is committed to diversity, equity, and inclusion. We believe we are most impactful when people with a wide range of backgrounds, experiences, and identities come together with common purpose. We encourage candidates from all backgrounds to apply.</p><br><br>Please mention the word **FREED** and tag RMTAzLjExNy4xMDMuNzE= when applying to show you read the job post completely (#RMTAzLjExNy4xMDMuNzE=). This is a beta feature to avoid spam applicants. Companies can search these words to find applicants that read this and see they&#x27;re human.</div>
+
+<a class="apply" href="https://remoteOK.com/remote-jobs/remote-content-marketing-manager-planned-parenthood-of-greater-new-york-1134953" target="_blank" rel="noopener">去原站申请 | Apply on Remote OK ↗</a>
+<footer>信息采集自 Remote OK,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from Remote OK; refer to the original posting.</footer>
+</body></html>

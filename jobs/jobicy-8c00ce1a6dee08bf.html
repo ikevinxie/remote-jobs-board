@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Colgate-Palmolive | Customer Development Manager - Wakefern</title>
+<meta property="og:title" content="Colgate-Palmolive | Customer Development Manager - Wakefern">
+<meta property="og:description" content="Colgate-Palmolive · 📍USA">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="Colgate-Palmolive · 📍USA">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Customer Development Manager - Wakefern</h1>
+<div class="meta">🏢 Colgate-Palmolive · 📍 USA · 销售 | Sales · 美洲 | Americas · 来源 Jobicy · 发布 2026-07-18</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://jobicy.com/jobs/146924-customer-development-manager-wakefern" target="_blank" rel="noopener">去原站申请 | Apply on Jobicy ↗</a>
+<div class="jd"><p>No Relocation Assistance Offered<br>Job Number #174137 - New York, New York, United States<br><strong>Who We Are</strong><br>Colgate-Palmolive Company is a global consumer products company operating in over 200 countries specializing in Oral Care, Personal Care, Home Care, Skin Care, and Pet Nutrition. Our products are trusted in more households than any other brand in the world, making us a household name!<br>Join Colgate-Palmolive, a caring, innovative growth company reimagining a healthier future for people, their pets, and our planet. Guided by our core values—Caring, Inclusive, and Courageous—we foster a culture that inspires our people to achieve common goals. Together, let&#x27;s build a brighter, healthier future for all.</p><p>As the <strong>Customer Development Manager</strong> for <strong>Wakefern</strong>, you will have ownership &amp; responsibility to deliver sales objectives on volume, spending and retail execution. You will formulate and execute our strategic plan to reach maximum volume, profitability and customer service. You will also have direct oversight over the business P&amp;L. </p><p>You&#x27;ll collaborate with direct reports and cross-functional partners to deliver designated account strategies and champion solutions where everyone wins. You will leverage consumer insights to drive incremental growth and strengthen the customer investment strategy, so that it is consistent with Retail Environment strategy, brand strategy, and shopper insights.</p><p><em>**This is a remote role, though openness and flexibility to work out of the New York, NY office on occasion is preferred.**</em></p><p><strong>Responsibilities:</strong></p><ul>
+<li>Identify areas of opportunity for products and programs, develop Customer Marketing strategies that incorporate consumer insights, and have an awareness of the competitor landscape to create promotional strategies where we all win.</li>
+<li>Establish partnerships with direct reports, cross-functional teams, brokers, and the customer retail team. These relationships thrive on mutual trust and integrity to achieve results and execute against strategy and goals. In this role, you will help coach and develop more junior talent, so interest in leading teams is key in this role. </li>
+<li>Influence internal and external partners through collaboration, negotiation and thought leadership.</li>
+<li>Look for opportunities to improve and seek creative solutions. Adapt and adjust the strategy with the customer, revisit objectives, gain insights from pre- and post-evaluation and return on investment analyses to ultimately incorporate learning into the future strategy.</li>
+<li>Highlight business trends in each account through fact-based analysis to include brand share, pricing, promotion levels, and trade class development. Understand the effectiveness of different investment levers.</li>
+</ul><p><strong>Required qualifications:</strong></p><ul>
+<li>Bachelor&#x27;s Degree </li>
+<li>4+ years in sales roles or adjacent experiences </li>
+<li>Experience working with a syndicated service (Nielsen, IRI) account </li>
+<li>Previous people leadership experience, including leading teams</li>
+</ul><p><strong>Preferred qualifications:</strong></p><ul>
+<li>Experience working in consumer product goods </li>
+<li>Direct previous experience working with Wakefern/ShopRite</li>
+<li>Microsoft Office or Google Suite proficiency (i.e, Sheets, Slides, Docs) </li>
+</ul><p><strong>Compensation and Benefits</strong><br>Salary Range $86,000.00 - $137,000.00 USD<br>Pay is determined based on experience, qualifications, and location. Salaried employees may also be eligible for discretionary bonuses, profit-sharing, and long-term incentives for Executive-level roles.<br>Benefits: Salaried employees enjoy a comprehensive benefits package, including medical, dental, vision, basic life insurance, paid parental leave, disability coverage, and participation in the 401(k) retirement plan with company matching contributions subject to eligibility requirements. Additional benefits include a minimum of 15 vacation/PTO days (hourly employees receive a minimum of 120 hours) and 13 paid holidays (vacation days are prorated based on the employee&#x27;s hire date within the calendar year). Paid sick leave is adjusted based on role and location in accordance with local laws. Detailed information regarding paid sick leave entitlements will be provided to employees upon hiring and may be subject to adjustments based on changes in legislation or company policies.<br><strong>Our Commitment to Inclusion</strong><br>Our journey begins with our people—developing strong talent with diverse backgrounds and perspectives to best serve our consumers around the world and fostering an inclusive environment where everyone feels a true sense of belonging. We are dedicated to ensuring that each individual can be their authentic self, is treated with respect, and is empowered by leadership to contribute meaningfully to our business.<br><strong>Equal Opportunity Employer</strong><br>Colgate is an equal opportunity employer and all qualified applicants will receive consideration for employment without regard to race, color, religion, gender, gender identity, sexual orientation, national origin, ethnicity, age, disability, marital status, veteran status (United States positions), or any other characteristic protected by law.<br>Reasonable accommodation during the application process is available for persons with disabilities. Please complete this <a href="https://docs.google.com/forms/d/e/1FAIpQLSdaxk_eF4utznQoVHlxmL9jVFJbOkM4Oe5CAdKOg-h9EPdLfg/viewform" rel="nofollow noopener" target="_blank">request form</a> should you require accommodation.<br>For additional Colgate terms and conditions, please click <a href="https://www.colgatepalmolive.com/content/dam/cp-sites/corporate/corporate/en_us/corp/locale-assets/pdf/colgate-terms-and-conditions-2023.pdf" rel="nofollow noopener" target="_blank">here</a>.<br>#LI-Remote</p></div>
+
+<a class="apply" href="https://jobicy.com/jobs/146924-customer-development-manager-wakefern" target="_blank" rel="noopener">去原站申请 | Apply on Jobicy ↗</a>
+<footer>信息采集自 Jobicy,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from Jobicy; refer to the original posting.</footer>
+</body></html>

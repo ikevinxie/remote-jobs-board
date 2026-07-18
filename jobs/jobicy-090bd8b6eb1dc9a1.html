@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitLab | Senior Director, Procurement</title>
+<meta property="og:title" content="GitLab | Senior Director, Procurement">
+<meta property="og:description" content="GitLab · 📍USA">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="GitLab · 📍USA">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Senior Director, Procurement</h1>
+<div class="meta">🏢 GitLab · 📍 USA · 销售 | Sales · 美洲 | Americas · 来源 Jobicy · 发布 2026-07-18</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://jobicy.com/jobs/147008-senior-director-procurement" target="_blank" rel="noopener">去原站申请 | Apply on Jobicy ↗</a>
+<div class="jd"><p>GitLab is the intelligent orchestration platform for DevSecOps. GitLab enables organizations to increase developer productivity, improve operational efficiency, reduce security and compliance risk, and accelerate digital transformation. More than 50 million registered users and more than 50% of the Fortune 100* trust GitLab to ship better, more secure software faster.</p>
+<p>The same principles built into our products are reflected in how our team works: we embrace AI as a core productivity multiplier, with all team members expected to incorporate AI into their daily workflows to drive efficiency, innovation, and impact. GitLab is where careers accelerate, innovation flourishes, and every voice is valued. Our high-performance culture is driven by our values and continuous knowledge exchange, enabling our team members to reach their full potential while collaborating with industry leaders to solve complex problems. <a href="https://www.youtube.com/watch?v=OuZIb5zszQI" rel="nofollow noopener" target="_blank">Co-create the future with us</a> as we build technology that transforms how the world develops software.</p>
+<p>*<em>Fortune 500® is a registered trademark of Fortune Media IP Limited, used under license. Claim based on GitLab data. Fortune 100 refers to the top 20% ranked companies in the 2025 Fortune 500 list, published in June 2025. Fortune and Fortune Media IP Limited are not affiliated with, and do not endorse products or services of GitLab.</em></p><p>As the Senior Director, Procurement, you&#x27;ll help shape how GitLab builds and scales procurement in a fast-growing, all-remote company. In this role, you&#x27;ll create and manage a procurement strategy that supports company goals while improving operational efficiency, managing risk, and building clear, practical processes that work across teams. You&#x27;ll guide policies, systems, and purchase controls that support responsible growth, and you&#x27;ll partner closely with stakeholders across the business to make procurement a trusted, effective function. This role is a strong fit for someone who can balance strategy and execution, strengthen team performance, and build a procurement organization that delivers consistency, speed, and sound judgment.</p><h3><strong>What you’ll do</strong></h3><ul>
+<li>Lead hyperscaler and strategic vendor relationships with a 360-degree view across commercial terms, GTM incentives, product co-development opportunities, and partner program value</li>
+<li>Have an ownership mindset - drive the function forward with speed whilst not sacrificing quality to deliver impact for internal stakeholders.</li>
+<li>Create, communicate, and execute a procurement strategy that supports GitLab&#x27;s business objectives and improves operational efficiency, risk management, and scalable decision-making.</li>
+<li>Own procurement policies, practices, and systems that help the business scale while managing risk and improving efficiency. Challenge the status quo and be a change agent.</li>
+<li>Develop procurement processes, systems, and purchase controls to support compliance, increase policy adoption, and improve operational efficiency across teams.</li>
+<li>Partner with internal stakeholders, external auditors, and advisors to improve procurement, negotiation, audit, and accounting processes.</li>
+<li>Build strong cross-functional relationships to understand business needs, improve the team member experience, and ensure procurement programs deliver value.</li>
+<li>Lead vendor negotiation strategy and support negotiations to achieve stronger pricing, favorable terms, and measurable business value.</li>
+<li>Build an AI-first procurement function — actively identifying where automation, AI tooling, and modern workflows can replace manual work, reduce cycle times, and free the team to focus on higher-value decisions.</li>
+<li>Define team KPIs, identify root causes behind performance gaps, and lead improvement plans that increase procurement efficiency and team performance.</li>
+<li>Lead and develop the procurement team to improve accountability, strengthen performance, and support professional growth in alignment with GitLab&#x27;s values.</li>
+</ul><h3><strong>What you’ll bring</strong></h3><ul>
+<li>Significant experience in procurement within a technology company, including experience leading procurement teams.</li>
+<li>A strong track record of building procurement strategies, operating models, and controls that support growth and consistency.</li>
+<li>Good judgment grounded in industry knowledge, practical experience, and an awareness of business tradeoffs.</li>
+<li>The ability to assess broad stakeholder needs and adapt to current and emerging policies, practices, trends, and business requirements.</li>
+<li>Strong operational skills with experience improving procure-to-pay processes for speed, consistency, and quality.</li>
+<li>Experience developing vendor negotiation strategies and managing supplier relationships with a focus on business value.</li>
+<li>An outcomes-focused leadership style with experience setting goals, improving team performance, and helping others grow.</li>
+<li>The ability to create solutions that meet current business needs while building a foundation for future scale in an asynchronous, cross-functional environment.</li>
+</ul><h3><strong>About the team</strong></h3><p>On the Procurement team, we help GitLab make thoughtful, efficient purchasing decisions that advance business goals and responsible growth. We work across functions to improve how we buy, manage suppliers, and apply controls that reduce risk while keeping the business moving. We play an important role in creating clear processes, enabling compliance, and helping stakeholders navigate procurement with clarity. In our all-remote environment, we rely on strong documentation, clear communication, and coordination across many partners to keep procurement effective, scalable, and aligned with GitLab&#x27;s values. For more information, check out GitLab’s <a href="https://handbook.gitlab.com/handbook/finance/procurement/" rel="nofollow noopener" target="_blank">Procurement Handbook page</a>. </p><p><em>The base salary range for this role’s listed level is currently for residents of the United States only. This range is intended to reflect the role&#x27;s base salary rate in locations throughout the US. Grade level and salary ranges are determined through interviews and a review of education, experience, knowledge, skills, abilities of the applicant, equity with other team members, alignment with market data, and geographic location. The base salary range does not include any bonuses, equity, or benefits. See more information on our <a href="https://about.gitlab.com/handbook/total-rewards/benefits/general-and-entity-benefits/" rel="nofollow noopener" target="_blank">benefits</a> and <a href="https://about.gitlab.com/handbook/stock-options/" rel="nofollow noopener" target="_blank">equity</a>. Sales roles are also eligible for incentive pay targeted at up to 100% of the offered base salary.</em></p>United States Salary Range$184,800—$314,400 USD<h3><strong>How GitLab Supports Full-Time Employees</strong></h3>
+<ul>
+<li><a href="https://about.gitlab.com/handbook/total-rewards/benefits/general-and-entity-benefits/" rel="nofollow noopener" target="_blank">Benefits to support your health, finances, and well-being</a></li>
+<li><a href="https://handbook.gitlab.com/handbook/people-group/time-off-and-absence/time-off-types/#flexible-paid-time-off-pto" rel="nofollow noopener" target="_blank">Flexible Paid Time Off </a></li>
+<li><a href="https://handbook.gitlab.com/handbook/company/culture/inclusion/tmrg-tmag/" rel="nofollow noopener" target="_blank">Team Member Resource Groups</a></li>
+<li><a href="https://handbook.gitlab.com/handbook/total-rewards/stock-options/" rel="nofollow noopener" target="_blank">Equity Compensation &amp; Employee Stock Purchase Plan</a></li>
+<li><a href="https://handbook.gitlab.com/handbook/people-group/learning-and-development/growth-and-development/" rel="nofollow noopener" target="_blank">Growth and Development Fund</a></li>
+<li><a href="https://about.gitlab.com/handbook/total-rewards/benefits/general-and-entity-benefits/#parental-leave" rel="nofollow noopener" target="_blank">Parental Leave</a> </li>
+</ul>
+<p>Please note that we welcome interest from candidates with varying levels of experience; many successful candidates do not meet every single requirement. Additionally, studies have shown that people from <a href="https://about.gitlab.com/company/culture/inclusion/#examples-of-select-underrepresented-groups" rel="nofollow noopener" target="_blank">underrepresented groups</a> are less likely to apply to a job unless they meet every single qualification. If you&#x27;re excited about this role, please apply and allow our recruiters to assess your application.</p> <p><strong>Country Hiring Guidelines: </strong>GitLab hires new team members in countries around the world. All of our roles are remote, however some roles may carry specific location-based eligibility requirements. Our Talent Acquisition team can help answer any questions about location after starting the recruiting process. </p>
+<p><strong>Privacy Policy: </strong>Please review our <a href="https://handbook.gitlab.com/handbook/hiring/candidate-faq/recruitment-privacy-policy/" rel="nofollow noopener" target="_blank">Recruitment Privacy Policy.</a> Your privacy is important to us.</p>
+<p>GitLab is proud to be an equal opportunity workplace and is an affirmative action employer. GitLab’s policies and practices relating to recruitment, employment, career development and advancement, promotion, and retirement are based solely on merit, regardless of race, color, religion, ancestry, sex (including pregnancy, lactation, sexual orientation, gender identity, or gender expression), national origin, age, citizenship, marital status, mental or physical disability, genetic information (including family medical history), discharge status from the military, protected veteran status (which includes disabled veterans, recently separated veterans, active duty wartime or campaign badge veterans, and Armed Forces service medal veterans), or any other basis protected by law. GitLab will not tolerate discrimination or harassment based on any of these characteristics. See also <a href="https://about.gitlab.com/handbook/people-policies/inc-usa/#equal-employment-opportunity-policy" rel="nofollow noopener" target="_blank">GitLab’s EEO Policy</a> and <a href="https://about.gitlab.com/handbook/labor-and-employment-notices/#eeoc-us-equal-employment-opportunity-commission-notices" rel="nofollow noopener" target="_blank">EEO is the Law</a>. If you have a disability or special need that requires <a href="https://about.gitlab.com/handbook/people-policies/inc-usa/#reasonable-accommodation" rel="nofollow noopener" target="_blank">accommodation</a>, please let us know during the <a href="https://about.gitlab.com/handbook/hiring/interviewing/#adjustments-to-our-interview-process" rel="nofollow noopener" target="_blank">recruiting process</a>.</p></div>
+
+<a class="apply" href="https://jobicy.com/jobs/147008-senior-director-procurement" target="_blank" rel="noopener">去原站申请 | Apply on Jobicy ↗</a>
+<footer>信息采集自 Jobicy,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from Jobicy; refer to the original posting.</footer>
+</body></html>

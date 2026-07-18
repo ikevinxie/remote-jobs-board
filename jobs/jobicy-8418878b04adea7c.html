@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Remote | Senior Site Reliability Engineer (Remote Build)</title>
+<meta property="og:title" content="Remote | Senior Site Reliability Engineer (Remote Build)">
+<meta property="og:description" content="Remote · 📍EMEA">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="Remote · 📍EMEA">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Senior Site Reliability Engineer (Remote Build)</h1>
+<div class="meta">🏢 Remote · 📍 EMEA · 软件开发 | Software Development · 欧洲 | Europe / EMEA · 来源 Jobicy · 发布 2026-07-18</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://jobicy.com/jobs/146979-senior-site-reliability-engineer-remote-build" target="_blank" rel="noopener">去原站申请 | Apply on Jobicy ↗</a>
+<div class="jd"><h3><strong>About Remote</strong></h3>
+Remote is solving modern organizations’ biggest challenge – navigating global employment compliantly with ease. We make it possible for businesses of all sizes to recruit, pay, and manage international teams. With our core values at heart and future focused work culture, our team works tirelessly on ambitious problems, asynchronously, around the world. You can find Remoters working from 6 different continents (Antarctica left to go!) and all of our positions are fully remote.<br>With Innovation as one of the core values, we have built Automation and AI capabilities into the requirements for every role.<br>We encourage every member of the Remote team to bring their talents, experiences and culture to the table to help us build the best-in-class HR platform.
+ 
+If you are energetic, curious, motivated and ambitious, be part of our world. Apply now and define the future of work!<h3><strong>The Position</strong></h3><p>Remote Build is Remote&#x27;s agentic shift: as AI agents proliferate across HR and Finance stacks, they need to route through the employment infrastructure layer - labour law across 100+ countries, payroll, entity structures, the compliance rail. The infrastructure powering these integrations must be rock-solid, secure, and built for scale.</p><p>As <strong>Senior Site Reliability Engineer for Remote Build</strong>, you&#x27;ll own the operational excellence and infrastructure strategy that makes Build&#x27;s platform reliable, performant, and safe for customers. You&#x27;ll report to the Engineering Manager and work closely with the Remote Build leadership group, product managers, engineers, and customer success to ensure every engagement scales reliably from day one.</p><h3>What you’ll do</h3><ul>
+<li><strong>Infrastructure as code at scale.</strong> Design, implement, and maintain infrastructure-as-code patterns using Terraform and Kubernetes that support both standard connectors and custom builds. Make it easy for engineers to deploy and operate with confidence.</li>
+<li><strong>Observability and incident response.</strong> Build and maintain comprehensive monitoring, logging, and alerting systems. Lead incident response efforts, conduct post-mortems, and drive continuous improvement in system reliability.</li>
+<li><strong>Security and compliance in motion.</strong> Work with our Security team to embed security into every layer of Build infrastructure. Ensure we meet compliance requirements across 100+ jurisdictions without creating friction for developers or customers.</li>
+<li><strong>Performance and cost optimisation.</strong> Continuously optimize system performance, resource utilization, and cloud costs. Make recommendations that improve both reliability and unit economics.</li>
+<li><strong>Automation and operational leverage.</strong> Identify manual operational toil and systematically eliminate it. Build tools and processes that let teams operate efficiently without scaling headcount.</li>
+<li><strong>Platform reliability and developer experience.</strong> Partner with platform teams to ensure APIs, MCP, and CLI are resilient and observable. Give infrastructure feedback that shapes how the platform evolves.</li>
+</ul><h3>What you’ll bring</h3><ul>
+<li><strong>Senior-level SRE experience:</strong> demonstrated experience in a Site Reliability Engineering, DevOps Engineering, or SysOps role. You have stood up and operated production systems at scale.</li>
+<li><strong>Kubernetes and AWS:</strong> deep, hands-on experience running Kubernetes in production. Solid AWS fundamentals across compute, networking, storage, and managed services.</li>
+<li><strong>Infrastructure-as-code:</strong> Proficiency with Terraform or similar IaC tools. You write code to define infrastructure; you don&#x27;t click buttons in the console.</li>
+<li><strong>CI/CD and deployment automation:</strong> real experience setting up and operating GitLab, GitHub Actions, Jenkins, or similar. You understand deployment strategies, rollback mechanisms, and safety nets.</li>
+<li><strong>Scripting and systems knowledge: </strong>strong bash scripting. Comfortable debugging system-level issues, reading logs, and understanding Linux kernel basics.</li>
+<li><strong>Great communication:</strong> you explain complex infrastructure decisions clearly to both engineers and non-technical stakeholders. You write clear runbooks and documentation.</li>
+</ul><h3><strong>Nice to have:</strong></h3><ul>
+<li>Experience with 1+ backend programming language (Elixir, Python, Go, Java, Node.js, etc.).</li>
+<li>Experience in consultancy settings.</li>
+<li>Container registry and artifact management (ECR, Docker Hub, etc.).</li>
+<li>Observability stack depth (Datadog, Prometheus, ELK, Grafana, or similar).</li>
+<li>Experience working with or scaling multi-tenant platforms.</li>
+</ul><h3><strong>Practicals</strong></h3><ul>
+<li><strong>You&#x27;ll report to:</strong> Engineering Manager</li>
+<li><strong>Team:</strong> Engineering</li>
+<li><strong>Location:</strong> Anywhere in the World</li>
+<li><strong>Start date:</strong> As soon as possible</li>
+</ul><h3><strong>Application process</strong></h3><ul>
+<li>Interview with recruiter</li>
+<li>Interview with hiring manager</li>
+<li>Infrastructure Deep Dive</li>
+<li>Executive interview</li>
+<li>Bar raiser interview</li>
+<li>Offer + Background Check (<a href="https://www.notion.so/Veremark-Remote-96e108c037b8423cbd4c3f07a1f9b38b?pvs=21" rel="nofollow noopener" target="_blank">Veremark &amp; Remote</a>)</li>
+</ul><p>#LI-DNI</p><p>Remote&#x27;s <a href="https://www.notion.so/remotecom/people-Total-Rewards-1945bce8d3924ece9421ba8630f57b0c" rel="nofollow noopener" target="_blank">Total Rewards philosophy</a> is to ensure fair, unbiased compensation and fair equity pay along with competitive benefits in all locations in which we operate. We do not agree to or encourage cheap-labor practices and therefore we ensure to pay above in-location rates. We hope to inspire other companies to support global talent-hiring and bring local wealth to developing countries.</p>
+<p>At first glance our salary bands seem quite wide - here is some context. At Remote we have international operations and a globally distributed workforce. We use geo ranges to consider geographic pay differentials as part of our global compensation strategy to remain competitive in various markets while we hiring globally.<br>Our salary ranges are determined by role, level and location, and our job titles may span more than one career level. The actual base pay for the successful candidate in this role is dependent upon many factors such as location, transferable or job-related skills, work experience, relevant training, business needs, and market demands. The base salary range may be subject to change.<br><em>At Remote, we foster internal mobility as a key element of our culture of employee growth and development, supported by a compensation philosophy that guarantees pay equity and fairness. Therefore, all compensation changes associated with an internal move will be reviewed by the Total Rewards &amp; People Enablement team on a case by case basis.</em></p>The annual salary range for this full-time position is$54,000—$150,000 USD<h3><strong>Benefits</strong></h3>
+
+Our full benefits &amp; perks are explained in our handbook at <a href="http://remote.com/r/benefits" rel="nofollow noopener" target="_blank">remote.com/r/benefits</a>. As a global company, each country works differently, but some benefits/perks are for all Remoters:
+<ul>
+<li>work from anywhere</li>
+<li>flexible paid time off</li>
+<li>flexible working hours (we are <a href="https://remote.com/async" rel="nofollow noopener" target="_blank">async</a>)</li>
+<li>16 weeks paid parental leave</li>
+<li>mental health support services</li>
+<li>stock options</li>
+<li>learning budget</li>
+<li>home office budget &amp; IT equipment</li>
+<li>budget for local in-person social events or co-working spaces</li>
+</ul>
+
+<h3><strong>How you’ll plan your day (and life)</strong></h3>
+<p>We work async at Remote which means you can plan your schedule around your life (and not around meetings). Read more at <a href="https://remote.com/async" rel="nofollow noopener" target="_blank">remote.com/async</a>.</p>
+<p>You will be empowered to take ownership and be proactive. When in doubt you will default to action instead of waiting. Your <strong>life-work balance</strong> is important and you will be encouraged to put yourself and your family first, and fit work around your needs.</p>
+<p>If that sounds like something you want, apply now!</p>
+<h3><strong>How to apply</strong></h3>
+<ol>
+<li>Please fill out the form below and upload your CV with a PDF format.</li>
+<li><strong>We kindly ask you to submit your application and CV in English, as this is the standardised language we use here at Remote.</strong></li>
+<li>If you don’t have an up to date CV but you are still interested in talking to us, please feel free to add a copy of your LinkedIn profile instead.</li>
+</ol>
+<p>Not only do we encourage folks from all ethnic groups, genders, sexuality, age, abilities, disability status and any other under-represented group to apply, but we prioritize a sense of belonging. We have 4 ERGs (Women, Disability, Queer, Minorities in Tech) who meet regularly with the People team. During your interviews and beyond, we ask &amp; encourage anybody who needs an accommodation to request one from their recruiter.</p>
+<p>We will ask you to voluntarily tell us your pronouns at interview stage, and you will have the option to answer our anonymous demographic questionnaire when you apply below. As an equal employment opportunity employer it’s important to us that our workforce reflects people of all backgrounds, identities, and experiences and this data will help us to stay accountable. We thank you for providing this data, if you chose to.</p>
+<p>At Remote, we embrace AI as a valuable tool while prioritizing human creativity and authenticity. We look forward to meeting candidates who balance innovation with genuine expertise and experience. To learn more about Remote&#x27;s AI guidelines check see <a href="https://www.notion.so/remotecom/Guidelines-on-using-AI-when-applying-for-a-job-at-Remote-11ccb4dadab4805f80a7c73b6567bd8f" rel="nofollow noopener" target="_blank">here</a>. <br><em>Please note we accept applications on an ongoing basis. </em></p></div>
+
+<a class="apply" href="https://jobicy.com/jobs/146979-senior-site-reliability-engineer-remote-build" target="_blank" rel="noopener">去原站申请 | Apply on Jobicy ↗</a>
+<footer>信息采集自 Jobicy,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from Jobicy; refer to the original posting.</footer>
+</body></html>

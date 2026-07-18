@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WME | Senior DevOps Engineer, Applications</title>
+<meta property="og:title" content="WME | Senior DevOps Engineer, Applications">
+<meta property="og:description" content="WME · 📍Anywhere in the World">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="WME · 📍Anywhere in the World">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Senior DevOps Engineer, Applications</h1>
+<div class="meta">🏢 WME · 📍 Anywhere in the World · 软件开发 | Software Development · 全球 | Worldwide · 来源 We Work Remotely · 发布 2026-07-16</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://weworkremotely.com/remote-jobs/wme-senior-devops-engineer-applications" target="_blank" rel="noopener">去原站申请 | Apply on We Work Remotely ↗</a>
+<div class="jd"><p>
+  <strong>Headquarters:</strong> Remote-CA
+    <br><strong>URL:</strong> <a href="http://wmeagency.com" rel="nofollow noopener" target="_blank">http://wmeagency.com</a>
+</p>
+
+<p></p><p></p><p></p><p></p><p>WME is building the next generation of internal platforms that power one of the world&#x27;s leading entertainment companies.</p><p></p><p>We&#x27;re looking for a Senior Dev Ops Engineer who is equally comfortable designing cloud infrastructure and improving system reliability. The software we build helps agents and teams manage relationships, deals, and opportunities across the global entertainment industry — and keeping it fast, available, and observable is critical work.</p><p></p><p>You&#x27;ll own the infrastructure and reliability story end-to-end: provisioning cloud resources, maintaining Kubernetes deployments, improving CI/CD pipelines, and building the observability that lets engineers move fast with confidence. We&#x27;re in an active migration from a legacy system, so you&#x27;ll be operating both the new platform and supporting the transition as we move module by module.</p><p></p><p>We&#x27;re building this engineering organization largely from the ground up. If you like greenfield infrastructure work, have opinions about how platforms should be built, and want to shape how a team ships software, this is the role.</p><p></p><p><b>Example Problems You Might Work On:</b></p><ul><li><p>Designing and maintaining the Azure infrastructure that runs our gRPC microservices and Next.js web app</p></li><li><p>Building observability that gives engineers visibility into service health, latency, and failure modes across a distributed system</p></li><li><p>Improving CI/CD pipelines so deployments are fast, safe, and fully automated</p></li><li><p>Managing PostgreSQL at scale — backups, failover, migrations, and performance</p></li><li><p>Supporting a multi-service migration from a legacy .NET/MSSQL platform to a modern cloud-native stack</p></li><li><p>Building developer tooling that reduces friction and keeps the team shipping</p></li></ul><p></p><p><b>What You&#x27;ll Do:</b></p><p></p><ul><li><p>Own and evolve Azure infrastructure using Terraform — networking, compute, managed services, and secrets</p></li><li><p>Manage Kubernetes clusters and Helm-based deployments for a distributed microservices platform</p></li><li><p>Build and maintain CI/CD pipelines (GitHub Actions / Azure DevOps) that keep deployments fast and safe</p></li><li><p>Define and improve observability: metrics, logging, alerting, and tracing across services</p></li><li><p>Lead incident response — drive resolution, write postmortems, and follow through on reliability improvements</p></li><li><p>Manage PostgreSQL infrastructure: backups, replication, failover, and query performance</p></li><li><p>Collaborate closely with engineers to improve local development environments and deployment workflows</p></li><li><p>Enforce security best practices: secrets management, network policies, access controls, and vulnerability scanning</p></li></ul><p></p><p><b>What We&#x27;re Looking For</b></p><p></p><ul><li><p>Solid DevOps or platform engineering experience, typically 5+ years</p></li><li><p>Strong hands-on experience with Azure (AKS, Azure AD, managed databases, blob storage, networking)</p></li><li><p>Terraform experience — writing, organizing, and maintaining infrastructure as code at scale</p></li><li><p>Kubernetes and Helm experience managing production workloads</p></li><li><p>Experience building and operating CI/CD pipelines (GitHub Actions, Azure DevOps, or similar)</p></li><li><p>PostgreSQL experience — operational management, migrations, and performance tuning</p></li><li><p>Solid understanding of observability tooling (Datadog, Grafana, OpenTelemetry, or equivalent)</p></li><li><p>Experience with incident response and driving reliability improvements from postmortems</p></li><li><p>Docker and container image management experience</p></li><li><p>Familiarity with secrets management tools (Azure Key Vault, Vault, or equivalent)</p></li><li><p>Comfortable working in environments where systems and processes are still evolving</p></li></ul><p></p><p><b>How We Build</b></p><ul><li><p>Ship practical software that solves real problems</p></li><li><p>Favor simple, maintainable architectures</p></li><li><p>Work closely across engineering, product, and design</p></li><li><p>Use modern cloud infrastructure (AWS / Azure), Terraform, and containerized deployments</p></li><li><p>Maintain automated CI/CD pipelines to keep shipping fast and safe</p></li><li><p>Leverage AI-assisted development across the engineering workflow</p></li></ul><p></p><p><i>Per local requirements and in the interest of transparency, the rate shown below reflects the prevalent current hiring range for this position. Hiring pay rates are based on a number of factors, including location and may vary depending on job-related qualifications, knowledge, skills and experience. The company strives to provide locally competitive rewards packages, which include base rate along with, as applicable, short- and long-term incentives, growth and developmental opportunities, and robust benefits, such as health care, retirement, vacation and other paid time off, and additional offerings.</i></p><p></p><p><i>Hiring Rate Minimum: </i></p>$131,250 annually (minimum will not fall below the applicable state/local minimum salary thresholds)<p></p><p><i>Hiring Rate Maximum:</i></p>$175,000 annually<p></p><p></p>WME is an equal opportunity employer and encourages applications from qualified and eligible candidates regardless of sex, race, disability, age, sexual orientation, or religion or belief.
+
+<p><strong>To apply:</strong> <a href="https://weworkremotely.com/remote-jobs/wme-senior-devops-engineer-applications" rel="nofollow noopener" target="_blank">https://weworkremotely.com/remote-jobs/wme-senior-devops-engineer-applications</a></p></div>
+
+<a class="apply" href="https://weworkremotely.com/remote-jobs/wme-senior-devops-engineer-applications" target="_blank" rel="noopener">去原站申请 | Apply on We Work Remotely ↗</a>
+<footer>信息采集自 We Work Remotely,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from We Work Remotely; refer to the original posting.</footer>
+</body></html>

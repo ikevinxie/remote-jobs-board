@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Datavant | Manager, Client Sucess</title>
+<meta property="og:title" content="Datavant | Manager, Client Sucess">
+<meta property="og:description" content="Datavant · 📍USA">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="Datavant · 📍USA">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Manager, Client Sucess</h1>
+<div class="meta">🏢 Datavant · 📍 USA · 客户支持 | Customer Support · 美洲 | Americas · 来源 Jobicy · 发布 2026-07-18</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://jobicy.com/jobs/146547-manager-client-sucess" target="_blank" rel="noopener">去原站申请 | Apply on Jobicy ↗</a>
+<div class="jd"><p>Datavant is the data collaboration platform trusted for healthcare. Guided by our mission to make the world’s health data secure, accessible and actionable, we provide critical data solutions for organizations across the healthcare ecosystem - including providers, health plans, researchers, and life sciences companies. From fulfilling a single patient’s request for their medical records to powering the AI revolution in healthcare, Datavanters are building the future of how data is connected and used to improve health. <br>By joining Datavant today, you’re stepping onto a driven and highly collaborative team that is passionate about creating transformative change in healthcare.</p><p><strong>What We’re Looking For:</strong></p><p>The Manager, Client Success will be working with designated clients to ensure that all client business needs are met with a high degree of quality. The Manager, Client Success serves as a key partner for day-to-day client operations, helping to drive satisfaction, retention, and operational excellence throughout the client lifecycle.</p><p><strong>What You Will Do: </strong></p><ul>
+<li>Serve as the primary point of contact for assigned clients, managing day-to-day needs and ensuring smooth delivery of services.</li>
+<li>Lead and coach a team of account managers that service Datavant customers to ensure meeting format, communication and reporting are consistent. Serve as a key escalation point for issue resolution.</li>
+<li>Develop a trusted advisor relationship with strategic accounts, overseeing execution across client engagements, including implementation, forecasting, project tracking, and issue resolution.</li>
+<li>Collaborate with internal teams (sales, operations, product) to ensure alignment between client goals and Datavant’s solutions.</li>
+<li>Support client success planning and identify opportunities to expand client engagement through additional products or services.</li>
+<li>Partner with Client Success leadership to escalate and resolve complex client challenges.</li>
+<li>Track and report on client performance metrics and service level agreements.</li>
+<li>Help define and implement best practices for account management, reporting, and client communication.</li>
+<li>Stay informed about industry trends and competitive developments to help guide clients effectively.</li>
+<li>Learn the systems, processes, and technologies that support client delivery and actively suggest process improvements.</li>
+</ul><p><strong>What You Will Bring to the Table:</strong></p><ul>
+<li>Bachelor’s degree or equivalent experience</li>
+<li>6+ years experience in client management, account management, or customer success roles</li>
+<li>Experience working in the healthcare insurance and/or healthcare audit industry required</li>
+<li>Demonstrated ability to prioritize and manage multiple projects at a time while paying strict attention to detail</li>
+<li>Experience leading or mentoring team members.</li>
+<li>Strong communication and presentation skills, with the ability to manage relationships across client and internal teams.</li>
+<li>Demonstrated success in delivering client-focused solutions that meet business needs.</li>
+<li>Excellent problem-solving, organization, and analytical skills.</li>
+<li>Proficiency in project management and data tools.</li>
+<li>Collaborative, flexible, and able to adapt quickly in a fast-paced environment.</li>
+<li>Strong judgment and ability to manage competing priorities effectively.</li>
+<li>Demonstrated ability to work within a diverse work group environment</li>
+<li>Willingness to travel up to 15% of the time</li>
+</ul><p>We are committed to building a diverse team of Datavanters who are all responsible for stewarding a high-performance culture in which all Datavanters belong and thrive. We are proud to be an Equal Employment Opportunity employer and all qualified applicants will receive consideration for employment without regard to race, color, sex, sexual orientation, gender identity, religion, national origin, disability, veteran status, or other legally protected status.<br>At Datavant our total rewards strategy powers a high-growth, high-performance, health technology company that rewards our employees for transforming health care through creating industry-defining data logistics products and services.<br>The range posted is for a given job title, which can include multiple levels. Individual rates for the same job title may differ based on their level, responsibilities, skills, and experience for a specific job.</p>The estimated total cash compensation range for this role is:$130,000—$150,000 USD<p>To ensure the safety of patients and staff, many of our clients require post-offer health screenings and proof and/or completion of various vaccinations such as the flu shot, Tdap, COVID-19, etc. Any requests to be exempted from these requirements will be reviewed by Datavant Human Resources and determined on a case-by-case basis. Depending on the state in which you will be working, exemptions may be available on the basis of disability, medical contraindications to the vaccine or any of its components, pregnancy or pregnancy-related medical conditions, and/or religion. <br>This job is not eligible for employment sponsorship.<br>Datavant is committed to a work environment free from job discrimination. We are proud to be an Equal Employment Opportunity employer and all qualified applicants will receive consideration for employment without regard to race, color, sex, sexual orientation, gender identity, religion, national origin, disability, veteran status, or other legally protected status. To learn more about our commitment, please review our EEO Commitment Statement <a href="https://www.datavant.com/eeo-commitment-statement" rel="nofollow noopener" target="_blank">here</a>. <a href="https://www.eeoc.gov/know-your-rights-workplace-discrimination-illegal" rel="nofollow noopener" target="_blank">Know Your Rights</a>, explore the resources available through the EEOC for more information regarding your legal rights and protections. In addition, Datavant does not and will not discharge or in any other manner discriminate against employees or applicants because they have inquired about, discussed, or disclosed their own pay. <br>At the end of this application, you will find a set of voluntary demographic questions. If you choose to respond, your answers will be anonymous and will help us identify areas for improvement in our recruitment process. (We can only see aggregate responses, not individual ones. In fact, we aren’t even able to see whether you’ve responded.) Responding is entirely optional and will not affect your application or hiring process in any way.<br>Datavant is committed to working with and providing reasonable accommodations to individuals with physical and mental disabilities. If you need an accommodation while seeking employment, please request it <a href="https://peopleteam.datavant.com/portal/en/newticket?departmentId=248697000248790029&amp;layoutId=248697000248795462" rel="nofollow noopener" target="_blank">here,</a> by selecting the ‘Interview Accommodation Request’ category. You will need your requisition ID when submitting your request, you can find instructions for locating it <a href="https://app.tango.us/app/workflow/Greenhouse--Locating-Requisition-ID-2c7d618c8a8a423da4330ff12330695e" rel="nofollow noopener" target="_blank">here</a>. Requests for reasonable accommodations will be reviewed on a case-by-case basis.</p>
+
+
+
+
+<p>For more information about how we collect and use your data, please review our <a href="https://www.datavant.com/privacy-policy" rel="nofollow noopener" target="_blank">Privacy Policy</a>.</p></div>
+
+<a class="apply" href="https://jobicy.com/jobs/146547-manager-client-sucess" target="_blank" rel="noopener">去原站申请 | Apply on Jobicy ↗</a>
+<footer>信息采集自 Jobicy,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from Jobicy; refer to the original posting.</footer>
+</body></html>

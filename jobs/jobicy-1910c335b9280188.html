@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Toptal | Client Sales Representative</title>
+<meta property="og:title" content="Toptal | Client Sales Representative">
+<meta property="og:description" content="Toptal · 📍Europe,  UK">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="Toptal · 📍Europe,  UK">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Client Sales Representative</h1>
+<div class="meta">🏢 Toptal · 📍 Europe,  UK · 销售 | Sales · 欧洲 | Europe / EMEA · 来源 Jobicy · 发布 2026-07-16</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://jobicy.com/jobs/146617-client-sales-representative" target="_blank" rel="noopener">去原站申请 | Apply on Jobicy ↗</a>
+<div class="jd"><h3>About Toptal</h3>
+<p>Toptal is a global network of top talent in business, design, and technology that enables companies to scale their teams, on-demand. With $200+ million in annual revenue <strong>and team members based around the globe</strong>, Toptal is the <a href="https://www.toptal.com/remote-work-playbook" rel="nofollow noopener" target="_blank">world’s largest fully remote workforce</a>.</p>
+<p>We take the best elements of virtual teams and combine them with a support structure that encourages innovation, social interaction, and fun. We see no borders, move at a fast pace, and are never afraid to break the mold.</p>
+<h3>Job Summary:</h3>
+<p>Our Client Sales Representatives connect and engage with prospective clients who originate from inbound leads. They seek new business opportunities by connecting with, and developing relationships with, potential customers and guiding prospective clients throughout the required sales stages. To excel in this position, you need to effectively communicate and collaborate with clients, ensuring they understand the value of our services and how Toptal can support their goals. Our ideal candidate thrives in a fast-paced environment, is hungry to exceed sales quotas, and strives to go above and beyond. If you are passionate about sales, innately driven, and results-oriented, this is the perfect opportunity for you to launch your sales career.</p>
+<p>This is a remote position. We do not offer visa sponsorship or assistance. Resumes and communication must be submitted in English.</p>
+<h3>Responsibilities:</h3>
+<p><em>The following information is intended to describe the general nature and level of work being performed. It is not intended to be an exhaustive list of all duties, responsibilities, or required skills.</em></p>
+<ul>
+<li>Sales Cycle Management: You will be the initial face of Toptal and supporting our clients through the required sales stages. As the first point of contact and the initial ‘face’ of Toptal for new clients, you will be responsible for moving these clients forward in the sales process, starting with regularly conducting sales calls. You will be responsible for accurately articulating the benefit of Toptal to potential clients in these calls and managing deal cycles from discovery through close.</li>
+<li>Client Experience: Clients are at the heart of everything we do. You will be responsible for executing upon a customer-centric approach across all of your customer interactions during pre-defined working hours. You will build rapport with our prospective clients, which will require researching clients before outreach and staying on top of industry trends and Toptal competitors.</li>
+<li>Collaboration with Team Members: You will collaborate with your team to promptly respond to high-volume inbound client inquiries. Communicating via Zoom and Slack is critical to maintaining a high level of collaboration and clear communication within the team.</li>
+<li>Growth and Development: Our SMB sales team members always look to improve individually and as a team. Being open to and implementing feedback will be critical to achieving success in this role and at Toptal.</li>
+</ul>
+<h3>In the first week, expect to:</h3>
+<ul>
+<li>Onboard and integrate into Toptal.</li>
+<li>Learn Toptal’s model, our team members, and our story.</li>
+<li>Begin our 1-1 sales training process which conveys our value proposition, sales process, and delivery method.</li>
+<li>Become acquainted with the cross-functional teams you will work with to close new business.</li>
+</ul>
+<h3>In the first month, expect to:</h3>
+<ul>
+<li>Complete our personalized sales training program, including mock calls and role-play scenarios.</li>
+<li>Be able to accurately articulate Toptal’s value proposition and process.</li>
+<li>Be able to speak to incoming leads, understand the clients’ needs, overcome any objections, present the value proposition of Toptal, and close leads that are a good fit for Toptal.</li>
+<li>Work alongside the various business units to ensure your prospects are progressing through the funnel.</li>
+<li>Begin closing new business, exercising discretion and independent judgment.</li>
+</ul>
+<h3>In the first three months, expect to:</h3>
+<ul>
+<li>Be fully ramped up and integrated into the team.</li>
+<li>Complete additional vertical-specific training.</li>
+<li>Possess a healthy pipeline of prospects that are working through your funnel.</li>
+<li>Exhibit a successful track record of hitting sales goals.</li>
+</ul>
+<h3>In the first six months, expect to:</h3>
+<ul>
+<li>Have a solid history of claiming and closing new business by consistently meeting or exceeding sales goals.</li>
+<li>Identify process improvement areas to help increase team efficiency and effectiveness, which may include providing consultation or advice to management on policies and procedures.</li>
+<li>Continue to implement sales best practices for client interactions and follow-up.</li>
+</ul>
+<h3>In the first year, expect to:</h3>
+<ul>
+<li>Begin to mentor new members of the team, helping them learn about Toptal, our model, and pass along standard methodologies.</li>
+<li>Continue to gain and close new business along with managing your funnel to consistently meet and exceed sales targets.</li>
+<li>Become a productive, collaborative, and consistent contributor to the team.</li>
+</ul>
+<h3>Qualifications and Job Requirements:</h3>
+<ul>
+<li>Bachelor’s degree is required.</li>
+<li>The ideal candidate will have 1-3 years of B2B sales experience (i.e. Account Executive, Inside Sales, Outside Sales Representative, Account Representative, or related title).</li>
+<li>Software or tech-related sales experience and education are a plus.</li>
+<li>Be attentive to client needs. You will be required to be fully available during your working hours to take client calls.</li>
+<li>You are client-centric. You will be working with prospective clients daily, uncovering and resolving clients’ issues through value-based selling.</li>
+<li>Have a “will-to-win” attitude. You’re looking to not only meet but exceed your quota and are naturally competitive. We provide a base salary plus uncapped commission and want our Client Advisors to make the most out of it!.</li>
+<li>You’re a “learn-it-all”. We are looking for someone who is always looking to grow, strives for improvement, and constantly seeks feedback from peers/ leaders. Even as an individual contributor, you seek to share and gain knowledge from those around you.</li>
+<li>Ability to collaborate effectively with your team members.</li>
+<li>Outstanding written and verbal communication skills.</li>
+<li>Ability to work and thrive in a fast-paced, rapidly growing company and handle a wide variety of challenges, deadlines, and a diverse array of contacts. We move quickly, so having exceptional time management skills and the ability to manage a high volume of clients is key to being successful in this role.</li>
+<li>You must be a world-class individual contributor to thrive at Toptal. You will not be here just to tell other people what to do.</li>
+</ul></div>
+
+<a class="apply" href="https://jobicy.com/jobs/146617-client-sales-representative" target="_blank" rel="noopener">去原站申请 | Apply on Jobicy ↗</a>
+<footer>信息采集自 Jobicy,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from Jobicy; refer to the original posting.</footer>
+</body></html>

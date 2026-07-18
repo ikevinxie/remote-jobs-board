@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>电鸭直招帖 | 招聘｜兼职 Vue3 前端开发｜60元/小时｜远程日结</title>
+<meta property="og:title" content="电鸭直招帖 | 招聘｜兼职 Vue3 前端开发｜60元/小时｜远程日结">
+<meta property="og:description" content="电鸭直招帖 · 📍全职远程(电鸭·中文社区)">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="电鸭直招帖 · 📍全职远程(电鸭·中文社区)">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>招聘｜兼职 Vue3 前端开发｜60元/小时｜远程日结</h1>
+<div class="meta">🏢 电鸭直招帖 · 📍 全职远程(电鸭·中文社区) · 软件开发 | Software Development · 亚太 | Asia-Pacific · 来源 电鸭社区 · 发布 2026-07-13</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://eleduck.com/posts/QZfpv2" target="_blank" rel="noopener">去原站申请 | Apply on 电鸭社区 ↗</a>
+<div class="jd"><p>现有项目持续迭代，招聘一名兼职前端开发，主要负责前端页面开发、设计稿还原、接口联调及问题调试。</p>
+<p>项目已有完整框架和代码基础，不是从零搭建。希望寻找开发效率高、能够独立完成任务，并可长期稳定合作的个人开发者。</p>
+<p>工作内容<br>
+根据设计稿精准还原前端页面<br>
+开发管理后台、商城、H5及移动端页面<br>
+完成页面布局、组件、交互和响应式适配<br>
+对接后端接口并完成数据联调<br>
+排查页面报错、样式错位及交互异常<br>
+修复现有前端 Bug<br>
+对开发成果进行自测、自审和优化<br>
+按要求提交 Git 代码及当日开发说明<br>
+前端技术栈<br>
+Vue 3<br>
+TypeScript<br>
+Vite<br>
+Element Plus<br>
+Avue<br>
+Pinia<br>
+Tailwind CSS<br>
+UniApp<br>
+Nuxt 3<br>
+ColorUI<br>
+Pure Admin</p>
+<p>现有项目主要包括：</p>
+<p>管理后台：Vue3＋Element Plus＋Avue<br>
+商城及用户端：UniApp＋ColorUI<br>
+后台首页：Vue3＋Avue3＋Element Plus<br>
+SEO 官网：Nuxt 3，支持 SSR／SSG<br>
+后端技术栈<br>
+Java 25<br>
+Spring Boot<br>
+Spring Cloud<br>
+Spring Cloud Alibaba<br>
+Spring AI<br>
+MyBatis-Plus<br>
+PostgreSQL<br>
+Redis／Valkey<br>
+Nacos<br>
+OpenFeign<br>
+RocketMQ<br>
+XXL-Job<br>
+MinIO<br>
+Docker</p>
+<p>岗位以前端开发为主，不要求精通全部后端技术，但需要能够看懂接口文档、理解数据结构，并独立完成前后端联调。</p>
+<p>AI 工具要求</p>
+<p>需要熟练使用以下一种或多种 AI 编程工具：</p>
+<p>Claude／Claude Code<br>
+Cursor<br>
+GitHub Copilot<br>
+ChatGPT<br>
+Codex 或其他同类工具</p>
+<p>要求能够合理使用 AI 工具：</p>
+<p>快速理解现有项目代码<br>
+辅助开发页面和业务组件<br>
+排查前端报错和接口问题<br>
+优化代码结构和开发效率<br>
+根据设计稿准确实现页面<br>
+对 AI 生成代码进行人工检查、调试和自测</p>
+<p>不接受未经检查直接复制 AI 代码。最终交付结果、代码质量和功能正确性由开发者本人负责。</p>
+<p>任职要求<br>
+熟练使用 Vue3、TypeScript、Element Plus<br>
+有后台管理系统、商城、H5或UniApp项目经验<br>
+能够根据设计稿精准还原页面样式和交互<br>
+注重字体、间距、尺寸、圆角、阴影及响应式细节<br>
+能独立完成表格、表单、弹窗、分页、上传等功能<br>
+能使用浏览器开发者工具排查问题<br>
+熟悉 Axios、RESTful API及前后端接口联调<br>
+能看懂基础 Java和Spring Boot接口代码<br>
+熟悉 Git分支、提交和代码合并流程<br>
+能够独立自测，不依赖他人逐项检查基础问题<br>
+远程协作要求</p>
+<p>本岗位为远程兼职，但需要配合日常线上协作。</p>
+<p>通过微信、飞书、腾讯会议等方式沟通<br>
+需求确认、页面验收、接口调试或问题排查时，需要进入线上会议<br>
+会议过程中需要配合共享屏幕，现场展示页面、代码运行情况、控制台报错及调试过程<br>
+必要时需要现场完成简单调整或演示问题复现<br>
+不要求全天开启屏幕共享，仅在需求沟通、技术协作和验收时使用<br>
+无法接受线上会议及共享屏幕协作方式的，请勿添加<br>
+薪资及结算方式<br>
+60元/小时<br>
+按日结算<br>
+每天开发前确认任务、预计工时和验收标准<br>
+当日提交代码、工时记录和进度说明后，可先结算当日费用的 80%<br>
+当日约定的页面、功能和样式全部实现，通过自测并完成提交后，当天结算100%<br>
+未完成任务对应的剩余20%，在完成并验收后补齐<br>
+未经提前确认的额外工时，原则上不计入结算<br>
+自审与返工规则</p>
+<p>开发者申请当日100%结算，即视为已经确认：</p>
+<p>页面及功能已经实现<br>
+设计稿已经逐项核对<br>
+接口已经完成联调<br>
+常见操作流程已经测试<br>
+控制台不存在明显报错<br>
+代码已经提交至指定分支<br>
+任务已经达到双方确认的验收标准</p>
+<p>提交结算后，如发现以下问题，开发者应自行完成返工，不重复计算工时：</p>
+<p>未按照已确认需求实现<br>
+页面样式与设计稿存在明显偏差<br>
+功能无法正常使用<br>
+存在明显前端报错<br>
+接口参数或数据处理遗漏<br>
+响应式适配未完成<br>
+因代码疏漏产生的 Bug<br>
+提交前未进行基本自测</p>
+<p>因新增需求、需求范围变化、设计稿修改或原任务之外的功能产生的工作，不属于免费返工，双方重新确认工时。</p>
+<p>代码及项目保密责任</p>
+<p>参与项目即视为接受代码和业务资料保密要求。</p>
+<p>未经项目方书面同意，不得：</p>
+<p>复制、下载或保留与工作无关的项目代码<br>
+将源代码、数据库结构、接口文档或账号信息提供给第三方<br>
+将项目代码上传至公开仓库、个人公开仓库或代码分享平台<br>
+将项目代码、业务逻辑或内部资料用于其他客户项目<br>
+对外发布项目截图、后台页面、设计稿或开发过程<br>
+向培训机构、外包团队或其他开发者转交任务<br>
+使用项目代码作为公开作品或求职展示<br>
+将密钥、Token、服务器信息、用户数据等敏感资料录入不受控平台</p>
+<p>仅允许在项目授权范围内使用代码和资料。合作终止后，应停止访问项目，并按要求删除本地保存的代码、文档、账号及相关资料。</p>
+<p>因开发者泄露、违规复制、擅自传播或不当使用代码及项目资料造成损失的，需要承担相应保密责任。</p>
+<p>正式参与项目后，可根据需要签署保密协议。</p>
+<p>合作要求<br>
+每日开始前确认任务和预计时间<br>
+开发过程中及时反馈问题，不要到结算时才说明<br>
+当日任务尽量当日完成<br>
+提交代码前必须完成基本自测<br>
+不虚报工时，不重复计算返工时间<br>
+不接受频繁失联或只提交未经测试的代码<br>
+不接受未经允许转包或找他人代做<br>
+优先长期稳定合作的个人开发者<br>
+暂不考虑培训机构及纯销售型外包公司<br>
+应聘请提供</p>
+<p>请私信发送：</p>
+<p>工作年限<br>
+常用技术栈<br>
+Vue3／UniApp项目经验<br>
+代表项目或作品截图<br>
+使用过的 AI 编程工具<br>
+每日及每周可投入时间<br>
+最快开始时间<br>
+是否接受60元/小时、按日结算<br>
+是否接受线上会议及共享屏幕<br>
+是否接受代码及项目保密要求<br>
+当前所在城市</p>
+<p>私信格式：</p>
+<p>前端兼职＋工作年限＋每日可投入时间＋项目案例＋AI工具＋可共享屏幕</p></div>
+
+<a class="apply" href="https://eleduck.com/posts/QZfpv2" target="_blank" rel="noopener">去原站申请 | Apply on 电鸭社区 ↗</a>
+<footer>信息采集自 电鸭社区,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from 电鸭社区; refer to the original posting.</footer>
+</body></html>

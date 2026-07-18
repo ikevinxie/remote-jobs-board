@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lakeshore Learning Materials, LLC | Director of Paid Acquisition</title>
+<meta property="og:title" content="Lakeshore Learning Materials, LLC | Director of Paid Acquisition">
+<meta property="og:description" content="Lakeshore Learning Materials, LLC · 📍USA">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="Lakeshore Learning Materials, LLC · 📍USA">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Director of Paid Acquisition</h1>
+<div class="meta">🏢 Lakeshore Learning Materials, LLC · 📍 USA · 市场营销 | Marketing · 美洲 | Americas · 来源 Jobicy · 发布 2026-07-17</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://jobicy.com/jobs/149396-director-of-paid-acquisition" target="_blank" rel="noopener">去原站申请 | Apply on Jobicy ↗</a>
+<div class="jd"><h3>Company Description</h3><p>At Lakeshore, we create innovative learning materials and world-class guest experiences for teachers, parents and children. Since 1954, we’ve grown into a global community—with a thriving e-commerce business, multiple catalogs, over 50 stores, a peerless national sales force, plus international offices that support our preeminent supply chain division. But today we’re working better, smarter and faster than ever—and setting our sights even higher. We’re building an infrastructure designed for scalability, embracing data-driven decision-making and using technology to improve efficiency and ensure the best tools for the best work. Most importantly, we continue to invest in a diverse team of inquisitive top talent who fuel each other’s passions and curiosity, take risks, try new things and believe that every new day brings opportunities for growth.</p><h3>Job Description</h3><p><strong>We&#x27;re looking for a Director of Paid Acquisition to own how Lakeshore</strong> reaches and converts customers through paid media — across both our direct-to-consumer and institutional channels. You&#x27;ll set the strategy, lead a growing team, and stay close enough to the work to make fast, informed decisions in the accounts. This is a high-ownership role at the center of a rapidly scaling digital business, and the impact you drive here connects directly to putting quality learning materials in the hands of educators, families, and children. </p><p>This role is expected to work primarily during Pacific Time (PT) business hours.</p><p><strong>A day on the job looks like this: </strong></p><ul><li>Own the paid acquisition strategy, roadmap, and budget across Meta, Google, and emerging channels — holding full accountability for CAC, ROAS, and revenue targets across B2C and B2I </li><li>Lead and grow a team of paid media professionals, setting clear direction, raising the standard of work, and building the skills and structure the team needs to scale </li><li>Partner with our external agency and cross-functional teams — creative, merchandising, ecommerce, and finance — to align paid investment with company priorities and maximize return </li><li>Design and run a rigorous, continuous testing program across creative, audience, bid strategy, and landing pages, translating results into fast, evidence-based decisions </li><li>Build reporting and forecasting that gives leadership clear, honest visibility into spend, acquisition performance, and where the business is headed </li><li>Analyze the full paid customer journey — from first impression through conversion — to surface high-impact optimization opportunities both in-channel and on-site </li></ul><h3>Qualifications</h3><p><strong>Got the skills and experience? Here’s what we’re looking for:</strong></p><p><strong>Required </strong></p><ul><li>10+ years in performance and paid media in an ecommerce environment, with meaningful experience in both B2C retail and B2B or institutional channels </li><li>5+ years managing significant paid media budgets directly in-platform, with deep current hands-on expertise in Meta Ads Manager and Google Ads </li><li>5+ years leading a team, with a demonstrated ability to develop talent, set direction, and hold a team accountable for measurable outcomes </li><li>Proven track record owning paid channels end-to-end — from strategy and forecasting through execution, testing, and optimization </li><li>Strong command of budget pacing, bid strategy, attribution modeling, and creative testing frameworks </li><li>Experience briefing and collaborating with creative teams to develop and iterate on ad concepts tied to performance goals </li><li>Comfortable making confident decisions with incomplete information in a fast-moving, shifting environment </li><li>This is a remote role; must be able to collaborate effectively across time zones and functions without day-to-day in-person oversight </li></ul><p><strong>Preferred </strong></p><ul><li>Experience working at or managing an external paid media agency</li><li>Hands-on experience with paid channels beyond Meta and Google — Pinterest, TikTok, programmatic, or paid search extensions </li><li>Exposure to institutional or B2B marketing funnels in addition to consumer retail </li></ul><p><strong>What sets you apart </strong></p><ul><li>You translate performance data into a clear business story — not just for channel specialists, but for a VP or CFO who needs to understand what the numbers mean and what to do next </li><li>You can zoom out to set a six-month strategy and zoom back in to catch a budget pacing issue before it costs real money — without losing your footing at either altitude </li><li>You build trust across teams by sharing context generously, pushing back constructively, and following through consistently </li><li>You approach creative with both analytical rigor and genuine aesthetic judgment — you know what good looks like, and you know how to test whether you&#x27;re right </li></ul><h3>Additional Information</h3><p><strong>And here’s our end of the bargain!</strong></p><p>At Lakeshore, we pay local market wages for employees that reside within Los Angeles and Orange Counties. For employees residing outside of Los Angeles and Orange Counties, pay is based on national market.</p><p>For this position, new employees joining Lakeshore are typically brought into the organization at a salary rate between $123,000-$165,000 depending on relevant experience &amp; skillset.</p><p>This range is indicative of projected hiring range. The annual base compensation will take into account each candidate&#x27;s relevant experience, location, and skillset.</p><ul><li>Bonus eligible</li><li>Paid leave for new parents to support work/life balance and family bonding</li><li>Excellent medical/dental and vision coverage—EPO, PPO and HSA</li><li>401(k) retirement plan with company contribution (because you will retire someday)</li><li>Flexible benefits—choose what you like, ignore the rest</li><li>On-site preschool for our employees’ children</li><li>On-site employee gym for all levels/fitness needs</li><li>Generous employee discount</li><li>Casual dress…and we really mean it</li></ul><p>At Lakeshore, we know our diversity makes us stronger, and when everyone feels included and valued, we all win. We strive to embrace our differences and create an intentionally diverse and inclusive community that is representative of the teachers, families and children we serve.</p><p>We know we couldn’t do the extraordinary things we’re doing without the people on our team. Thanks to the passion and enthusiasm of this spectacular group, Lakeshore is more than a great place to work—it’s a great experience to be part of. Day in and day out, we give everything we’ve got to create products that instill a sense of wonder and foster a true love of learning. To help maintain this high bar for success, we’re constantly on the lookout for people to join us. So if you’re a down-to-earth professional who shares our desire for making a difference, we’d love to hear from you. <br>To learn more about Lakeshore, visit <a href="https://www.lakeshorelearning.com/about/careers" rel="nofollow noopener" target="_blank">www.lakeshorelearning.com/careers</a><a href="https://www.lakeshorelearning.com/about/careers%C2%A0" rel="nofollow noopener" target="_blank"> </a><br><strong>Equal Employment Opportunity Policy</strong><br>
+People are selected to become members of the Lakeshore family based on skill, merit and mind-boggling talent—not based on race, color, creed, sexual orientation, gender or gender identity, marital status, domestic partnership status, military status, religion, age, national origin, ancestry, alienage, AIDS or AIDS-related complex status, genetic information, predisposition or carrier status, status as a victim of domestic violence, physical or mental disability, or any other characteristic protected by applicable law. If things aren’t equal, we all lose.</p><p>To learn about how we collect and use Applicant information, please visit our <a href="https://www.lakeshorelearning.com/about/privacy-policy-employee-applicant/" rel="nofollow noopener" target="_blank">Employee/Applicant Privacy Policy.</a></p><p><strong>Lakeshore is an E-Verify employer. We use E-Verify to confirm the employment eligibility of all newly hired employees.</strong></p><p>Please see the <a href="http://www.e-verify.gov/sites/default/files/everify/posters/IER_RightToWorkPoster%20Eng_Es.pdf" rel="nofollow noopener" target="_blank">E-Verify Participation Poster and Know Your Rights Poster</a> in <a href="http://www.eeoc.gov/sites/default/files/2023-06/22-088_EEOC_KnowYourRights6.12ScreenRdr.pdf" rel="nofollow noopener" target="_blank">English</a> and <a href="https://www.eeoc.gov/sites/default/files/2023-06/22-088_EEOC_KnowYourRightsSp6.12.pdf" rel="nofollow noopener" target="_blank">Spanish </a>for more information. INDRLL1</p></div>
+
+<a class="apply" href="https://jobicy.com/jobs/149396-director-of-paid-acquisition" target="_blank" rel="noopener">去原站申请 | Apply on Jobicy ↗</a>
+<footer>信息采集自 Jobicy,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from Jobicy; refer to the original posting.</footer>
+</body></html>
