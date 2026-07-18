@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Local Infusion | Regional Practice Manager - New Hampshire</title>
+<meta property="og:title" content="Local Infusion | Regional Practice Manager - New Hampshire">
+<meta property="og:description" content="Local Infusion · 📍United States">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="Local Infusion · 📍United States">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>Regional Practice Manager - New Hampshire</h1>
+<div class="meta">🏢 Local Infusion · 📍 United States · 其他 | Other · 美洲 | Americas · 来源 Himalayas · 🕐 时区 UTC-10 ~ UTC+14 · 发布 2026-07-18</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://himalayas.app/companies/local-infusion/jobs/regional-practice-manager-new-hampshire" target="_blank" rel="noopener">去原站申请 | Apply on Himalayas ↗</a>
+<div class="jd"><h3><strong>We are <a href="https://himalayas.app/companies/local-infusion" rel="nofollow noopener" target="_blank">Local Infusion</a>.</strong></h3><p><a href="https://himalayas.app/companies/local-infusion" rel="nofollow noopener" target="_blank">Local Infusion</a> is the fastest growing infusion provider in the United States, with a mission to transform the specialty infusion industry, because patients deserve better. By providing both exceptional, patient-centered care and the proprietary, AI-driven technology powering it, <a href="https://himalayas.app/companies/local-infusion" rel="nofollow noopener" target="_blank">Local Infusion</a> accelerates access, simplifies workflows, and improves outcomes for everyone in the infusion journey — from patients and clinicians to health plans, health systems, employers, and pharma.<br><br>Clinicians can spend less time on paperwork and more time with patients, bringing comfort, connection, and community back to healthcare. With <a href="https://himalayas.app/companies/local-infusion" rel="nofollow noopener" target="_blank">Local Infusion</a>, every patient and every care team is fully supported, every step of the way.</p><p><strong>Fraud and Security Notice: </strong>Please note that all communication regarding job opportunities at <a href="https://himalayas.app/companies/local-infusion" rel="nofollow noopener" target="_blank">Local Infusion</a> will come exclusively from an @<a href="http://mylocalinfusion.com" rel="nofollow noopener" target="_blank">mylocalinfusion.com</a> email address. If you receive messages from any other domain, please disregard them.</p><h3><strong>The Role</strong></h3><h3>Regional Practice Manager, New Hampshire</h3><p>At <a href="https://himalayas.app/companies/local-infusion" rel="nofollow noopener" target="_blank">Local Infusion</a>, our mission is to revolutionize the specialty infusion industry because patients deserve better. We are committed to delivering exceptional clinical care through operational excellence, innovative thinking, and an unwavering focus on the patient experience.  As the <strong>Regional Practice Manager (RPM)</strong>, you will report directly to the Vice President of Operations and serve as the operational leader for multiple infusion centers. </p><p>You will oversee all aspects of regional practice operations, including clinical operations, intake and patient access, reimbursement support, staffing, facility management, regulatory compliance, and referring provider relationships. </p><p>The RPM is responsible for driving operational performance while ensuring patients receive timely access to specialty therapies and an exceptional care experience. This position requires a confident, solutions-oriented leader who thrives in a fast-paced healthcare environment, exercises sound independent judgment, and effectively balances competing priorities with minimal supervision.</p><p>In addition to overseeing daily operations, the RPM serves as the regional subject matter expert for patient access and reimbursement. You will partner closely with Intake, Pharmacy, Nursing, Revenue Cycle, and Executive Leadership to navigate complex payer requirements, remove barriers to care, improve referral conversion, and ensure operational consistency across multiple practices.</p><p>Success in this role requires exceptional leadership, strong business acumen, advanced healthcare insurance knowledge, outstanding organizational skills, and the ability to confidently manage multiple priorities, teams, and technology platforms simultaneously. The ideal candidate is adaptable, resourceful, and willing to travel throughout the region as business needs evolve.</p><h3><strong>Key Responsibilities:</strong></h3><h3>Operational Leadership</h3><ul><li><p>Provide operational leadership for multiple infusion centers, ensuring consistent execution of organizational standards, regulatory compliance, and exceptional patient care.</p></li><li><p>Lead, mentor, coach, and develop high-performing clinical, intake, and administrative teams while fostering a culture of accountability, collaboration, and continuous improvement.</p></li><li><p>Independently assess operational challenges and make timely decisions that support patient care, compliance, employee engagement, and organizational objectives.</p></li><li><p>Monitor regional performance metrics, identify operational trends, and implement strategies to improve efficiency, patient satisfaction, and financial performance.</p></li><li><p>Ensure standard operating procedures are consistently followed while identifying opportunities for process improvement and operational scalability.</p></li><li><p>Oversee facility readiness, vendor relationships, inventory coordination, staffing plans, and overall operational continuity across assigned practices.</p></li></ul><h3>Patient Access &amp; Insurance Operations</h3><ul><li><p>Serve as the regional operational expert for patient access, reimbursement, and healthcare insurance processes.</p></li><li><p>Provide daily guidance and real-time support to Intake teams navigating complex payer requirements, prior authorizations, denials, appeals, medical necessity requirements, referral barriers, and specialty medication access.</p></li><li><p>Analyze payer policies and independently develop operational strategies that improve patient access while maintaining compliance with payer and organizational requirements.</p></li><li><p>Partner with Intake, Nursing, Pharmacy, and Revenue Cycle teams to proactively resolve reimbursement challenges and improve referral conversion.</p></li><li><p>Monitor payer policy changes and communicate operational updates, workflow enhancements, and best practices to regional teams.</p></li><li><p>Coach and educate team members on insurance processes, documentation requirements, reimbursement workflows, and payer-specific expectations to promote consistency and operational excellence.</p></li><li><p>Escalate highly complex reimbursement issues appropriately while independently resolving routine and moderately complex insurance challenges.</p></li></ul><h3>Team &amp; Business Management</h3><ul><li><p>Manage staffing models and labor utilization to meet patient demand while maintaining productivity and financial performance.</p></li><li><p>Address patient, provider, employee, and facility concerns promptly while maintaining a high standard of professionalism and service.</p></li><li><p>Prioritize multiple operational initiatives simultaneously while maintaining accuracy, responsiveness, and attention to detail in a high-volume environment.</p></li><li><p>Utilize multiple technology platforms, including EHR/EMR systems, payer portals, referral management software, scheduling platforms, CRM systems, Microsoft Office, and other healthcare applications to manage daily operations and resolve patient access challenges.</p></li><li><p>Travel throughout the assigned region, including occasional short-notice travel, to provide onsite operational leadership, staffing support, training, and business continuity as organizational needs arise.</p></li></ul><h3><br>Qualifications &amp; Requirements</h3><ul><li><p>Bachelor&#x27;s degree in Healthcare Administration, Business Administration, Nursing, or a related field preferred.</p></li><li><p>Three or more years of progressive leadership experience in healthcare operations, physician practice management, ambulatory care, specialty pharmacy, infusion services, or a related healthcare setting.</p></li><li><p>Strong working knowledge of commercial insurance, Medicare, Medicaid, prior authorizations, reimbursement processes, referral management, specialty medication access, payer policies, and medical necessity documentation.</p></li><li><h3>Clinical background preferred.</h3></li><li><p>Demonstrated ability to independently analyze complex situations, make sound decisions, and drive operational outcomes with minimal supervision.</p></li><li><p>Exceptional organizational, prioritization, and time management skills with the ability to successfully manage multiple competing priorities in a fast-paced healthcare environment.</p></li><li><p>Proven ability to multitask across multiple practices, departments, technology platforms, and operational initiatives while maintaining attention to detail.</p></li><li><p>Strong analytical, critical thinking, and problem-solving abilities.</p></li><li><p>Excellent communication, leadership, coaching, and relationship-building skills.</p></li><li><p>High level of initiative, accountability, professionalism, and adaptability.</p></li><li><p>Advanced proficiency with electronic health records, payer portals, Microsoft Office Suite, scheduling software, CRM platforms, and other healthcare technology systems.</p></li><li><p>Ability and willingness to travel throughout the assigned region, including overnight or short-notice travel, based on operational needs.</p></li></ul><h3><strong>The <a href="https://himalayas.app/companies/local-infusion" rel="nofollow noopener" target="_blank">Local Infusion</a> Way</strong></h3><p><a href="https://himalayas.app/companies/local-infusion" rel="nofollow noopener" target="_blank">Local Infusion</a> is a respectful, upbeat, and remote-first team united by our mission of shaping the way specialty infusion care is delivered. We are highly ambitious, but understand that in order to do a great job, we have to take care of ourselves; we expect that you will have time and energy devoted to your families, friends and hobbies.</p><h3>As part of our team, full-time employees get:</h3><ul><li><h3>Potential for performance bonuses</h3></li><li><p>Medical, dental, and vision insurance through our employer plan</p></li><li><h3>Short and long-term disability coverage</h3></li></ul><ul><li><p>401(k) — as an early stage startup, and we match!</p></li></ul><ul><li><p>15 Days PTO — and we want you to take it!</p></li></ul><ul><li><p>Competitive paid parental leave and flexible return to work policy.</p></li></ul><ul><li><p>We invest in your career. Our company is growing quickly, and we&#x27;ll give you the opportunity to do the same. You&#x27;ll have access to a number of professional development opportunities so that you can keep up with the company&#x27;s evolving needs and grow your career along the way.</p></li></ul><p>We don’t discriminate—<a href="https://himalayas.app/companies/local-infusion" rel="nofollow noopener" target="_blank">Local Infusion</a> is an Equal Employment Opportunity (EEO) Employer. We fundamentally believe that a more diverse and inclusive team leads to a stronger company more able to achieve our vision.</p><p>Originally posted on <a href="https://himalayas.app" rel="nofollow noopener" target="_blank">Himalayas</a></p></div>
+
+<a class="apply" href="https://himalayas.app/companies/local-infusion/jobs/regional-practice-manager-new-hampshire" target="_blank" rel="noopener">去原站申请 | Apply on Himalayas ↗</a>
+<footer>信息采集自 Himalayas,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from Himalayas; refer to the original posting.</footer>
+</body></html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wonderly | VP of Growth</title>
+<meta property="og:title" content="Wonderly | VP of Growth">
+<meta property="og:description" content="Wonderly · 📍United States · 💰USD 400,000 - 800,000">
+<meta property="og:site_name" content="Global Remote Jobs">
+<meta property="og:type" content="article">
+<meta name="description" content="Wonderly · 📍United States · 💰USD 400,000 - 800,000">
+<style>
+:root {
+  --bg: #faf7f2; --card: #ffffff; --fg: #1c2b33; --muted: #687a84;
+  --border: #e7e0d4; --accent: #0d9488; --accent2: #0284c7;
+  --chip: #e6f4f1; --warn-bg: rgba(217, 119, 6, .10); --warn-border: rgba(217, 119, 6, .45);
+  --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 6px 20px -8px rgba(28, 43, 51, .12);
+  --grad: linear-gradient(100deg, var(--accent), var(--accent2));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1418; --card: #122029; --fg: #e7edf0; --muted: #8fa3ad;
+    --border: #22333d; --accent: #2dd4bf; --accent2: #38bdf8;
+    --chip: #173039; --warn-bg: rgba(251, 191, 36, .10); --warn-border: rgba(251, 191, 36, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -10px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 1000px; padding: 28px 18px 72px;
+       font: 15px/1.65 -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--fg); }
+h1 { font-size: 26px; margin: 0 0 2px; letter-spacing: .2px;
+     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 19px; margin: 34px 0 12px; }
+h3 { font-size: 15px; margin: 22px 0 10px; }
+a { color: var(--accent2); }
+.hero { margin-bottom: 20px; }
+.share-fab { position: fixed; right: 16px; bottom: 24px; z-index: 40;
+             padding: 10px 20px; border-radius: 999px; border: none; cursor: pointer;
+             background: var(--grad); color: #fff; font-size: 14px; font-weight: 650;
+             box-shadow: 0 4px 16px rgba(13, 148, 136, .35); }
+.share-fab:hover { filter: brightness(1.06); }
+.tagline { color: var(--muted); font-size: 14px; margin: 2px 0 8px; }
+.sub { color: var(--muted); font-size: 13px; }
+.nav { font-size: 13px; margin-top: 6px; }
+.nav a { color: var(--accent2); text-decoration: none; margin-right: 4px; }
+.nav a:hover { text-decoration: underline; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+        padding: 10px 16px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); }
+.stat b { display: block; font-size: 20px; color: var(--fg); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.chip { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+        border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+        transition: all .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--grad); color: #fff; border-color: transparent; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 14px; background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; position: sticky; top: 8px; z-index: 5; box-shadow: var(--shadow); }
+.controls input[type=search], .controls select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--fg); font-size: 14px; }
+.controls input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.controls label.toggle { display: inline-flex; gap: 5px; align-items: center;
+                         font-size: 13px; color: var(--muted); cursor: pointer; }
+.count { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+
+.job, li.job { padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px;
+       margin-bottom: 10px; background: var(--card); box-shadow: var(--shadow);
+       transition: transform .15s, box-shadow .15s; list-style: none; }
+.job:hover { transform: translateY(-2px); }
+ul.joblist { padding: 0; margin: 0; }
+.job a.title { font-weight: 650; color: var(--fg); text-decoration: none; font-size: 15.5px; }
+.job a.title:hover { color: var(--accent); }
+.meta { margin-top: 6px; color: var(--muted); font-size: 13px;
+        display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         background: var(--chip); color: var(--accent); font-size: 12px; margin-left: 8px;
+         vertical-align: 1px; font-weight: 600; }
+select.mark { padding: 2px 6px; border: 1px solid var(--border); border-radius: 8px;
+              background: var(--bg); color: var(--muted); font-size: 12px; }
+.job.marked-interested { border-color: var(--accent); }
+.job.marked-applied { opacity: .72; }
+
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+         margin: 18px 0; font-size: 13px; color: var(--muted); }
+.pager button { border: 1px solid var(--border); background: var(--card); color: var(--fg);
+                border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager button:not(:disabled):hover { border-color: var(--accent); }
+.pager select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px;
+                background: var(--card); color: var(--fg); }
+
+.banner { padding: 12px 16px; border-radius: 12px; margin: 14px 0; font-size: 14px; }
+.banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.banner.pick { background: var(--card); border: 1.5px solid var(--accent); box-shadow: var(--shadow); }
+.banner.tldr { background: var(--card); border: 1px solid var(--border); line-height: 1.75; box-shadow: var(--shadow); }
+.apply { display: inline-block; margin: 20px 0; padding: 13px 30px; border-radius: 12px;
+         background: var(--grad); color: #fff !important; font-weight: 650; text-decoration: none;
+         box-shadow: var(--shadow); }
+.apply:hover { filter: brightness(1.06); }
+.jd { border-top: 1px solid var(--border); padding-top: 16px; }
+.jd p, .jd li { line-height: 1.75; }
+
+table { border-collapse: collapse; font-size: 13px; background: var(--card);
+        border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+td, th { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+
+.share-panel { position: fixed; inset: 0; background: rgba(10, 20, 24, .55);
+               display: flex; align-items: center; justify-content: center; z-index: 50; }
+.share-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+             padding: 26px 30px; text-align: center; box-shadow: var(--shadow); max-width: 320px; }
+.share-box svg { width: 220px; height: 220px; border-radius: 10px; }
+.share-box .sub { margin-top: 10px; word-break: break-all; }
+
+footer { margin-top: 36px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+footer a { color: var(--accent2); }
+.empty { text-align: center; color: var(--muted); padding: 48px 0; }
+.hidden { display: none !important; }
+</style></head><body>
+<div class="sub"><a href="../index.html">← 返回全部岗位 | All jobs</a></div>
+<h1>VP of Growth</h1>
+<div class="meta">🏢 Wonderly · 📍 United States · 💰 USD 400,000 - 800,000 · 其他 | Other · 美洲 | Americas · 来源 Himalayas · 🕐 时区 UTC-10 ~ UTC+14 · 发布 2026-07-18</div>
+
+
+
+<p class="meta">⚠️ 请仔细甄别招聘信息真假:本站仅自动聚合公开信息,不对其真实性负责;凡要求缴费、垫资、提供银行卡密码的均为骗局。 | Listings are auto-aggregated from public sources; we don&#x27;t verify them. Beware of job scams — never pay to apply.</p>
+<a class="apply" href="https://himalayas.app/companies/wonderly/jobs/vp-of-growth" target="_blank" rel="noopener">去原站申请 | Apply on Himalayas ↗</a>
+<div class="jd"><h3>About <a href="https://himalayas.app/companies/wonderly" rel="nofollow noopener" target="_blank">Wonderly</a></h3><p><a href="https://himalayas.app/companies/wonderly" rel="nofollow noopener" target="_blank">Wonderly</a> is building the first end-to-end AI business platform for service businesses. The roofers, contractors, med spas, and law firms that make up the majority of the economy are excellent at their craft and poor at running a business — and most of them should be generating 2–5x more revenue than they currently are.</p><p>Today, solving this means hiring an agency, stitching together a dozen tools, and spending weeks on setup and maintenance. Even then, results are inconsistent and systems break constantly.</p><p><a href="https://himalayas.app/companies/wonderly" rel="nofollow noopener" target="_blank">Wonderly</a> replaces all of it. Ads, website, lead intake, CRM, AI receptionist, follow-up, and project delivery — all in one platform, fully set up in minutes. Because we own every layer, nothing breaks at the seams. The integrations that fail in stitched-together systems simply don&#x27;t exist inside <a href="https://himalayas.app/companies/wonderly" rel="nofollow noopener" target="_blank">Wonderly</a>.</p><p>What makes us different is that AI is native to the platform, not bolted on. Our agents don&#x27;t just suggest — they actually run ads, build websites, answer calls, qualify leads, book meetings, follow up, and move deals through the pipeline. The goal is not incremental improvement. The goal is to take a business from a non-functional system to a high-performing one almost immediately.</p><p>With backing from YC and Sam Altman, a $500M+ valuation, and hundreds of thousands of users, we&#x27;re well positioned to lead. We&#x27;re building for the majority of businesses in the economy. For them, AI doesn&#x27;t need to be customizable — it needs to work.</p><p><a href="https://himalayas.app/companies/wonderly" rel="nofollow noopener" target="_blank">Wonderly</a> is intense, fast, and not for everyone. If you want to work with top talent, push yourself harder than you thought possible, and help redefine how AI actually drives revenue for real businesses, you&#x27;ll thrive here.</p><h3>About the Role</h3><p>We’re hiring a VP of Growth to lead growth and marketing across our two products: Motion, our established productivity platform, and <a href="https://himalayas.app/companies/wonderly" rel="nofollow noopener" target="_blank">Wonderly</a>, the new AI-native business platform we’re scaling.</p><p>This person will report directly to Harry Qi, Founder and CEO of Motion and <a href="https://himalayas.app/companies/wonderly" rel="nofollow noopener" target="_blank">Wonderly</a>.</p><ol><li><p>Motion is our mature time and project management product - where we’ve scaled to $40M/year in revenue and $20M/year in free cashflow. However, Motion was pre-AI SaaS; no matter what people tell you, it’s nearly impossible to retrofit best AI Agents to a pre-AI SaaS.</p></li><li><p>So we decided to build a new company, <a href="https://himalayas.app/companies/wonderly" rel="nofollow noopener" target="_blank">Wonderly</a>, fully owned by Motion and funded by Motion’s $20M/year in free cashflow, in addition to tens of millions of cash in the bank. We’ve been working on <a href="https://himalayas.app/companies/wonderly" rel="nofollow noopener" target="_blank">Wonderly</a> for over a year with 65 team members (almost entirely PDE), and believe <strong>we’ve just recently found PMF for <a href="https://himalayas.app/companies/wonderly" rel="nofollow noopener" target="_blank">Wonderly</a></strong>. <a href="https://himalayas.app/companies/wonderly" rel="nofollow noopener" target="_blank">Wonderly</a> is an end-to-end verticalized AI-native OS for home services businesses - we own the entire system of record, all business applications (we replace ServiceTitan, House Call Pro, RingCentral, Squarespace, Docusign, Square, and a dozen other applications), and dozens of AI agents ourselves embedded natively inside our business applications, with native data read &amp; write access to our system of record. As a result, we can deploy dozens of AI Agents to our customers with no FDEs, no integrations, and no data cleaning work.</p></li></ol><p><a href="https://himalayas.app/companies/wonderly" rel="nofollow noopener" target="_blank">Wonderly</a> has the most result-driven business model, because we’ve proven our system and AI Agents work. We are not trying to sell our customers a dream - we deliver real revenue and profit to our customers. All of our software and AI Agents are free - we charge a % of revenue we deliver for our customers. Each of our 10+ core AI Agents help improve their revenue by 5-20%. This is the ultimate outcome-based pricing, only possible when you own the entire end-to-end system and all the agents yourself.</p><p>We believe <a href="https://himalayas.app/companies/wonderly" rel="nofollow noopener" target="_blank">Wonderly</a> has the potential to be a $100B - $1T outcome. The market is massive: home service businesses across North America (a $2T market). Construction, HVAC, roofing businesses, and the long tail of local businesses that do not have the time or capabilities to make a best-in-class lead acquisition, sales process, and back office ops.</p><p>We are not starting from zero. We have the team, capital, product velocity, and hard-won experience of people who have already built something sizable.</p><p>We’d love to tell you more about <a href="https://himalayas.app/companies/wonderly" rel="nofollow noopener" target="_blank">Wonderly</a> via a private meeting, and why we have PMF.</p><h3>The Role</h3><p>We need a VP of Growth who can build and own the marketing engine for <a href="https://himalayas.app/companies/wonderly" rel="nofollow noopener" target="_blank">Wonderly</a>.</p><p><a href="https://himalayas.app/companies/wonderly" rel="nofollow noopener" target="_blank">Wonderly</a> has gone 0 → 1, we now need 1 → 100</p><p>This is not a classic VP Growth role where you inherit a clean team, a mature budget, and a stable playbook. You’ll be stepping into a company that moves fast, changes direction dramatically to find even better GTM opportunities, and expects marketing to lead initiatives company-wide, not just follow with brand, PR, and content. Marketing explicitly drives revenue here.</p><p>You won’t have a fixed lane. Instead you’ll find the highest-leverage growth problem, solve it, hire out a team to scale it when needed, and move to the next one. Some examples include:</p><ul><li><p>Paid and organic acquisition across many channels (Meta, Google, Youtube, Tik Tok, Reddit…etc). For many channels, we still need to go from 0 → 1, and you need to figure it out.</p></li><li><p>Landing pages. Positioning. SEO. Lifecycle. Email deliverability. Attribution. Funnel analytics. Product launches. Creative testing. OOH. Website conversion. Data quality and reporting. Affiliate and partnerships. BDR/SDRs cold calling. Sales enablement. Whatever moves the number.</p></li><li><p>Some weeks that means scaling Meta and Google campaigns. Some weeks it means getting Tik Tok and Youtube from 0 → 1. Some weeks it means talking to dozens of influencers. Some weeks it means rewriting the homepage because the positioning is wrong. Some weeks it means figuring out why Google hasn’t indexed the product pages. Some weeks it means fixing events for lifecycle email deliverability. Some weeks it means building a SEO acquisition strategy for landscapers, remodelers, roofers, or other service businesses. You should be comfortable getting deep into the work. You may need to inspect events in Segment or Amplitude. You may need to check DNS records, debug tracking, review ad account structure, talk to customers, or write a product spec. You’re a member of the leadership team but you are not above any of it.</p></li></ul><p>If you want to build the marketing engine for a company taking a serious swing at a trillion-dollar market in North America, this is it.</p><h3>What You’ll Own</h3><p>You’ll own marketing performance for <a href="https://himalayas.app/companies/wonderly" rel="nofollow noopener" target="_blank">Wonderly</a>, including:</p><ul><li><p>Positioning and messaging for <a href="https://himalayas.app/companies/wonderly" rel="nofollow noopener" target="_blank">Wonderly</a>’s core products</p></li><li><p>Paid acquisition across large channels like Meta, Google, Youtube, Tik Tok, etc.</p></li><li><h3>Influencer strategy and organic content.</h3></li><li><p>Landing pages, website conversion, and funnel testing</p></li><li><p>SEO strategy, indexing, content, and programmatic growth opportunities</p></li><li><p>Lifecycle marketing across activation, onboarding, retention, and reactivation</p></li><li><h3>Attribution, analytics, and reporting</h3></li><li><h3>Creative testing and ad iteration</h3></li><li><p>Local-market and vertical-specific growth experiments</p></li><li><p>Sales and customer-facing enablement when needed</p></li><li><p>Hiring, managing, and developing the marketing team as the function scales</p></li></ul><p>You do not need to be the world’s best specialist in every one of these areas. But you do need to be dangerous in all of them. And if you haven’t touched a channel - that’s completely fine; you need to be confident in your ability to learn and become an expert in any channel in a short amount of time. You should know enough to diagnose problems, make decisions, hire well, manage specialists, and personally step in when something important is broken.</p><h3>Backgrounds That Tend to Work</h3><p>People from these backgrounds tend to thrive:</p><ul><li><p>Founders or early employees who have had to build the whole go-to-market machine</p></li><li><p>Quant traders who are great at coming up with new/unique ideas, strategies, and executing these ideas.</p></li><li><p>Growth leaders at fast-moving B2B AI/SaaS companies</p></li></ul><h3>Backgrounds we care less about:</h3><ul><li><p>Big-company marketing roles where success meant managing agencies and approving plans</p></li><li><p>Brand-only roles disconnected from revenue</p></li></ul><h3>What matters more than the resume:</h3><ul><li><h3>You think clearly from first principles</h3></li><li><p>You are very resourceful and can become an expert in any topic fast</p></li><li><p>You make decisions with incomplete information</p></li><li><h3>You are comfortable with messy data</h3></li><li><p>You can write and you’re fast with numbers in a business context</p></li><li><h3>You can work with engineers</h3></li><li><p>You have strong taste, but you are not closed-minded</p></li></ul><h3>Expectations</h3><p>This is a high-output and company-defining role.</p><h3>You should expect:</h3><ul><li><h3>Real ownership from day one</h3></li><li><h3>Direct accountability for growth numbers</h3></li><li><h3>Daily visibility into performance</h3></li><li><h3>Management of a team already in place</h3></li><li><p>Regular in-person work sessions and hacker houses</p></li><li><p>A team that values speed, clarity, and ownership</p></li></ul><h3>Compensation</h3><ul><li><p>$400,000 - $800,000 in total compensation (split roughly evenly between base salary and equity).</p></li><li><h3>Remote, North America</h3></li></ul><p><em><a href="https://himalayas.app/companies/wonderly" rel="nofollow noopener" target="_blank">Wonderly</a> is committed to creating a diverse and inclusive workplace where everyone is treated with respect and given equal opportunities. We do not discriminate based on gender identity, race, ancestry, disability, religion, sexual orientation, pregnancy status, veteran status, or any other characteristic protected by law. We welcome and encourage all qualified candidates to apply for our job openings.</em></p><h3>Compensation Range: $400K - $800K</h3><p>Originally posted on <a href="https://himalayas.app" rel="nofollow noopener" target="_blank">Himalayas</a></p></div>
+
+<a class="apply" href="https://himalayas.app/companies/wonderly/jobs/vp-of-growth" target="_blank" rel="noopener">去原站申请 | Apply on Himalayas ↗</a>
+<footer>信息采集自 Himalayas,版权归原发布方;内容可能滞后,以原站为准。 |
+Collected from Himalayas; refer to the original posting.</footer>
+</body></html>
